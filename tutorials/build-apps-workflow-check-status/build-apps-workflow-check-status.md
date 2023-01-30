@@ -53,7 +53,7 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
 
 ### Store process ID
-1. On the **Create Sales Order** page, click the **Get Approval** button, and then open its logic pane.
+1. On the **Create Sales Order** page, click the **Get Approval** button, and then open its logic canvas.
 
     You should already see **Create record** and **Toast** flow functions from the previous tutorial.
 
@@ -104,6 +104,9 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     ![Container style](page-container-style.png)
 
+
+
+
 6. Select the inside container, and in the **Layout** tab, make the following changes:
 
     - Layout to horizontal
@@ -153,7 +156,7 @@ We now need a data variable to hold the list of workflows that we triggered, so 
     
     ![Create variable](data-variable.png)
 
-    Open the logic pane, and remove the **Delay** flow function.
+    Open the logic canvas, and remove the **Delay** flow function.
 
     ![Remove delay](data-no-delay.png)
 
@@ -206,8 +209,11 @@ In the last step we saved the process ID and status, but the status could have c
 
     Under **Resource schema**, click **Add New** and add a field of type _Text_ and with the name `ProcessID`.
 
-4. Click the **create** panel, and enable that action with the toggle button.
+4. Click the **create** panel.
 
+    Then enable the create action with the toggle button.
+
+    ![Alt text](create.png)
     ![Create](data-resource-create.png)
 
 5. For **Relative path and query**, click the binding **X** (next to the name of the destination), then select **Formula > Create Formula**.
@@ -245,7 +251,7 @@ You should get information about the process, including its name and status.
 ### Create logic to retrieve status
 1. Close the **Data** tab.
    
-2. In the **Workflow Status** page, click the **Status** button (in the first row), and open the logic pane for it.
+2. In the **Workflow Status** page, click the **Status** button (in the first row), and open the logic canvas for it.
 
 3. Create a logic flow as shown in the following (always use the top outputs for flow functions with more than one output): 
 
@@ -313,6 +319,6 @@ Go to SAP Build Process Automation, and just suspend the process.
 
 ![Suspend](rerun-suspend.png)
 
-Then go back to your app and click **Status** for the process. The status should change to ***Completed***.
+Then go back to your app and click **Status** for the process. The status should change to ***Suspended***.
 
 ![Updated status](rerun-updated.png)

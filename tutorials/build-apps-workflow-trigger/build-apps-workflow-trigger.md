@@ -49,10 +49,14 @@ Your app will look something like this:
 
 ### Create a new app project
 Go to the SAP Build lobby, and click **Create**.
-   
+
 ![Create project](new-project-create.png)
 
-Select **Build an Application > Web & Mobile Application**.
+Select **Build an Application**.
+
+![Build an application](new-project-appgyver.png)   
+
+Select **Web & Mobile Application**.
 
 ![Select project type](new-project-web-project.png)
 
@@ -66,6 +70,13 @@ For the project name, enter `Sales Order Trigger`, then click **Create**.
 
 ### Create the sales order page
 By default your new application contains a page with title and text fields. In this step, you will focus on turning this page into your app, including how to build a UI and stylize the UI elements.
+
+>Note that there are 2 tabs for this step. 
+>
+>- You can do the first tab, **Basic steps**, which we recommend and which will teach you about UI components, stylizing them, and organizing them on the page.
+>
+>- You can instead do the second tab, **Import Project**, which will bypass the nitty gritty of adding and stylizing components, and instead teach you how to import an SAP Build Apps project into an existing project. This way is much faster.
+ 
 
 [OPTION BEGIN [Basic steps]]
 
@@ -160,7 +171,7 @@ By default your new application contains a page with title and text fields. In t
 
 [OPTION END]
 
-[OPTION BEGIN [Bypass]]
+[OPTION BEGIN [Import Project]]
 
 Sometimes, stylizing a UI is tedious. But we want you to see some of things you can do with SAP Build Apps.
 
@@ -256,11 +267,14 @@ Now you will set up the connection from your app to SAP Build Process Automation
     | **`ExpectedDeliveryDate`** | ***Text***   |
 
 
-4. Click the **create** panel, and enable that action with the toggle button.
+4. Click the **create** panel.
 
+    Then enable the create action with the toggle button.
+
+    ![Alt text](create.png)
     ![Create](data-resource-create.png)
 
-5. For **Request headers**, click the binding **X**, then **List of values**.
+1. For **Request headers**, click the binding **X**, then **List of values**.
 
     Click **Add a value**, and add the following key-value pair:
 
@@ -271,7 +285,7 @@ Now you will set up the connection from your app to SAP Build Process Automation
 
     Click **Save**.
 
-6. For **Request body mapper**, click the binding **X**, then **Formula > Create formula**.
+2. For **Request body mapper**, click the binding **X**, then **Formula > Create formula**.
 
     Enter the following for the formula -- replace `<your definition ID>` with the ID for your process:
 
@@ -281,7 +295,7 @@ Now you will set up the connection from your app to SAP Build Process Automation
 
     Click **Save** twice.
 
-7. Click **Save Data Resource** (bottom right).
+3. Click **Save Data Resource** (bottom right).
 
     Click **Save** (in the upper right to save all your changes to the project).
 
@@ -408,9 +422,9 @@ You can also check the Inbox to see the forms were created and the values proper
 
 
 ### Add logic to trigger workflow
-1. Click on the **Get Approval** button, and open the logic panel by clicking **Add logic to Button1** at the bottom right.
+1. Click on the **Get Approval** button, and open the logic canvas by clicking **Add logic to Button1** at the bottom right.
 
-    ![Open logic pane](logic-open1.png)
+    ![Open logic canvas](logic-open1.png)
 
 2. Drag a **Create record** flow function onto the canvas, and connect the component tap event to it.
    
