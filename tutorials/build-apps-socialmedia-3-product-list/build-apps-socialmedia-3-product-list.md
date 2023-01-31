@@ -93,7 +93,7 @@ In this step, if you want to use a destination that you have already set up to N
 
     ![Northwind configuration](Northwind2.png)
    
-3. Click **Save** (upper right**).
+3. Click **Save** (upper right).
 
 [OPTION END]
 
@@ -173,14 +173,18 @@ For more information on creating destinations that can be consumed by SAP Build 
 
 
 ### Create variables
-1. Go back to the UI canvas.
+1. Go back to the UI canvas, and select **Variables**.
 
-2. Select **Variables**.
+    ![UI variables](ui-variables.png)
 
-3. Under **App Variables**, click **Add App Variable**.
+2. Under **App Variables**, click **Add App Variable**.
+
+    ![App variables](app-var.png)
 
     - Select the new variable (i.e., `variable1`), and rename it to `Ratings`.
     - Set the type to **List**, and the list item type to **Object**.
+
+    ![Ratings app variable](app-var-type.png)
 
     >On the one hand, a type of object with no fields has no schema, so it is more difficult to work with in the formula editor. But on the other hand, it is compatible with any object and saves us the time of defining all the fields.
 
@@ -217,7 +221,7 @@ Now that we have all the data in variables, we want to bind them to the list com
     | RatingCount | `DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(repeated.current.ProductID)).count,0)` |
     | Image source | For fun, I wanted each product to have a picture. The simplest was to take a service that returns a picture. Here's a formula to return a cat picture.<div>&nbsp;</div> `"https://cataas.com/cat/says/" + repeated.current.ProductID`     |
     
-
+    >The formula for the image may appear in red as an error, but it will work. Just save it.
 
 
 
@@ -225,8 +229,12 @@ Now that we have all the data in variables, we want to bind them to the list com
 ### Get the rating data
 1. Click an open area on the canvas, and open the logic pane.
 
-2. For the Page mounted event, add an **Execute cloud function** flow function, and then a **Set app variable** flow function.
+    ![Page logic panel](logic-canvas-page.png)
 
+2. For the Page mounted event, add an **Execute cloud function** flow function, and then a **Set app variable** flow function.
+    
+    ![Alt text](execute-function.png)
+    
     Connect them like ths:
 
     ![Rating logic](ratings-logic.png)

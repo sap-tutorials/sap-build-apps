@@ -26,31 +26,41 @@ In the previous tutorial, you set up all of the data variables and global logic 
 ### Display product name and current rating
 1. Go back to the Product Page page.
 
-2. Drag onto the canvas a container, and in the container add title, star rating (in **By Me** tab), and text components.
+2. Drag onto the canvas a container, and in the container add title, star rating (in **By Me** tab), and a text component.
 
     ![Container tree](part1-container1.png) ![Container UI](part1-container2.png)
 
-3. Set the container layout to horizontal, and set the align components to middle.
+3. Select the container, and then in **Layout** tab set the layout to horizontal, and set the align components to middle.
+
+    ![Container layout](container-properties.png)
 
 4. For the title, set the **Content** to **Data and Variables > Data Variables > Products1 > Productname**.
 
-    - Set its width to **Fit to content**.
+    - In the **Layout** tab, set its width to **Fit to content**.
 
 5. For the star rating:
 
-    - Set **Maximum value to 5.
+    - Go to **Properties** tab, and set **Maximum value** to 5.
     - Set the **Value** to the following formula:
+  
         ```JavaScript
         DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(params.productID)).avg,0)
         ```
-    - Set its width to **Fit to content**.
+
     - Set **View only?** to true.
+    - Go to **Layout** tab and set its width to **Fit to content**.
 
 6. For the text component, set the **Content** to the following formula:
 
     ```JavaScript
     FORMAT_LOCALIZED_DECIMAL(DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(params.productID)).avg,0), "en", 1,1) 
     ```
+
+>**What do the formulas do?**
+>
+>The formulas for the **Rating** and **RatingCount** first get the record in the **Ratings** app variable with a product ID the same as the current product.
+>
+>Then it takes the average rating to display in the star rating control as stars, and the number of ratings with 1 decimal place to display in the text field.  
 
 
 
@@ -59,11 +69,19 @@ In the previous tutorial, you set up all of the data variables and global logic 
 ### Let users rate product
 1. Add a List divider component next onto the canvas.
 
-    Double-click the list divider, which opens the style editor. Change the following properties under **Style**:
+    ![List divider](listdivider.png)
+    
+    Double-click the list divider, which opens the style editor. 
+    
+    >The style editor is similar to the template editor (which is opened by the icon at the bottom of the **Properties** tab), except that the style editor only lets you change the styles of the component or the component's parts. 
+   
+    Change the following properties under **Style**:
 
     - **Border color** to Positive (under **Follow smart content color**)
     - **Border width** to **Thick**
     - Click **Exit**.
+
+    ![List divider style](listdivider-style.png)
 
 2. Copy and paste the list divider so you have 2 lines in a row.
 
@@ -87,15 +105,28 @@ In the previous tutorial, you set up all of the data variables and global logic 
     |-------|---------|
     | Maximum value | 5 | 
     | Value | **Page variable > rating** | 
-    | View only? | **Page variable > RatingComplete** | 
+    | View only? | **Page variable > ratingcomplete** | 
 
 6. Click on the star rating, and open the logic pane. 
 
     Change the event to **Component: Star rating > Property 'Value' changed**.
+
+    ![Change event](eventchange.png)
     
     Add flow functions after the event so the logic pane looks like this:
 
     ![Logic to add rating](Rating-logic-overview.png)
+
+    >**What's going on?**
+    >
+    >The logic flow is intended to do the following:
+    >1. **IF:** Check if the rating was changed to a number above 0.
+    >2. **Create record:** Add a record to the Rating entity representing this rating.
+    >3. **Set page variable:** Indicate that the user gave a rating and disable the rating component.
+    >4. **Execute cloud function:** Retrieve the average ratings for all products, since we have a new rating.
+    >5. **Set app variable:** Save the average ratings
+    >
+    >All of this should update the overall rating for the product at the top of the page. 
 
 7. Set the bindings for the flow functions.
 
@@ -112,13 +143,13 @@ In the previous tutorial, you set up all of the data variables and global logic 
         | Field | Value | 
         |-------|---------|
         | Rating | **Page variable > rating** | 
-        | RatingBy | Any text (I wrote static text `daniel`). In the future, you would get the current user and bind that. | 
+        | RatingBy | Any static text (I wrote static text `daniel`). In the future, you would get the current user and bind that. | 
         | ProductID | **Page parameter > productID** | 
         | DateCreated | Formula `NOW()` | 
 
         ![Create record](Rating-create-record.png)
 
-    - For **Set page variable**, set the variable **RatingComplete** to true.
+    - For **Set page variable**, set the variable **ratingcomplete** to true.
 
     - For **Execute cloud function**, set the function to AverageRating.
 
@@ -151,21 +182,24 @@ If you want, you can go back to the product list, then navigate again to this pr
 ### Create form to add a comment
 1. Under the second list divider add the following:
    
-   - Text component
-   - Input field
-   - Button
+    - Text component
+
+    - Input field
+
+    - Button
 
     ![Comment form](comment-form.png)
 
 2. For the text field, change the text to `Add Comment`.
 
-    In the Layout tab, change the bottom gap to 1px.
-
+    In the **Layout** tab, change the bottom gap to 1px.
 
 3. For the input box, do the following:
 
     - Remove the **Label** text.
     - Bind **Value** to **Page variable > newcomment**.
+
+    ![Input box](inputbox.png)
 
 4. For the button, change the **Label** to `Post`.
 
@@ -179,7 +213,7 @@ If you want, you can go back to the product list, then navigate again to this pr
 
     - For the Create record:
 
-        Set the resource to **Comment**, and then set the **Comment** record as follows:
+        Set the resource to **Comment**.
 
         For the Comment record, click **Custom object** and set the following:
 
@@ -187,14 +221,14 @@ If you want, you can go back to the product list, then navigate again to this pr
         |-------|---------|
         | Comment | **Page variable > newcomment** | 
         | ProductID | **Page parameter > productID** | 
-        | CommentedBy | Any text (I wrote static text `daniel`). In the future, you would get the current user and bind that. | 
+        | CommentedBy | Any static text (I wrote static text `daniel`). In the future, you would get the current user and bind that. | 
         | DateCreated | formula `NOW()` | 
 
         ![Create record](Rating-create-record.png)
 
     - For the bottom Set page variable:
   
-        Set the variable to **newcomment**. Leave everything else alone so that it gets set to an empty string.
+        Set the variable to **newcomment**. Leave everything else alone so that it resets to an empty string.
 
     - For the top Set page variable:
 
@@ -208,6 +242,14 @@ If you want, you can go back to the product list, then navigate again to this pr
 
 7. Click **Save**.
 
+>**What's going on?**
+>
+>The logic flow is intended to do the following:
+>1. **Creates record:** Add a record to the Comment entity representing this rating.
+>2. **Set page variable (bottom):** Clear the comment input box.
+>3. **Set page variable (top):** Add one to the page size -- since we want add the new comment to the list of comments but keep exactly the comments that were displayed before.
+>4. **Trigger event:** Retrieve the comments again, since we have a new comment to display.
+ 
 
 
 
@@ -217,36 +259,37 @@ If you want, you can go back to the product list, then navigate again to this pr
 1. Below the button, add the following:
 
     - Text component
+
     - Container
+
         Inside the container add 2 text components.
+
     - Button (under the container)
 
-    In the Tree view, it should look like this:
-
-    ![Tree for comment list](commentlist-tree.png)
+    ![Comments UI](commentUI.png)
 
 2. For the first text component:
 
     - Set the **Content** to `No posts yet`.
-    - Set **Visible** (iun the Advanced properties) to the formula:
+    - Set **Visible** (in **Advanced Properties**) to the formula:
 
-        ```
+        ```JavaScript
         IS_EMPTY(data.Comment1)
         ```
 
 3. For the container:
 
-    - Edit the **Layout Container** style and change padding to 4px all around.
-    - Under Effects, enable the shadow, set shadow to `Content Shadow 1` and set the shadow color to `#AF9E8D`.
-    - Under **Properties** tab, set **Repeat with** to **Data variable > Comment1**. 
+    - Go to the **Style** tab, and edit the **Layout Container** style and change padding to 4px all around.
+    - Under Effects, enable the shadow, set shadow to `Content Shadow 1` and set the shadow color to static color `#AF9E8D`.
+    - Go to the **Properties** tab, and set **Repeat with** to **Data variable > Comment1**. 
 
 4. For the first text component in the container:
-    - Set the text size to small.
     - Set the Content to the following formula:
 
         ```JavaScript
         FORMAT_DATETIME_LOCAL(repeated.current.dateCreated, "YYYY-MM-DD HH:mm:ss") + " - " + repeated.current.commentedBy
         ```
+    - Go to the **Style** tab, edit the Primary Paragraph style, and under **Typography** set the text size to small.
 
 5. For the second text component in the container:
 
@@ -254,10 +297,10 @@ If you want, you can go back to the product list, then navigate again to this pr
 
 6. For the button:
 
-    - Set Content to `More`.
-    - Set **Visible** to the following formula:
+    - Set **Content** to `More`.
+    - Under **Advanced Properties**, set **Visible** to the following formula:
 
-        ```
+        ```JavaScript
         pageVars.totalcount>pageVars.pagesize
         ```
 
@@ -265,7 +308,7 @@ If you want, you can go back to the product list, then navigate again to this pr
 
     - Add **Set page variable**, and set **pagesize** to the following formula:
 
-        ```
+        ```JavaScript
         pageVars.pagesize + 3
         ```
 
@@ -276,12 +319,31 @@ If you want, you can go back to the product list, then navigate again to this pr
 
 
 ### Run the app
-Go to the Launch tab, and click Open Preview Portal.
+Go to the **Launch** tab, and click **Open Preview Portal**.
 
-Click **Open wen preview**, and select the Social media project.
+Click **Open web preview**, and select the Social media project.
 
+The List of Products page should open, showing the list of Northwind products, with a cat picture for each. And for each it should show:
 
+- Stars representing their average rating (from the Visual Cloud Function)
+- A 1-decimal number representing the average rating
+- A number in parentheses representing the number of ratings 
 
+![List of Products](runapp1.png)
 
+Click one of the products, and you get to the Product Page.
 
+![Product Page](runapp2.png)
+
+Click the hamburger menu (top right), and you can navigate back to the home page.
+
+![Navigation](runapp3.png)
+
+On the Product Page, you can rate the product, and the average rating will update.
+
+And you can add a comment.
+
+![Rate and add comments](runapp4.png)
+
+Once you have more than 3 comments, you can use the **More** button to see earlier comments.
 

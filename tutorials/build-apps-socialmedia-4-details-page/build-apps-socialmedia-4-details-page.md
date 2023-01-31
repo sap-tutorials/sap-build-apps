@@ -32,9 +32,13 @@ In this tutorial, you create the required variables, binding and logic, and in t
 
 
 ### Create a new page
-1. In the upper left, click on the name of the current page (i.e., **List of Products**).
+1. In the upper left, click on the name of the current page.
+
+    ![Pages](newpage-click.png)
 
 2. Click **Add New Page**.
+
+    ![Add page](newpage-add.png)
 
     Call the page `Product Page`.
 
@@ -53,13 +57,15 @@ In this tutorial, you create the required variables, binding and logic, and in t
 
 2. Under **Page Variables**, add the following page variables:
 
+    ![Variables](variables.png)
+
     | Variable | Type | Purpose |
     |-------|---------|--------|
-    | **RatingComplete** | True/false | Indicates the user gave a rating and we will disable the rating component |
+    | **ratingcomplete** | True/false | Indicates the user gave a rating and we will disable the rating component |
     | **newcomment** | Text | Contains the text the user enters as a new comment |
     | **pagesize** | Number -- set initial value to 3  | The number of comments to display, which starts at 3 but can grow |
-   | **rating** | Number | The rating given by the user for this product, bound to the star rating component's **Value** field    |
-   | **totalcount** | Number | The total number of comments for this product, which we get as part of the call to the **Comment** entity |
+    | **rating** | Number | The rating given by the user for this product, bound to the star rating component's **Value** field    |
+    | **totalcount** | Number | The total number of comments for this product, which we get as part of the call to the **Comment** entity |
 
 3. Under **Page Parameter**, add the following page parameter:
 
@@ -70,6 +76,8 @@ In this tutorial, you create the required variables, binding and logic, and in t
 4. Under **Data Variables**, add a data variable based on the **Comment** entity (keep the name **Comment1**).
 
     Click on the new data variable, open the logic pane, and remove all of the flow functions.
+
+    ![Data variable](variables-data.png)
 
     >We will put the logic in a central place, so we can reuse the flow functions.
 
@@ -105,27 +113,44 @@ We want to refresh our comments data at many points in our app (e.g., user adds 
 
     ![Data variable settings](vars-data-settings.png)
    
-    - For the **Filter condition**, set the condition so `productID` equals the `productID` page parameter.
+    - For the **Filter condition**, select the **X** and select **Object with properties**.
+
+        Click **Add Condition**, and set the property `productId` equal to the page parameter `productID`.
   
         ![Data variable filter](vars-data-filter.png)
 
-    - For the **Ordering**, set `dateCreated` field and descending.
+    - For the **Ordering**, select the **X** and select **List of values**.
 
+        Click **Add Sort Option**, and set the sort property `dateCreated` and the sort direction to `desc`.
+    
         ![Data variable ordering](vars-data-ordering.png)
 
-    - For the **Paging**, set the following (`pagesize` is the page variable):
+    - For the **Paging**, select the **X** and select **Object with properties**.
+
+        Set the following values as follows (`pagesize` is the page variable):
 
         ![Data variable paging](vars-data-paging.png)
 
-4. For the **Set data variable**, set `Comment1`  to **Output value of another node > Get record collection > Collection of records**.
+4. For the **Set data variable** flow function, set the following:
 
-5. For the **Set page variable**, set `totalCount`  to **Output value of another node > Get record collection > Total count**.
+    - **Data variable name** property to `Comment1`
+    - **Record collection** to **Output value of another node > Get record collection > Collection of records**.
 
-6. Drag a **Receive event** flow function onto the canvas.
+    ![Set data variable](setdata.png)
 
+5. For the **Set page variable**, set `totalCount` variable to **Output value of another node > Get record collection > Total count**.
+
+6. Drag a **Receive event** flow function (all the way at the bottom) onto the canvas.
+
+    ![Alt text](receiveevent.png)
+   
     Set **Event source** to **Fired from "Trigger event"** (all the way at the bottom).
     
-    Under **Advanced**, set the name of the flow function to **Refresh Comments**.
+    ![Trigger event](receiveevent-event.png)
+
+    Under **Advanced**, set the name of the flow function to `Refresh Comments`.
+
+    ![Event name](receiveevent-name.png)
 
     >This creates an event called **Refresh Comments** that can be called from other logic flows.
 
@@ -146,8 +171,12 @@ Whenever someone clicks on one of the products on the List of Products page, we 
 2. Select the list component, and open the logic pane.
 
 3. Connect an **Open page** flow function to the tap event.
+   
+    ![Open page](openpage.png)
+    
+    With the flow function selected, in the **Properties** pane, set the **Page** property to **Product Page**.
 
-    Set the **Page** to **Product Page**.
+    ![Open page properties](openpage-properties.png)
 
     Set **Parameters > ProductID** to the following formula:
 
@@ -157,6 +186,6 @@ Whenever someone clicks on one of the products on the List of Products page, we 
 
     ![Navigate](navigate.png)
 
-4. Click **Save**.
+1. Click **Save**.
 
 

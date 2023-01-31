@@ -33,7 +33,11 @@ Go to the SAP Build lobby, and click **Create**
    
 ![Create](new-project-create2.png)
 
-Select **Build an Application > Application Backend**.
+Select **Build an Application**.
+
+![Build an application](new-project-appgyver.png)
+
+Select **Application Backend**.
 
 ![Create project](new-project-create.png)
 
@@ -145,7 +149,7 @@ In the **Deployments** tab, click **Review and Deploy**.
 
 After reviewing the changes, click **Deploy to Development**.
 
-It should about a minute or two (going from **Not deployed** to **Missing** to **Progressing** to **Healthy** status). Once you see **Healthy**, you can add data to the entities and make calls from your front-end app. We will do this in the upcoming tutorials.
+It should take about a minute or two (going from **Not deployed** to **Missing** to **Progressing** to **Healthy** status). Once you see **Healthy**, you can add data to the entities and make calls from your front-end app. We will do this in the upcoming tutorials.
 
 
 

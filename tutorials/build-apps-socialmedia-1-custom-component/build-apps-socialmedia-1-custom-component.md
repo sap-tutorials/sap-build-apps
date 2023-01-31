@@ -62,19 +62,38 @@ The component will look like this in runtime mode.
 
 
 ### Create a new app project
+
+
+
+
+
+
 1. Go to the SAP Build lobby, and click **Create**.
    
-    ![Create project](new-project-create2.png)
-    
-    Select **Build an Application > Web & Mobile Application**.
+    ![Lobby create](new-project-lobby-create.png)
 
-    ![Name project](new-project-create.png)
+    Select **Build an Application**.
+
+    ![Build an application](new-project-appgyver.png)   
+
+    Select **Web & Mobile Application**.
+
+    ![Create project](new-project-create.png)
 
     For the project name, enter `Social Media`, then click **Create**.
 
-2. Delete the text component.
+    >You will get a skeleton project, with a page, a title component, and a text component.
+    >
+    >SAP Build Apps lets you create apps by dragging and dropping components onto the canvas, and then configuring those components by changing, for example, the text in a text component or the image to display in an image component. 
+
+
+2. Select the text component, and click the **X** to delete it.
+
+    ![Delete text](delete-text.png)
 
 3. Change the text of the title to `Products`.
+   
+    ![Change title](changeproduct.png)
 
 4. Click on an open area in the canvas, and in the **Properties** tab, change the name of the page to `List of Products`.
 
@@ -138,11 +157,19 @@ Our goal is to both show a list of products, and also to show a rating for each.
    ![Open Alt text](mash-open.png)
 
    >**Template Editor**
-   >The template editor lets you make changes to existing components. However, the changes will affect all such components in the current project. That is why we made a duplicate, in case we would want to use the original version.
+   >
+   >The template editor lets you make changes to existing components -- add components, change component properties, add internal properties and bindings. The stripes in the canvas indicate you are in the template editor.
+   >
+   >![Template editor](template-editor.png)
+   >
+   >The template editor lets you make changes to existing components, but the changes will affect all such components in the current project. That is why we made a duplicate, in case we would want to use the original version.
+   >
 
-3. Delete the paragraph component.
+3. In the template editor, select the paragraph component and click the **X** to delete it.
 
-4. In the Tree view under the Title, add a container, a star rating (from **By Me** tab), and 2 text components, according to this hierarchy:
+    ![Delete paragraph](template-delete-para.png)
+
+4. In the Tree view (bottom right), under the Title, add a container, a star rating (from **By Me** tab), and 2 text components, according to this hierarchy:
 
     ![Tree view](mash-tree.png)
 
@@ -152,9 +179,9 @@ Our goal is to both show a list of products, and also to show a rating for each.
 
 5. Select Container 2, and set the layout to horizontal, and align components to vertically to bottom.
 
-    ![Align container](mash-component.png)
+    ![Align container](container-config.png)
 
-    Set its width to **Fit to content**.
+    In the **Layout** tab, set its width to **Fit to content**.
 
 6. Select the star rating component, and set the **Maximum value** property to 5.
 
@@ -200,6 +227,8 @@ We want the component to show the rating and rating count for each of the produc
 
     Under **Layout**, set the width to be exactly 40px wide (select **Exact size** and enter `40`).
 
+    ![Exact width](exact-width.png)
+
 5. Select the second text component, and set the **Content** property to the following formula:
 
     ```JavaScript
@@ -214,11 +243,17 @@ We want the component to show the rating and rating count for each of the produc
 
     ![Star rating editor](comp-star-editor.png)
 
-    - In the Tree view, select **Icon: Full**.
+    - In the Tree view, expand the nodes and select **Icon: Full**.
 
         ![Star rating tree](star-tree.png)
 
-        Under **Style**, edit the **Primary Icon** style. Change the color to static color `#F0AB00`, then click **Overwrite**.
+        Under **Style**, edit the **Primary Icon** style. 
+
+        ![Edit icon style](edit-icon-style.png)
+            
+        Change the color binding type to static color, enter the color `#F0AB00`, then click **Overwrite**.
+
+        ![Change color](edit-icon-color.png)
 
     - Select **Properties**, then **Properties** on the left side, and then select the **Value** property.
 
@@ -228,8 +263,12 @@ We want the component to show the rating and rating count for each of the produc
 
         Click **Exit**.
 
-7. Again, select the composite component, and reopen the component template editor.
+7. We still need to make a binding change within the composite component -- set the rating component value to the component's `Rating` property -- so we need to open the template editor for the composite component.
+
+    So, again, select the composite component, and reopen the component template editor.
    
+   ![Open Alt text](mash-open.png)
+
     Select the star rating, and set the **Value** property to the following:
 
     **Component properties > Composite component internal property > Rating**
@@ -238,7 +277,7 @@ We want the component to show the rating and rating count for each of the produc
 
     ![Star rating value](comp-star-value.png)
 
-8. Click **Exit** (from the component template editor), and then **Save** (upper right).
+8.  Click **Exit** (from the component template editor), and then **Save** (upper right).
 
 >**Styles**
 >When we changed the color of the stars to orange, we clicked **Overwrite**, which meant we changed it for the **Primary Icon** style, which affects all icons.
