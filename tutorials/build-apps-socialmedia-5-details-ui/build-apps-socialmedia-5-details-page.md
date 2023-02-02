@@ -280,7 +280,7 @@ If you want, you can go back to the product list, then navigate again to this pr
 3. For the container:
 
     - Go to the **Style** tab, and edit the **Layout Container** style and change padding to 4px all around.
-    - Under Effects, enable the shadow, set shadow to `Content Shadow 1` and set the shadow color to static color `#AF9E8D`.
+    - Under **Effects**, enable the shadow, set shadow to `Content Shadow 1` and set the shadow color to static color `#AF9E8D`.
     - Go to the **Properties** tab, and set **Repeat with** to **Data variable > Comment1**. 
 
 4. For the first text component in the container:

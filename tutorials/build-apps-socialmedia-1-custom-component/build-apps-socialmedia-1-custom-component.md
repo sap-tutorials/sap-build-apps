@@ -154,16 +154,16 @@ Our goal is to both show a list of products, and also to show a rating for each.
    
 2. While the component is selected, open the **Component template editor** (at the bottom of the **Properties** pane).
    
-   ![Open Alt text](mash-open.png)
+    ![Open Alt text](mash-open.png)
 
-   >**Template Editor**
-   >
-   >The template editor lets you make changes to existing components -- add components, change component properties, add internal properties and bindings. The stripes in the canvas indicate you are in the template editor.
-   >
-   >![Template editor](template-editor.png)
-   >
-   >The template editor lets you make changes to existing components, but the changes will affect all such components in the current project. That is why we made a duplicate, in case we would want to use the original version.
-   >
+    > **Template Editor**
+   
+    >The template editor lets you make changes to existing components -- add components, change component properties, add internal properties and bindings. The stripes in the canvas indicate you are in the template editor.
+   
+    >![Template editor](template-editor.png)
+   
+    >The template editor lets you make changes to existing components, but the changes will affect all such components in the current project. That is why we made a duplicate, in case we would want to use the original version.
+   
 
 3. In the template editor, select the paragraph component and click the **X** to delete it.
 
@@ -188,6 +188,7 @@ Our goal is to both show a list of products, and also to show a rating for each.
 In the next step we will continue to work in the component template editor.
 
 >**Tree View**
+
 >The tree view is indispensible for making sure your hierarchy of components is OK (e.g., components are within a container).
 >
 >Consider renaming the components you drag onto the canvas, so when viewing the tree view you can tell what they are for. The component name is under the **Properties** tab, under the **Advanced** section.
@@ -267,7 +268,7 @@ We want the component to show the rating and rating count for each of the produc
 
     So, again, select the composite component, and reopen the component template editor.
    
-   ![Open Alt text](mash-open.png)
+    ![Open Alt text](mash-open.png)
 
     Select the star rating, and set the **Value** property to the following:
 
@@ -280,6 +281,7 @@ We want the component to show the rating and rating count for each of the produc
 8.  Click **Exit** (from the component template editor), and then **Save** (upper right).
 
 >**Styles**
+
 >When we changed the color of the stars to orange, we clicked **Overwrite**, which meant we changed it for the **Primary Icon** style, which affects all icons.
 >
 >We could have instead clicked **New Style** and created a new style, which we could then apply to any icon we wanted orange. All other icons would remain the default style.

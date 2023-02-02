@@ -161,9 +161,9 @@ For more information on creating destinations that can be consumed by SAP Build 
 
 6. Click **Cloud functions**.
    
-   ![Functions tab](vcf-functions.png)
+    ![Functions tab](vcf-functions.png)
    
-   Select **AverageRating**, and then click **Enable Cloud Function**.
+    Select **AverageRating**, and then click **Enable Cloud Function**.
 
 7. Click **Save**, then **Exit**.
 
@@ -219,10 +219,15 @@ Now that we have all the data in variables, we want to bind them to the list com
     | Title label | Data item in repeat: `current.ProductName` |
     | Rating | Formula<div>&nbsp;</div>`DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(repeated.current.ProductID)).avg,0)` |
     | RatingCount | `DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(repeated.current.ProductID)).count,0)` |
-    | Image source | For fun, I wanted each product to have a picture. The simplest was to take a service that returns a picture. Here's a formula to return a cat picture.<div>&nbsp;</div> `"https://cataas.com/cat/says/" + repeated.current.ProductID`     |
+    | Image source | For fun, I wanted each product to have a picture. The simplest was to take a service that returns a picture. Here's some formulas to return random pictures:<div>&nbsp;</div>`"https://picsum.photos/100?random=" + repeated.current.ProductID`<div>&nbsp;</div>`"https://cataas.com/cat/says/" + repeated.current.ProductID`  |
     
     >The formula for the image may appear in red as an error, but it will work. Just save it.
 
+2. Still with the Large Image List Item selected, and in the **Style** tab, set the following:
+
+    - Edit the **(unnamed)** style.
+    - Under **Effects**, enable the shadow, set shadow to `Content Shadow 1` and set the shadow color to static color `#AF9E8D`.
+    - Click **Save**, then
 
 
 
