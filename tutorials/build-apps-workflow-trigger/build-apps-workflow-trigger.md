@@ -177,7 +177,7 @@ Sometimes, stylizing a UI is tedious. But we want you to see some of things you 
 
 If you really want you can skip this step, do the following:
 
-1. Download the file [`Sales order Trigger.zip.gpg`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/sap-build-apps-workflow-trigger/AppsTemplate.zip.gpg).
+1. Download the file [`Sales order Trigger.zip.gpg`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/build-apps-workflow-trigger/Sales-Order-Trigger.zip.gpg).
 
 2. Click the 3 dots next to **History** in the upper-right corner.
 
