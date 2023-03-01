@@ -236,7 +236,7 @@ Now you will set up the connection from your app to SAP Build Process Automation
     | Field                | Value                                         |
     | -------------------- | --------------------------------------------- |
     | Data resource name   | `Trigger Workflow`                             |
-    | BTP destination name | Select the destination you created for this tutorial |
+    | BTP destination name | `sap-process-destination` (or the destination you created, if you created your own) |
 
     ![Base](data-resource-base.png)
 
@@ -255,8 +255,6 @@ Now you will set up the connection from your app to SAP Build Process Automation
     | **`OrderAmount`**          | ***Number*** |
     | **`ExpectedDeliveryDate`** | ***Text***   |
     | **`Division`**             | ***Text***   |
-    | **`OrderDate`**            | ***Text***   |
-    | **`OrderNumber`**          | ***Text***   |
     | **`SalesOrderType`**       | ***Text***   |
     | **`ShippingCountry`**      | ***Text***   |
     | **`SalesOrganisation`**    | ***Text***   |
@@ -268,6 +266,8 @@ Now you will set up the connection from your app to SAP Build Process Automation
     Then enable the create action with the toggle button.
 
     ![Create enable](create.png)
+
+    <br>
 
     ![Create enable](data-resource-create.png)
 
@@ -389,7 +389,7 @@ You can also check the Inbox to see the forms were created and the values proper
 
 ### Bind data variable to UI elements
 1. Go back to **View** so you can see the UI canvas.
-2. Click on the first input field (for **Ship To Party**).
+2. Click on the first input field (for **Customer**).
 
     In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > shipToParty**.
 
@@ -403,7 +403,7 @@ You can also check the Inbox to see the forms were created and the values proper
 
     Click **Save**
 
-4. Click on the third input field (for **Amount****).
+4. Click on the third input field (for **Amount**).
 
     In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > orderAmount**.
 
@@ -446,7 +446,7 @@ You can also check the Inbox to see the forms were created and the values proper
     Click **Formula**, then click on the existing formula, and replace it with the following:
    
     ```JavaScript
-    {salesorderdetails: {division: "1010", orderDate: NOW("YYYY-MM-DD"), orderAmount: NUMBER(data["Trigger Workflow1"].salesorderdetails.orderAmount), orderNumber: "1234", shipToParty: data["Trigger Workflow1"].salesorderdetails.shipToParty, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: data["Trigger Workflow1"].salesorderdetails.expectedDeliveryDate, material: data["Trigger Workflow1"].salesorderdetails.material}}
+    {salesorderdetails: {division: "1010", orderAmount: NUMBER(data["Trigger Workflow1"].salesorderdetails.orderAmount), shipToParty: data["Trigger Workflow1"].salesorderdetails.shipToParty, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: data["Trigger Workflow1"].salesorderdetails.expectedDeliveryDate, material: data["Trigger Workflow1"].salesorderdetails.material}}
     ```
 
     Click **Save**.
@@ -503,7 +503,7 @@ You can also check the Inbox to see the forms were created and the values proper
     | Field | Value |
     |-------|-------|
     | Customer | `Joe's Bikes` |
-    | Order DateMaterial | `HT-1000` |
+    | Material | `HT-1000` |
     | Amount  | `1000` |
     | Delivery Date  | `2023-03-31` |
 

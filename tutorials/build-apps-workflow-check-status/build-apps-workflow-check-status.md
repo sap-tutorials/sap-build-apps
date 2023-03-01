@@ -53,11 +53,13 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
 
 ### Store process ID
-1. On the **Create Sales Order** page, click the **Get Approval** button, and then open its logic canvas.
+1. Go back to the UI canvas of the **Create Sales Order** page.
+
+2. Click the **Get Approval** button, and open its logic canvas.
 
     You should already see **Create record** and **Toast** flow functions from the previous tutorial.
 
-2. Drag a second **Create record** flow function right after the first one and before the **Toast** flow function.
+3. Drag a second **Create record** flow function right after the first one and before the **Toast** flow function.
 
     Reconnect the flow functions like the following:
 
@@ -67,7 +69,7 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     >Every flow function can define different outputs depending on the result of the flow function. Many flow functions -- including **Create record** -- have one output for success (top) and one output for an error (bottom).
 
-3. Click the new **Create record**, and set the following:
+4. Click the new **Create record**, and set the following:
 
     - For **Resource name**, select **Workflows**.
 
@@ -94,7 +96,7 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     Click **Add New Page**, call the new page `Workflow Status`, and click **OK**. 
 
-2. Change the title component text to `Workflow Status`.
+2. Change the title component text (**Content** property) to `Workflow Status`.
 
 3. Remove the text component.  
 
@@ -178,6 +180,10 @@ We now need a data variable to hold the list of workflows that we triggered, so 
 
     ![Workflows repeat](WorkflowsRepeat.png)
 
+    >**Repeat with:** You will see 4 duplicates of any component that has a binding for **Repeat with**, just to show you there is a binding.
+    >
+    >If you want to change something with the bindings, only the first (original) components will be selectable.
+
 4. Bind the text fields.
 
     Click the **Process ID** text field (first one), and for the **Content** binding, select **Data item in repeat > current > processId**, and click **Save**.
@@ -186,7 +192,7 @@ We now need a data variable to hold the list of workflows that we triggered, so 
 
 5. Click **Save** (upper right).
 
-Rerun your app, and enter fields for the sales order and click **Submit** to trigger the workflow.
+Rerun your app (**Launch > Open Preview Portal > Open Web Preview**), enter fields for the sales order, and click **Submit** to trigger the workflow.
 
 ![Trigger workflow](launch-toast.png)
 
@@ -211,7 +217,7 @@ In the last step we saved the process ID and status, but the status could have c
     | Field                | Value                                         |
     | -------------------- | --------------------------------------------- |
     | Data resource name   | `Workflow Information`                             |
-    | BTP destination name | Select the destination you created for this tutorial |
+    | BTP destination name | `sap-process-destination` (or the destination you created, if you created your own) |
 
     Under **Resource schema**, click **Add New** and add a field of type _Text_ and with the name `ProcessID`.
 
@@ -220,6 +226,8 @@ In the last step we saved the process ID and status, but the status could have c
     Then enable the create action with the toggle button.
 
     ![Enable create](create.png)
+
+    <br>
 
     ![Create](data-resource-create.png)
 
@@ -230,6 +238,10 @@ In the last step we saved the process ID and status, but the status could have c
     ```JavaScript
     "/" +  query.record.processId
     ``` 
+
+    It should now look like this:
+
+    ![Resource path](data-resource-path.png)
 
     Click **Save** twice.
 

@@ -63,7 +63,7 @@ A data resource defines a connection to a backend, and when executed, will bring
 
     ![ES5 destination](data-es5-dest.png)
     
-4. Click **Add Integration**.
+4. Click **Install Integration**.
 
     ![Add integration](data-add-integration.png)
 
@@ -135,13 +135,13 @@ After retrieving the data, we need a place to put it, with the proper schema so 
     | **Label text** | Delete `Dropdown label` |
     | **Option list** | Click the list of values icon, and set the binding to a formula, and set the formula to the following:<div>&nbsp;</div>`MAP(data.Products1, {label: item.Name, value: item.Id})` |
 
-    You will have to bind the dropdown field to the `Trigger Workflow1` data variable (as we did for the input field for material).
+4. You will have to bind the dropdown field to the `Trigger Workflow1` data variable (as we did for the input field for material).
     
     For the **Selected value** field, set the binding to: **Data amd variables > Data variable > Trigger Workflow1 > material**. 
 
     ![Selected value](dropdown-selected-value.png)
 
-4. Click **Save** (upper right).
+5. Click **Save** (upper right).
 
 
 
@@ -149,9 +149,19 @@ After retrieving the data, we need a place to put it, with the proper schema so 
 ### Run app
 Run the app again.
 
->To run the app, go to the **Launch** tab, then **Open Preview Portal > Open web preview**, and then click **Open** for the `Sales Order Trigger` project.
+>If you already have a browser tab open to the web preview, it will refresh whenever you save the project.
+>
+>Otherwise, to run the app, go to the **Launch** tab, then **Open Preview Portal > Open web preview**, and then click **Open** for the `Sales Order Trigger` project.
 
-Enter `10000` for the amount, and select `Notebook Basic 15` from the dropdown for the material -- one of the products from the ES5 system.
+5. Enter the following values in your form:
+
+    | Field | Value |
+    |-------|-------|
+    | Customer | `Dinah's Bikes` |
+    | Amount  | `2000` |
+    | Delivery Date  | `2023-04-01` |
+
+For the material, select `Notebook Basic 15` from the dropdown for the material -- one of the products from the ES5 system.
 
 This will also update the text field with the ID for the product.
 

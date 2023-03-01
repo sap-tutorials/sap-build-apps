@@ -106,6 +106,9 @@ Before deploying, you must have a build showing as `delivered`.
     
 3. Once signed in, select the Cloud Foundry organization to deploy the app to.
 
+    >**For SAP Build workshops, this will be `
+Work Zone Training _training-emea-z3ktmhk1`.**
+
     ![Select org](deploy4.png)
 
     >The deployment is always to the default space of the organization.
