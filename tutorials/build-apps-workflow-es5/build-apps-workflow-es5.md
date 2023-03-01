@@ -16,7 +16,7 @@ primary_tag: software-product>sap-build
 - You or IT has set up a user with the ES5 gateway demo system, as described in the tutorial [Create an Account on the SAP Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
 - You or IT has created a destination called ES5-Shop to the ES5 EPM_REF_APPS_SHOP_SRV OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
 
-
+ 
 
 ## You will learn
 - How to create a data source to SAP data
@@ -113,7 +113,7 @@ After retrieving the data, we need a place to put it, with the proper schema so 
 
 
 
-### Create dropdown for business partners
+### Create dropdown for materials
 1. On your **Create Sales Order** page, go back to UI canvas by clicking **View**.
 
     >You can close the logic pane if it interferes with your work.
@@ -151,7 +151,7 @@ Run the app again.
 
 >To run the app, go to the **Launch** tab, then **Open Preview Portal > Open web preview**, and then click **Open** for the `Sales Order Trigger` project.
 
-Enter `10000` for the amount, and select `Notebook Basic 15` from the dropdown for the material -- one of the products partners from the ES5 system.
+Enter `10000` for the amount, and select `Notebook Basic 15` from the dropdown for the material -- one of the products from the ES5 system.
 
 This will also update the text field with the ID for the product.
 

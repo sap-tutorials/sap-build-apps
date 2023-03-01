@@ -12,7 +12,7 @@ primary_tag: software-product>sap-build
 # Deploy SAP Build App to SAP BTP
 <!-- description --> Deploy an app created with SAP Build Apps to HTML5 applications on SAP BTP.
 
-
+ 
 ## Prerequisites
 - To deploy, you need to be a member of the Cloud Foundry org and space to which you will be deploying to.
 
