@@ -65,6 +65,8 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     >**IMPORTANT:** If a flow function has 2 outputs, use the top one.
 
+    >Every flow function can define different outputs depending on the result of the flow function. Many flow functions -- including **Create record** -- have one output for success (top) and one output for an error (bottom).
+
 3. Click the new **Create record**, and set the following:
 
     - For **Resource name**, select **Workflows**.
@@ -96,7 +98,7 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
 3. Remove the text component.  
 
-4. Add 2 containers, a button, and 2 text components to the page so that the hierarchy of components looks like in the **Tree** view.
+4. Add 2 containers, a button, and 2 text components to the page so that the hierarchy of components looks like the **Tree** view below.
 
     ![Page components](page-components.png)
 
@@ -104,7 +106,7 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     ![Container style](page-container-style.png)
 
-
+    >This is the style we created for forms when we created the list of sales order fields on the **Create Sales Order** page.
 
 
 6. Select the inside container, and in the **Layout** tab, make the following changes:
@@ -113,6 +115,10 @@ You can see all the APIs you can call related to SAP Build Process Automation in
     - Align components to middle
 
     ![Container align](page-container-align.png)
+
+    The page should now look like this:
+
+    ![Page layout](page-layouts.png)
 
 7. Select the button, and make the following changes:
 
@@ -213,7 +219,8 @@ In the last step we saved the process ID and status, but the status could have c
 
     Then enable the create action with the toggle button.
 
-    ![Alt text](create.png)
+    ![Enable create](create.png)
+
     ![Create](data-resource-create.png)
 
 5. For **Relative path and query**, click the binding **X** (next to the name of the destination), then select **Formula > Create Formula**.
@@ -234,11 +241,17 @@ In the last step we saved the process ID and status, but the status could have c
 
 Now you can test it if you have an ID of a process instance in SAP Build Process Automation.
 
-Open the **Workflow Information** data resource again, go to the **create** action, then open the **Test** tab, enter a process instance ID for **ProcessID**, and click **Run Test**. 
+>You can get the instance ID by going to the Monitor tab (starting from the SAP Build lobby), and on the left clicking **Monitor > Process and Workflow Instances**.
+
+>Then click on your latest running process. On the right, you can click the copy button next to the **Instance ID** field.
+
+>![Get instance ID](process-id-get.png)
+
+With the instance ID, open the **Workflow Information** data resource again, go to the **create** action, then open the **Test** tab, enter a process instance ID for **ProcessID**, and click **Run Test**. 
 
 ![Test connection](test-connection.png)
 
-You should get information about the process, including its name and status.
+You should get information about the process, including the process ID, start time, and status.
 
 >You could suspend a process briefly, and then rerun the status API and see that it is suspended. You can then simply resume the process.
 >
@@ -253,7 +266,9 @@ You should get information about the process, including its name and status.
    
 2. In the **Workflow Status** page, click the **Status** button (in the first row), and open the logic canvas for it.
 
-3. Create a logic flow as shown in the following (always use the top outputs for flow functions with more than one output): 
+3. Create a logic flow as shown in the following image.
+    
+    >Always use the top outputs for flow functions with more than one output. 
 
     ![Logic flow](status-flow.png)
 
@@ -297,12 +312,12 @@ You should get information about the process, including its name and status.
     
     Click **Save**. 
 
-8. For the **Set data variable** flow function:
+8.  For the **Set data variable** flow function:
    
     - **Data variable name:** Set to **Workflows1**.
     - **Record collection:** Bind to **Output value of another node > Get record collection**, click **Collection of records**, and then click **Save**.
 
-9. Click **Save** (upper right).
+9.  Click **Save** (upper right).
 
 
 
@@ -310,7 +325,7 @@ You should get information about the process, including its name and status.
 
 
 
-### Run the app
+### Run app
 Run the app again (it should refresh on its own), and click the navigation to go to **Workflow Status**. You should see something like this, with ***Running*** status.
 
 ![Status running](data-rerun.png)

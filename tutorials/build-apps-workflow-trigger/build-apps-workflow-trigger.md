@@ -14,7 +14,7 @@ primary_tag: software-product>sap-build
 
 ## Prerequisites
 - You have set up SAP Build App and have entered the lobby.
-- You have set up SAP Process Automation, created a service key, and created a destination to call the SAP Build process Automation APIs.
+- You have set up SAP Process Automation, created a service key, and created a destination to call the SAP Build Process Automation APIs.
 - You have created a workflow in SAP Build Process Automation and have the `definitionId` for the workflow.
 
 
@@ -30,7 +30,7 @@ primary_tag: software-product>sap-build
 ## Intro
 This tutorial shows you how to use SAP Build Apps to create and stylize a simple, one-page app that triggers an SAP Build Process Automation workflow.
 
-Specifically, the app lets the user enter sales order details and then send these to a process for approval before it is automatically created in S/4HANA.
+Specifically, the app lets the user enter sales order details and then send these to a process for approval, before the sales would be automatically created in S/4HANA Cloud.
 
 Your app will look something like this:
 
@@ -129,7 +129,7 @@ By default your new application contains a page with title and text fields. In t
     - Let's save the style by scrolling up, clicking **New Style**, entering `Layout Form Container`, and clicking **OK**. 
 
 
-5. Inside the outer container, add another container, and inside that container add a text and input field. The result should look like this:
+6. Inside the outer container, add another container, and inside that container add a text and input field. The result should look like this:
 
     ![Inside container](UI-container2.png)
 
@@ -143,31 +143,26 @@ By default your new application contains a page with title and text fields. In t
     
     For the input field, delete `Label` from the **Label** property.  
 
-6. From the **Tree** view, copy the inside container and paste it inside the outer ( **Form** ) container until you have 10 fields. 
+7. From the **Tree** view, copy the inside container and paste it inside the outer ( **Form** ) container until you have 4 fields. 
 
     ![Multiple fields](UI-multiple-fields.png)
 
-7. Click on each field label and change it to the following field names, in this order:
+8. Click on each field label and change it to the following field names, in this order:
 
     | Fields | 
     |-------|
-    | Amount    | 
-    | Order Date    | 
-    | Delivery Date    | 
-    | Order Number    | 
     | Ship To Party    | 
-    | Order Type    | 
-    | Sales Org    | 
-    | Division    | 
-    | Dist. Channel    | 
-    | Shipping Country    | 
+    | Material    | 
+    | Order Amount    | 
+    | Delivery Date    | 
 
     ![Name fields](UI-name-fields.png)
 
-8. At the bottom of the page (outside the outside container), add a button.
+9. At the bottom of the page (outside the outside container), add a button.
 
     In the **Properties** tab, set the **Label** to `Get Approval`.
 
+    ![Add button](UI-button.png)
 
 [OPTION END]
 
@@ -177,7 +172,7 @@ Sometimes, stylizing a UI is tedious. But we want you to see some of things you 
 
 If you really want you can skip this step, do the following:
 
-1. Download the file [`Sales order Trigger.zip.gpg`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/build-apps-workflow-trigger/Sales-Order-Trigger.zip.gpg).
+1. Download the file [`Sales-Order-Trigger.zip.gpg`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/build-apps-workflow-trigger/Sales-Order-Trigger.zip.gpg).
 
 2. Click the 3 dots next to **History** in the upper-right corner.
 
@@ -255,24 +250,26 @@ Now you will set up the connection from your app to SAP Build Process Automation
 
     | Field Name           | Type   |
     | -------------------- | ------ |
+    | **`ShipToParty`**          | ***Text***   |
+    | **`Material`**             | ***Text***   |
+    | **`OrderAmount`**          | ***Number*** |
+    | **`ExpectedDeliveryDate`** | ***Text***   |
     | **`Division`**             | ***Text***   |
     | **`OrderDate`**            | ***Text***   |
-    | **`OrderAmount`**          | ***Number*** |
     | **`OrderNumber`**          | ***Text***   |
-    | **`ShipToParty`**          | ***Text***   |
     | **`SalesOrderType`**       | ***Text***   |
     | **`ShippingCountry`**      | ***Text***   |
     | **`SalesOrganisation`**    | ***Text***   |
     | **`DistributionChannel`**  | ***Text***   |
-    | **`ExpectedDeliveryDate`** | ***Text***   |
 
 
 4. Click the **create** panel.
 
     Then enable the create action with the toggle button.
 
-    ![Alt text](create.png)
-    ![Create](data-resource-create.png)
+    ![Create enable](create.png)
+
+    ![Create enable](data-resource-create.png)
 
 1. For **Request headers**, click the binding **X**, then **List of values**.
 
@@ -308,7 +305,7 @@ Now you will set up the connection from your app to SAP Build Process Automation
 
 2. Click **create** on the left, and then the **Test** tab.
 
-3. Enter values for all the fields (really, you only need to enter an order amount), and then scroll down and click **Run Test**.
+3. Enter values for the fields (really, you only need to enter an order amount), and then scroll down and click **Run Test**.
 
     >**IMPORTANT:** Date fields must be in the format of `2022-12-25` and the order amount must be a number.
 
@@ -392,27 +389,31 @@ You can also check the Inbox to see the forms were created and the values proper
 
 ### Bind data variable to UI elements
 1. Go back to **View** so you can see the UI canvas.
-2. Click on the first input field (for Amount).
+2. Click on the first input field (for **Ship To Party**).
 
-    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > orderAmount**.
+    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > shipToParty**.
 
     ![Binding input field](bind-input1.png)
 
     Click **Save**
 
-3. Click on the second input field (for Order Date).
+3. Click on the second input field (for **Material**).
 
-    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > orderDate**.
+    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > material**.
 
     Click **Save**
 
-4. Click on the third input field (for Delivery Date).
+4. Click on the third input field (for **Amount****).
+
+    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > orderAmount**.
+
+    Click **Save**
+
+5. Click on the fourth input field (for **Delivery Date**).
 
     In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > expectedDeliveryDate**.
 
     Click **Save**
-
-5. Continue to bind the remaining input boxes to the appropriate fields.
 
 6. Click **Save** (upper right).
 
@@ -442,17 +443,27 @@ You can also check the Inbox to see the forms were created and the values proper
     
     ![Object binding](objectbinding.png) 
     
-    Click click **Formula > Formula**. Remove the existing formula, and copy the following:
+    Click **Formula**, then click on the existing formula, and replace it with the following:
    
     ```JavaScript
-    { salesorderdetails: SET_KEY(data["Trigger Workflow1"].salesorderdetails, "orderAmount", NUMBER(data["Trigger Workflow1"].salesorderdetails.orderAmount)) }
+    {salesorderdetails: {division: "1010", orderDate: NOW("YYYY-MM-DD"), orderAmount: NUMBER(data["Trigger Workflow1"].salesorderdetails.orderAmount), orderNumber: "1234", shipToParty: data["Trigger Workflow1"].salesorderdetails.shipToParty, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: data["Trigger Workflow1"].salesorderdetails.expectedDeliveryDate, material: data["Trigger Workflow1"].salesorderdetails.material}}
     ```
+
+    Click **Save**.
     
     >**What does the formula do?**
     >
-    >All of the data we want to send should already be in our data variable, since we bound it to the input boxes. But sometimes number values inadvertently are sent as text, and we want to make sure the order amount is sent as a number.
+    >The 4 main fields we want to send should already be in our data variable, since we bound it to the input boxes. But we need to:
     >
-    >`SET_KEY` sends our object, with certain (key) fields updated.
+    >- Send values for some other fields.
+    >- Format the number value for the order amount.
+    >- Set the order date to today.
+    >
+    >You can do all this field by field -- using the **Object with properties** binding -- but to save time we gave you the formula.
+    >
+    >If you want to explore, open the binding for the **Record** field and select **Object with properties** and you can see the UI where you can set each field by hand.
+    
+  
 
 
 5. Drag a **Toast** flow function onto the canvas, and connect the **top** output of the **Create record** flow function to it.
@@ -491,8 +502,9 @@ You can also check the Inbox to see the forms were created and the values proper
 
     | Field | Value |
     |-------|-------|
-    | Amount | 1000 |
-    | Order Date | `2023-02-20` |
+    | Customer | `Joe's Bikes` |
+    | Order DateMaterial | `HT-1000` |
+    | Amount  | `1000` |
     | Delivery Date  | `2023-03-31` |
 
     For the remaining fields, enter what you'd like.
@@ -505,11 +517,17 @@ You should see the toast message indicating the workflow was triggered, and with
 
 ![Preview toast](launch-toast.png)
 
-You can also see the results of the call in SAP Build Process Automation:
+You can also see the results of the call in SAP Build Process Automation.
+
+Go to the **Monitor** tab, then **Process and Workflow Instances**. The first one should be the one you just triggered.
 
 - You can see the new process instance.
 - You can see the context, which is the values sent with the API.
 - You can also see the execution log, which in this case ran the auto-approve task because the amount was below 100000.
 
+The context field in yellow are the ones that you entered via the UI.
+
 ![Preview in process automation](launch-preview-SPA.png)
+
+You can also see that the process instance ID is the same: in the toast message and in the upper right of the Monitor tab.
 
