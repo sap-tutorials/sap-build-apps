@@ -73,6 +73,8 @@ In this tutorial, you create the required variables, binding and logic, and in t
     |-------|---------|--------|
     | productID | Text | The product to be displayed on the product page, received when the user clicks on a certain product in the list of products |
 
+    >**Page parameters** are variables that are required to pass when navigating to a particular page.
+
 4. Under **Data Variables**, add a data variable based on the **Comment** entity (keep the name **Comment1**).
 
     Click on the new data variable, open the logic pane, and remove all of the flow functions.

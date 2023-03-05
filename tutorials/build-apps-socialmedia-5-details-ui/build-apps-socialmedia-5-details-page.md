@@ -7,7 +7,7 @@ time: 25
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build-apps--enterprise-edition
 ---
- 
+  
 
 # Create the Product Page UI with Ratings/Comments
 <!-- description -->Create the user interface for the product page, which shows the product and lets users add a rating and comments. 

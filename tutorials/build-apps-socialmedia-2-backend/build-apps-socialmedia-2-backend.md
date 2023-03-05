@@ -97,6 +97,8 @@ Every time a user adds a comment about a product, we want to store that as a sin
 ### Create function
 We want to create a function that will aggregate the ratings of the products and return a single average rating for each product. If there are no ratings for a product, no record is returned for that product.
 
+Functions are created using the standard SAP Build Apps formula, based on JavaScript syntax.
+
 1. In the **Functions** tab, click **Create new**.
 
     Set the name to `AverageRating`, and click **Create**.
