@@ -7,15 +7,17 @@ time: 25
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
- 
+  
 
 # Create SAP Build App to Trigger Workflow
 <!-- description --> Trigger a workflow created in SAP Build Process Automation from an app created with SAP build Apps.
 
 ## Prerequisites
 - You have set up SAP Build App and have entered the lobby.
-- You have set up SAP Process Automation, created a service key, and created a destination to call the SAP Build Process Automation APIs.
-- You have created a workflow in SAP Build Process Automation and have the `definitionId` for the workflow.
+- You have set up SAP Process Automation, and created the process described in the tutorial group [Create a Sales Order Process and Enable Triggering Via API](https://developers.sap.com/group.sap-build-apps-process-trigger-enable.html).
+  - You will have to know the `definitionId` for the process you created.
+- You have set up the destination to SAP Build Process Automation, as described in [Create Destination to Trigger Process from any Service](https://developers.sap.com/tutorials/spa-create-service-instance-destination.html).
+  - You will have to know the name of the destination.
 
 
 
@@ -40,9 +42,11 @@ Your app will look something like this:
 
 >**Before You Begin:** You will need:
 >
->- The name of the SAP BTP destination to your SAP Build Process Automation instance. The destination **MUST** be configured with the URL of the entire path of the SAP Build Process Automation [Workflow Instances API](https://api.sap.com/api/SPA_Workflow_Runtime/resource).
+>- The name of the SAP BTP destination to your SAP Build Process Automation instance (for workshops, this will be done for you). The destination **MUST** be configured with the URL of the entire path of the SAP Build Process Automation [Workflow Instances API](https://api.sap.com/api/SPA_Workflow_Runtime/resource).
 >
->- The `definitionId` for your specific workflow. 
+>- The `definitionId` for your specific workflow, which you can find within your trigger in SAP Build Process Automation project. You can get this by going to your triggers in the Deployed version of your project, and clicking **View**.
+
+>    ![Definition ID](definitionId.png)
 
 
 ---

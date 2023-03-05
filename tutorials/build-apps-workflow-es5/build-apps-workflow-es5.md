@@ -7,7 +7,7 @@ time: 25
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
- 
+  
 
 # Populate Dropdown with SAP Data (ES5)
 <!-- description --> Populate a dropdown field with SAP data, in this case with data from ES5 gateway demo system.
