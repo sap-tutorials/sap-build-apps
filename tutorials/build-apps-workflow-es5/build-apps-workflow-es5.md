@@ -14,7 +14,7 @@ primary_tag: software-product>sap-build
 
 ## Prerequisites
 - You or IT has set up a user with the ES5 gateway demo system, as described in the tutorial [Create an Account on the SAP Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
-- You or IT has created a destination called ES5-Shop to the ES5 EPM_REF_APPS_SHOP_SRV OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
+- You or IT has created a destination called **ES5-Shop** to the `ES5 EPM_REF_APPS_SHOP_SRV` OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
 
  
 
@@ -30,12 +30,14 @@ Previously, we created an input box for the user to enter a material ID for the 
 
 >**Before You Begin:** You or IT needs to have set up a user with the ES5 gateway demo system, as described in the tutorial [Create an Account on the SAP Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html).
 
->Then, you or IT needs to have created a destination called `ES5-Shop` to the `ES5 EPM_REF_APPS_SHOP_SRV` OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
+>Then, you or IT needs to have created a destination called **ES5-Shop** to the `ES5 EPM_REF_APPS_SHOP_SRV` OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
 >
 
 ---
 
 ### What data will you use?
+>**IMPORTANT:** If you are in a workshop, the ES5-Shop destination has already been created for you and you can skip this step.
+
 SAP Build Apps can make API calls via destinations to backend services set up in SAP BTP. So you need to set up a destination to the ES5 gateway service.
 
 The instructions for setting up the destination are in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
@@ -45,6 +47,8 @@ We will use a product table from the Shop service, so the URL for the destinatio
 ```URL
 https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV
 ```
+
+
  
 
 
@@ -62,12 +66,14 @@ A data resource defines a connection to a backend, and when executed, will bring
 3. Select your ES5 destination.
 
     ![ES5 destination](data-es5-dest.png)
+
+    >**IMPORTANT:** If you are in a workshop, use the **ES5-Shop** destination.
     
 4. Click **Install Integration**.
 
     ![Add integration](data-add-integration.png)
 
-    Select the `Product` entity on the left, and click **Enable Data Entity** on the right.
+    Select the `Products` entity on the left, and click **Enable Data Entity** on the right.
 
     ![Enable entity](data-enable-entity.png)
 
@@ -87,7 +93,7 @@ After retrieving the data, we need a place to put it, with the proper schema so 
 
     ![Add data variable](data-var-add.png)
 
-3. Click on the new variable, and open the logic pane by click on **Create sales order** at the bottom of the page.
+3. Click on the new variable, and open the logic pane by clicking **Create sales order** at the bottom of the page.
 
     ![Open logic canvas](data-var-logic.png)
 
@@ -107,7 +113,7 @@ After retrieving the data, we need a place to put it, with the proper schema so 
     
     Click **Save**.
 
-6. Click **Save** (upper right**).
+6. Click **Save** (upper right).
    
 
 

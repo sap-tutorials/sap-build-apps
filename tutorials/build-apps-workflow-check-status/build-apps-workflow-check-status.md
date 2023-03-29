@@ -81,6 +81,10 @@ You can see all the APIs you can call related to SAP Build Process Automation in
         | **status**        | Select the formula binding and use:<div></div> ```outputs["Create record"].response.status``` |
         | **dateTriggered** | Select the formula binding and use:<div></div> ```NOW()```                
         
+        >**NOTE:** The first 2 formulas may give you an error but this is OK. We did not define a specific schema for the response from SAP Build Process Automation API, so SAP Build Apps does not recognize the field and suggests it is wrong. But you can still save the formula.
+
+        >![No error](error.png)
+    
     Click **Save**, and then **Save** again in the upper right.                    
 
 
@@ -96,20 +100,21 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     Click **Add New Page**, call the new page `Workflow Status`, and click **OK**. 
 
-2. Change the title component text (**Content** property) to `Workflow Status`.
+2. Change the title component text ( **Content** property ) to `Workflow Status`.
 
 3. Remove the text component.  
 
-4. Add 2 containers, a button, and 2 text components to the page so that the hierarchy of components looks like the **Tree** view below.
+4. Drag a container to the page.
+    
+    The add a container inside the first container, and in the new container add a button, and 2 text components. It should look like this:
 
     ![Page components](page-components.png)
 
-5. Click the outside container, go to the **Style** tab and select the style we created in the previous tutorial, **Layout Form Container**.
+5. Click the outside container, go to the **Style** tab, scroll to the bottom, and select the style we created in the previous tutorial, **Layout Form Container**.
 
     ![Container style](page-container-style.png)
 
     >This is the style we created for forms when we created the list of sales order fields on the **Create Sales Order** page.
-
 
 6. Select the inside container, and in the **Layout** tab, make the following changes:
 
@@ -160,7 +165,9 @@ We now need a data variable to hold the list of workflows that we triggered, so 
 
 1. Go back to the UI canvas, and open the **Variables** area.
     
-    Create a data variable from the **Workflows** data resource.
+    Select **Data Variables** on the left.
+    
+    Click **Add Data Variable**, and base the new variable on the **Workflows** data resource.
     
     ![Create variable](data-variable.png)
 
@@ -170,7 +177,7 @@ We now need a data variable to hold the list of workflows that we triggered, so 
 
 2. Click **View** to return to the UI canvas.
 
-3. In the tree view (bottom right), select the inner-most container, **Container 2**.
+3. In the tree view (bottom right), select the inside container, **Container 2**.
 
     In the **Properties** pane, select **Repeat with** and then choose **Data and Variables > Data Variables > Workflows1**, and then click **Save**.
 
@@ -192,7 +199,7 @@ We now need a data variable to hold the list of workflows that we triggered, so 
 
 5. Click **Save** (upper right).
 
-Rerun your app (**Launch > Open Preview Portal > Open Web Preview**), enter fields for the sales order, and click **Submit** to trigger the workflow.
+Rerun your app ( **Launch > Open Preview Portal > Open Web Preview** ), enter fields for the sales order, and click **Submit** to trigger the workflow.
 
 ![Trigger workflow](launch-toast.png)
 
@@ -210,7 +217,7 @@ In the last step we saved the process ID and status, but the status could have c
 
 1. Open the **Data** tab.
 
-2. Click **Create Data Entity > SAP BTP Destination REST API Integration**.
+2. Scroll down to **SAP Build Apps classic data entities**, and then click **Create Data Entity > SAP BTP Destination REST API Integration**.
 
 3. On the **Base** panel, enter the following:
 
@@ -227,7 +234,7 @@ In the last step we saved the process ID and status, but the status could have c
 
     ![Enable create](create.png)
 
-    <br>
+    &nbsp;<br>
 
     ![Create](data-resource-create.png)
 
@@ -247,7 +254,7 @@ In the last step we saved the process ID and status, but the status could have c
 
 6. Change the **Request method** to **GET** (from **POST**).
 
-7. Click **Save Data Resource** (bottom right).
+7. Click **Save Data Entity** (bottom right).
 
 8. Click **Save** (upper right).
 
@@ -265,7 +272,7 @@ With the instance ID, open the **Workflow Information** data resource again, go 
 
 You should get information about the process, including the process ID, start time, and status.
 
->You could suspend a process briefly, and then rerun the status API and see that it is suspended. You can then simply resume the process.
+>You could suspend a process briefly -- click **Put on Hold** in the **Monitor** tab for that process instance -- and then rerun the status API and see that it is suspended. You can then simply resume the process.
 >
 >![Test status connection](test-connection2.png)
 
