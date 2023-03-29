@@ -153,9 +153,9 @@ By default your new application contains a page with title and text fields. In t
 
     ![Copy](copy1.png)
  
-   Duplicate the container by clicking on the **Duplicate** icon.
+    Duplicate the container by clicking on the **Duplicate** icon.
    
-   ![Duplicate](copy2.png)
+    ![Duplicate](copy2.png)
  
     Repeat this 2 more times, until you have 4 fields.
 
@@ -294,7 +294,6 @@ Now you will set up the connection from your app to SAP Build Process Automation
     Then enable the create action with the toggle button.
 
     ![Create enable](create.png)
-
     &nbsp;<br>
 
     ![Create enable](data-resource-create.png)

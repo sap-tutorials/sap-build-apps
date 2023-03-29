@@ -128,8 +128,14 @@ Work Zone Training _training-emea-z3ktmhk1`.**
     The name of the app is at the end of the URL.
 
     >**IMPORTANT:** As of the writing of this tutorial, the link in this screen did not work.
-
-
+    >
+    >Generally the link will be in this format:
+    >
+    >`https://<tenant subdomain>.launchpad.cfapps.eu10.hana.ondemand.com/<app name>.<app name>-<version>/page.Page1.html`
+    >
+    >The app name is generally in the format `ag1234`. So an example URL is:
+    >
+    >`https://mysubaccount-f5ytahk1.launchpad.cfapps.eu10.hana.ondemand.com/ag5633.ag5633-1.0.0/page.Page1.html`
 
 ### Run app
 1. Open your subaccount's cockpit.
