@@ -252,7 +252,7 @@ Now you will set up the connection from your app to SAP Build Process Automation
     ![New data resource](data-resource-new.png)
 
     The configuration screen appears, starting with the **Base** panel.
-
+ 
 3. On the **Base** panel, enter the following:
 
     | Field                | Value                                         |
