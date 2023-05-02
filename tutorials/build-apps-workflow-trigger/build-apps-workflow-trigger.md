@@ -55,6 +55,44 @@ Your app will look something like this:
 
 ---
 
+### A few important UI concepts
+
+Before you begin, we want to help you understand how apps are developed with SAP Build Apps.
+
+Every app is built on a UI canvas – the canvas is the background of the app. On the canvas, you drag and drop components: text fields, input boxes, toggle bars, images and many other components you want the user to interact with.
+
+![Canvas](canvascomponents.png)
+
+
+Every component has properties, for example: the text to display, the value of the input box and so forth. You select the component and then its properties appear in the **Properties** pane to the right.
+
+![Properties](properties.png)
+
+Each property is bound to something, for example:
+* Static text
+* A variable (whose value can be updated elsewhere)
+* Data from a backend
+* A formula
+
+For the property, you click the binding button ...
+
+![Binding button](bindingbutton.png)
+
+... and then select from a menu of bindings.
+
+![Bindings](bindingbutton2.png)
+
+Finally, for every component there are events, for example, when a user taps a button or enters data in an input box. You can capture these events and then perform an action – like display a dialog, create data in a backend, change the value of variables and much more.
+
+This is done on the logic canvas. Select a component (or no component if you want to capture app events), and then open the logic canvas.
+
+![Logic canvas](logiccanvas.png)
+
+You then drag and drop flow functions and connect them to events. The flow functions are executed whenever that event occurs. And, of course, each flow function has properties to bind 😺.
+
+![Flow functions](flows.png)
+
+
 ### Create a new app project
 Go to the SAP Build lobby, and click **Create**.
 
@@ -79,7 +117,9 @@ For the project name, enter `Create Sales Order`, then click **Create**.
 
 
 ### Create the sales order page
-By default your new application contains a page with title and text fields. In this step, you will focus on turning this page into your app, including how to build a UI and stylize the UI elements.
+By default your new application contains a page with title and text fields. In this step, you will focus on turning this page into your app – by adding components like input boxes and buttons, and then styling them. 
+
+This is creating the user interface or UI.
 
 >Note that there are 2 tabs for this step. 
 >
@@ -219,7 +259,9 @@ Click **Done** and you can go to the next step.
 
 
 ### Enable SAP BTP authentication
-You need to enable SAP BTP authentication since you want to use SAP BTP destinations.
+You need to enable SAP BTP authentication because you want to use SAP BTP destinations, and users need to be authenticated to use them.
+
+SAP BTP destinations are connections to backend services – specifying the location of a backend and how the user will be authenticated – that can be used by the services within SAP BTP, including SAP Build Apps.  
 
 1. Go to the **Auth** tab.
 
@@ -239,9 +281,9 @@ You need to enable SAP BTP authentication since you want to use SAP BTP destinat
 
 
 ### Create data resource to SAP Build Process Automation
-As part of setting up SAP Build Process Automation, you created a destination so you can make calls to the SAP Build Process Automation APIs, including the one that lets you trigger a workflow.
+As part of setting up SAP Build Process Automation, you created an SAP BTP destination that points to SAP Build Process Automation APIs, so that you can trigger workflows.
 
-Now you will set up the connection from your app to SAP Build Process Automation on your tenant, using that destination.
+Now you will set up the connection from your app to that destination, so you can call SAP Build Process Automation.
 
 >**NOTE:** For workshop participants, this destination will be provided for you.
 
@@ -331,6 +373,7 @@ Now you will set up the connection from your app to SAP Build Process Automation
 
 
 ### Test the trigger
+SAP Build App enables you to test whether your connection works. Here, we will trigger the workflow manually.
 
 1. Open the data resource again by clicking it.
    
@@ -399,6 +442,10 @@ You can also check the Inbox to see the forms were created and the values proper
 
 
 ### Create data variable
+Whenever we want to trigger a workflow, we need to send some data – in this case, the sales order information.
+
+So we will create a variable that will hold the information. The variable is based on the data resource, where we already defined the fields the workflow needs.
+
 1. Back on the UI canvas, select **Variables**.
 
 2. On the left, click **Data Variables**.
@@ -421,6 +468,11 @@ You can also check the Inbox to see the forms were created and the values proper
 
 
 ### Bind data variable to UI elements
+We created a variable for the sales order data, but now we need to get the data entered by the user into the variable. We do this by binding the variable to UI elements, specifically, to the input boxes.
+
+Whenever someone types into the input box, the value is automatically copied into the variable.
+
+
 1. Go back to **View** so you can see the UI canvas.
 2. Click on the first input field (for **Customer**).
 
@@ -456,6 +508,8 @@ You can also check the Inbox to see the forms were created and the values proper
 
 
 ### Add logic to trigger workflow
+We need to set up the logic so when someone clicks the **Get Approval** button (an event), we send the sales order data to our SAP Build Process Automation workflow using the data resource we previously created. 
+
 1. Click on the **Get Approval** button, and open the logic canvas by clicking **Add logic to Button1** at the bottom right.
 
     ![Open logic canvas](logic-open1.png)

@@ -103,11 +103,16 @@ Before deploying, you must have a build showing as `delivered`.
 
     ![Select account](deploy3.png)
 
+    >**For SAP Build workshops**, you will likely get a screen like this since you are using a custom identity provider:
+    
+    >![Origin key](originkey.png)
+
+    >Enter your custom IDP origin key in the input box, which for workshops, will be `am86fwfbe-platform` and then click **Sign in with alternative identity provider**.
     
 3. Once signed in, select the Cloud Foundry organization to deploy the app to.
 
-    >**For SAP Build workshops, this will be `
-Work Zone Training _training-emea-z3ktmhk1`.**
+be `
+    >**For SAP Build workshops**, this will Work Zone Training _training-emea-z3ktmhk1`.
 
     ![Select org](deploy4.png)
 
