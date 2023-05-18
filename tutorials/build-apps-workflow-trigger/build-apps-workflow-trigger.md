@@ -44,7 +44,7 @@ Your app will look something like this:
 >
 >- The name of the SAP BTP destination to your SAP Build Process Automation instance. The destination **MUST** be configured with the URL of the entire path of the SAP Build Process Automation [Workflow Instances API](https://api.sap.com/api/SPA_Workflow_Runtime/resource).
 
->    **For workshops, the destination will be created for you and the name will be provided to you.**. 
+>    **For workshops, the destination will be created for you and the name of the destinations will be provided to you**. 
 >
 >- The `definitionId` for your specific workflow, which you can find within your trigger in SAP Build Process Automation project. You can get this by going to your triggers in the Deployed version of your project, and clicking **View**.
 
@@ -119,9 +119,9 @@ For the project name, enter `Create Sales Order`, then click **Create**.
 ### Create the sales order page
 By default your new application contains a page with title and text fields. In this step, you will focus on turning this page into your app – by adding components like input boxes and buttons, and then styling them. 
 
-This is creating the user interface or UI.
+This is known as creating the user interface, also known as the UI.
 
->Note that there are 2 tabs for this step. 
+>Note that there are 2 tabs for this tutorial step. 
 >
 >- You can do the first tab, **Basic steps**, which we recommend and which will teach you about UI components, stylizing them, and organizing them on the page.
 >
@@ -134,7 +134,7 @@ This is creating the user interface or UI.
 
     ![Delete text](UI-delete-text.png)
 
-2. Click on an open area, and in the **Properties** tab, change the **Page name** to `Create Sales Order`.
+2. Click on an open area (this brings up the **Properties** tab for the app instead of for a specific component), and in the **Properties** tab, change the **Page name** to `Create Sales Order`.
 
     ![Page name](UI-page-name.png)
 
@@ -143,6 +143,8 @@ This is creating the user interface or UI.
     ![Title](UI-title.png)
 
 5. To the canvas, drag a Container component. 
+
+    >Container components let you group components and configure the collection of the components as a single unit.
 
     With the container selected, in the **Properties** tab under **Advanced Properties**, change the **Component display name** to `Form`.
 
@@ -173,7 +175,7 @@ This is creating the user interface or UI.
 
 6. Into the outer container (Form), drag in another container.
    
-    >It may be easiest to drag it into the **Tree** view on the lower right, so you can put it precisely where you want.
+    >It may be easier to drag it into the **Tree** view on the lower right, so you can put it precisely where you want. The **Tree** makes it easier to select specific components and to create a hierarchy of components on the page.
 
     Inside the new container add a text and input field. The result should look like this:
 
@@ -228,9 +230,9 @@ This is creating the user interface or UI.
 
 [OPTION BEGIN [Import Project]]
 
-Sometimes, stylizing a UI is tedious. But we want you to see some of things you can do with SAP Build Apps.
+We really want you to see some of things related to stylizing you can do with SAP Build Apps. But we understand that stylizing a UI may be tedious for some people.
 
-If you really want you can skip this step, do the following:
+If you really want, you can skip doing the stylizing and instead import the project already stylized. If you want to take this route, do the following:
 
 1. Download the file [`Sales-Order-Trigger.zip.gpg`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/build-apps-workflow-trigger/Sales-Order-Trigger.zip.gpg).
 
@@ -262,6 +264,8 @@ Click **Done** and you can go to the next step.
 You need to enable SAP BTP authentication because you want to use SAP BTP destinations, and users need to be authenticated to use them.
 
 SAP BTP destinations are connections to backend services – specifying the location of a backend and how the user will be authenticated – that can be used by the services within SAP BTP, including SAP Build Apps.  
+
+SAP BTP authentication also has the benefit of requiring authentication in your app and reusing the built-in SAP BTP authentication mechanism.
 
 1. Go to the **Auth** tab.
 
@@ -342,12 +346,16 @@ Now you will set up the connection from your app to that destination, so you can
 
 1. For **Request headers**, click the binding **X**, then **List of values**.
 
+    ![Request headers](requestheaders.png)
+
     Click **Add a value**, and add the following key-value pair:
 
     | Field            | Value              |
     | ---------------- | ------------------ |
     | **Header name**  | `Content-Type`     |
     | **Header value** | `application/json` |
+
+    ![Content-Type](requestheaders2.png)
 
     Click **Save**.
 
@@ -362,6 +370,8 @@ Now you will set up the connection from your app to that destination, so you can
     ![Definition ID](defid1.png)
 
     Click **Save** twice.
+
+    >The request body mapper will format the body of this HTTP request. For SAP Build Process Automation trigger API, the body provides the name of the process you want to trigger, plus all the input fields defined for that process.
 
 3. Click **Save Data Entity** (bottom right).
 
@@ -414,6 +424,8 @@ If all works OK, you will get a **201** status code and a response with informat
 
 > **COMMON ISSUES**
 >
+>**403:** The destination to the SAP Build Process Automation API is not configured properly. Make sure the client ID, secret, service URL and authentication URL (with `/oath/token` path) are set correctly. Do not add user/password for the authentication URL.
+>
 >**404:** The API did not recognize the name of your process (i.e., `definitionId` in the request body mapper) or the path to the service is wrong -- both in the **create** tab.
 >
 >**415:** You did not send the `Content-Type` request header.
@@ -444,7 +456,7 @@ You can also check the Inbox to see the forms were created and the values proper
 ### Create data variable
 Whenever we want to trigger a workflow, we need to send some data – in this case, the sales order information.
 
-So we will create a variable that will hold the information. The variable is based on the data resource, where we already defined the fields the workflow needs.
+So we will create a variable that will hold the information. A data variable is based on a specific data resource -- in this case the one to trigger our workflow -- and the variable's schema is automatically duplicated from the data resource.
 
 1. Back on the UI canvas, select **Variables**.
 
@@ -461,6 +473,8 @@ So we will create a variable that will hold the information. The variable is bas
     ![New data record](data-variable-single.png)
 
 5. Click **Save** (upper right).
+
+>Make sure the name of the data variable is exactly `Trigger Workflow1` with no extra spaces or characters.
 
 
 
@@ -533,10 +547,12 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
     Click **Formula**, then click on the existing formula, and replace it with the following:
    
     ```JavaScript
-    {salesorderdetails: {division: "1010", orderAmount: NUMBER(data["Trigger Workflow1"].salesorderdetails.orderAmount), shipToParty: data["Trigger Workflow1"].salesorderdetails.shipToParty, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: data["Trigger Workflow1"].salesorderdetails.expectedDeliveryDate, material: data["Trigger Workflow1"].salesorderdetails.material}}
+    {salesorderdetails: {shipToParty: data["Trigger Workflow1"].salesorderdetails.shipToParty, material: data["Trigger Workflow1"].salesorderdetails.material, orderAmount: NUMBER(data["Trigger Workflow1"].salesorderdetails.orderAmount), expectedDeliveryDate: data["Trigger Workflow1"].salesorderdetails.expectedDeliveryDate, division: "1010", salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000"}}
     ```
 
     >**IMPORTANT:** The formula assumes that you named your data variable `Trigger Workflow1`, which should be the default name if you named your data resource `Trigger Workflow`.
+
+    >Even a typo in the name of the data variable, like an extra space, will mess up the binding.
 
     Click **Save**.
     
@@ -544,9 +560,9 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
     >
     >The 4 main fields we want to send should already be in our data variable, since we bound it to the input boxes. But we need to:
     >
-    >- Send values for some other fields.
-    >- Format the number value for the order amount.
-    >- Set the order date to today.
+    >
+    >- Format the number value for the order amount (if not it will sent as string and this will cause an error).
+    >- Send values for some other fields (for future use).
     >
     >You can do all this field by field -- using the **Object with properties** binding -- but to save time we gave you the formula.
     >
