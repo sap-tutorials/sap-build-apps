@@ -146,7 +146,7 @@ This is known as creating the user interface, also known as the UI.
 
     >Container components let you group components and configure the collection of the components as a single unit.
 
-    With the container selected, in the **Properties** tab under **Advanced Properties**, change the **Component display name** to `Form`.
+    With the container selected, in the **Properties** tab, change the **Component display name** to `Form`.
 
     ![Container](UI-container.png)
 
