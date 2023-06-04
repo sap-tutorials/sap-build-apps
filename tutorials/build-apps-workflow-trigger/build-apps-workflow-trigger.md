@@ -106,7 +106,7 @@ Select **Web & Mobile Application**.
 
 ![Select project type](new-project-web-project.png)
 
->**IMPORTANT:** In the next step, if you are in a workshop, please use a unique identify for the name of your app, such as `Create Sales Order 001`, based on your SAP BTP user name.
+>**IMPORTANT:** In the next step, if you are in a workshop, please use a unique identify for the name of your app, such as `Create Sales Order 001` (based on your SAP BTP user name) or 'Create Sales Order - DBW` (based on your initials).
  
 For the project name, enter `Create Sales Order`, then click **Create**.
   
@@ -366,6 +366,8 @@ Now you will set up the connection from your app to that destination, so you can
     ```JavaScript
     ENCODE_JSON({  "definitionId": "<your definition ID>",  "context":  query.record })
     ```
+
+    >If you forgot the `definitionID` for your process, you can simply open the deployed version of your SAP Build Process Automation project, and view the trigger you created. This was all explained in the previous tutorial [Run the Sales Order Business Process](https://developers.sap.com/tutorials/spa-academy-run-salesorderprocess.html).
 
     ![Definition ID](defid1.png)
 
