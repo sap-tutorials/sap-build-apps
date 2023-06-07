@@ -22,12 +22,20 @@ primary_tag: software-product>sap-build
 ## Intro
 In addition to triggering a workflow, you can call other APIs to get information about the status of the workflow, the tasks within a workflow, and a whole lot more.
 
-You can see all the APIs you can call related to SAP Build Process Automation in the [SAP API Business Hub](https://api.sap.com/package/SAPProcessAutomation/all). Select the API you are interested in, and then click **View the API Reference**.
+In this tutorial, we will create a new page to display the processes we have triggered, and let the user click a button for each to check it's status.
+
+You can see all the APIs you can call related to SAP Build Process Automation in the [SAP Business Accelerator Hub](https://api.sap.com/package/SAPProcessAutomation/all). Select the API you are interested in, and then click **View the API Reference**.
 
 ---
 
 ### Create local storage for process information
-1. Open the **Sales Order Trigger** app you created in the previous tutorial.
+Each time we trigger a process, we want to save the process instance ID so that we can later get information about the process, like its status, by calling other SAP Build Process Automation APIs. For this, we will use on-device storage.
+
+On-device storage is meant to keep info only needed by the current user, especially state information or settings. You can get a sense of on-device storage in this video, [SAP Build Apps tutorial Part 2 - Creating a to-do list saved in local storage](https://www.youtube.com/watch?v=EbCW__JN4CM).
+
+
+
+1. Open the **Create Sales Order** app you created in the previous tutorial.
    
 2. Go to the **Data** tab.
 
@@ -37,7 +45,7 @@ You can see all the APIs you can call related to SAP Build Process Automation in
     
     Call the storage `Workflows`, and click **Add**.
 
-4. To the Workflows entity, add the following fields (go to the bottom of the page):
+4. To the Workflows entity, add the following fields (click **Add New** for each field):
 
     | Field Name    | Type    |
     | --- | --- |
@@ -48,6 +56,8 @@ You can see all the APIs you can call related to SAP Build Process Automation in
     Click **Save** (upper right).
 
     ![Create fields](ondevice-fields.png)
+
+5. Click **Save** (upper right).
 
 
 
@@ -73,6 +83,8 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     - For **Resource name**, select **Workflows**.
 
+        ![Workflows data resource](workflow-resource.png)
+
     - For **Record**, click the **Custom object**, and enter the following for each of the following fields:
 
         | Field         | Value                                                                              |
@@ -81,6 +93,8 @@ You can see all the APIs you can call related to SAP Build Process Automation in
         | **status**        | Select the formula binding and use:<div></div> ```outputs["Create record"].response.status``` |
         | **dateTriggered** | Select the formula binding and use:<div></div> ```NOW()```                
         
+        ![Workflow record](workflows-record.png)
+
         >**NOTE:** The first 2 formulas may give you an error but this is OK. We did not define a specific schema for the response from SAP Build Process Automation API, so SAP Build Apps does not recognize the field and suggests it is wrong. But you can still save the formula.
 
         >![No error](error.png)
@@ -92,6 +106,8 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
 
 ### Create UI for page to display process info
+In this step, we will design the page to display a list of all the processes the user has started, and for each there will be a button for the user to get updated status on each one. 
+
 1. Click on the **Create Sales Order** page link.
     
     ![Open pages](page-open.png)
@@ -100,21 +116,23 @@ You can see all the APIs you can call related to SAP Build Process Automation in
 
     Click **Add New Page**, call the new page `Workflow Status`, and click **OK**. 
 
-2. Change the title component text ( **Content** property ) to `Workflow Status`.
+2. Change the title component text ( **Content** property ) to `Workflow Status`. (Select the title component and go to the **Properties** tab on the right.)
 
 3. Remove the text component.  
 
-4. Drag a container to the page.
+4. Drag a container component to the page.
     
-    The add a container inside the first container, and in the new container add a button, and 2 text components. It should look like this:
+    Add another container inside the first container, and in the new container add a button, and 2 text components. It might be easier to drag the components to the **Tree** view.
+    
+    It should look like this:
 
     ![Page components](page-components.png)
 
-5. Click the outside container, go to the **Style** tab, scroll to the bottom, and select the style we created in the previous tutorial, **Layout Form Container**.
+5. Click the outside container, go to the **Style** tab, scroll to the bottom, and select the style we created in a previous tutorial, **Layout Form Container**.
 
     ![Container style](page-container-style.png)
 
-    >This is the style we created for forms when we created the list of sales order fields on the **Create Sales Order** page.
+    >This is the style we created for forms when we created the list of sales order fields on the **Create Sales Order** page. Now we can reuse it 😀.
 
 6. Select the inside container, and in the **Layout** tab, make the following changes:
 
@@ -141,21 +159,22 @@ The page should look like this:
 
 
 ### Create navigation
+Since we now have 2 pages, we need a way to get from the first page to the second page, and back again. We will use the built-in navigation system to do this.
+
+
 1. Click the **Navigation** tab.
 
-2. Click the **Empty Page** page in the navigation menu area. 
-
-    On the right, change the name of the **Tab name** to `Create Sales Order`.
+    The default navigation should already be enabled and you should already have an entry for the Home Page that will point to the Sales Order Trigger page. 
 
     ![Navigation](navigation.png)
 
-3. Click **Add item**.
+2. Click **Add item**.
 
     This should automatically add the **Workflow Status** page to the menu, with the same name for the tab name.
 
     >If not, change the **Tab name** and **Page** to `Workflow Status`.
 
-4. Click **Save** (upper right).
+3. Click **Save** (upper right).
 
 
 
@@ -175,9 +194,17 @@ We now need a data variable to hold the list of workflows that we triggered, so 
 
     ![Remove delay](data-no-delay.png)
 
+    Lastly, lets display the processes in chronologically order. Select the **Get record collection** flow function, and in the **Properties** tab:
+    
+    - Click the **X** next to **Ordering**.
+    - Change the binding to **List of values**.
+    - Click **Add Sort Option**, and set the values to `dateTriggered` and `desc`.
+
+    ![Order records](orderrecords.png)
+
 2. Click **View** to return to the UI canvas.
 
-3. In the tree view (bottom right), select the inside container, **Container 2**.
+3. In the **Tree** view (bottom right), select the inside container, **Container 2**.
 
     In the **Properties** pane, select **Repeat with** and then choose **Data and Variables > Data Variables > Workflows1**, and then click **Save**.
 
@@ -197,6 +224,8 @@ We now need a data variable to hold the list of workflows that we triggered, so 
 
     Click the **Status** text field (second one), and for the **Content** binding, select **Data item in repeat > current > status**, and click **Save**.
 
+    ![Field bindings](field-binding.png)
+
 5. Click **Save** (upper right).
 
 Rerun your app ( **Launch > Open Preview Portal > Open Web Preview** ), enter fields for the sales order, and click **Submit** to trigger the workflow.
@@ -213,7 +242,7 @@ Click the navigation to open the **Workflow Status** page, and you should be abl
 
 
 ### Create data resource for status API
-In the last step we saved the process ID and status, but the status could have changed in the meantime. So we want to be able to click **Status** and get the latest status.
+In the previous step, we saved the process ID and status, but the status could have changed in the meantime. So we want to be able to click **Status** and get the latest status from an SAP Build Process Automation.
 
 1. Open the **Data** tab.
 
@@ -246,11 +275,11 @@ In the last step we saved the process ID and status, but the status could have c
     "/" +  query.record.processId
     ``` 
 
+    Click **Save** twice.
+
     It should now look like this:
 
     ![Resource path](data-resource-path.png)
-
-    Click **Save** twice.
 
 6. Change the **Request method** to **GET** (from **POST**).
 
@@ -272,9 +301,15 @@ With the instance ID, open the **Workflow Information** data resource again, go 
 
 You should get information about the process, including the process ID, start time, and status.
 
->You could suspend a process briefly -- click **Put on Hold** in the **Monitor** tab for that process instance -- and then rerun the status API and see that it is suspended. You can then simply resume the process.
+>You could suspend a process briefly -- click **Put on Hold** in the **Monitor** tab for that process instance.
+>
+>![Suspend process](suspend.png)
+>
+>Then rerun the status API and see that it is suspended. 
 >
 >![Test status connection](test-connection2.png)
+>
+>You can then simply resume the process in the **Monitor** tab.
 
 
 
@@ -287,7 +322,7 @@ You should get information about the process, including the process ID, start ti
 
 3. Create a logic flow as shown in the following image.
     
-    >Always use the top outputs for flow functions with more than one output. 
+    >Always use the top output for flow functions with more than one output. 
 
     ![Logic flow](status-flow.png)
 
@@ -321,9 +356,14 @@ You should get information about the process, including the process ID, start ti
     - **Resource name:** Set to **Workflows**. 
     - **ID:** Bind to **Data item in repeat > current > id**.
     - **Record:** Click on **Custom object**, and then change the binding for **status** to the following formula:
+  
         ```JavaScript
         outputs["Create record"].response.status
         ```  
+
+        It should look like this:
+
+        ![Status binding](statusbinding.png)
 
 7. For the **Get record collection** flow function, just change the **Resource name** to **Workflows**.
 

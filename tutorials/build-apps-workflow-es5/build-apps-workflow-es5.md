@@ -67,7 +67,7 @@ A data resource defines a connection to a backend, and when executed, will bring
 
     ![ES5 destination](data-es5-dest.png)
 
-    >**IMPORTANT:** If you are in a workshop, use the **ES5-Shop** destination.
+    >**IMPORTANT:** If you are in a workshop, use the **ES5-Shop** destination already set up for you.
     
 4. Click **Install Integration**.
 
@@ -93,13 +93,15 @@ After retrieving the data, we need a place to put it, with the proper schema so 
 
     ![Add data variable](data-var-add.png)
 
-3. Click on the new variable, and open the logic pane by clicking **Create sales order** at the bottom of the page.
+3. Click on the new variable, and open the logic pane (if it is not already open) by clicking **Create sales order** at the bottom of the page.
 
     ![Open logic canvas](data-var-logic.png)
 
 4. Click on the **Delay** flow function, and delete it by clicking the **X**.
 
     ![Delete delay](data-var-delete.png)
+
+    >The default data logic retrieves the data and then waits 5 seconds and retrieves it again, over and over. We don;t need this constant retrieval so we deleted it.
 
 5. Click on the new variable again, and on the right-side of the page, go to **Paging** and click on the **X**, and then click **Object with properties**.
    
@@ -113,6 +115,8 @@ After retrieving the data, we need a place to put it, with the proper schema so 
     
     Click **Save**.
 
+    >We set the paging because ES5 has many, many products and we did not want to show so many. In some cases (like with S/4HANA data), there might be so many results that the API call will time out and return no results. 
+
 6. Click **Save** (upper right).
    
 
@@ -125,6 +129,8 @@ After retrieving the data, we need a place to put it, with the proper schema so 
     >You can close the logic pane if it interferes with your work.
    
 2. Drag a dropdown field next to the input box for the **Material**.
+
+    ?Make sure for the 2nd container for the material you have text, input, and dropdown components at the same level.
    
     ![Add dropdown](dropdown-add.png)
 
@@ -141,11 +147,17 @@ After retrieving the data, we need a place to put it, with the proper schema so 
     | **Label text** | Delete `Dropdown label` |
     | **Option list** | Click the list of values icon, and set the binding to a formula, and set the formula to the following:<div>&nbsp;</div>`MAP(data.Products1, {label: item.Name, value: item.Id})` |
 
+    >**What does the formula do?**
+    >
+    >A dropdown field wants the options as a list of objects, with each object having 2 fields: `Name` for the display name, and `Id` for the underlying value of the option. The `Map` function takes the data in the data variable and converts it to the format we need.
+
 4. You will have to bind the dropdown field to the `Trigger Workflow1` data variable (as we did for the input field for material).
     
-    For the **Selected value** field, set the binding to: **Data amd variables > Data variable > Trigger Workflow1 > material**. 
+    For the **Selected value** field, set the binding to: **Data and variables > Data variable > Trigger Workflow1 > material**. 
 
     ![Selected value](dropdown-selected-value.png)
+
+    Click **Save**.
 
 5. Click **Save** (upper right).
 
@@ -163,7 +175,7 @@ Run the app again.
 
     | Field | Value |
     |-------|-------|
-    | Customer | `Dinah's Bikes` |
+    | Customer | `Dinah's Doughnuts` |
     | Amount  | `2000` |
     | Delivery Date  | `2023-04-01` |
 

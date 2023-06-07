@@ -44,13 +44,13 @@ Your app will look something like this:
 >
 >- The name of the SAP BTP destination to your SAP Build Process Automation instance. The destination **MUST** be configured with the URL of the entire path of the SAP Build Process Automation [Workflow Instances API](https://api.sap.com/api/SPA_Workflow_Runtime/resource).
 
->    **For workshops, the destination will be created for you and the name of the destinations will be provided to you**. 
+>   **For workshops, the destination will be created for you and the name of the destinations will be provided to you**. 
 >
->- The `definitionId` for your specific workflow, which you can find within your trigger in SAP Build Process Automation project. You can get this by going to your triggers in the Deployed version of your project, and clicking **View**.
+>- The `definitionId` for your specific workflow, which you can find within your trigger in SAP Build Process Automation project. You can get this by going to your triggers in the deployed version of your project, and clicking **View**.
 
->    Copy the payload to a text editor, and there you can copy just the definition ID.
+>   Copy the payload to a text editor, and there you can copy just the definition ID.
 
->    ![Definition ID](definitionId.png)
+>   ![Definition ID](definitionId.png)
 
 
 ---
@@ -106,7 +106,7 @@ Select **Web & Mobile Application**.
 
 ![Select project type](new-project-web-project.png)
 
->**IMPORTANT:** In the next step, if you are in a workshop, please use a unique identify for the name of your app, such as `Create Sales Order 001` (based on your SAP BTP user name) or 'Create Sales Order - DBW` (based on your initials).
+>**IMPORTANT:** In the next step, if you are in a workshop, please use a unique identify for the name of your app, such as `Create Sales Order 001 DBW` – based on your SAP BTP user name or and based on your initials.
  
 For the project name, enter `Create Sales Order`, then click **Create**.
   
@@ -166,14 +166,15 @@ This is known as creating the user interface, also known as the UI.
         |-------|----------|
         | **Enable Shadow**    | True   |
         | **Shadow size**    | Content Shadow 0   |
-        | **Shadow color**    | `#8e8989`<div>&nbsp;</div>Click the **X**, and then select **Static color**. You can then copy and paste in the color code. |
+        | **Shadow color**    | `#8e8989`<div>&nbsp;</div>Click the **X**, and then select **Static color**. You can then copy and paste in the color code, or use the color picker to choose a color. ![Color picker](UI-color.png)|
 
     - Let's save the style by scrolling up in the **Style** tab, clicking **New Style**, entering `Layout Form Container`, and clicking **OK**. 
 
         ![New style](newstyle.png)
 
+    This saves the new style in the **Style** tab.
 
-6. Into the outer container (Form), drag in another container.
+6. Into this container ( **Form** ), drag in another container.
    
     >It may be easier to drag it into the **Tree** view on the lower right, so you can put it precisely where you want. The **Tree** makes it easier to select specific components and to create a hierarchy of components on the page.
 
@@ -181,7 +182,7 @@ This is known as creating the user interface, also known as the UI.
 
     ![Inside container](UI-container2.png)
 
-    Select the new, inner container (Container1 from the Tree view), go to **Layout** tab, and under **Layout** set the container to **Horizontal**. Then, set **Align components** to middle.
+    Select the new, inner container ( **Container1** from the **Tree** view), go to **Layout** tab, and under **Layout** set the container to **Horizontal**. Then, set **Align components** to middle.
 
     ![Container layout](UI-container-layout.png)
     
@@ -263,7 +264,7 @@ Click **Done** and you can go to the next step.
 ### Enable SAP BTP authentication
 You need to enable SAP BTP authentication because you want to use SAP BTP destinations, and users need to be authenticated to use them.
 
-SAP BTP destinations are connections to backend services – specifying the location of a backend and how the user will be authenticated – that can be used by the services within SAP BTP, including SAP Build Apps.  
+SAP BTP destinations are connections to backend services – each specifies the location of a backend and how the user will be authenticated. The destinations can be used by the various services within SAP BTP, including SAP Build Apps.  
 
 SAP BTP authentication also has the benefit of requiring authentication in your app and reusing the built-in SAP BTP authentication mechanism.
 
@@ -334,6 +335,7 @@ Now you will set up the connection from your app to that destination, so you can
     | **`SalesOrganisation`**    | ***Text***   |
     | **`DistributionChannel`**  | ***Text***   |
 
+    >**IMPORTANT:** Enter the fields exactly as shown above because casing it important and otherwise SAP Build Process Automation will not match what you send with the fields you defined there. Also, there is no date type in this window, so dates should be entered as text fields.
 
 4. Click the **create** panel.
 
@@ -368,6 +370,8 @@ Now you will set up the connection from your app to that destination, so you can
     ```
 
     >If you forgot the `definitionID` for your process, you can simply open the deployed version of your SAP Build Process Automation project, and view the trigger you created. This was all explained in the previous tutorial [Run the Sales Order Business Process](https://developers.sap.com/tutorials/spa-academy-run-salesorderprocess.html).
+
+    The formula should look something like this:
 
     ![Definition ID](defid1.png)
 
@@ -450,7 +454,7 @@ You can also check the Inbox to see the forms were created and the values proper
 
 ![Inbox](test-inbox.png)
 
-
+In any event, you can close your data resource definition by clicking **Save Data Entity**.
 
 
 
@@ -460,15 +464,21 @@ Whenever we want to trigger a workflow, we need to send some data – in this ca
 
 So we will create a variable that will hold the information. A data variable is based on a specific data resource -- in this case the one to trigger our workflow -- and the variable's schema is automatically duplicated from the data resource.
 
-1. Back on the UI canvas, select **Variables**.
+1. Back on the UI canvas (click the **UI Canvas** tab at the top), select **Variables**.
 
 2. On the left, click **Data Variables**.
+
+    >If you get a big text box saying **Welcome to Variables**, you can read it but then you can close it by clicking the **X**.
+
+    >![Date variable documentation](data-variable-docs.png)
    
 3. Click **Add Data Variable**, and choose **Trigger Workflow** as the data resource on which to base the data variable.
 
     >The schema of the data variable will be the same as the data resource.
 
     ![New data variable](data-variable-new.png)
+
+    ![Data variable resource](data-variable-resource.png)
 
 4. On the right, choose **New data record**.
 
@@ -477,6 +487,8 @@ So we will create a variable that will hold the information. A data variable is 
 5. Click **Save** (upper right).
 
 >Make sure the name of the data variable is exactly `Trigger Workflow1` with no extra spaces or characters.
+>
+>![Check variable name](checkvariablename.png)
 
 
 
@@ -490,6 +502,7 @@ Whenever someone types into the input box, the value is automatically copied int
 
 
 1. Go back to **View** so you can see the UI canvas.
+   
 2. Click on the first input field (for **Customer**).
 
     In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Data Variables > Trigger Workflow1 > shipToParty**.
@@ -536,13 +549,17 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
 3. Click on the **Create record** flow function and configure it in the **Properties** pane on the right.
 
+    ![Logic configuration](logic-properties-tab.png)
+
     For **Resource name**, this should already be set to **Trigger Workflow**, since you have only one data resource.
 
     ![Create record binding](logic-create-record-binding.png)
     
     For **Record**, you have to bind each of the data variable fields to the appropriate record field. 
 
-    There are many ways to do binding. For **Record**, you will use a formula. Click on the object binding button:
+    There are many ways to do binding. For **Record**, you will use a formula simply because it is faster, though formulas are one of the most important binding types and provide a lot of flexibility.
+    
+    Click on the object binding button:
     
     ![Object binding](objectbinding.png) 
     
@@ -554,7 +571,7 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     >**IMPORTANT:** The formula assumes that you named your data variable `Trigger Workflow1`, which should be the default name if you named your data resource `Trigger Workflow`.
 
-    >Even a typo in the name of the data variable, like an extra space, will mess up the binding.
+    >A typo in the name of the data variable, like an extra space, will mess up the binding.
 
     Click **Save**.
     
@@ -573,13 +590,15 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
   
 
 
-5. Drag a **Toast** flow function onto the canvas, and connect the **top** output of the **Create record** flow function to it.
+4. Drag a **Toast** flow function onto the canvas, and connect the **top** output of the **Create record** flow function to it.
 
     ![Toast](bind-toast.png)
 
-6. Click on the **Toast** flow function and configure it in the **Properties** pane on the right.
+5. Click on the **Toast** flow function and configure it in the **Properties** pane on the right.
 
     For **Toast message**, click on the **ABC**, and then select **Formula > Formula**.
+
+    ![Toast configure](logic-toast-configure.png)
 
     Erase the quotation marks, and enter the following formula:
 
@@ -589,7 +608,7 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     Click **Save**.
 
-7. Click **Save** (upper right).
+6. Click **Save** (upper right).
 
 
 
@@ -614,9 +633,9 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
     | Amount  | `100000` |
     | Delivery Date  | `2023-03-31` |
 
-6. Click **Get Approval**.
+6. Click **Get Approval**. When the toast message appears take a screenshot.
 
-You process should be triggered and require approval (since the amount is 100,000 or above).
+Your process should be triggered and require approval (since the amount is 100,000 or above).
 
 You should see the toast message indicating the workflow was triggered, and with the process instance ID.
 
@@ -624,14 +643,12 @@ You should see the toast message indicating the workflow was triggered, and with
 
 You can also see the results of the call in SAP Build Process Automation.
 
-Go to the **Monitor** tab, then **Process and Workflow Instances**. The first one should be the one you just triggered.
+Go to the **Monitor** tab, then **Monitor > Process and Workflow Instances**. The first one should be the one you just triggered.
 
 - You can see the new process instance.
 - You can see the process ID is the same as in the toast message in the app.
-- You can see the context, which is the values sent with the API.
-- You can also see the execution log, which shows  was below 100000.
-
-The context field in yellow are the ones that you entered via the UI.
+- You can see the context, which is the values sent with the API (4 of them, in yellow, you entered in the input fields and the others were hardcoded in the formula for the **Create record** flow function).
+- You can also see the execution log, which shows that the process stopped at the approval step (since it was at least 100,000) and is awaiting approval. If you expand the approval step you can see more information, including who the approval request was sent to.
 
 ![Preview in process automation](launch-preview-SPA.png)
 
