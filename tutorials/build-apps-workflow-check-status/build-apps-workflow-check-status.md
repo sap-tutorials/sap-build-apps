@@ -255,11 +255,9 @@ In the previous step, we saved the process ID and status, but the status could h
     | Data resource name   | `Workflow Information`                             |
     | BTP destination name | `sap-process-destination` (or the destination you created, if you created your own) |
 
-    Under **Resource schema**, click **Add New** and add a field of type _Text_ and with the name `ProcessID`.
+4. Click the **retrieve** panel.
 
-4. Click the **create** panel.
-
-    Then enable the create action with the toggle button.
+    Then enable the **retrieve** action with the toggle button.
 
     ![Enable create](create.png)
 
@@ -272,7 +270,7 @@ In the previous step, we saved the process ID and status, but the status could h
     Use the following for the formula:
 
     ```JavaScript
-    "/" +  query.record.processId
+    "/" +  query.record.id
     ``` 
 
     Click **Save** twice.
@@ -281,11 +279,9 @@ In the previous step, we saved the process ID and status, but the status could h
 
     ![Resource path](data-resource-path.png)
 
-6. Change the **Request method** to **GET** (from **POST**).
+6. Click **Save Data Entity** (bottom right).
 
-7. Click **Save Data Entity** (bottom right).
-
-8. Click **Save** (upper right).
+    Click **Save** (upper right).
 
 Now you can test it if you have an ID of a process instance in SAP Build Process Automation.
 
@@ -295,11 +291,15 @@ Now you can test it if you have an ID of a process instance in SAP Build Process
 
 >![Get instance ID](process-id-get.png)
 
-With the instance ID, open the **Workflow Information** data resource again, go to the **create** action, then open the **Test** tab, enter a process instance ID for **ProcessID**, and click **Run Test**. 
+With the instance ID, open the **Workflow Information** data resource again, go to the **retrieve** action, then open the **Test** tab, enter a process instance ID for **ProcessID**, and click **Run Test**. 
 
 ![Test connection](test-connection.png)
 
 You should get information about the process, including the process ID, start time, and status.
+
+Once you get a proper response response, click **Autodetect Schema from Response**, which will save the response schema so you can more easily refer to it in the formulas you will create later.
+
+![Autodetect schema](autodetect.png)
 
 >You could suspend a process briefly -- click **Put on Hold** in the **Monitor** tab for that process instance.
 >
@@ -330,7 +330,7 @@ You should get information about the process, including the process ID, start ti
     >
     >The set of flow functions does the following:
     >
-    >1. **Create record:** Retrieves the status of a specific workflow.
+    >1. **Get record:** Retrieves the status of a specific workflow.
     >
     >2. **If condition:** Checks if the status is different from what is recorded in the local on-device storage.
     >
@@ -340,15 +340,15 @@ You should get information about the process, including the process ID, start ti
     >
     >5. **Set data variableCreate record:** Updates the data variable with the data from the API call, which updates the UI.
 
-4. For the **Create record** flow function:
+4. For the **Get record** flow function:
 
     - **Resource name:** Set to **Workflow Information**. 
-    - **Record:** Click **Custom object**, and bind the **ProcessID** field to **Data item in repeat > current > processId**. 
+    - **Record:** Click **Custom object**, and bind the **id** field to **Data item in repeat > current > processId**. 
 
 5. For the **If** flow function, bind the **Condition** field to the following formula:
 
     ```JavaScript
-    repeated.current.status != outputs["Create record"].response.status
+    repeated.current.status != outputs["Get record"].record.status
     ```
 
 6. For the **Update record** flow function:
@@ -358,7 +358,7 @@ You should get information about the process, including the process ID, start ti
     - **Record:** Click on **Custom object**, and then change the binding for **status** to the following formula:
   
         ```JavaScript
-        outputs["Create record"].response.status
+        outputs["Get record"].record.status
         ```  
 
         It should look like this:

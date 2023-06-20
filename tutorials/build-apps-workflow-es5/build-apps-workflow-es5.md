@@ -14,7 +14,7 @@ primary_tag: software-product>sap-build
 
 ## Prerequisites
 - You or IT has set up a user with the ES5 gateway demo system, as described in the tutorial [Create an Account on the SAP Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
-- You or IT has created a destination called **ES5-Shop** to the `ES5 EPM_REF_APPS_SHOP_SRV` OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
+- You or IT has created a destination called **ES5-Shop** to the `ES5 EPM_REF_APPS_SHOP_SRV` OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html). The only difference in the URL path.
 
  
 
