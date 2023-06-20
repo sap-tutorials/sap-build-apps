@@ -261,10 +261,6 @@ In the previous step, we saved the process ID and status, but the status could h
 
     ![Enable create](create.png)
 
-    &nbsp;<br>
-
-    ![Create](data-resource-create.png)
-
 5. For **Relative path and query**, click the binding **X** (next to the name of the destination), then select **Formula > Create Formula**.
 
     Use the following for the formula:
