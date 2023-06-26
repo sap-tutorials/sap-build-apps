@@ -128,7 +128,7 @@ This is known as creating the user interface, also known as the UI.
 >- You can instead do the second tab, **Import Project**, which will bypass the nitty gritty of adding and stylizing components, and instead teach you how to import an SAP Build Apps project into an existing project. This way is much faster.
  
 
-[OPTION BEGIN [Basic steps]]
+[OPTION BEGIN [Basic Steps]]
 
 1. Select the text field, and click the **X** to delete it.
 
@@ -255,12 +255,6 @@ Click **Done** and you can go to the next step.
 
 
 
-
-
-
-
-
-
 ### Enable SAP BTP authentication
 You need to enable SAP BTP authentication because you want to use SAP BTP destinations, and users need to be authenticated to use them.
 
@@ -290,7 +284,14 @@ As part of setting up SAP Build Process Automation, you created an SAP BTP desti
 
 Now you will set up the connection from your app to that destination, so you can call SAP Build Process Automation.
 
->**NOTE:** For workshop participants, this destination will be provided for you.
+>Note that there are 2 tabs for this tutorial step. 
+>
+>- You can do the first tab, **Basic Steps**, which we recommend and which will teach you about many of the features and s for data resources.
+>
+>- You can instead do the second tab, **Import Data Resource**, which will bypass the nitty gritty of setting up the data resource, and instead teach you how to search the Marketplace and install a data component.
+
+
+[OPTION BEGIN [Create Data Resource]]
 
 1. Open the **Data** tab, at the top of the page.
 
@@ -346,7 +347,7 @@ Now you will set up the connection from your app to that destination, so you can
 
     ![Create enable](data-resource-create.png)
 
-1. For **Request headers**, click the binding **X**, then **List of values**.
+5. For **Request headers**, click the binding **X**, then **List of values**.
 
     ![Request headers](requestheaders.png)
 
@@ -361,7 +362,7 @@ Now you will set up the connection from your app to that destination, so you can
 
     Click **Save**.
 
-2. For **Request body mapper**, click the binding **X**, then **Formula > Create formula**.
+6. For **Request body mapper**, click the binding **X**, then **Formula > Create formula**.
 
     Enter the following for the formula -- replace `<your definition ID>` with the ID for your process that you saved from your process trigger:
 
@@ -379,12 +380,48 @@ Now you will set up the connection from your app to that destination, so you can
 
     >The request body mapper will format the body of this HTTP request. For SAP Build Process Automation trigger API, the body provides the name of the process you want to trigger, plus all the input fields defined for that process.
 
-3. Click **Save Data Entity** (bottom right).
+7. Click **Save Data Entity** (bottom right).
 
     Click **Save** (in the upper right to save all your changes to the project).
 
+[OPTION END]
 
+[OPTION BEGIN [Import Data Resource]]
 
+>If you started to create the data resource yourself, just delete the data resource and start with the instructions in this tab.
+
+1. On the main UI Canvas, click **Marketplace**.
+
+    ![Marketplace](importdata1.png)
+
+2. Search for: `gCgeEdbUoiC5FrwvHEOs-Q`
+
+    You should see the Trigger Workflow.
+
+    ![Trigger Workflow](importdata2.png)
+
+3. Select the **Trigger Workflow** component, and click **Install.
+
+    ![Install](importdata3.png)
+
+4. Open the **Data** tab, and open the **Trigger Workflow** data resource.
+
+    ![Open data resource](importdata4.png)
+
+    Click **create**, and open the formula for the **Request Body Mapper**.
+     to your definitionId
+
+    ![Create action](importdata5.png)
+
+    The only thing you need to do is change the formula so the definitionId is equal to the definitionId for your process. 
+
+    ![Definition ID](importdata6.png)
+
+5. Click **Save Data Entity** (bottom right).
+
+    Click **Save** (in the upper right to save all your changes to the project).
+
+[OPTION END]
 
 
 
