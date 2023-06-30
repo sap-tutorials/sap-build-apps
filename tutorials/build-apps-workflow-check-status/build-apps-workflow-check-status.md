@@ -266,7 +266,7 @@ In the previous step, we saved the process ID and status, but the status could h
     Use the following for the formula:
 
     ```JavaScript
-    "/" +  query.Identifier.id
+    "/" + query.Identifier.id
     ``` 
 
     Click **Save** twice.
