@@ -24,7 +24,7 @@ In addition to triggering a workflow, you can call other APIs to get information
 
 In this tutorial, we will create a new page to display the processes we have triggered, and let the user click a button for each to check it's status.
 
-You can see all the APIs you can call related to SAP Build Process Automation in the [SAP Business Accelerator Hub](https://api.sap.com/package/SAPProcessAutomation/all). Select the API you are interested in, and then click **View the API Reference**.
+You can see all the APIs you can call related to SAP Build Process Automation in the [SAP Business Accelerator Hub](https://api.sap.com/package/SAPProcessAutomation/all). Select the API you are interested in, and then click **View the API Reference**. 
 
 ---
 
