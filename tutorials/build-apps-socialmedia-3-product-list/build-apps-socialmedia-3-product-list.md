@@ -118,7 +118,7 @@ For more information on creating destinations that can be consumed by SAP Build 
 
 3. Pick the `Northwind` destination on the left.
 
-    ![Select Northwind](Northwind.png)
+    ![Select Northwind](Northwind-dest-pick-dest.png)
 
 4. Click **Install Installation**.
 
@@ -215,7 +215,7 @@ Now that we have all the data in variables, we want to bind them to the list com
 
     | Field | Binding |
     |-------|---------|
-    | Repeat with| The data variable **Products**|
+    | Repeat with| The data variable **Products1**|
     | Title label | Data item in repeat: `current.ProductName` |
     | Rating | Formula<div>&nbsp;</div>`DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(repeated.current.ProductID)).avg,0)` |
     | RatingCount | `DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(repeated.current.ProductID)).count,0)` |
