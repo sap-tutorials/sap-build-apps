@@ -122,7 +122,7 @@ Functions are created using the standard SAP Build Apps formula, based on JavaSc
     Click **Set Formula**, and set the formula to the following:
 
     ```JavaScript
-    GROUP(outputs["Rating / Records listed"].records, item.productId, {productID: key, avg: AVERAGE(PLUCK(items,"rating")), count: COUNT(items) } )
+    GROUP(outputs["List records Rating / Records listed"].records, item.productId, {productID: key, avg: AVERAGE(PLUCK(items,"rating")), count: COUNT(items) } )
     ```
 
     Click **Save**, and then click **Add**.
