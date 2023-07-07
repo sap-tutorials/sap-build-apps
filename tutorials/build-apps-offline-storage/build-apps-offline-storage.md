@@ -4,13 +4,7 @@ author_name: Merituuli Melkko
 author_profile: https://github.com/mmelkko
 auto_validation: true
 time: 25
-tags:
-  [
-    tutorial>intermediate,
-    software-product>sap-business-technology-platform,
-    software-product>sap-build,
-    software-product>sap-build-apps--enterprise-edition,
-  ]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build
 ---
 
