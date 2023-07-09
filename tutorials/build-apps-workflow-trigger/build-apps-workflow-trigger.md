@@ -413,9 +413,12 @@ Now you will set up the connection from your app to that destination, so you can
 
     ![Create action](importdata5.png)
 
-    The only thing you need to do is change the formula so the definitionId is equal to the definitionId for your process. 
+    The only thing you need to do is change the formula so the `definitionId` is equal to the `definitionId` for your process. 
 
     ![Definition ID](importdata6.png)
+
+    >You can find the `definitionId` of your process in the lobby. In the lobby, go to **Monitoring > Manage Process and Workflows**, and search for your process by project/process name.
+
 
 5. Click **Save Data Entity** (bottom right).
 
