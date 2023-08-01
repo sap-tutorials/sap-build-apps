@@ -69,7 +69,7 @@ Next, we will be adding a data variable on the app’s **Global canvas**. To do 
 
 To go to the global canvas, open the page selection panel and choose the global canvas.
 
-![How to move to the global canvas](step2gif1.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step2gif1.gif" alt="How to move to the global canvas"/>
 
 Now from the left side pane, select **data variables**, and add a new data variable for the data entity you created in step 1. Give the data variable a name of your choice, in this tutorial `Preferences` was used. We will be using a Collection type data variable, so you will not need to change the other settings.
 
@@ -115,13 +115,13 @@ Next, we will be adding some logic between the Get record collection and Set dat
 
 From the left side panel, find the If condition node and drag it on the canvas between the Get record collection and Set data variable nodes.
 
-![Add If logic node](step3gif3.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step3gif3.gif" alt="Add If logic node"/>
 
 The purpose of this if condition is to check whether the user already has preferences from when they previously used the app, or if default preferences should be created. This is done by checking if the list of records gotten from the Get record collection node is empty or not.
 
 Save before proceeding, or you will not see the correct information as you open the formula editor for the If condition node.
 
-![Formula for if node](step3gif4.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step3gif4.gif" alt="Formula for If node"/>
 
 Select the If condition node and go to add a formula into the **condition** input. The formula will look like `!IS_EMPTY(outputs[“Get record collection”].records)`, but _if you copy paste this formula, it will not work_ as once again, the output needs to have the correct reference to the previous logic node. You will get this automatically by using the automatic fill of the formula editor by either clicking the correct output with your mouse or selecting it with arrow keys and enter.
 
@@ -155,13 +155,13 @@ Since we want to provide a selection for the user between the languages, it is d
 
 You can find the keys of the languages you enabled by looking at the Set current language flow function. But first you must install it from the Marketplace.
 
-![Install the flow function from marketplace](step4gif1.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step4gif1.gif" alt="Install the flow function from marketplace"/>
 
 Drag two things on the logic canvas on the Global canvas main canvas where you were working in the previous step: the **Set current language flow** from under Installed tab, and a **Receive event** from the very bottom of the Core tab.
 
 We want to change the current language of the app every time the language app variable is changed. Thus, select the Receive event node and select **“App variable ‘language’ changed”** as the event source. Now this event will fire every time the app variable changes, including when the app is first opened.
 
-![Add event node to logic canvas](step4gif2.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step4gif2.gif" alt="Add event node to logic canvas"/>
 
 Next when you select Set current language, you will notice that the options for the Supported language property are the keys for the languages that you will need in the next Step. Write these down – for my English (US) and German selection, the keys were `en-US` and `de`.
 
@@ -169,7 +169,7 @@ Now that you have the keys you need, configure the Set current language node to 
 
 Once you have translations enabled, you can start using them everywhere in your application where you have text. The easiest way to do this is while you configure each part of your UI via clicking on the translation button.
 
-![Configuring translations for a text component](step4gif3.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step4gif3.gif" alt="Configuring translations for a text component"/>
 
 ### UI for modifying user preferences
 
@@ -191,13 +191,13 @@ If you’d like to do a full dark mode for your app, you will need to use a lot 
 
 Select the title of the page. Under Styles tab, go to modify the style class you are using for the title and set the color to come from a formula.
 
-![Set conditional color for a text](step6gif1.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step6gif1.gif" alt="Set conditional color for a text"/>
 
 This formula could be something like `IF(appVars.darkMode, theme.$smartColorPalette_darkMedia.neutral, theme.$smartColorPalette_app.neutral)`
 
 Similarly, set the background of the page. This time the formula can be set by creating a Local Palette as you can see in the gif below.
 
-![Set conditional background color](step6gif2.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step6gif2.gif" alt="Set conditional background color"/>
 
 The formula could be something like `IF(appVars.darkMode, theme.$smartColorPalette_darkMedia.background, theme.$smartColorPalette_app.background)`
 
@@ -223,4 +223,4 @@ Save the successful result in the Preferences data variable. For that, add a Set
 
 Once the data gets saved in the data variable, your app will function correctly and remember the settings the user last had on this device. When previewed, your app should look something like this.
 
-![Final view of application functionality](step7gif1.gif)
+<img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step7gif1.gif" alt="Final view of application functionality"/>
