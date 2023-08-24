@@ -14,7 +14,7 @@ primary_tag: software-product>sap-build
 
 ## Prerequisites
 - You have created a trial account, as described in [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
-- Your trial account must be in the **US East (VA) - AWS** region. 
+- Your trial account must be in the **US East (VA) - AWS** or **Europe - Frankfurt** region. 
 
 
 
@@ -34,6 +34,8 @@ primary_tag: software-product>sap-build
 
 
 ### Install Cloud Identity Service
+SAP Build Apps requires that users be part of a custom identity provider. Therefore, you need to install the Cloud Identity Service.
+
 1. In the cockpit of your subaccount, go to **Service Marketplace**.
 
     Search for **Cloud Identity Service**.
@@ -71,7 +73,7 @@ When you are done you will see a new browser tab with the administration UI for 
 
     Click **Establish Trust**.
 
-    You should see the identity provider you created by installing the Cloud Identity Service.
+    You should see the identity provider you created when you install the Cloud Identity Service.
 
     ![IDP](trust2.jpg)
 
@@ -115,6 +117,20 @@ You should now have a custom identity provider in the trust configuration.
 
 
 ### Set up roles
+With SAP Build Apps, you have the following roles:
+
+| Role | Purpose |
+|-------|--------|
+| RegistryDeveloper  | Provides access to the lobby to manage your own projects. |
+| RegistryAdmin      | Provides access to the lobby to manage all projects. |
+| BuildAppsDeveloper | Provides access to create projects in SAP Build Apps. |
+| BuildAppsAdmin     | Provides access to create projects in SAP Build Apps and to manage all projects.  |
+
+The 2 admin roles are grouped into the **BuildApps_Administration** role collection, and the 2 developer roles are grouped into the **BuildApps_Developer** role collection.
+
+But after installing SAP Build Apps, only the Registry roles are added to the role collections, so you must add the others.
+
+
 1. In your subaccount cockpit, go to **Security > Role Collections**.
 
 2. Select **BuildApps_Administrator** role collection.
@@ -156,10 +172,12 @@ In the cockpit of your subaccount, go to **Services and Instances**.
 
 Click on **SAP Build Apps** (or the little icon) to view the SAP Build lobby.
 
-You will be asked to log in.
+You will be asked to log in with the user you set up with the custom identity provider.
 
 ![Log in](rerun3.jpg)
 
 You should now see SAP Build Apps.
 
 ![SAP Build Apps lobby](rerun4.jpg)
+
+😺
