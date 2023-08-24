@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 10
+time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition,software-product-function>sap-cloud-application-programming-model, software-product>sap-business-application-studio]
 primary_tag: software-product>sap-build
 ---
@@ -87,7 +87,7 @@ Click the project to open it.
 
 >If the project cannot load because it conflicts with an existing project or you already imported it, there is a second way to import projects (from within an existing project), and we have provided a second version of the project for this purpose.
 
->Download the file [RiskManagement.zip.gpg](RiskManagement.zip.gpg).
+>Download the file [RiskManagement.zip.gpg](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/build-apps-cap-app/RiskManagement.zip.gpg).
 
 >From within an open SAP Build Apps project, make sure the project is saved. Then go to the upper-right corner, select the 3 dots and then **Replace** -- this import replaces and deletes the current content of the project.
 

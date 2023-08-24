@@ -77,15 +77,22 @@ Finally, click on `RiskManagement-uaa`, and you will see a service key on the ri
  
     ![New destination](2-dest2.jpg)
 
+3. Click **Save**.
+
+
+
 
 ### Give your user roles
 1. In the cockpit, go to **Security > Users**.
 
 2. Find your user for the custom IDP, and on the right, click **Assign Role Collection**.
 
-3. Search for `risk`, select both roles you creatd with your service, and click **Assign Role Collection**.
+3. Search for `risk`, select both roles you created with your service, and click **Assign Role Collection**.
 
     ![Assign roles](3-roles.jpg)
+
+
+
 
 
 ### Test service
