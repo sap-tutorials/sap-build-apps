@@ -15,9 +15,9 @@ primary_tag: software-product>sap-build
  
  
 ## Prerequisites
-- You have created a trial account, as described in [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
-- You have installed SAP Business Application Studio on your trial subaccount, as described in [Set Up SAP Business Application Studio for App Development in the Trial Environment](https://developers.sap.com/tutorials/appstudio-lcap-onboarding-trial.html).
-- You have installed SAP Build Apps on your trial subaccount.
+- You have created a trial account in US East (Va) region, as described in [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
+- You have installed SAP Build Apps on your trial subaccount, as described in [Set Up SAP Build Apps on SAP BTP Trial Account](https://developers.sap.com/tutorials/build-apps-trial.html).
+- You have created an instance of SAP HANA database in your Cloud Foundry space.
   
 
 ## You will learn
