@@ -25,7 +25,7 @@ primary_tag: software-product>sap-build
 
 
 
-## Run the SAP Build Apps Booster
+### Run the SAP Build Apps Booster
 SAP BTP offers a booster that automatically sets up all the things you need to start using SAP Build Apps, including:
 
 - SAP Build Apps
@@ -52,17 +52,17 @@ SAP BTP offers a booster that automatically sets up all the things you need to s
 
 5. Select **Select Subaccount**, and click **Next**.
 
-    >You will not be able to select **Create Subaccount** because your trial global account is limited to one subaccount.
+    >You will not be able to select **Create Subaccount** because your trial global account is limited to one subaccount, unless you deleted the subaccount automatically created when you created your trial account.
 
 6. The booster will automatically select the one subaccount, so there is nothing to do on the **Configure subaccunt** screen.
 
     Click **Next**.
 
-7. On the **Add Users** screen, add your email address to the **Administrators** and **Developers** boxes.
+7. On the **Add Users** screen, you are automatically giving the apprpriate roles so there is nothing to do here.
 
     Click **Next**.
 
-8. On the **Review** screen, click **Finish**.
+9. On the **Review** screen, click **Finish**.
 
 When everything is installed, you will see the following:
 
@@ -100,12 +100,10 @@ You should now see SAP Build Apps.
 
 ![SAP Build Apps lobby](rerun4.jpg)
 
->In subsequent logins, you may be presented with 2 identity providers to log in with. SAP Build Apps requires the custom identity provider, so select the identity provider that is not **Defualt identity provider**.
+>In subsequent logins, you may be presented with 2 identity providers to log in with. SAP Build Apps requires the custom identity provider, so select the identity provider that is <span style="color:red">NOT **Default identity provider**</span>.
 
->When you do login to SAP Build Apps:
+>When you do login to SAP Build Apps, use your password that you created for the custom identity provider.
 
 >![Log in](rerun3.jpg)
-
->Use your password that you created for the custom identity provider.
 
 😺
