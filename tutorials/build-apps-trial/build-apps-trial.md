@@ -92,7 +92,7 @@ You should now have a custom identity provider in the trust configuration.
 
 ### Install SAP Build Apps
 
-1. Navigate back to your subaccount, and go to **Services and Instances**.
+1. Navigate back to your subaccount, and go to **Instances and Subscriptions**.
 
 2. Click **Create**.
 
@@ -168,7 +168,7 @@ But after installing SAP Build Apps, only the Registry roles are added to the ro
 
 
 ### Open SAP Build Apps
-In the cockpit of your subaccount, go to **Services and Instances**.
+In the cockpit of your subaccount, go to **Instances and Subscriptions**.
 
 Click on **SAP Build Apps** (or the little icon) to view the SAP Build lobby.
 

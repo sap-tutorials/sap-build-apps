@@ -18,6 +18,7 @@ primary_tag: software-product>sap-build
 - You have created a trial account in US East (Va) region, as described in [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
 - You have installed SAP Build Apps on your trial subaccount, as described in [Set Up SAP Build Apps on SAP BTP Trial Account](https://developers.sap.com/tutorials/build-apps-trial.html).
 - You have created an instance of SAP HANA database in your Cloud Foundry space by going to your subaccount, then going to **Cloud Foundry > Spaces** and opening your space (`dev`), and then going to **SAP HANA Cloud**. Here you can click **Create > SAP HANA database** and follow the defaults of the wizard. Make sure to select **Allow all IP addresses**.  
+- You have given your user on the custom identity provider the role collection `Business_Application_Studio_Developer`.
   
 
 ## You will learn
@@ -37,7 +38,7 @@ Another key feature is the creation of roles, one for viewer of the data and one
 
 
 
-### Open SAP Business Application Studio
+### Create SAP Business Application Studio project
 
 
 [OPTION BEGIN [Use SAP Build Lobby]]
@@ -73,7 +74,7 @@ Click the project to open the project in SAP Business Application Studio.
 
 ![SAP Business Application Studio](lobby7.jpg)
 
-
+>Opening the studio and creating the development environment could take up to 5 minutes.
 
 [OPTION END]
 
@@ -182,7 +183,7 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     ![Alt text](4-create-relationship3.jpg)
     
-    Set the following properties:
+    All of the following properties will be set:
 
     | Field    | Value | 
     | -------- | ------- |
@@ -190,9 +191,7 @@ These steps open SAP Business Application Studio in the traditional way, without
     | Multiplicity  | To-many    |
     | Name  | risks    |
     | Target Entity  | Risks    |
-    | Backlink Property  | miti    |
-
-    >All the fields should already be set, except the backlink property.
+    | Backlink Property  | mitigations    |
 
     Click the checkmark ☑️ to save the changes and close the editor by clicking the top-right **X**.
 
@@ -227,25 +226,30 @@ These steps open SAP Business Application Studio in the traditional way, without
 
 
 
+
+
+
 ### Add sample data
 
-1. Go back to the storyboard.
+1. Download the CSV data files [RiskManagement-Risks.csv](RiskManagement-Risks.csv) and [RiskManagement-Mitigations.csv](RiskManagement-Mitigations.csv).
 
-2. Right-click the **Mitigations** entity, and select **Add Sample Data**.
+2. Go back to the storyboard.
+
+3. Right-click the **Mitigations** entity, and select **Add Sample Data**.
 
     ![Add sample data](6-sample-data-mitigations.jpg)
 
-3. Choose **Import**, and click **Add**.
+4. Choose **Import**, and click **Add**.
 
     ![Import data](6-sample-data-mitigations2.jpg)
 
-4. Select the downloaded `RiskManagement-Mitigations.csv` file.
+5. Select the downloaded `RiskManagement-Mitigations.csv` file.
 
     The data is automatically added and saved.
 
     ![Data added](6-sample-data-mitigations3.jpg)
 
-5. Go back to the storyboard, and do the same for the **Risks** entity with the `RiskManagement-Risks.csv` file.
+6. Go back to the storyboard, and do the same for the **Risks** entity with the `RiskManagement-Risks.csv` file.
 
 
 
@@ -265,7 +269,7 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     ![Plus for roles](7-plus-roles.jpg)
     
-    Call the role `RiskViewer` and keep the privilege at **Read*.
+    Call the role `RiskViewer` and keep the privilege at **Read**.
 
     ![Add role](7-roles-man3.jpg)
 
@@ -367,6 +371,13 @@ You should use the Task Explorer for deployment. The following instructions desc
     ![Deployment](8-deploy-login6.jpg)
    
 [OPTION END]
+
+
+
+
+
+
+
 
 ### Check service
 
