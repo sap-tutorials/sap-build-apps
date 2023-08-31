@@ -211,6 +211,10 @@ Click **Risk Management** to open the app. You should see the first page with a 
 
 ![Test risks](6-test-risks.jpg)
 
+In addition, you see a toast message indicating what permissions you. In this case, since you gave yourself manager permissions, it should say you are a manager.
+
+![Permissions](6-permissions-display.png)
+
 Also, the **Add Risk** button should take you to the **Manage Risks** page (though that page will not let you add a risk yet, and clicking **Create Risk** will not do anything).
 
 
@@ -300,7 +304,7 @@ The page has a page parameter. If sent, the page is for updating; if it's null, 
 
         - **Risk ID:** page parameter RiskID
 
-        - **Record:** Set the following formula:
+        - **Record:** Set the following formula (allows us to make sure the integer fields receive a number value):
   
             ```JavaScript
             {impact: NUMBER(data.Risks1.impact), title: data.Risks1.title, descr: data.Risks1.descr, prio: data.Risks1.prio, criticality: NUMBER(data.Risks1.criticality)}
@@ -327,7 +331,7 @@ The page has a page parameter. If sent, the page is for updating; if it's null, 
 
     - **1**
 
-        ```
+        ```Text
         Priority can only be 5 characters
         ```
 
@@ -337,13 +341,15 @@ The page has a page parameter. If sent, the page is for updating; if it's null, 
 
     - **3**
 
-        ```
+        ```Text
         New risk created
         ```
 
     - **4 (if create fails)**
 
         Set to **Output value of another node > Create record > Error > Message**.
+
+5. Click **Save** (upper right).
 
 
 
