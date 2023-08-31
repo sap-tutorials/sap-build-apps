@@ -193,7 +193,7 @@ These steps open SAP Business Application Studio in the traditional way, without
     | Target Entity  | Risks    |
     | Backlink Property  | mitigations    |
 
-    Click the checkmark ☑️ to save the changes and close the editor by clicking the top-right **X**.
+    Click **Create**.
 
 5. For both entities, open the **Show Details** pane again.
 
@@ -213,7 +213,7 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     ![Add service](5-service-add.jpg)
 
-    Choose the **Risks** entity, and click **OK**.
+    Choose the **Risks** entity, disable the **Enable Draft Editing**, and click **OK**.
 
     ![Risks entity](5-service-add2.jpg)
 
@@ -221,7 +221,7 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     ![Add entity](5-service-add3.jpg)
 
-    Choose the **Mitigations** entity, and click **OK**.
+    Choose the **Mitigations** entity, , disable the **Enable Draft Editing**, and click **OK**.
 
 
 
@@ -287,7 +287,7 @@ These steps open SAP Business Application Studio in the traditional way, without
 
 2. Add another role by clicking the plus sign ( **+** ).
 
-    Call the role `RiskManager` and change the privilege to **Full*.
+    Call the role `RiskManager` and change the privilege to **Full**.
 
     ![Add role](7-roles-man6.jpg)
 
