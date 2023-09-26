@@ -339,7 +339,7 @@ Once you get a proper response response, click **Autodetect Schema from Response
 4. For the **Get record** flow function:
 
     - **Resource name:** Set to **Workflow Information**. 
-    - **id:** Click the binding icon and set the field to **Data item in repeat > current > processId**. 
+    - **id:** Click the binding icon and set the field to a formula `repeated.current.processId` (don't worry if the formula editor give a warning). 
 
 5. For the **If** flow function, bind the **Condition** field to the following formula:
 
