@@ -5,7 +5,7 @@ author_profile: https://github.com/thecodester
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition,software-product-function>sap-cloud-application-programming-model, software-product>sap-business-application-studio]
-primary_tag: software-product>sap-build 
+primary_tag: software-product>sap-build
 ---
  
 
@@ -223,7 +223,7 @@ Also, the **Add Risk** button should take you to the **Manage Risks** page (thou
 
 
 ### Manage Risks – Add logic to load data
-The **Add Risk** page can be used to add a new risk or update an existing risk if navigating from an existing risk.
+The **Manage Risks** page can be used to add a new risk or update an existing risk if navigating from an existing risk.
 
 The page has a page parameter. If sent, the page is for updating; if it's null, the page will be used to add a risk.
 
