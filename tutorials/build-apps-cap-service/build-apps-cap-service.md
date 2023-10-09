@@ -147,7 +147,7 @@ These steps open SAP Business Application Studio in the traditional way, without
     | impact    | integer    | | 
     | criticality    | integer    |  | 
 
-    Click the checkmark ☑️ to save the changes and close the editor by clicking the top-right **X**.
+    Close the editor by clicking the top-right **X**.
 
     ![Risks entity fields](4-create-data-model3.jpg)
 
@@ -169,13 +169,15 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     ![Alt text](4-create-data-model6.jpg)
 
-    Click the checkmark ☑️ to save the changes and close the editor by clicking the top-right **X**.
+    Close the editor by clicking the top-right **X**.
 
-4. Add relationship between the entities by selecting the **Mitigations** entity, and clicking – and holding down – the **Relationship** icon.
+4. Add relationship between the entities by selecting the **Mitigations** entity, and clicking the **Relationship** icon.
+
+    This will create an arrow for you to indicate the other entity with which to form a relationship.
    
     ![Mitigations relationsip](4-create-relationship.jpg)
 
-    Drag the icon and drop it on the **Risks** entity.
+    Drag the icon and drop it on the **Risks** entity, and click.
 
     ![Risks relationsip](4-create-relationship2.jpg)
 
@@ -190,14 +192,18 @@ These steps open SAP Business Application Studio in the traditional way, without
     | Type  | Association    |
     | Multiplicity  | To-many    |
     | Name  | risks    |
-    | Target Entity  | Risks    |
+    | Target Entity  | RiskManagement.Risks    |
     | Backlink Property  | mitigations    |
 
     Click **Create**.
 
+    This will create a relationship.
+
+    ![Relationship created](4-create-relationship3a.jpg)
+
 5. For both entities, open the **Show Details** pane again.
 
-    Select the **Aspects** tab, and enable the **managed** aspect. Click the checkmark ☑️ to save the changes.
+    Select the **Aspects** tab, and enable the **managed** aspect. 
 
     ![Aspects](4-create-relationship4.jpg)
 
@@ -221,7 +227,7 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     ![Add entity](5-service-add3.jpg)
 
-    Choose the **Mitigations** entity, , disable the **Enable Draft Editing**, and click **OK**.
+    Choose the **Mitigations** entity, disable the **Enable Draft Editing**, and click **OK**.
 
 
 
@@ -315,7 +321,9 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     ![Expand node](8-deploy-project.jpg)
 
-2. Hover over **Deploy RiskManagement** and click the **Run** icon next to your project.
+2. Hover over **Enable Discovery and Deploy RiskManagement** and click the **Run** icon next to your project.
+
+    ![Expand node](8-deploy-project2.jpg)
 
     The deployment process will run briefly, a **Terminal** window will open at the bottom of the screen, and then the Cloud Foundry login screen will appear. (You may need to make the **Terminal** area smaller to see the login screen.)
 
@@ -393,15 +401,15 @@ You should use the Task Explorer for deployment. The following instructions desc
 
     You will get a page with information about your service, with a link to the service (`service/RiskManagement`).
 
-    >You will not see anything yet since you are not authorized.
+    >You will not see anything yet since you are not authorized. In the next tutorial, we will test it from SAP Business Application Studio, and in the following tutorial you will access it from SAP Build Apps.
 
-2. You will need some information about your service to create a destination so that it can be accessed by other applications, like SAP Build Apps.
+2. The destination for your service – so that other services like SAP Build Apps can call it – was already created. But if you needed to create it yourself, you would do so by getting information about your service.
 
-    Go back to the previous page, and on left click **Service Bindings**, and then click `RiskManagement-uaa`.
+    Go back to the previous page, and on the left click **Service Bindings**, and then click `RiskManagement-uaa`.
 
     ![Service bindings](9-check4.jpg)
 
-    On the right you will see a service key, and by clicking **View** you will get the client ID, and secret and other information for this service so that you can create a destination.
+    On the right you will see a service key, and by clicking **View** you will get the client ID, and secret and other information for this service that would be needed to create a destination.
 
     ![Service key](9-check5.jpg)
 

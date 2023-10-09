@@ -9,8 +9,8 @@ primary_tag: software-product>sap-build
 ---
  
 
-# Expose a CAP Service to SAP Build
-<!-- description --> Expose a CAP service that is deployed on SAP BTP so that SAP Build Apps projects can access the backend.
+# Test CAP Service and its Destination
+<!-- description --> Test the CAP service created with SAP Business Application Studio's productivity tools, including the destination automatically generated to expose it to SAP Build.
 
  
 ## Prerequisites
@@ -18,13 +18,13 @@ primary_tag: software-product>sap-build
 
 
 ## You will learn
-- How to create a destination to your CAP service with principal propagation
+- How to find and test the destination automatically created when you deployed your CAP service
 
 
 ## Intro
-In order for SAP Build Apps to access your CAP service, you must create a destination for the service. The destination will be defined so it will log into the service using the credentials of the current user.
+In order for SAP Build Apps to access your CAP service, a destination for the service is required. The destination was automatically created when you deployed the service with **Enable Discovery**.
 
-We want to log into the service this way because we have defined roles, which can be assigned to specific users. So we need to know the current user.
+In this tutorial we will test the destination using the credentials of the current user. We want to log into the service this way because we have defined roles, which can be assigned to specific users. So we need to know the current user.
 
 
 ---
@@ -38,48 +38,38 @@ Click on the service, and then click on **Service Bindings**. Here you will `Ris
 
 ![Alt text](1-check-service2.jpg)
 
-Finally, click on `RiskManagement-uaa`, and you will see a service key on the right, for which you can click **View** to get all the information you need to build a destination.
+Finally, click on `RiskManagement-uaa`, and you will see a service key on the right, for which you can click **View** to get all the information that was used to build the destination.
 
 ![Service key](1-check-service3.jpg)
 
+>You won't need this information now, but if you make certain changes to the destination, you may need to provide the client secret, which is found in this file.
 
 
 
 
-### Create destination
+### View destination
 1. Navigate back to your subaccount (`trial` if you are in your trial account).
 
 2. Go to **Connectivity > Destinations**.
 
-    You will already see a destination called `RiskManagement-app-srv` related to your service, from which you will create copy and adjust it so you can use it for SAP Build Apps.
+3. Select the destination `RiskManagement-RiskManagementService`.
 
     ![Destinations](2-dest.jpg)
 
-3. If you cannot clone the destination, export it and import it as a new destination.
+    At the bottom of the page you will see all of the settings for this destination.
 
-    >You will notice the authentication type is `OAuth2UserTokenExchange`. This allows the CAP service, when called using the destination, to know who the user is. This is important because we defined roles and only users with those roles can either read or read and write to the CAP service.
 
-    Set the following:
-
-    | Field    | Value | 
-    | -------- | ------- |
-    | Name  | `RiskManagement-app-srv-BUILD`    |
-    | URL  | Add the following path to the URL: `/service/RiskManagement`   |
-    | Client Secret  | Get this value from the service key in the previous step.    |
-
-    Add the following properties to the destination:
+    Notice the additional properties that make it available to SAP Build Apps and SAP Build Process Automation.
 
     | Field    | Value | 
     | -------- | ------- |
     | Appgyver.Enabled  | true    |
     | WebIDEEnabled  | true     |
     | HTML5.DynamicDestination  | true    |
- 
-    ![New destination](2-dest2.jpg)
+    | sap.processautomation.enabled  | true    |
+    | sap.applicationdevelopment.actions.enabled  | true    |
 
-3. Click **Save**.
-
-
+    And notice that the authentication type is `OAuth2UserTokenExchange`, which enables the service to know what user is calling it. Most of the other settings for authentication come from the service key.
 
 
 ### Give your user roles
@@ -90,8 +80,6 @@ Finally, click on `RiskManagement-uaa`, and you will see a service key on the ri
 3. Search for `risk`, select both roles you created with your service, and click **Assign Role Collection**.
 
     ![Assign roles](3-roles.jpg)
-
-
 
 
 
