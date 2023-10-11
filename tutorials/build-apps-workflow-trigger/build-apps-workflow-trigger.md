@@ -306,7 +306,7 @@ Now you will set up the connection from your app to that destination, so you can
     | Field                | Value                                         |
     | -------------------- | --------------------------------------------- |
     | Data entity name   | `Trigger Workflow`                             |
-    | BTP destination name | `sap-process-destination` (or the destination you created, if you created your own) |
+    | BTP destination name | `spa-process-destination` (or the destination you created, if you created your own) |
 
     ![Base](data-resource-base.png)
 
@@ -420,7 +420,9 @@ Now you will set up the connection from your app to that destination, so you can
     >You can find the `definitionId` of your process in the lobby. In the lobby, go to **Monitoring > Manage Process and Workflows**, and search for your process by project/process name.
 
 
-5. Click **Save Data Entity** (bottom right).
+5. Click Save twice.
+   
+6. Click **Save Data Entity** (bottom right).
 
     Click **Save** (in the upper right to save all your changes to the project).
 

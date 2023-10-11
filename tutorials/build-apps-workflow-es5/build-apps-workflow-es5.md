@@ -153,7 +153,7 @@ After retrieving the data, we need a place to put it, with the proper schema so 
 
 4. You will have to bind the dropdown field to the `Trigger Workflow1` data variable (as we did for the input field for material).
     
-    For the **Selected value** field, set the binding to: **Data and variables > Data variable > Trigger Workflow1 > material**. 
+    From the properties tab, for the **Selected value** field, set the binding to: **Data and variables > Data variable > Trigger Workflow1 > material**. 
 
     ![Selected value](dropdown-selected-value.png)
 
@@ -187,4 +187,4 @@ This will also update the text field with the ID for the product.
 
 Click **Get Approval** to trigger the workflow. 
 
-Go to the **Monitor** tab, and you should see your instance, showing the `orderAmount` of 2000 and the `material` as `HT-1000`.
+Go to the Build lobby and access the **Monitor** tab, and you should see your instance, showing the `orderAmount` of 2000 and the `material` as `HT-1000`.
