@@ -221,6 +221,8 @@ These steps open SAP Business Application Studio in the traditional way, without
 
     Choose the **Risks** entity, disable the **Enable Draft Editing**, and click **OK**.
 
+    >**IMPORTANT:** Please make sure that the **Enable Draft Editing** checkbox is ***disabled***, as this will prevent you from adding records and seeing the data in the following tutorials. Note that if you disable the checkbox and then select an entity, the checkbox will be re-enabled.
+
     ![Risks entity](5-service-add2.jpg)
 
 2. Click **Add Entity** and place the new entity in the canvas.
