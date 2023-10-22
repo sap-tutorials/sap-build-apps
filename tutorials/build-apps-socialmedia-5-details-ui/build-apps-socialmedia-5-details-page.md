@@ -30,7 +30,7 @@ In the previous tutorial, you set up all of the data variables and global logic 
 
     ![Container tree](part1-container1.png) ![Container UI](part1-container2.png)
 
-3. Select the container, and then in **Layout** tab set the layout to horizontal, and set the align components to middle.
+3. Select the container (you can use the Tree view in the bottom right), and then in **Layout** tab set the layout to horizontal, and set the align components to middle.
 
     ![Container layout](container-properties.png)
 
@@ -55,6 +55,8 @@ In the previous tutorial, you set up all of the data variables and global logic 
     ```JavaScript
     FORMAT_LOCALIZED_DECIMAL(DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(params.productID)).avg,0), "en", 1,1) 
     ```
+
+7. Click **Save** (upper right).
 
 >**What do the formulas do?**
 >
@@ -83,23 +85,25 @@ In the previous tutorial, you set up all of the data variables and global logic 
 
     ![List divider style](listdivider-style.png)
 
-2. Copy and paste the list divider so you have 2 lines in a row.
+2. Select the new divider, and click the **Duplicate** icon.
+
+    ![Duplicate divider](duplicate-divider.png)
 
     >The lines look like boxes but will be displayed as lines.
 
-3. In between the dividers, add a container, with a text and star rating component, so it looks like this.
+4. In between the dividers, add a container, with a text and star rating component, so it looks like this.
 
     ![Let user rate](RatingComponent.png)
 
     Change the layout of the container to horizontal.
 
-4. For the text box, change the width to **Fit content**.
+5. For the text box, change the width to **Fit content**.
 
     Edit the current style, and change **Typography > Text size** to small text.
 
     Set the Content to `Rate this product`.
 
-5. For the star rating, change the following bindings:
+6. For the star rating, change the following bindings:
 
     | Field | Value | 
     |-------|---------|
@@ -107,7 +111,7 @@ In the previous tutorial, you set up all of the data variables and global logic 
     | Value | **Page variable > rating** | 
     | View only? | **Page variable > ratingcomplete** | 
 
-6. Click on the star rating, and open the logic pane. 
+7. Click on the star rating, and open the logic pane. 
 
     Change the event to **Component: Star rating > Property 'Value' changed**.
 
@@ -120,15 +124,20 @@ In the previous tutorial, you set up all of the data variables and global logic 
     >**What's going on?**
     >
     >The logic flow is intended to do the following:
+    >
     >1. **IF:** Check if the rating was changed to a number above 0.
+    >
     >2. **Create record:** Add a record to the Rating entity representing this rating.
+    >
     >3. **Set page variable:** Indicate that the user gave a rating and disable the rating component.
+    >
     >4. **Execute cloud function:** Retrieve the average ratings for all products, since we have a new rating.
+    >
     >5. **Set app variable:** Save the average ratings
     >
     >All of this should update the overall rating for the product at the top of the page. 
 
-7. Set the bindings for the flow functions.
+8. Set the bindings for the flow functions.
 
     - For **If condition**, set the condition to the following formula:
   
@@ -159,9 +168,11 @@ In the previous tutorial, you set up all of the data variables and global logic 
         outputs["Execute cloud function"].values.ratings
         ```
 
-8. Click **Save**.
+        >Don't worry if the formula is red (remember, we did not specify the schema). 
 
-9. Click **Save** (upper right).
+9. Click **Save**.
+
+10. Click **Save** (upper right).
 
 You can now test this functionality. Open the app, navigate to the product page of one of the products, and give it a rating.
 
@@ -208,6 +219,8 @@ If you want, you can go back to the product list, then navigate again to this pr
     Set up flow functions as follows:
 
     ![Comment logic](comment-logic.png)
+
+    >**IMPORTANT:** Notice that the 2 **Set page variable** functions are connected to the ***top*** output of the **Create record** function.
 
 6. Configure the flow functions as follows:
 
@@ -268,10 +281,11 @@ If you want, you can go back to the product list, then navigate again to this pr
 
     ![Comments UI](commentUI.png)
 
-2. For the first text component:
+2. For the first text component, in the **Properties** tab:
 
     - Set the **Content** to `No posts yet`.
-    - Set **Visible** (in **Advanced Properties**) to the formula:
+
+    - Set **Visible** (in **Advanced Properties** at the bottom of the tab) to the formula:
 
         ```JavaScript
         IS_EMPTY(data.Comment1)
@@ -293,7 +307,7 @@ If you want, you can go back to the product list, then navigate again to this pr
 
 5. For the second text component in the container:
 
-    - Set the Content to **Data item in repeat > comment**.
+    - Set the Content to **Data item in repeat > current > comment**.
 
 6. For the button:
 
@@ -321,9 +335,9 @@ If you want, you can go back to the product list, then navigate again to this pr
 ### Run the app
 Go to the **Launch** tab, and click **Open Preview Portal**.
 
-Click **Open web preview**, and select the Social media project.
+Click **Open web preview**, and select the social media project.
 
-The List of Products page should open, showing the list of Northwind products, with a cat picture for each. And for each it should show:
+The List of Products page should open, showing the list of Northwind products, with a cat (or other) picture for each. And for each it should show:
 
 - Stars representing their average rating (from the Visual Cloud Function)
 - A 1-decimal number representing the average rating
@@ -345,5 +359,5 @@ And you can add a comment.
 
 ![Rate and add comments](runapp4.png)
 
-Once you have more than 3 comments, you can use the **More** button to see earlier comments.
+Once you have more than 3 comments, you can navigate back to the home page and then reopen the product page. This time, you can use the **More** button to see earlier comments.
 

@@ -113,19 +113,23 @@ Functions are created using the standard SAP Build Apps formula, based on JavaSc
 
     ![Configuration](function-add-config.png)
 
-3. Click on **Success** (on the right).
+3. Click on **End execution** (on the right), and then on **Execution Finished**.
    
     ![Alt text](output-new.png)
 
-    Click **Output Value** and name the output `Ratings`.
+    Under **Output values**, click **Add value**, and set the the following:
+    
+    - Set **Name** to `Ratings`
 
-    Click **Set Formula**, and set the formula to the following:
+        ![Return values](return-value.png)
+  
+    - Click **Set formula** and enter the following formula:
 
-    ```JavaScript
-    GROUP(outputs["List records Rating / Records listed"].records, item.productId, {productID: key, avg: AVERAGE(PLUCK(items,"rating")), count: COUNT(items) } )
-    ```
+        ```JavaScript
+        GROUP(outputs["List records Rating / Records listed"].records, item.productId, {productID: key, avg: AVERAGE(PLUCK(items,"rating")), count: COUNT(items) } )
+        ```
 
-    Click **Save**, and then click **Add**.
+    Click **Confirm**, then click **Add**, and then **Confirm**.
 
     ![Output formula](output-add.png)
 

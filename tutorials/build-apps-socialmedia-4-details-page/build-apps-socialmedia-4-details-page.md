@@ -103,7 +103,7 @@ In this tutorial, you create the required variables, binding and logic, and in t
 ### Enable refresh of comments
 We want to refresh our comments data at many points in our app (e.g., user adds comment or user pages through comments). So we will put the logic in a central place, and create an event that we can call anytime.
 
-1. Click in an open spot on the canvas, and then open the logic pane.
+1. Return to the view of the canvas, then click in an open spot on the canvas, and then open the logic pane.
 
 2. In the logic, create a logic flow like this:
  
