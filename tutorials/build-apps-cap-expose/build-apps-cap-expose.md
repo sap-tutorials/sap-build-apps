@@ -107,6 +107,8 @@ Finally, click on `RiskManagement-uaa`, and you will see a service key on the ri
 
     ![Service document](4-test3.jpg)
 
+    >**IMPORTANT:** If for some reason you do not get a response from terminal, continue on with the rest of the tutorial. 
+
 4. If you remove the roles from your user, immediately you will see that you get a 403 error.
 
     ![403 error](4-test4.jpg)

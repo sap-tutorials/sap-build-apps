@@ -366,6 +366,12 @@ Click **Create Risk**.
 
 ![Add risk](9-test-app.jpg)
 
+>**Troubleshooting:** If your risk does not get added, you may have inadvertently enabled draft mode. Go back to your CAP service, select the **Risk** entity, and check its settings. 
+
+>![Draft mode](BAS_UncheckDraftEditing.png)
+
+>If draft mode is enabled, uncheck the option and redeploy the CAP service.
+
 Now use the navigation menu to return to the main page with all the risks, and make sure your new risk is there.
 
 ![Navigate back](9-navigate.jpg)
