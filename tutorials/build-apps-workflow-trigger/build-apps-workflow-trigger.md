@@ -286,9 +286,9 @@ Now you will set up the connection from your app to that destination, so you can
 
 >Note that there are 2 tabs for this tutorial step. 
 >
->- You can do the first tab, **Basic Steps**, which we recommend and which will teach you about many of the features and s for data resources.
+>- You can do the first tab, **Basic Steps**, which we recommend and which will teach you about many of the features for data resources.
 >
->- You can instead do the second tab, **Import Data Resource**, which will bypass the nitty gritty of setting up the data resource, and instead teach you how to search the Marketplace and install a data component.
+>- On some systems and in some workshops, you can instead do the second tab, **Import Data Resource**, which will bypass the nitty gritty of setting up the data resource, and instead teach you how to search the Marketplace and install a data component. **IMPORTANT:** This is not available on all systems.
 
 
 [OPTION BEGIN [Create Data Resource]]
