@@ -41,43 +41,6 @@ Another key feature is the creation of roles, one for viewer of the data and one
 ### Create SAP Business Application Studio project
 
 
-[OPTION BEGIN [Use SAP Build Lobby]]
-These steps open SAP Business Application Studio using SAP Build's lobby. You must have installed one of the SAP Build tools in order to open the SAP Build lobby.
-
-1. Open the your subaccount, making sure **Instances and Subscriptions** on the left-side menu is selected.
-    
-    ![Open SAP Build lobby](lobby1.jpg)
-
-2. Open the SAP Build lobby by either clicking **SAP Build Apps** or **SAP Build Process Automation**. 
-
-3. In the SAP Build lobby, click **Create**.
-
-    ![Create](lobby2.jpg)
-
-    Click **Build an Application**.
-
-    ![Build an Application](lobby3.jpg)
-
-    Click **Pro Developers**.
-
-    ![Pro Developers](lobby4.jpg)
-
-    Enter `RiskManagement` for the project name, and click **Create**.
-
-    ![Enter name and create](lobby5.jpg)
-
-The new project will be created in the lobby.
-
-![New project](lobby6.jpg)
-
-Click the project to open the project in SAP Business Application Studio.
-
-![SAP Business Application Studio](lobby7.jpg)
-
->Opening the studio and creating the development environment could take up to 5 minutes.
-
-[OPTION END]
-
 [OPTION BEGIN [Use BAS Directly]]
 These steps open SAP Business Application Studio in the traditional way, without using SAP Build's lobby.
 
@@ -314,7 +277,7 @@ These steps open SAP Business Application Studio in the traditional way, without
 
 
 ### Deploy project to SAP BTP
-[OPTION BEGIN [Task Explorer]]
+
 1. Open the Task Explorer by clicking on the side panel.
 
     ![Task Explorer](8-icon-task-explorer.jpg) 
@@ -347,40 +310,9 @@ These steps open SAP Business Application Studio in the traditional way, without
 
 The deployment will take about 5 minutes to finish. When complete, you will get the URL to your service, though you will not have permissions to view it.
 
-[OPTION END]
 
-[OPTION BEGIN [Command Palette]]
-You should use the Task Explorer for deployment. The following instructions describe another, more manual way to do deployment.
 
-1. Log into Cloud Foundry on your trial account by pressing **Control-Shift-P**.
 
-    ![Command palette](8-deploy-login.jpg)
-
-    Type in `CF: Log`, and then select **CF: Login to Cloud Foundry**.
-
-    ![Login command](8-deploy-login2.jpg)
-
-    Enter your Cloud Foundry endpoint, and your username and password for SAP BTP trial, and click **Sign-in**.
-
-    ![Credentials](8-deploy-login3.jpg)
-
-2. Once you login to Cloud Foundry in general, BAS will want to know to which subaccount and space you want to deploy to.
-
-    ![Subaccount and space](8-deploy-login4.jpg)
-
-    Select the subaccount (Cloud Foundry organization), and then the space.
-
-    >If you are working on trial, you will likely have only one choice for each.
-
-    Click **Apply**.
-
-3. Go back to the **Home** page, and click **Deploy > Deploy**.
-
-    The deployment will take about 5 minutes to finish. When complete, you will get the URL to your service, though you will not have permissions to view it.
-
-    ![Deployment](8-deploy-login6.jpg)
-   
-[OPTION END]
 
 
 
