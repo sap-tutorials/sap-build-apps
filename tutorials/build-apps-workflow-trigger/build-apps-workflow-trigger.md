@@ -272,6 +272,7 @@ SAP BTP authentication also has the benefit of requiring authentication in your 
 
     On the confirmation popup, click **OK**. 
 
+4. Click **Save** on the upper right corner.
 
 
 
@@ -685,7 +686,7 @@ You should see the toast message indicating the workflow was triggered, and with
 
 You can also see the results of the call in SAP Build Process Automation.
 
-Go to the **Monitor** tab, then **Monitor > Process and Workflow Instances**. The first one should be the one you just triggered.
+Go to the **Monitoring** tab from the lobby, then under **Monitor** section, access the **Process and Workflow Instances** tile. The first one should be the one you just triggered.
 
 - You can see the new process instance.
 - You can see the process ID is the same as in the toast message in the app.
