@@ -278,6 +278,8 @@ These steps open SAP Business Application Studio in the traditional way, without
 
 ### Deploy project to SAP BTP
 
+
+
 1. Open the Task Explorer by clicking on the side panel.
 
     ![Task Explorer](8-icon-task-explorer.jpg) 
@@ -310,7 +312,17 @@ These steps open SAP Business Application Studio in the traditional way, without
 
 The deployment will take about 5 minutes to finish. When complete, you will get the URL to your service, though you will not have permissions to view it.
 
-
+>**TROUBLESHOOTING:** 
+>
+>- In a SAP BTP trial account, SAP Business Application Studio allows only 2 deployments using a **Full-Stack Application Using Productivity Tools** dev space. If you created the application from the SAP Build lobby, this is the type of dev space used behind the scenes.
+>
+>- If you have trouble redeploying the CAP service, you may want to remove the previous deployment by running the following command in a terminal window:
+>
+>    ```
+>    cf undeploy RiskManagement --delete-services --delete-service-keys
+>    ``` 
+>
+>    The above assumes your app is named `RiskManagement`. You can check all deployed apps by running the command `cf mtas`.
 
 
 
