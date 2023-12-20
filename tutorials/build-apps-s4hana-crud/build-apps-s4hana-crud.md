@@ -9,15 +9,16 @@ primary_tag: software-product>sap-build-apps--enterprise-edition
 ---
  
 
-# Perform CRUD for S/4HANA in SAP Build Apps
+# Perform S/4HANA CRUD Operations in SAP Build Apps
 <!-- description --> Using SAP Build Apps, create an app that performs all the CRUD operations for the SAP S/4HANA Cloud business partner address API, and handles $expand for nested entities and API rules.
 
-
+ 
  
 ## Prerequisites
 
 - You have enabled SAP Build Apps on your trial tenant, as described in [Set Up SAP Build Apps (with Booster) on SAP BTP Trial Account](https://developers.sap.com/tutorials/build-apps-trial-booster.html).
-- You have created a destination to your SAP S/4HANA Cloud system's Business Partners API. To get started, you can create a destination to the APIs on the SAP Business Accelerator Hub (see [Access Demo SAP APIs for SAP Build](https://www.youtube.com/watch?v=11TUQgQi-9k)) but you will not be able to update the data.
+- You have created a destination to your SAP S/4HANA Cloud system's Business Partners API. See the [documentation](https://help.sap.com/docs/build-apps/service-guide/sap-systems?locale=en-US) for destinations being used in SAP Build Apps. The service URL should be in the form: `https://{host}:{port}/sap/opu/odata/sap/API_BUSINESS_PARTNER`  
+- To get started, you can create a destination to the APIs on the SAP Business Accelerator Hub (see [Access Demo SAP APIs for SAP Build](https://www.youtube.com/watch?v=11TUQgQi-9k)) and build the entire UI, but you will not be able to update the data.
 
 
 
@@ -614,4 +615,4 @@ Now use the app, and try out the following:
 - Click on a BP and try to delete a non-default address.
 - Try to add an address with country = `GB` (you should get an error since there is no way to add a postal code).
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tl5rdBKD3bY" frameborder="0" allowfullscreen></iframe>
