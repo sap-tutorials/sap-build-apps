@@ -540,9 +540,16 @@ Now you will create the home page that displays a list of business partners, for
 
 3. Configure the filter or paging of the data variable so that you do not get 1000s of business partners -- this will freeze your app.
 
-    As an example, I created a filter that returns only records where the **SearchTerm1** field has a certain flag (using the **Object with properties** binding).  
+    As an example, I created a filter that returns only records where the **SearchTerm1** field has a certain flag (using the **Object with properties** binding).
+
+
+    To do this, I clicked **Filter Condition → Custom Condition**.
 
     ![Filter](page1-data-variable-filter.png)
+
+    Then I selected the property **SearchTerm1** and set it to `DBW`. Use whatever filter works for you on your system.
+
+    ![Search term](page1-filter-searchterm.png)
 
 4. Click **View** to return to the UI canvas.
 
@@ -562,7 +569,7 @@ Now you will create the home page that displays a list of business partners, for
 
     ![List item configuration](page1-ui-listitem.png)
 
-7. With the list item selected, open the logic canvas.
+6. With the list item selected, open the logic canvas.
 
     Add an **Open page** flow function, and configure it as follows:
 
