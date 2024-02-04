@@ -31,9 +31,7 @@ primary_tag: software-product>sap-build
 ## Intro
 Your app has a product list page, as well as the UI for a product details page that was already provided in the skeleton project.
 
-In this exercise, you will enhance the **Product details** page by connecting to the required data and binding that data to appropriate components. 
-
-You will also create the navigation so that when a user clicks on a product on the product list page, the user will be taken to the product details page and be shown the product information.
+In this exercise, you will enhance the **Product details** page by connecting to the required data and binding that data to appropriate components. You will also create the navigation so that when a user clicks on a product on the product list page, the user will be taken to the product details page and be shown the product information.
 
 
 
@@ -115,7 +113,7 @@ Page variables are used to store all kinds of temporary data that is used by the
 In this case, you will create a page variable to store the quantity of the item the user wants. This variable will be bound to an input box so the user can easily enter the quantity.
 
 
-1. On the left, click **Page variables**
+1. On the left, click **Page Variables**
 
 2. Click **Add Page Variable**. 
 
@@ -157,19 +155,27 @@ The product details page already contains the UI components needed to display th
     Under the **Properties** tab, click the **Content** icon, then select **Data and Variables > **Data variable** > Products1 > Description**. 
 
     Set the preview value to `Product description`.
+    
+    Click **Save**.
 
 3. For the next 4 fields, we will use formulas. Set the following bindings:
 
     | UI element   |  Formula |
     |---|---|
-    | **Text - ID**   |  "ID: " + data.Products1.Id |
-    | **Text - Price**  | "Price: $" + FORMAT_LOCALIZED_DECIMAL(NUMBER(data.Products1.Price), "en", 2,2)  |
-    | **Text - Supplier**  | "Supplier: " + data.Products1.SupplierName |
-    | **Text - Weight**  |  "Weight: " + data.Products1.WeightMeasure + " " + data.Products1.WeightUnit  |
+    | **Text - ID**   |  `"ID: " + data.Products1.Id` |
+    | **Text - Price**  | `"Price: $" + FORMAT_LOCALIZED_DECIMAL(NUMBER(data.Products1.Price), "en", 2,2)`  |
+    | **Text - Supplier**  | `"Supplier: " + data.Products1.SupplierName` |
+    | **Text - Weight**  |  `"Weight: " + data.Products1.WeightMeasure + " " + data.Products1.WeightUnit`  |
 
     The end result after the mapping to these fields should look like this.
 
     ![ Mapping fields ](images/4-mapping-product-details-fields.png)
+
+    >Formulas let you manipulate the data before displaying.
+    
+    >Here, the ID is displayed with a prefix, the price is formatted, the supplier is displayed with a prefix, and the weight units and amount are concatenated. 
+
+    >In an upcoming step, for the total, we will do some calculations as well.
 
 5. Select the **Input field - Quantity**.
 
@@ -179,11 +185,6 @@ The product details page already contains the UI components needed to display th
     
     For the binding, select **Data and Variables > Page variable > quantity**, and click **Save**.
 
-    >Formulas let you manipulate the data before displaying.
-    
-    >Here, the ID is merely displayed, the price is formatted, the supplier is merely displayed, and the weight units and amount are concatenated. 
-
-    >In the next step, for the total, we will do some calculations as well.
 
 6. Select the **Text - Total** component. 
    
@@ -197,7 +198,7 @@ The product details page already contains the UI components needed to display th
     "Total Cost: $" + IF(IS_NULLY(data.Products1.Price),"", FORMAT_LOCALIZED_DECIMAL(pageVars.quantity * NUMBER(data.Products1.Price), "en", 2,2) )
     ```
 
-    > ### What does the formula do?
+    > **What does the formula do?**
 
     >The formula checks if the price exists. If it doesn't, we just print out nothing. If it exists, we convert it to a number (the API provides it as a string), then multiply it by the quantity, and then format it with 2 decimal places. Finally, we precede everything with a dollar sign.
 
@@ -241,10 +242,12 @@ Our details page is all set up, but there is no way to get to it. So we will set
     ![Connect open page function](images/11b-connect-openpage.png)
 
 5. Click on the **Open Page** flow function.
-   
+
+    >On the right-side pane, you can configure the flow function, similar to binding for visual UI components.
+
     Set **Page** to **Product Details**.
 
-    >Notice that SAP Build Apps now recognizes that this page requires a page parameter to be passed, and creates a field for you to fill in.
+    >Notice that SAP Build Apps now recognizes that this page requires a page parameter to be passed, and creates a field for you to configure.
     
     Set **productID** value to **Data item in repeat > current > Id**.
 

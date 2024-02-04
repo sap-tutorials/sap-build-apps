@@ -175,7 +175,7 @@ If the purchase request meets the conditions for needing approval (total greater
 
     ![Blank approval](approval3.png)
     
-    Name the form **Approval Form**.
+    Name the form `Approval Form`.
 
     Click **Create**.
 
@@ -193,7 +193,7 @@ If the purchase request meets the conditions for needing approval (total greater
 
     ![Header](approvalform2.png)
 
-4. Add the following fields in order according to the following:
+4. Add the following fields by dragging them from the left onto the form. Enter the name, and on the right configuration pane set them to read only.
 
     | Type | Name | Extra Settings |
     |------|------|------|
@@ -206,7 +206,7 @@ If the purchase request meets the conditions for needing approval (total greater
     
     ![Approval form fields](approvalform3.png)
 
-2. Select the **Order Items** table and click the **+** icon.
+6. Select the **Order Items** table and click the **+** icon.
 
     ![Add field](table1.png)
 
@@ -230,7 +230,7 @@ If the purchase request meets the conditions for needing approval (total greater
 
     ![Table complete](table4.png)
 
-3. Click **Save**.
+7. Click **Save**.
 
 
 
@@ -238,12 +238,12 @@ If the purchase request meets the conditions for needing approval (total greater
 
 
 
-### Add notification forms
-Now we will send a notification form if the order is approved, and another notification form if the order is rejected.
+### Add notification form
+Now we will send a notification form if the order is approved.
 
 1. Go back to the process tab.
 
-2. Under **Approve**, click the **+** icon and then select **Form > Blank Form**.
+2. Under **Approve** under the **Approval Form**, click the **+** icon and then select **Form > Blank Form**.
 
     ![Notification form](note1.png)
 
@@ -279,7 +279,7 @@ For example, for an approval, we need to specify who will be the approver. Or, f
 
     | Tab | Field | Source/Binding |
     |-----|-------|----------------|
-    | **General** | **Subject** | `Approval Request for Order: ` and then click in the box and select **Process Inputs > Order ID**. ![Alt text](binding2.png)
+    | **General** | **Subject** | `Approval Request for Order: ` and then click in the box and select **Process Inputs > Order ID**.<div>&nbsp;</div>![Subject](binding2.png)
     | **General** | **Recipients > Users** | Click in the box and select **Process Metadata > Process Started By**. 
     | **Inputs** | **Order ID** | Click in the box and select **Process Inputs > Order ID**. 
     | **Inputs** | **Order Items** | Click in the box and select **Process Inputs > Order Items**. 
@@ -301,7 +301,11 @@ For example, for an approval, we need to specify who will be the approver. Or, f
 
     Under the **If** of the **Condition** step – meaning, the request is for a small amount of money – click the plus sign, **+**.
 
+    ![Same binding](binding4.png)
+
     Select **Form**, and instead of creating a new form, select **Available Forms > Approval Notification**.
+
+    ![Reuse form](binding5.png)
 
     It is added as **Approval Notification 1**.
 
@@ -367,17 +371,13 @@ When you are complete with the changes to your project, you must release and dep
 
     This area shows you all the processes that have been deployed.
 
-3. Select your process, and then click **Start new Instance and Close**.
+3. Select your process, and then click **Start New Instance**.
 
     This opens the dialog that lets you trigger a process – for testing  – without using a form, API call, or external event.
 
     ![Start New Process Instance](15e_Start_New_Instance.png)
 
-    >**IMPORTANT:** You must provide the values for the inputs you define as process inputs in JSON format. BUT ... the example JSON you will see in the dialog is not related AT ALL to what you need to provide. Therefore, you will delete this JSON.  
-
-   ![Inputs for Starting Instance](15f_Starting_Process_Instance.png)
-
-5. Delete the JSON in the dialog, and replace it with the following:
+5. In the dialog, delete the JSON and replace it with the following:
 
     ```JavaScript
     {
@@ -406,11 +406,11 @@ When you are complete with the changes to your project, you must release and dep
 
     If all goes well you will get a message **Instance started**.
 
-> ### Potential problems
+>**Potential problems**
 >
-> - If you do not provide all the values that are used in the process (i.e., in one of the bindings or steps), then you will get an error.
+>- If you do not provide all the values that are used in the process (i.e., in one of the bindings or steps), then you will get an error.
 >
-> - If you provide a number value as a string, or a date value in the wrong format, you will get an error.
+>- If you provide a number value as a string, or a date value in the wrong format, you will get an error.
 
 
 
@@ -461,41 +461,39 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     ![Refresh](images/test-6.png)
 
-    You can now see that you the notification was completed, and therefore the process instance is completed.
+    In the logs, you can now see that you the notification was completed, and therefore the process instance is completed.
     
     You can also see the status is now **Completed**.
     
-    ![Approved](images/test-7.png)
+7. You can test the process again – go back to **Monitoring > Manage**, click your process and click **Start New Instance** – this time with the following JSON, which has an amount above 1000, meaning it will require an approval: 
 
->You can test the process again – got back to **Monitoring > Manage**, click your process and click **Start New Instance** – this time with the following JSON, which has an amount above 1000, meaning it will require an approval: 
+    ```JavaScript
+    {
+        "businessPartner": "11",
+        "newStatus": "APPROVED",
+        "orderId": "100000",
+        "total": 1500,
+        "orderItems": [
+        {
+        "product": "Pencils",
+        "quantity": 2,
+        "price": 14.5,
+        "total": 29
+        },
+        {
+            "product": "Pencils",
+            "quantity": 2,
+            "price": 14.5,
+            "total": 29
+        }
+        ]
+    }
+    ```
 
->```JavaScript
->{
->    "businessPartner": "11",
->    "newStatus": "APPROVED",
->    "orderId": "100000",
->    "total": 1500,
->    "orderItems": [
->    {
->       "product": "Pencils",
->       "quantity": 2,
->       "price": 14.5,
->       "total": 29
->    },
->    {
->        "product": "Pencils",
->        "quantity": 2,
->        "price": 14.5,
->        "total": 29
->    }
->    ]
->}
->```
+    Now if you go to check your latest instance, you will see that the approval step is activated.
 
-Now if you go to check your latest instance, you will see that the approval step is activated.
+    ![Approval step](images/test-again-1.png)
 
-![Approval step](images/test-again-1.png)
+    And if you open the Inbox and refresh, you will now have an approval form with **Submit/Reject** buttons at the bottom.
 
-And if you open the Inbox and refresh, you will now have an approval form with **Submit/Reject** buttons at the bottom.
-
-![Approval form](images/test-again-2.png)
+    ![Approval form](images/test-again-2.png)

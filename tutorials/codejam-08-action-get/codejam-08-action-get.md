@@ -7,8 +7,8 @@ time: 40
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
-  
- 
+   
+
 # Create Action Project to Get Data from SAP S/4HANA Cloud
 <!-- description --> Create an action project to retrieve SAP S/4HANA Cloud data and call the action from your business process, as part of the SAP Build CodeJam.
 
@@ -50,15 +50,20 @@ In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP 
 
     On the top-right, click `API Key` to see your key. Copy it and save on the side.
 
-2. Download the destination definition.
+2. Download the destination definition file [`S4HANA-Hub-Public`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-08-action-get/S4HANA-Hub-Public).
 
-3. Open the cockpit on your SAP BTP trial account.
+2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
 
-    Go to **Connectivity > Destinations**, and click **Import Destination**.
+    <!-- border -->
+    ![Open destinations](3-open-destinations.png)
 
-    Select the destination definition you downloaded.
+3. Click **Import Destination**, and then select the `S4HANA-Hub-Public` file you downloaded.
 
-    In the URL.headers.APIKey, enter the key you earlier retirved from the [SAP Business Accelerator Hub](https://api.sap.com/).
+    The draft destination will be filled in except for your API key.
+
+    <!-- border -->
+    ![New destination](4-create-destination.png)
+4. In the **URL.headers.APIKey** additional property, enter the key you earlier retrieved from the [SAP Business Accelerator Hub](https://api.sap.com/).
 
     Click **Save**.
 
@@ -116,11 +121,13 @@ In this step, you will enable the destination to be used in your processes.
 
 4. Choose **S4HANA-Hub-BP**.
 
-    ![Choose S/4 HANA Hub](1d_Browse_Choose_S4HANA_Hub_Public.png) 
-
     You will see all the APIs contained in the business partner service, including those for the `A_BusinessPartner` entity.
-    
+
     ![Business Partner Entity](1e_Check_for_Business_Partner_Entity.png) 
+
+    Open **A_BusinessPartner** to see the specific APIs available.
+
+    ![Choose S/4 HANA Hub](1d_Browse_Choose_S4HANA_Hub_Public.png) 
 
     Click **Next**.
 
@@ -134,11 +141,9 @@ In this step, you will enable the destination to be used in your processes.
 
 6. Expand the **A_BusinessPartner** entity.   
 
-    ![Expand Business Partner Entity](1g_Expand_A_BusinessPartner.png) 
-
     Select the **GET** operation that is called **Retrieves business partner data by using business partner number**.  
    
-    >Be careful! There are a lot of APIs that look the same.
+    >Be careful! There are a lot of APIs that look the same. You can use the search to help make finding the right one easier.
 
     ![BP by Number](1h_GET_BP_by_Number.png) 
 
@@ -161,7 +166,7 @@ In this step, you will enable the destination to be used in your processes.
 
 
 ### Configure Action project
-You have now created an action project and selected the API to expose. Bu now you must configure – for example, what inputs to require, what outputs to return, and what OData parameters to include.
+You have now created an action project and selected the API to expose. But now you must configure – for example, what inputs to require, what outputs to return, and what OData parameters to include.
 
 Your action should be open to the **Retrieves business partner data by using business partner number (GET)** API, and you should see the **Input** tab.
 
@@ -180,11 +185,11 @@ Your action should be open to the **Retrieves business partner data by using bus
 
     ![Uncheck the output fields set 2 ](3d_Configure_Service_Outputs.png)  
 
-2. Click **Remove** (back at the top of the list).
+2. Scroll back up, and click **Remove**.
 
-    ![Remove output Fields](3e_Remove_Output_Fields.png) 
+    ![Remove](3e_Click_Remove.png)
 
-    Confirm **Remove**
+    Confirm **Remove**.
 
     ![Confirm Removal ](3f_Remove_Output_Fields.png) 
 
@@ -242,7 +247,7 @@ To make the action available to your processes, you must release and publish the
 
     ![Check Action Project Status](5c_Action_Project_Status_Check.png) 
 
-   Back in the SAP Build main page under **Actions**, you can see your action, and its released version.
+    Back in the SAP Build main page under **Actions**, you can see your action, and its released version.
 
     ![Action Project under Actions List](6a_Action_Project_in_ActionsList.png) 
 
@@ -252,7 +257,7 @@ To make the action available to your processes, you must release and publish the
 
 
 ### Add action to process
-Now you've created an action to retrieve data. Now lets ad it so we can retrieve data as part of our process.
+Now you've created an action to retrieve data. Now lets add it so we can retrieve data as part of our process.
 
 
 
@@ -260,7 +265,7 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
     ![Return to Lobby](7a_Return_to_Lobby.png) 
 
-2. Under **Overview > Artifacts**, click **Purchase Approval Process**. 
+2. Select the **Editable** version at the top, and then under **Overview > Artifacts**, click **Purchase Approval Process**. 
 
     ![Click on Add](7b_Select_Approval_Process.png) 
 
@@ -280,7 +285,7 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
     
     The action is added to the process flow.
 
-    ![Action Added](7g_Action_Added.png) 
+    ![AAction Added](7h_Action_added.png)
 
 4. With the new action block selected, go to the side panel and configure the action.
 
@@ -290,7 +295,7 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
     Enter `BPdest` for the identifier, and click **Create**.
 
-5. In the **Inputs** tab, click in the **BusinessPartner** field, and select **Process Inputs > Business Partner** fields to Action **Inputs**.
+5. In the **Inputs** tab, click in the **BusinessPartner** field, and select **Process Inputs > Business Partner** fields.
 
     ![Configure Action Inputs](7i_Action_Input_Config.png)
 
@@ -308,7 +313,7 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
     Click **Add**.
 
-    ![Add Condition](8b_Add_Condition.png).
+    ![Add Condition](8b_Add_Condition.png)
 
     Set this new condition as follows:
     
@@ -327,7 +332,7 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
     Click **Apply**, and then click **Save** (upper right).
 
-    > ### What's going on?
+    > **What's going on?**
     >
     >Previously, anything less than 1000 was automatically approved. But now, if the related business partner is in group **BP01**, those requests are also automatically approved.
     
@@ -339,7 +344,7 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
     Click **Next**.
 
-        ![Deploy step 1](9b_Deploy_Step1.png)
+    ![Deploy step 1](9b_Deploy_Step1.png)
 
     - Select **Destination Variable** value.
 
@@ -353,9 +358,9 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
         ![Deploy step 3](9e_Deploy_Step3.png)
 
-    - Status of the Project changes to **Deployed**. Click on SAP Logo at the left upper corner to return to Build Lobby.
+    The status of the project changes to **Deployed**. Click the SAP logo at the upper left to return to SAP Build Lobby.
 
-        ![Deployment Status](9f_Deployed_Status.png)
+    ![Deployment Status](9f_Deployed_Status.png)
 
 
 
@@ -369,21 +374,15 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
 
 
-1. Open **ShoppingApp** from SAP Build lobby.
+1. Open the **ShoppingApp** project from SAP Build lobby.
 
     ![Open Shopping App](10a_Shopping_App.png)
 
-2. Navigate to the cart page by clicking **Home page**.
-
-    ![Open App Pages](10b_Navigate_to_Pages.png)
-
-    Click the **Cart** page. 
+2. Navigate to the cart page.
 
     ![Open Cart Page](10c_Select_Cart.png)
 
 3. Toggle to **Variables**.
-
-    ![Switch from View to Variable](10d_Toggle_to_Variables.png)
 
     Choose **Page Variables** on the left, then click **Add Page Variable**.
 
@@ -401,15 +400,17 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
     Click the business partner dropdown list, and bind **Selected value** to **Data and Variables > Page Variables > BP**.
 
-   Click **Save** (upper right).
+    ![Dropdown binding](dropdown-binding.png)
 
-   >The skeleton project already had the business partner dropdown list to have 2 business partner IDs that were valid in the demo API, one with grouping BP01 and one with grouping BP02 – in order to test out the logic of our process. 
+    Click **Save** (upper right).
+
+    >The skeleton project already had the business partner dropdown list to have 2 business partner IDs that were valid in the demo API, one with grouping BP01 and one with grouping BP02 – in order to test out the logic of our process. 
 
 6.  Click the **Purchase** button and open its logic canvas.
 
     ![Click on Purchase Button](13a_Select_purchase_Button.png)
 
-    Click on the **Create record** flow function, and then on the right, click **Custom object** under **Record**.
+    Click the **Create record** flow function, and then on the right, click **Custom object** under **Record**.
 
     >This is the flow function that triggers your process.
 
@@ -423,13 +424,11 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
     Click **Save**.
 
-    Make sure the Variable is bound.
-
     ![Page Variable Binding ](13g_BP_Variable_Bound.png)
 
     **Save** the binding.
 
-    ![ Save Binding ](13h_Save_Binding.png)
+    ![Save Binding](13h_Save_Binding.png)
 
     **Save** the changes to the app (upper right).
 
@@ -443,35 +442,16 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
 
 
 ### Test process
-1. Launch the app. 
-
-    - Click **Launch** tab.
-
-        ![Launch the App](14a_Launch_App.png)
-
-    - Click **Open preview portal**.
-         
-        ![Open Preview Portal](14b_Open_Preview_Portal.png)
-
-    - Click **Open web preview**.
-
-        ![Open Web Preview](14c_Open_web_Preview.png)
-
-    - Click **Open** on the **ShoppingApp**.
-
-        ![Open App](14d_Open_App.png)
-     
-
+1. Relaunch the app. 
 
 2. Select a product.
       
-    ![Select a Product](15a_Select_Product.png)
+    ![Choose product](15a_Choose_Product.png)
 
-    Change the quantity and click **Add to the Cart**.
+    Change the quantity to `5` and click **Add to Cart**.
 
     ![Add to Cart](15b_Add_to_Cart.png)
 
-    
 3. Click **Cart** in the left navigation menu.
 
     ![Cart Page](16a_Cart_Page.png)
@@ -485,14 +465,13 @@ Now you've created an action to retrieve data. Now lets ad it so we can retrieve
     ![Click Purchase](16c_Click_Purchase.png)
 
     You should get a purchase confirmation message.
-
-    ![Purchase Request Created Message](16d_Purchase_Order_Requested.png)
-
+    
+    ![Purchase Request Created Message](16dPurchase_Order_Requested.png)
 
 4. In the SAP Build main page, navigate to the **Monitoring** tab.
 
-    ![Click on Monitoring](17a_Navigate_to_Monitoring.png) 
-
+    ![Click on Monitoring](17a_Click_Monitoring.png)
+    
     Under **Monitor**, click **Process and Workflow Instances**.
 
     ![Choose Process](17b_Monitor_Process.png)

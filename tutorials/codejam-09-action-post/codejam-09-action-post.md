@@ -7,7 +7,7 @@ time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
-   
+  
 
 # Create Action Project to Post Data to CAP Service
 <!-- description --> Create an action project to update our CAP service and call the action from your process when the order is approved, as part of the SAP Build CodeJam.
@@ -42,7 +42,7 @@ In this tutorial, you will create another action, this time to connect to our CA
 
 ### Create action project
 
-1. Go back to the SAP Build lobby, and click **Connectors > **Actions**.
+1. Go back to the SAP Build lobby, and click **Connectors > Actions**.
 
     ![Select Actions](images/1-actions-from-lobby.png)
 
@@ -64,7 +64,7 @@ In this tutorial, you will create another action, this time to connect to our CA
 
     Click **Next**.
 
-4. Enter **OrderManagement-Actions** for the project name.
+4. Enter **OrderManagement-Actions** for the project name and description.
     
     Click **Create**.
 
@@ -126,9 +126,9 @@ Now you must designed what operations you want to expose to the creators of proc
 
     >If for some reason you entered an order ID that did not exist, the service will create it, and you will get a **201 OK** status code.
 
-If you want to see the result of the update, you could use the following URL to see the order information (replace the **<service domain>** with the domain given in the CodeJam).
+>If you want to see the result of the update, you could use the following URL to see the order information (replace the **<service domain>** with the domain given in the CodeJam).
 
-`https://<service domain>/service/OrderManagement/Orders(6c25e827-15c2-4e7f-be1a-89fb4304d4fa)`
+>`https://<service domain>/service/OrderManagement/Orders(6c25e827-15c2-4e7f-be1a-89fb4304d4fa)`
 
 
 
@@ -186,7 +186,7 @@ Now, you will add the action so that if the order is approved, the action will u
 
 3. In the **Browse library** pop-up, select the **Update entity in Orders** tile.
 
-   >If you are on a system with lots of actions, use the search text to find your **OrderManagementService** action, or select your project from **Projects** dropdown.
+    >If you are on a system with lots of actions, use the search text to find your **OrderManagementService** action, or select your project from **Projects** dropdown.
 
     ![Browse library](images/5c-browse-library-filter-projects.png)
 
@@ -206,11 +206,13 @@ Now, you will add the action so that if the order is approved, the action will u
 
 5. In the side pane, go to the **Inputs** tab.
 
-    Click in the **ID** field (this is one of the inputs defined in the action). You get a choice of data fields from other steps in the automation.
+    Click in the **ID** field (this is one of the inputs defined in the action). We must bind which order to update.
     
     Choose **Process Inputs > Order ID**.
 
     ![Inputs tab](images/5f-input-tab-orderid.png)
+
+    Click in the **status** field, and then choose **Process Inputs > New Status**.
 
 6. Click **Save**(upper right).
 
@@ -307,5 +309,5 @@ This is similar to the previous test, except now the CAP service has been update
 ![Updated](images/test-4.png)
 
 
-
+ 
 

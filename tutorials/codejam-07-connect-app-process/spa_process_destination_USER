@@ -1,0 +1,15 @@
+#clientSecret=<< Existing password/certificate removed on export >>
+#
+#Sun Feb 04 12:09:41 UTC 2024
+clientId=
+Type=HTTP
+HTML5.DynamicDestination=true
+Authentication=OAuth2UserTokenExchange
+Name=spa_process_destination_USER
+sap.processautomation.enabled=true
+tokenServiceURL=
+ProxyType=Internet
+URL=
+tokenServiceURLType=Dedicated
+AppgyverEnabled=true
+sap.applicationdevelopment.actions.enabled=true

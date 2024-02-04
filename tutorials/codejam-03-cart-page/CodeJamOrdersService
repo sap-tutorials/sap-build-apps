@@ -1,0 +1,13 @@
+#
+#Thu Jan 11 14:17:49 UTC 2024
+Type=HTTP
+HTML5.DynamicDestination=true
+Authentication=NoAuthentication
+Name=CodeJamOrdersService
+WebIDEEnabled=true
+sap.processautomation.enabled=true
+sap.build.usage=odata_gen
+ProxyType=Internet
+URL=
+Appgyver.Enabled=true
+sap.applicationdevelopment.actions.enabled=true

@@ -42,9 +42,11 @@ Now you will connect the app to the process.
 To connect Build Apps to Process Automation a destination needs to be created for the Build Process Automation from the SAP BTP Cockpit.
 
 
-1. Go to BTP Cockpit > Sub Account(trial) > **Instances and Subscriptions**.
+1. Go to your SAP BTP cockpit, enter your **trial** subaccount, and on the left select **Instances and Subscriptions**.
    
-2. Under the instance, select **...** > **Create Service Key**.
+2. Under **Instances**, find your instance of the SAP Build Process Automation service.
+
+    On the right, click the three dots, and then select **Create Service Key**.
 
     <!-- border -->![Create](7.png)  
 
@@ -56,51 +58,38 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
     <!-- border -->![Create](9.png)  
 
-5. After the key is provisioned, open it and take note of the following fields:
+5. After the key is provisioned, open it and take note of the following fields, or just save the entire text to a file:
 
-    - `api`
-    - `clientid`
-    - `clientsecret`
-    - `url`
+    - **api**
+    - **clientid**
+    - **clientsecret**
+    - **url**
 
     These values are needed next for the **Destination Configuration**.
 
     <!-- border -->![Create](9.1.png) 
 
-6. Navigate to **Connectivity** > **Destinations** > **Create Destination**. Enter the destination name as `spa_process_destination_user`.
+6. Download the destination definition file [`spa_process_destination_USER`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-07-connect-app-process/spa_process_destination_USER).
 
-    <!-- border -->![Create](10.png)
+7. In your trial SAP BTP cockpit, click **Connectivity >  Destinations**.
 
-7. Enter the details as below.
 
-    | Field|Value
-    | --- | :---
-    | Name | any name (`spa_process_destination_user`)
-    | Type | HTTP
-    | Description | any description
-    | URL | `api/public/workflow/rest/v1/workflow-instances`, where `api` is noted previously in step 4<div>&nbsp;</div> such as: `https://spa-api-gateway-bpi-us-prod.cfapps.us10.hana.ondemand.com/public/workflow/rest/v1/workflow-instances`
-    | Proxy Type | Internet
-    | Authentication |  OAuth2UserTokenExchange
-    | Use `mTLS` for token retrieval |  Off
-    | Client ID | Paste the client id noted previously in step 4
-    | Client Secret | Paste the client secret noted previously in step 4
-    | Token Service URL Type | Dedicated
-    | Token Service URL|  `url/oauth/token`, where `url` is noted previously in step 4<div>&nbsp;</div>The final URL should be something like this: <div></div>`https://<your tenant>.authentication.<domain>.hana.ondemand.com/oauth/token`
-    | Token Service User| Blank
-    | Token Service Password| Blank
+8. Click **Import Destination**, and then select the `spa_process_destination_USER` file you downloaded.
 
-    > Additionally, enable the following Properties when you would like to integrate with SAP Build Apps.
+    The draft destination will be filled in except for the credentials.
 
-    |  Field     | Value
-    |  :------------- | :-------------
-    | `WebIDEEnabled`          | `true`
-    | `AppgyverEnabled`          | `true`
-    | `HTML5.DynamicDestination`          | `true`
-    | `sap.processautomation.enabled`          | `true`
+    Enter values for the following fields, based on the service key information you saved earlier.
 
-    <!-- border -->![Create](11.png)    
+    | Destination Field | Value from Key |
+    |--------------------|--------------|
+    | URL | api + `/public/workflow/rest/v1/workflow-instances` |
+    | Client ID | clientid  |
+    | Client Secret | clientsecret  |
+    | Token Service URL | url + `/oauth/token`  |
 
-8. Click **Check Connection** to the destination, the status will show **401: Unauthorized**. 
+    Click **Save**.
+
+9. Click **Check Connection** to the destination, the status will show **401: Unauthorized**. 
 
     > Even though the connection returns unauthorized, the status is successful.
 
@@ -112,10 +101,9 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
 
 ### Create data resource for triggering process
-Next thing to do is to create a data resource that connects to the SAP Build Process Automation APIs. 
+Now that we defined the API for triggering the process, we need a data resource so we can call the API from SAP Build Apps.
 
-
-1. Open your SAP Build Apps app from the SAP Build lobby.
+1. Open your SAP Build Apps project from the SAP Build lobby.
 
 2. Open the **Data** tab.
 
@@ -159,7 +147,7 @@ Next thing to do is to create a data resource that connects to the SAP Build Pro
 
     ![Create](resource-5.png)
 
-    Under **Request headers**, click **Custom list** and add the following header:
+    Under **Request headers**, click **List of values** and then **Add a value**. Add the following header:
 
     | Field | Value | 
     |-----|-------|
@@ -201,13 +189,11 @@ Next thing to do is to create a data resource that connects to the SAP Build Pro
 
 2. Click **create** on the left, and then the **Test** tab.
 
-3. Enter values for the fields.
+3. Enter the following values for the fields.
 
-    >Here's some examples:
-
-    >| Field | Sample Data |
+     | Field | Sample Data |
     |-------|--------------|
-    | **orderId** | `27242335-024f-41c3-8044-553ab5eaaa37` |
+    | **orderId** | `6c25e827-15c2-4e7f-be1a-89fb4304d4fa` |
     | **newStatus** | `APPROVED` |
     | **businessPartner** | `1234567` |
     | **total** | `1200` |
@@ -216,6 +202,7 @@ Next thing to do is to create a data resource that connects to the SAP Build Pro
 
     And create one order item by clicking **Add a value** under **orderItems**, and here's example data:
 
+     | Field | Sample Data |
     | **price** | `9.99` |
     | **total** | `19.98` |
     | **product** | `Stereophonic headphones` |
@@ -249,6 +236,8 @@ Next thing to do is to create a data resource that connects to the SAP Build Pro
     ```
 
     ![Success](test4.png)
+
+    Click **Save Data Entity** to close the data resource definition.
 
 > **COMMON ISSUES**
 >
@@ -405,7 +394,7 @@ Update the logic as follows.
 
 3. Now go back to the **Monitoring** tab and you should see that your app started an instance of your process.
 
-    And if it is over 1000 for the total, it will set off he approval form.
+    And if it is over 1000 for the total, it will set off the approval form.
 
     ![Process triggered](run2.png)
 

@@ -62,6 +62,10 @@ There are many use cases/scenarios where you can bring about innovation using SA
 
     ![Give Project Name](4_Business_Project_Name.png)
 
+    >You may get a disclaimer screen. If so, click **Accept**.
+
+    >![Disclaimer](Disclaimer.png)
+
 3. Once the project is created, it will automatically try to create a process for the project.
 
     In the dialog, for **Name**, enter `Purchase Approval Process`.
@@ -204,11 +208,13 @@ Examine the release status under the **Overview** tab. Make sure it is set to **
 
     ![Deploy public](13e_Click_Deploy.png)
 
-    >SAP Build Process Automation enables you to create multiple environments with different security so you can control who can run and update processes. For this CodeJam, you will work with the default **Public** environment, which allows everyone to deploy processes to the environment and execute processes in the environment.
+    >SAP Build Process Automation enables you to create multiple environments with different security so you can control who can run and update processes. For this CodeJam, you will work with the default **Public** environment, which allows everyone to deploy processes to the environment and execute those processes.
 
     >For more information, go to the SAP Build lobby and then **Control Tower > Environments**, or see [Environments](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/environments).
 
-    Click **Deploy** on the dialog.
+    A dialog indicates the triggers to be created and deployed.
+    
+    Click **Deploy**.
 
     ![Deploy trigger](13f_Click_Deploy.png)
 
@@ -240,15 +246,15 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
     ![Monitor Overview](15_Choose_Processes_Workflows.png)
 
-    This area shows you all the processes that have been deployed.
+    This area shows you all the processes that have been deployed. If you are using SAP Build Process Automation for the first time in your trial account, there likely is only one process and it is already selected.
 
-    You can perform a free text search, or you can select the project and then see all the processes in that project.
+    If it isn't selected, select it.
 
-    >If you are using SAP Build Process Automation for the first time in your trial account, there likely is only one process.
+    ![First project](15a_project.png)
 
-3. Select your process.
+    >For when you have many more processes, you can perform a free text search, or you can select the project and then see all the processes in that project.
 
-    You will now see information about this process, most notably:
+    With the process selected, you will see information about the process, most notably:
 
     - Its **ID**. You will need this ID when you make an API call to trigger this process.
 
@@ -264,15 +270,15 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
     A dialog opens that lets you provide the required inputs for the process, in JSON format.
     
-     >**IMPORTANT:** You must provide the values for the inputs that you defined as "process inputs," in JSON format. BUT ... the example JSON you will see in the dialog is not related AT ALL to what you need to provide. Therefore, you will delete this JSON.  
+    >**IMPORTANT:** You must provide the values for the inputs that you defined as "process inputs," in JSON format. BUT ... the example JSON you will see in the dialog is not related AT ALL to what you need to provide. Therefore, you will delete this JSON.  
 
-   ![Inputs for Starting Instance](15f_Starting_Process_Instance.png)
+    >![Inputs for Starting Instance](15f_Starting_Process_Instance.png)
 
-5. You will have to delete the JSON in the dialog, and then enter JSON based on the **Identifiers** of the process inputs you previously defined previously. Here's a reminder:
+    Here's a reminder of the inputs you defined (in the JSON, you must use the identifier name):
    
     ![Identifiers of Process Inputs as JSON keys](15g_Identifier_as_JSON_Input.png)
 
-    Therefore, delete the JSON in the dialog, and replace it with the following:
+5. Delete the JSON in the dialog, and replace it with the following:
 
     ```JavaScript
     {
@@ -283,11 +289,11 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
     }
     ```
 
-   ![JSON Key Value Pair for your Process](15h_JSON_Context.png)
+    ![JSON Key Value Pair for your Process](15h_JSON_Context.png)
 
 6. Click **Start New Instance and Close**.
 
-    If all goes well, you will get a message **Instance started**.
+    If all goes well, you will get the message **Instance started**.
 
 
 
@@ -313,11 +319,11 @@ Once triggered, we can monitor the process instance from the **Monitor** section
 
     In the details section at the top, you can see:
 
-    - When started
-    - When completed
+    - When it started
+    - When it completed
     - Who started it
     - ID of the instance
-    - Definition ID of the process
+    - Definition ID of the process (this is the ID we need for later)
 
     ![Examine the Process Flow Context](16b_Examine_Process_Log_Context.png)
 

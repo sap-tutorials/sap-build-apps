@@ -28,7 +28,7 @@ primary_tag: software-product>sap-build
 ## Intro
 In this exercise, you will be importing an already created skeleton app to your SAP Build Apps lobby. We've provided the skeleton app so you do not have to create all the UI elements for all the pages.
 
-For this page, the product list page, you will design the entire UI, including styles and layout. For this and all pages, you will create the data connections, variables, logic, and navigation.
+For this page, the product list page, you will design the entire UI, including styles and layout. For all pages, you will create the data connections, variables, logic, and navigation.
 
 For this product list page, we will connect to the ES5 service to get names, descriptions and images of products. At the end of this exercise, your homepage (product list page) will look something like this.
 
@@ -65,7 +65,7 @@ You need to enable SAP BTP authentication because you want to use SAP BTP destin
 
 SAP BTP destinations are connections to backend services – each specifies the location of a backend and how the user will be authenticated. The destinations can be used by the various services within SAP BTP, including SAP Build Apps.
 
-1. Go to the **Auth** tab.
+1. With your new project open, go to the **Auth** tab.
 
 2. Click **Enable Authentication**.
 
@@ -179,17 +179,17 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
 6. Select the container **Container - Products List** again, open the **Style** tab from the right pane, click the dropdown icon for the **Layout Container**, and click **Edit**.
 
+    ![Layout Container - Edit](images/12a-layout-container-edit.png)
+
     >Each component has a default style, plus additional alternative built-in styles you can choose. In addition, you can make changes to the current style, which changes the style for the current instance of the component only.
 
     >If you want, you can update the default style with your changes so it affects all components, or you can save your changes to a new style. 
 
-    ![Layout Container - Edit](images/12a-layout-container-edit.png)
-
-    - Expand the **padding** settings, set the padding on all 4 sides to 24px by clicking each rectangle, going to **Theme** tab, and selecting the **XXL** size.
+    Expand the **padding** settings, set the padding on all 4 sides to 24px by clicking each rectangle, going to **Theme** tab, and selecting the **XXL** size.
    
     ![Style Theme - Padding](images/12b-padding-xxl.png)
 
-    - Let’s save the style by scrolling up in the **Style** tab, clicking **New Style**, entering **Layout List Container**, and clicking **OK**. This saves the new style in the **Style** tab and now can be used on other containers in your app.
+    Let’s save the style by scrolling up in the **Style** tab, clicking **New Style**, entering **Layout List Container**, and clicking **OK**. This saves the new style in the **Style** tab and now can be used on other containers in your app.
   
     You should be able to see some nice padding around the content.
     
@@ -220,13 +220,13 @@ We created a data variable for the **Products** data and now we need to bind the
     | Field | Binding |
     |-------|---------|
     | Repeat with | **Data and Variables > Data variable > Products1** |
-    | Title label | **Data item in repeat > current.Name** |
-    | Description text | **Data item in repeat > current.Description** |
+    | Title label | **Data item in repeat > current > Name** |
+    | Description text | **Data item in repeat > current > Description** |
     | Image source | Formula > `'https://sapes5.sapdevcenter.com' + repeated.current.ImageUrl` |
 
     >The formula for the image may appear in red as an error, but it will still work. Go ahead and save it!
 
-    >One of the strengths of the formula editor is that it checks the data types of the properties you are setting to try to determine if the formula is compatible. 
+    >One of the strengths of the formula editor is that it checks the data types of the properties you are setting to try to determine if the formula is compatible. Here, it is expecting a value defined as an image URL, but our text – which is a valid URL – will work just as well.
 
 3. Click **Save** (upper right).
 
@@ -243,7 +243,7 @@ You may now test the app to see the Products list.
 
     ![Launch Page](images/17-launch-tab.png)
 
-    Click **Open Web Preview**.
+    Click **Open web preview**.
 
     ![Open Web Preview](images/17a-open-web-preview.png)
 
@@ -288,17 +288,19 @@ In the preview, you might have noticed that the product images are a little larg
 
         ![Width and height](images/restyle-4.png)
 
-    - Under **Position** (scroll down some more in the **Layout** tab), set the left spacing to 16px.
+    - Under **Position** (scroll down some more in the **Layout** tab), set the left spacing to **L 16px**.
 
         ![Left spacing](images/restyle-5.png)
         
-4. Click **Save** (upper right). Click **Exit** to exit the Component Style Editor.
+4. Click **Exit** to exit the Component Style Editor.
 
-    >Once you click **Save**, if you have a tab where you previously opened a web preview of your app, that tab will automatically update. Instead of opening up a new web preview, you can just navigate to that preview tab and see the updates.
+5. Click **Save** (upper right). 
 
-Navigate back to the preview tab, and you should see the app updated with the improved spacing.
+    Once you click **Save**, if you have a tab where you previously opened a web preview of your app, that tab will automatically update – no need to go back to the **Launch** tab. Instead of opening up a new web preview, you can just navigate to that preview tab and see the updates.
 
-![Preview](images/restyle-6-preview.png)
+    Navigate back to the preview tab, and you should see the app updated with the improved spacing.
+
+    ![Preview](images/restyle-6-preview.png)
 
 
 

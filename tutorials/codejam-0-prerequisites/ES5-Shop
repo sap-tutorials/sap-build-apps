@@ -1,0 +1,12 @@
+#Password=<< Existing password/certificate removed on export >>
+#
+#Sun Feb 04 08:44:18 UTC 2024
+Type=HTTP
+HTML5.DynamicDestination=true
+Authentication=BasicAuthentication
+Name=ES5-Shop
+WebIDEEnabled=true
+ProxyType=Internet
+URL=https\://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV
+User=
+AppgyverEnabled=true

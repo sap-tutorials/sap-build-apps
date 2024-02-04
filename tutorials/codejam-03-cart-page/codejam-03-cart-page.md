@@ -39,18 +39,36 @@ Specifically, you will retrieve data from our CAP service – which maintains th
 
 
 ### Create a destination for our CAP service
+To save you time we have given you almost all the information for the destination in a file you can import.
 
-1. To create a destination for our CAP service, we will give you some help, so download the destination file [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-0-prerequisites/CodeJamOrdersService). During the CodeJam, you will be provided an **URL** to add it to the destination.
+>**IMPORTANT: ** Before you begin this step, you will need to get the URL for the service from the CodeJam instructor.
 
-2. Go to the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/trial), select **Connectivity > Destinations** (on the left) and then click **Import Destination** and import the file you downloaded above.
 
-    ![BTP Destinations](images/BTPCockpit_Destinations.png)
+1. Download the destination definition file [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-0-prerequisites/CodeJamOrdersService).
+
+2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
+
+    <!-- border -->
+    ![Open destinations](3-open-destinations.png)
+
+3. Click **Import Destination**, and then select the `CodeJamOrdersService` file you downloaded.
+
+    The draft destination will be filled in except for the URL.
+
+    <!-- border -->
+    ![New destination](4-create-destination.png)
+
+
+4.  Enter the URL from your instructor.
 
     Click **Save**.
 
-3. Test the connectivity to the new destination by clicking **Check Connection**.
+5. Test the connectivity to the new destination by clicking **Check Connection**.
    
-    You should receive **200 – OK**. 
+   You should receive **200 – OK**. 
+
+
+
 
 
 
@@ -60,7 +78,7 @@ Specifically, you will retrieve data from our CAP service – which maintains th
 ### Create data resource for CAP service
 In order to fetch data from the CAP service, we need to create a data resource for the CAP service.
 
-1. Go to the **ShoppingApp** from the Build Apps lobby and Open the **Data** tab.
+1. Back in your **ShoppingApp** project, open the **Data** tab.
 
     Click **Add Integration**.
 
@@ -98,7 +116,7 @@ You should now be able to see **Orders** and **OrderItems** appearing under the 
 ### Create data variable
 Now that you we have defined the connection to the CAP service, let's create a data variable, which will automatically include the logic for making the call as well as holding the retrieved data.
 
-1. Navigate to the **Cart** page by clicking on the **Product Details** link on the upper-left corner, below the app name.
+1. Navigate to the **Cart** page by clicking on the **Home pages** link on the upper-left corner, below the app name.
 
     Select the **Cart** tile.
 
@@ -128,7 +146,7 @@ Now that you we have defined the connection to the CAP service, let's create a d
    
     | Property | Condition type | Compared value |
     |----------|----------------|---------------|
-    | `order_ID` | `equal` | `6c25e827-15c2-4e7f-be1a-89fb4304d4fa`  |
+    | **order_ID** | **equal** | `6c25e827-15c2-4e7f-be1a-89fb4304d4fa`  |
 
     >**IMPORTANT:** The order ID represents some dummy data we entered into the service so you will see some data in the UI. Later, you will update the condition so you only see your own data.
     >
@@ -150,7 +168,7 @@ In order to display the data in the cart from the `OrderItems` entity, you need 
 
 1. Toggle back to **View**.
    
-2. Select the **Product** text component. 
+2. Select the **Text - Product** text component (not the header). 
 
     You can click on the text component on the canvas, or you can select it under the Tree View: **Row - Cart Item > Cell #1 > Text - Product**.
 
@@ -168,9 +186,11 @@ In order to display the data in the cart from the `OrderItems` entity, you need 
     | --- | --- | --- |
     | Quantity    |    Cell #2 > Text - Quantity   |  Data item in repeat > current > quantity    |
     | Price    |   Container 10 > Text - Price   |  Data item in repeat > current > price   |
-    |  Total   |   Container 11 > Text -  |   Data item in repeat > current > total   |
+    |  Total   |   Container 11 > Text - Total |   Data item in repeat > current > total   |
 
 4. Select the **Cart Total: $** field and click the binding icon for its **Content** property.
+
+    ![Cart total binding](images/bind-2.png)
 
     Instead of **Static value**, change the binding type to **Formula** and replace the formula with the following formula:
     
