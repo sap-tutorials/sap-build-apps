@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform,sof
 primary_tag: software-product>sap-build
 ---
   
-
+ 
 # Create Action Project to Get Data from SAP S/4HANA Cloud
 <!-- description --> Create an action project to retrieve SAP S/4HANA Cloud data and call the action from your business process, as part of the SAP Build CodeJam.
 
