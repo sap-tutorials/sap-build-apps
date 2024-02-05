@@ -44,14 +44,20 @@ primary_tag: software-product>sap-build
 
 
 ### Create SAP BTP trial account
-If you do not already have an SAP BTP Trial account, follow this tutorial: [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-
-> **IMPORTANT:** For SAP Build and this CodeJam, create your SAP BTP trial account on the **US EAST (VA) - AWS** region.
+>**IMPORTANT:** For SAP Build and this CodeJam, you must have an SAP BTP trial account on the **US EAST (VA) - AWS** region.
 
 >![alt text](USEast.png)
 
+If you already have an SAP BTP trial account in the  **US EAST (VA) - AWS** region, you can skip this step.
+
+If you already have an SAP ID but not an SAP BTP trial account, you can go directly to [https://account.hanatrial.ondemand.com/trial](https://account.hanatrial.ondemand.com/trial) and create an SAP BTP trial account. 
+
+If you do not already have an SAP ID, follow this tutorial: [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+
 <!-- border -->
 ![Get ES5 account tutorial](BTPTut.png)
+
+When you are done, you can get to your trial account by going to [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/).
 
 
 
@@ -71,9 +77,11 @@ To install SAP Build Apps on your SAP BTP trial account, watch and follow along 
 ### Install SAP Build Process Automation
 To install SAP Build Process Automation, watch and follow along with this video from **Daniel Wroblewski**. 
 
-> STOP the video at **1:10 mins**. We do **NOT** want you to install Desktop Automation agent.
+>STOP the video at **1:10 mins**. You do **NOT** have to install the Desktop Automation agent.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2gB7ipo8TNY" frameborder="0" allowfullscreen></iframe> 
+
+The video will show you how to run the SAP Build Process Automation installer twice, once for the free subscription and the second for the standard service instance. For the instance you will need to give it a name; just call it `spa-service`.
 
 
 
@@ -94,7 +102,7 @@ Follow the tutorial [Create an account to the SAP Gateway Demo System (ES5)](htt
 ### Create destination for ES5
 Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/trial) where you will create connectivity between SAP BTP and the SAP Gateway Demo system account.
 
-1. Download the destination definition file [`ES5-Shop`](https://raw.githubusercontent.com/sap-tutorials/main/tutorials/codejam-0-prerequisites/ES5-Shop).
+1. Download the destination definition file by right-clicking on the link [`ES5-Shop`](https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/codejam-0-prerequisites/ES5-Shop), and selected **Save link as ...** and saving the file.
 
 2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
 
