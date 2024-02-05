@@ -46,6 +46,10 @@ primary_tag: software-product>sap-build
 ### Create SAP BTP trial account
 If you do not already have an SAP BTP Trial account, follow this tutorial: [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
+> **IMPORTANT:** For SAP Build and this CodeJam, create your SAP BTP trial account on the **US EAST (VA) - AWS** region.
+
+>![alt text](USEast.png)
+
 <!-- border -->
 ![Get ES5 account tutorial](BTPTut.png)
 
@@ -79,7 +83,8 @@ To install SAP Build Process Automation, watch and follow along with this video 
 ### Get ES5 account
 Follow the tutorial [Create an account to the SAP Gateway Demo System (ES5)](https://developers.sap.com/tutorials/gateway-demo-signup.html).
 
-<!-- border -->![Get ES5 account tutorial](es5tut.png)
+<!-- border -->
+![Get ES5 account tutorial](es5tut.png)
 
 
 
@@ -89,7 +94,7 @@ Follow the tutorial [Create an account to the SAP Gateway Demo System (ES5)](htt
 ### Create destination for ES5
 Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/trial) where you will create connectivity between SAP BTP and the SAP Gateway Demo system account.
 
-1. Download the destination definition file [`ES5-Shop`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-0-prerequisites/ES5-Shop).
+1. Download the destination definition file [`ES5-Shop`](https://raw.githubusercontent.com/sap-tutorials/main/tutorials/codejam-0-prerequisites/ES5-Shop).
 
 2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
 
@@ -98,19 +103,18 @@ Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/t
 
 3. Click **Import Destination**, and then select the `ES5-Shop` file you downloaded.
 
-    The draft destination will be filled in except for your credentials.
-
     <!-- border -->
     ![New destination](4-create-destination.png)
 
+    The draft destination will be filled in except for your credentials.
+
+    ![Add destination](add-destination.png)
 
 4.  Enter your ES5 user and password.
 
     Click **Save**.
 
-5. Test the connectivity to the new destination by clicking **Check Connection**.
-   
-   You should receive **200 – OK**. 
+    >No need to test the connectivity because you will get a **401** error whether or not your credentials are correct. 
 
 
 
