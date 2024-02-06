@@ -46,17 +46,22 @@ To connect Build Apps to Process Automation a destination needs to be created fo
    
 2. Under **Instances**, find your instance of the SAP Build Process Automation service.
 
+    ![Instances](instances.png)
+
     On the right, click the three dots, and then select **Create Service Key**.
 
-    <!-- border -->![Create](7.png)  
+    <!-- border -->
+    ![Create service key](7.png)  
 
-3. Enter the name for Service Key as `spa-key` and choose **Create**.
+3. Enter the name for service key as `spa-key` and choose **Create**.
 
-    <!-- border -->![Create](8.png)  
+    <!-- border -->
+    ![Key name](8.png)  
 
 4. The service key is created and you can view the credentials.
 
-    <!-- border -->![Create](9.png)  
+    <!-- border -->
+    ![key credentials](9.png)  
 
 5. After the key is provisioned, open it and take note of the following fields, or just save the entire text to a file:
 
@@ -69,16 +74,27 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
     <!-- border -->![Create](9.1.png) 
 
-6. Download the destination definition file [`spa_process_destination_USER`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-07-connect-app-process/spa_process_destination_USER).
+6. Download the destination definition.
+   
+    Click [`spa_process_destination_USER`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-07-connect-app-process/spa_process_destination_USER), and then click the download button.
 
-7. In your trial SAP BTP cockpit, click **Connectivity >  Destinations**.
+    ![Download](Download.png)
 
+7. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
+
+    <!-- border -->
+    ![Open destinations](3-open-destinations.png)
 
 8. Click **Import Destination**, and then select the `spa_process_destination_USER` file you downloaded.
 
-    The draft destination will be filled in except for the credentials.
+    <!-- border -->
+    ![New destination](4-create-destination.png)
 
-    Enter values for the following fields, based on the service key information you saved earlier.
+    The draft destination will be filled in except for the credentials and URLs.
+
+    ![Add destination](add-destination.png)
+
+9. Enter values for the following fields, based on the service key information you saved earlier. For **api** and **url**, you will have to append some text.
 
     | Destination Field | Value from Key |
     |--------------------|--------------|
@@ -87,13 +103,11 @@ To connect Build Apps to Process Automation a destination needs to be created fo
     | Client Secret | clientsecret  |
     | Token Service URL | url + `/oauth/token`  |
 
+    Select **Use default JDK truststore**.
+
     Click **Save**.
 
-9. Click **Check Connection** to the destination, the status will show **401: Unauthorized**. 
 
-    > Even though the connection returns unauthorized, the status is successful.
-
-    You have **successfully** created a **destination** and you can **trigger your business process** from any service like **SAP Build Apps**.
 
 
 
@@ -147,19 +161,23 @@ Now that we defined the API for triggering the process, we need a data resource 
 
     ![Create](resource-5.png)
 
-    Under **Request headers**, click **List of values** and then **Add a value**. Add the following header:
+    Under **Request headers**, click the **X**, then select **List of values** and then **Add a value**. Add the following header:
 
-    | Field | Value | 
+    | Header Name | Header Value | 
     |-----|-------|
     | `Content-Type` | `application/json` | 
 
+    Click **Save**.
+
     ![Request headers](resource-6.png)
 
-    Under **Request body mapper**, click the formula and use the following. Replace `<your definition ID>` with the ID for your process.
+    Under **Request body mapper**, click the **X**, then select **Formula** and use the following formula. Replace `<your definition ID>` with the ID for your process.
 
     ```JavaScript
     ENCODE_JSON({  "definitionId": "<your definition ID>",  "context":  query.record })
     ```
+
+    ![Trigger formula](trigger-formula.png)
 
     >If you did not save your definition ID, go to the SAP Build lobby, and go to **Monitoring > Manage > Process and Workflows**, and click your process.
 
@@ -189,12 +207,14 @@ Now that we defined the API for triggering the process, we need a data resource 
 
 2. Click **create** on the left, and then the **Test** tab.
 
+    ![Test trigger](test-trigger.png)
+
 3. Enter the following values for the fields.
 
-     | Field | Sample Data |
+    | Field | Sample Data |
     |-------|--------------|
-    | **orderId** | `6c25e827-15c2-4e7f-be1a-89fb4304d4fa` |
-    | **newStatus** | `APPROVED` |
+    | **orderId** | `6c25e827-15c2-1111-be1a-89fb4304d4fa` |
+    | **newStatus** | `CART` |
     | **businessPartner** | `1234567` |
     | **total** | `1200` |
 
@@ -202,10 +222,11 @@ Now that we defined the API for triggering the process, we need a data resource 
 
     And create one order item by clicking **Add a value** under **orderItems**, and here's example data:
 
-     | Field | Sample Data |
+    | Field | Sample Data |
+    |-------|--------------|
     | **price** | `9.99` |
     | **total** | `19.98` |
-    | **product** | `Stereophonic headphones` |
+    | **product** | `Headphones` |
     | **quantity** | `2` |
 
     >SAP Build Process Automation expects numbers as numbers, not strings. If you do not enter a value for a number field, a blank string is sent and an error occurs.
@@ -261,7 +282,7 @@ You can go into the SAP Build Process Automation monitoring and see there the pr
 
 ![Check process instance](test5.png)
 
-You can also check the Inbox to see the that the approval form was created properly – You get an approval form because the total was over 1000.
+You can also check the Inbox to see the that the approval form was created properly – you get an approval form because the total was over 1000.
 
 ![Inbox](test6.png)
 
@@ -280,8 +301,12 @@ Now that we have the data connection for triggering our process working, we now 
 
 1. Open the **Cart** page.
 
+    Go to the **UI Canvas** tab.
+
 2. Click on the **Purchase** button, and open up the logic canvas for the button (click **Show logic for Button - Trigger Workflow** at the bottom of the page).
-   
+
+    ![Purchase logic](purchase-logic.png)
+
 3. Add a **Create record**, **Update record** and **Alert** flow function, and attach them as follows:
 
     ![Logic](logic-1.png)
@@ -331,6 +356,8 @@ Now that we have the data connection for triggering our process working, we now 
 
 6. Configure the **Alert** by setting the **Dialog title** to **Output value of another node > Create record > Error > message**.
 
+    Click **Save**.
+
 7. Click **Save** (upper right).
 
 
@@ -345,8 +372,8 @@ Now that we have the data connection for triggering our process working, we now 
 In the same logic for the button, we want to:
 
 - Alert the user that the purchase was successful
-- Reset the cart ID
-- Reset the items in the cart
+- Reset the cart ID (since it cannot be used anymore)
+- Reset the items in our data variable.
 - Go back to the home page
 
 Update the logic as follows.
@@ -361,7 +388,7 @@ Update the logic as follows.
 
     - **Variable name** to `orderID`.
 
-    >Leave the **Assigned value** blank.
+        Leave the **Assigned value** blank.
 
 4. Configure the **Open page** as follows:
 

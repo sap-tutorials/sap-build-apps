@@ -30,7 +30,9 @@ primary_tag: software-product>sap-build
 ## Intro
 From the previous tutorial, you know how to set up a process project, to create an API trigger, to manually trigger a process, and to monitor the process.
 
-In this tutorial, you will add some logic to the process. SAP Build Process Automation lets you add different activities and steps to your process, such as:
+In this tutorial, you will add some logic to the process, specifically to automatically approve items less than 1000, and require approval for items larger than 1000.
+
+SAP Build Process Automation lets you add different activities and steps to your process, such as:
 
 - **Forms:** Used for notification or to let users enter information.
 - **Approval Forms:** Special forms that let approvers indicate they approve or reject all or part of a process request.
@@ -69,6 +71,8 @@ To do this, you can create a data type with all those fields, and specify that y
     | `price`| **Number** |
     | `total` | **Number** |
 
+    > If the Type of the fields is not reflected correctly in the table, select the correct **Type** again from the dropdown.
+
     With all the fields, the screen should look like this:
 
     ![Complete data type](images/1-finished.png)
@@ -83,7 +87,7 @@ To do this, you can create a data type with all those fields, and specify that y
 ### Update inputs
 Now that we have a data type, we want to add to the process another input for receiving a list of items.
 
-1. Open the **PurchaseApprovalProcess** process.  
+1. Open the **Purchase Approval Process** process.  
 
     >If the process tab is not already open, you can go back to the **Overview** tab and double-click the process. 
     
@@ -153,7 +157,13 @@ The process will include a condition that if the total is less than 1000, the pu
 
     Click **Apply**.
 
-The warning triangle next to the condition step should now disappear.
+    >The warning triangle next to the condition step should now disappear.
+
+4. On the side panel, change the name of the condition to `Check < 1000`.
+
+    ![Condition name](condition-name.png)
+
+    Click **Save** (upper right).
 
 
 
@@ -163,7 +173,7 @@ The warning triangle next to the condition step should now disappear.
 ### Add an approval form
 If the purchase request meets the conditions for needing approval (total greater than 1000), you will need an approval form, which will be sent to the Inbox of the approver.
 
-1. In the **PurchaseApprovalProcess** process tab, click the **+** sign under the **Default**.
+1. In the **Purchase Approval Process** process tab, click the **+** sign under the **Default**.
 
     ![Approval](approval1.png)
     
@@ -275,7 +285,7 @@ For example, for an approval, we need to specify who will be the approver. Or, f
 
     ![Binding](binding1.png)
 
-    Configure the fields as follows:
+    Configure the fields as follows (you likely will need to copy the text below to a plain text editor, and then from there copy into the fields, or type in the text):
 
     | Tab | Field | Source/Binding |
     |-----|-------|----------------|
@@ -285,8 +295,10 @@ For example, for an approval, we need to specify who will be the approver. Or, f
     | **Inputs** | **Order Items** | Click in the box and select **Process Inputs > Order Items**. 
 
     Expand **Order Items**, and you will see that the system automatically mapped the correct input fields to each of the table fields in form. 
-
+    
     ![Mapping](binding3.png)
+
+    >If the fields are not automatically mapped, check the data type of **Price**, **Quantity** and **Total** fields (should be **Number**) created within the **Order Items** data type earlier in this tutorial.
 
     You'll also notice that the warning for the approval form disappeared. 
 
@@ -350,7 +362,7 @@ When you are complete with the changes to your project, you must release and dep
     
     ![Deploy](deploy.png)
 
-    The project will now show as version 1.0.1.
+    The project will now show as deployed version 1.0.1.
 
     ![New version](deployfinal.png)
 
@@ -361,6 +373,10 @@ When you are complete with the changes to your project, you must release and dep
 
 
 ### Test the process
+You will now test the process flow. 
+
+Note that all forms will be sent to **Process started by** – which is you. You will act as both the approver and the requester.
+
 1. Go back to the **Monitoring** section in the SAP Build lobby menu.
 
     ![Return to Lobby to Choose Monitor](14f_Choose_Monitor_on_Lobby.png)
@@ -408,7 +424,7 @@ When you are complete with the changes to your project, you must release and dep
 
 >**Potential problems**
 >
->- If you do not provide all the values that are used in the process (i.e., in one of the bindings or steps), then you will get an error.
+>- If you do not provide all the values that are required in the process (i.e., in one of the bindings or steps), then you will get an error.
 >
 >- If you provide a number value as a string, or a date value in the wrong format, you will get an error.
 
@@ -424,6 +440,8 @@ When you are complete with the changes to your project, you must release and dep
 Once triggered, you can monitor the process instance from the **Monitor** section of the **Monitoring** tab.
 
 1. You can use the shortcut of the **Show Instances** from the **Manage** tab to show your instances.
+
+    ![Show instances](showinstances.png)
 
     Since this process instance added notifications and approval step, it won't automatically be completed and you will see it with the default filter.
 
@@ -497,3 +515,7 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     And if you open the Inbox and refresh, you will now have an approval form with **Submit/Reject** buttons at the bottom.
 
     ![Approval form](images/test-again-2.png)
+
+    If you approve, you can refresh the inbox and you will get the notification form – this time without it saying automatically approved.
+
+    ![Notify](notify.png)
