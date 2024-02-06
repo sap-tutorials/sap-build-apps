@@ -41,6 +41,8 @@ For this product list page, we will connect to the ES5 service to get names, des
 
 1. Download this skeleton project from this link [ShoppingApp.zip.gpg](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-01-homepage/ShoppingApp.zip.gpg).
 
+    ![Download](download.png)
+
 2. Go to SAP Build lobby and click the **Import** button.
 
     ![Import button](images/1-import-button.png)
@@ -67,37 +69,40 @@ SAP BTP destinations are connections to backend services – each specifies the 
 
 1. With your new project open, go to the **Auth** tab.
 
-2. Click **Enable Authentication**.
-
     ![Enable authentication](images/4-enable-btp-auth.png)
 
-3. Select **SAP BTP Authentication**.
+    Click **Enable Authentication**.
+
+2. Select **SAP BTP Authentication**.
 
     ![Select BTP authentication](images/5-select-btp-auth.png)
     
     Click **OK**.
 
-4. Click **Save** (upper right).
+3. Click **Save** (upper right).
 
+    ![Save](save.png)
 
 
 
 
 
 ### Enable a data entity
-Since you have already performed the steps in the prerequisites tutorial, you should have a destination to the ES5 shopping API so you can retrieve a list of products.
+Since you have already performed the steps in the prerequisites tutorial, you should have a destination to the ES5 shopping API that points to a service to return a list of products.
+
+Now you must create the connection between your app and the ES5 system.
 
 1. Open the **Data** tab.
 
-2. Click **Add Integration**.
-   
     ![Enable data entities](images/6-datatab-integrations.png)
 
-3. Click **BTP Destinations**.
+    Click **Add Integration**.
+   
+2. Click **BTP Destinations**.
     
     ![BTP destinations](images/6a-datatab-integrations.png)
 
-5. Find the **ES5-Shop** destination, and click it.
+3. Find the **ES5-Shop** destination, and click it.
 
     ![ES5-Shop](images/6b-datatab-integrations.png)
 
@@ -112,6 +117,8 @@ Since you have already performed the steps in the prerequisites tutorial, you sh
     ![Enable entities](images/6d-datatab-integrations.png)
 
     You should see the entity as **Enabled**.
+
+    ![Enabled](enabled.png)
 
 6. Click **Save** (upper right).
 
@@ -136,6 +143,10 @@ All this makes it possible to build SAP extensions that interact with and enhanc
     >If you get a big text box saying Welcome to variables, you can read it but then you can close it by clicking the X.
 
     >![Data Variables](images/9a-data-variable-docs.png)
+    >
+    >SAP Build Apps with an amazing help system, which provides embedded help when and where you need it. But if it is too much for you, you can always turn it off by going to the **Help** tab, and checking the checkbox for turning it off.
+    >
+    >![Help](help.png)
 
 2. Access the **Data Variables** tab on the left of the screen.
 
@@ -144,6 +155,10 @@ All this makes it possible to build SAP extensions that interact with and enhanc
     ![Add New Data Variables](images/9b-data-variable-new.png)
 
     Keep the default selections shown on the right pane as it is.
+
+    ![Variable settings](images/9c-variable-settings.png)
+
+    >These settings determine the type of data variable (e.g., whether a collection of records or a single record), the default logic for retrieving data, and the filtering, pagination and other settings when retrieving data.
 
 4. Click **Save** (upper right).
    
@@ -157,7 +172,7 @@ All this makes it possible to build SAP extensions that interact with and enhanc
    
     ![View](images/9-switch-uicanvas-toggle-variables.png)
 
-2. From the **Core** tab of the left pane, drag a **Container** component from under **Layout > Container** onto the canvas.
+2. From the **Core** tab of the left pane, drag a **Container** component from under **Layout > Container** onto the canvas into the white area.
 
     >Container components let you group components and configure the group of components as a single unit.
 
@@ -171,26 +186,30 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
     >It may be easier to drag it into the **Tree** view on the lower right, so you can put it precisely where you want. The **Tree** makes it easier to select specific components and to create a hierarchy of components on the page.
 
-4. Click the **Title** component, and in the **Properties** tab on the right pane, change the **Content** text to `Buy some hardware today!`. 
+4. With the **Title** component selected, and in the **Properties** tab on the right pane, enter `Buy some hardware today!` for the **Content** property. 
 
-5. From the **Core > Lists** of the left-side components pane, drag a **Large image list item**  into the **Container - Products List** container (after the title component).
+5. From the **Core > Lists** section nearly at the bottom of the left-side components pane, drag a **Large image list item** into the **Container - Products List** container (after the title component).
 
     ![Drag Large image list item inside Container](images/13-drag-largeimagelistitem-container.png)
 
-6. Select the container **Container - Products List** again, open the **Style** tab from the right pane, click the dropdown icon for the **Layout Container**, and click **Edit**.
+6. From the **Tree** view (bottom right), select the container **Container - Products List** again.
+
+    Open the **Style** tab from the right pane, click the dropdown icon for the **Layout Container**, and click **Edit**.
 
     ![Layout Container - Edit](images/12a-layout-container-edit.png)
 
     >Each component has a default style, plus additional alternative built-in styles you can choose. In addition, you can make changes to the current style, which changes the style for the current instance of the component only.
 
-    >If you want, you can update the default style with your changes so it affects all components, or you can save your changes to a new style. 
+    >If you want, you can update the default style with your changes so it affects all components (**Overwrite**), or you can save your changes to a new style (**New Style**). 
 
     Expand the **padding** settings, set the padding on all 4 sides to 24px by clicking each rectangle, going to **Theme** tab, and selecting the **XXL** size.
    
     ![Style Theme - Padding](images/12b-padding-xxl.png)
 
     Let’s save the style by scrolling up in the **Style** tab, clicking **New Style**, entering **Layout List Container**, and clicking **OK**. This saves the new style in the **Style** tab and now can be used on other containers in your app.
-  
+
+    ![Save style](images/12bb-save-style.png)
+
     You should be able to see some nice padding around the content.
     
     ![Padding around content](images/12c-nice-padding-around.png)
@@ -203,19 +222,38 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
 
 ### Bind data variable to UI elements
-We created a data variable for the **Products** data and now we need to bind the data from this data variable to the UI components added to the canvas to display the products in the list.
+We created a data variable for the **Products** data, and the logic for retrieving the data was created automatically. Now you need to tell the app how and where you want to display the data.
 
-1. Select the **Large Image List Item** on the canvas.
+To do this, you create bindings for your UI components – in this case, the list item.
+
+
+>**How binding works**
+>
+>When we configure a UI component (or later a logic component called a "flow function"), generally we do this with binding.
+>
+>For most properties, there is a binding icon that indicates what type of binding is used. For example, you can use **static text** for a text field, or you can show text from a backend service and use a binding to a **data variable** 
+>
+>In the example below it shows an icon with **ABC**, meaning that this is static text and will not change.
+
+>![Binding](binding.png) 
+
+>If you want to change the binding type, just click the binding icon and you will be shown binding types that are valid for the current property.
+>
+>If you want to keep the binding type, but change the actual binding (e.g., the text to display), then update the field to the right of the binding icon.
+
+
+
+1. Select the **Large image list item** on the canvas.
    
-2. In the **Properties** tab, set the following by clicking on the icon next to each field:
+2. In the **Properties** tab, you will set the following properties by clicking on the icon next to each field:
 
     ![Binding icon](images/14-icon-opens-modal.png)
 
-    Clicking on these icons shows different options for data binding.
+    Clicking on these icons will show different options for data binding.
 
     ![Binding options](images/14a-modal-options.png)
 
-    Do the bindings to the UI elements as follows:
+    Do the bindings as follows:
 
     | Field | Binding |
     |-------|---------|
@@ -224,8 +262,16 @@ We created a data variable for the **Products** data and now we need to bind the
     | Description text | **Data item in repeat > current > Description** |
     | Image source | Formula > `'https://sapes5.sapdevcenter.com' + repeated.current.ImageUrl` |
 
-    >The formula for the image may appear in red as an error, but it will still work. Go ahead and save it!
+    >To set a formula, click on the default formula. 
+    >
+    >![Formula editor](formula1.png)
+    >
+    >This opens the formula editor with the default formula loaded. Select all of the default formula, and replace with the formula we gave you.
+    >
+    >![Formula red](formula2.png)
 
+    >The formula for the image may appear in red as an error, but it will still work. Go ahead and save it!
+    >
     >One of the strengths of the formula editor is that it checks the data types of the properties you are setting to try to determine if the formula is compatible. Here, it is expecting a value defined as an image URL, but our text – which is a valid URL – will work just as well.
 
 3. Click **Save** (upper right).
@@ -238,7 +284,6 @@ You may now test the app to see the Products list.
 
 
 ### Test the App
-
 1. Go to the **Launch** tab, then **Open preview portal** Portal.
 
     ![Launch Page](images/17-launch-tab.png)
@@ -247,7 +292,7 @@ You may now test the app to see the Products list.
 
     ![Open Web Preview](images/17a-open-web-preview.png)
 
-    You will get a list of apps in your lobby – at his point you should have just one. 
+    You will get a list of apps in your lobby – at this point you should have just one. 
     
     ![Open App Tile](images/17c-select-codejamapp-silver.png)
     
@@ -284,11 +329,28 @@ In the preview, you might have noticed that the product images are a little larg
   
         ![Right gap](images/restyle-3.png)
 
+        >Click anywhere to close the selection dialog.
+
     - Under **Width and Height**, change the **Custom** values to **Set width** and **Set height**, and set them both to 64px. Delete all the other values so it looks like this:
 
         ![Width and height](images/restyle-4.png)
 
-    - Under **Position** (scroll down some more in the **Layout** tab), set the left spacing to **L 16px**.
+        >To select a value for many of the layout properties, click on the existing value (20%).
+        
+        >![Selector](selector1.png)
+
+        >You will get a variety of options for entering the value: 
+
+        >- **Theme:** A variety of predefined values
+        >- **PX:** By entering a pixel value (no need to type `px`)
+        >- **%:** By entering a percentage of the current container width
+        >- **⚡:** By entering a formula
+
+        >![Selector options](selector2.png)
+        >
+        >Since you want 64, enter `64` under **PX**.
+
+    - Under **Position** (scroll down some more in the **Layout** tab), set the left spacing to **L 16px** (under **Theme**).
 
         ![Left spacing](images/restyle-5.png)
         

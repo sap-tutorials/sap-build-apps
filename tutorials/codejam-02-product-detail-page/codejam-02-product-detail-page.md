@@ -41,7 +41,7 @@ In this exercise, you will enhance the **Product details** page by connecting to
 ### Create a page parameter
 The product details page will show the details of a specific product, but we need to be given the ID of the product to display.
 
-Therefore, we will create a page parameter to hold the ID. The page parameter also makes it so when another page (product list page) wants to navigate to the details page, it will be required to provide a product ID. 
+Therefore, we will create a page parameter on the ***product details page*** to hold the ID. The page parameter also makes it so when another page (product list page) wants to navigate to the details page, it will be required to provide a product ID. 
 
 
 1. In the upper-left corner, below the app name, **ShoppingApp**, click the link with the name of the current page – **Home page**.
@@ -84,6 +84,9 @@ Once we know the product for which we want to retrieve its details, we will need
    
 3. With the new variable still selected, change the **Data variable type** to **Single data record**. 
 
+    ![ Products data variable ](images/2c-data-variable-products1.png)
+
+
     >There are 3 kinds of data variable, which determines its underlying data type (list vs. object) and the inputs that are required:
     >
     >**Collection of data records:** A list of objects. This is what was automatically selected when we created a data variable for the products in the product list page. No inputs are required.  
@@ -92,14 +95,18 @@ Once we know the product for which we want to retrieve its details, we will need
     >
     >**New data record:** Just a single object. This object is empty but contains the schema for this data resource so it can be easily bound to UI components for the user to enter their data, and to flow functions to the data resource can be updated.
 
- 
 4. Map the **Id** field to the page parameter **productID**, which will contain the desired product when navigating to this page.
 
-    You'll have to click the **X** next to **Id**, and then select **Data and Variable > Page parameter > productID** and click **Save**. 
+    To do this, click the **X** next to **Id**.
+    
+    ![Click X](click-x.png)
+    
+    Then select **Data and
+     Variable > Page parameter > productID** and click **Save**. 
 
     The result should look like this:
 
-    ![ Products data variable ](images/2c-data-variable-products1.png)
+    ![Result](click-result.png)
 
 5. Click **Save** (upper right).
 
@@ -221,6 +228,8 @@ Our details page is all set up, but there is no way to get to it. So we will set
 
 1. Navigate back to the **Home page** by clicking on the **Product Details** link on the upper-left corner, below the app name.
 
+    ![Navigation](navigation.png)
+
     Select the **Home page** tile.
    
 2. With the **Large Image List Item** selected, click the **Add logic to Large Image List Item 1** link at the bottom of the canvas.
@@ -231,7 +240,7 @@ Our details page is all set up, but there is no way to get to it. So we will set
 
     >The logic canvas is where you can add flow functions to perform actions in response to user actions or changes in the state of the app (like changes in the value of variables, or when a page is loaded).
 
-    >There are different logic panes for each component and variable, as well as one for entire page.
+    >There are different logic panes for each component, data variable, and page.
 
 3.  From the **Logic Canvas** area on the left, drag and drop onto the logic canvas an **Open Page** function in the **Navigation** section of flow functions.
    
@@ -244,16 +253,18 @@ Our details page is all set up, but there is no way to get to it. So we will set
 5. Click on the **Open Page** flow function.
 
     >On the right-side pane, you can configure the flow function, similar to binding for visual UI components.
+    >
+    >![Open Page](openpage.png)
 
     Set **Page** to **Product Details**.
 
-    >Notice that SAP Build Apps now recognizes that this page requires a page parameter to be passed, and creates a field for you to configure.
+    >Notice that SAP Build Apps now recognizes that this page requires a page parameter called **productID** to be passed, and creates a field for you to configure.
     
     Set **productID** value to **Data item in repeat > current > Id**.
 
     ![Open page set page parameter](images/11c-openpage-set-page-param.png)
 
-    >When the user clicks on a product, SAP Build Apps will send the ID of that product to the **Product Details** page.
+    >SAP Build Apps knows we are in the logic canvas of a repeated UI element, so it provides the **Data item in repeat** binding type. When the user will click on a product, SAP Build Apps will send the ID of that product to the **Product Details** page.
 
 
 6. Click **Save** (upper right). 
@@ -280,6 +291,6 @@ Our details page is all set up, but there is no way to get to it. So we will set
 
     ![Product details page](images/10-final-product-details.png)
 
-    Change the **quantity** field by providing different quantities in the input field. The **Total Cost** field should reflect the changes accordingly.
+    Change the **quantity** field. The **Total Cost** field should reflect the changes.
 
     >We have not set the logic for he **Add to Cart** button, so that will not do anything ... yet.

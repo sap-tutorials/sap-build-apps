@@ -31,7 +31,7 @@ primary_tag: software-product>sap-build
 ## Intro
 In this exercise, you will be enhancing the **Cart** page of the SAP Build CodeJam app with data and functionality.
 
-Specifically, you will retrieve data from our CAP service – which maintains the data for our cart and later for the order once it is requested – and bind that data to your UI components. Also, you will implement logic for deleting data from the CAP service.
+Specifically, you will retrieve data from our CAP service – which we created for this CodeJam to maintain the data for our cart and later for the order once it is requested. You will then bind that data to your UI components, as well as logic for deleting data from the CAP service.
 
 
 
@@ -39,27 +39,33 @@ Specifically, you will retrieve data from our CAP service – which maintains th
 
 
 ### Create a destination for our CAP service
+In order to retrieve data from the CAP service, we need to create a destination in the SAP BTP cockpit, which we can then access from SAP Build Apps.
+
 To save you time we have given you almost all the information for the destination in a file you can import.
 
->**IMPORTANT: ** Before you begin this step, you will need to get the URL for the service from the CodeJam instructor.
+>**IMPORTANT:** Before you begin this step, you will need to get the URL for the service from the CodeJam instructor.
 
+1. Download the destination definition.
+   
+    Click [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-03-cart-page/CodeJamOrdersService), and then click the download button.
 
-1. Download the destination definition file [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-0-prerequisites/CodeJamOrdersService).
+    ![Download](download.png)
 
 2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
 
     <!-- border -->
-    ![Open destinations](3-open-destinations.png)
+    ![Open destinations](images/3-open-destinations.png)
 
 3. Click **Import Destination**, and then select the `CodeJamOrdersService` file you downloaded.
 
     The draft destination will be filled in except for the URL.
 
     <!-- border -->
-    ![New destination](4-create-destination.png)
-
+    ![Skeleton destination](images/destination.png)
 
 4.  Enter the URL from your instructor.
+
+    Select **Use default JDK truststore**.
 
     Click **Save**.
 
@@ -130,7 +136,7 @@ Now that you we have defined the connection to the CAP service, let's create a d
 
     ![Add New Data Variables](images/1b-data-variable-new.png)
    
-    With **OrderItems** data variable, selected, in the right pane, the type should already be set to **Collection of data records**. Keep this type.
+    With **OrderItems** data variable selected, in the right pane, the type should already be set to **Collection of data records**. Keep this type.
 
     ![Alt text](images/1d-data-variables-orderitems.png)
 
@@ -197,6 +203,12 @@ In order to display the data in the cart from the `OrderItems` entity, you need 
     ```JavaScript
     "CART TOTAL: $" + FORMAT_LOCALIZED_DECIMAL(NUMBER(SUM(MAP(data.OrderItems1,item.price * item.quantity))), "en", 2,2)
     ```
+
+    > **What does the formula do?**
+    >
+    >The formula uses the **MAP** function, one of the more powerful and useful functions. Here, the function goes through all the order items, multiplies the quantity and the price, and creates a new list with just integers representing the total cost of each item.
+    >
+    >The **SUM** function then ads it all together, and then the formula formats the result.
 
     Click **Save** twice. 
 

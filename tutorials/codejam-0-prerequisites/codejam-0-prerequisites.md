@@ -94,6 +94,7 @@ Follow the tutorial [Create an account to the SAP Gateway Demo System (ES5)](htt
 <!-- border -->
 ![Get ES5 account tutorial](es5tut.png)
 
+>ES5 is a publicly available demo system for SAP NetWeaver, which includes many of the services provided by typical SAP backends. We will use it to provide a list of products and images for our app, and mimic how an SAP Build Apps app would connect to an SAP backend. 
 
 
 
@@ -102,7 +103,11 @@ Follow the tutorial [Create an account to the SAP Gateway Demo System (ES5)](htt
 ### Create destination for ES5
 Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/trial) where you will create connectivity between SAP BTP and the SAP Gateway Demo system account.
 
-1. Download the destination definition file by right-clicking on the link [`ES5-Shop`](https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/codejam-0-prerequisites/ES5-Shop), and selected **Save link as ...** and saving the file.
+1. Download the destination definition.
+   
+    Click [`ES5-Shop`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-0-prerequisites/ES5-Shop), and then click the download button.
+
+    ![Download](Download.png)
 
 2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
 
@@ -134,3 +139,5 @@ Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/t
 Congratulations, you are now ready for our **SAP Build CodeJam**. Have a safe journey and the SAP Advocates Team looks forward to seeing you on the day of your event.
 
 Make sure you keep watching your specific **CodeJam event page** [here](https://groups.community.sap.com/t5/sap-codejam/eb-p/codejam-events).
+
+>**IMPORTANT:** You do not need to continue until you arrive at your event.
