@@ -39,7 +39,9 @@ For this product list page, we will connect to the ES5 service to get names, des
 
 ### Import the skeleton app project
 
-1. Download this skeleton project from this link [ShoppingApp.zip.gpg](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-01-homepage/ShoppingApp.zip.gpg).
+1. Download this skeleton project.
+
+    Click [ShoppingApp.zip.gpg](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-01-homepage/ShoppingApp.zip.gpg), and then click the download button.
 
     ![Download](download.png)
 

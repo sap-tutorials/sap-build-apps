@@ -312,7 +312,7 @@ Once triggered, we can monitor the process instance from the **Monitor** section
 
 1. In the same screen you triggered the process, click **Show instances**.
     
-    [Show instances](show-instances.png)
+    ![Show instances](show-instances.png)
 
     >You can also get to the same place with the menu by clicking **Monitoring**, and under **Monitor** clicking **Process and Workflow Instances** (likely first tile on the page). 
 
