@@ -74,6 +74,10 @@ There are many use cases/scenarios where you can bring about innovation using SA
 
     ![Give Process Name](5_Business_Process_Create.png) 
 
+    >You may get a message about the new layout editor or other news. Click **Close**.
+    >
+    >![Docs](docs.png)
+
     In your project, you will see an empty process with start and end nodes.
 
     ![Empty Business Process](6_Empty_Business_Process.png)
@@ -115,6 +119,8 @@ In this step, you will specify the inputs required for the process.
     |  `Business Partner`          | **String** | Yes |
     |  `New Status`                | **String** | Yes |
   
+    >The editor will remove leading and trailing spaces.
+
     Click **Apply**.
 
     ![Complete Adding Process Inputs](10_Complete_Adding_Process_Inputs.png)
@@ -152,8 +158,6 @@ For this process, we will define an API trigger, so our app can call an API to t
     Click **Create**.
 
     ![Create API Trigger](12c_Create_API_Trigger.png)
-
-    Click **Save** (upper right).
 
 The process inputs are automatically added to the trigger. Click the **Trigger** block, and expand the side panel.
 
@@ -204,7 +208,7 @@ Examine the release status under the **Overview** tab. Make sure it is set to **
 
     ![Examine Release Status Overview](13d_Click_Deploy.png)
 
-    You will be asked to select an environment. Select **Public** and click **Deploy**.
+2. You will be asked to select an environment. Select **Public** and click **Deploy**.
 
     ![Deploy public](13e_Click_Deploy.png)
 
@@ -212,7 +216,7 @@ Examine the release status under the **Overview** tab. Make sure it is set to **
 
     >For more information, go to the SAP Build lobby and then **Control Tower > Environments**, or see [Environments](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/environments).
 
-    A dialog indicates the triggers to be created and deployed.
+3. A dialog indicates the triggers to be created and deployed.
     
     Click **Deploy**.
 
@@ -220,11 +224,11 @@ Examine the release status under the **Overview** tab. Make sure it is set to **
 
     >Deploying will take a couple of seconds/minutes depending upon how big your project is and how many artifacts it has. Any errors during deployment are displayed in the **Deployment Console** at the bottom of the screen.
 
-2.  Once the deployment is successful, the status will change at the top of the page to **Deployed**. 
+    Once the deployment is successful, the status will change at the top of the page to **Deployed**. 
     
     ![Deployment Status](14d_Deployment_Status.png)
 
-3. Return to the SAP Build lobby by clicking SAP Logo in the top-left corner.
+4. Return to the SAP Build lobby by clicking SAP Logo in the top-left corner.
 
     ![Return to Lobby](14e_Return_to_Lobby.png)
 
@@ -246,7 +250,7 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
     ![Monitor Overview](15_Choose_Processes_Workflows.png)
 
-    This area shows you all the processes that have been deployed. If you are using SAP Build Process Automation for the first time in your trial account, there likely is only one process and it is already selected.
+    This area shows you all the processes that have been deployed. If you are using SAP Build Process Automation for the first time in your trial account, there is only one process and it is already selected.
 
     If it isn't selected, select it.
 
@@ -295,6 +299,9 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
     If all goes well, you will get the message **Instance started**.
 
+    ![Success](success.png)
+
+
 
 
 
@@ -303,9 +310,15 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 ### Monitor the Process  
 Once triggered, we can monitor the process instance from the **Monitor** section of the **Monitoring** tab.
 
-1. Click **Monitoring**, and under **Monitor** click **Process and Workflow Instances** (likely first tile on the page). 
+1. In the same screen you triggered the process, click **Show instances**.
+    
+    [Show instances](show-instances.png)
 
-    ![Monitor Process Flow](16a_Monitor_Process.png)
+    >You can also get to the same place with the menu by clicking **Monitoring**, and under **Monitor** clicking **Process and Workflow Instances** (likely first tile on the page). 
+
+    >You would then have to filter or search for your instance. The **Show Instances** button takes you there directly.
+
+    >![Monitor Process Flow](16a_Monitor_Process.png)
 
 2. By default, completed processes are not shown in the list. And because we have no actions inside the process, it will start and immediately complete.
 
@@ -315,7 +328,7 @@ Once triggered, we can monitor the process instance from the **Monitor** section
 
     ![Process instance](16a2_Monitor_Process.png)
     
-3. Click on your process instance.
+4. Click on your process instance.
 
     In the details section at the top, you can see:
 
@@ -329,7 +342,7 @@ Once triggered, we can monitor the process instance from the **Monitor** section
 
     Under **Logs** you can see all the events that occurred, such as its triggering, approval forms completed, API calls performed, and any other action that was taken as part of the process.
 
-    Under **Context**, you can see the data that was passed or retrieved for steps that involved data. 
+    Under **Context**, you can see the data that was passed to th eprocess, or that was retrieved during steps that involved data. 
 
 
 **Congratulations!** You have created your first simple SAP Build Process Automation process.
