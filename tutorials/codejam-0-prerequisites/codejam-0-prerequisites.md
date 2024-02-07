@@ -16,7 +16,6 @@ primary_tag: software-product>sap-build
 - Do this before you come to CodeJam ⏱️
 - Bring your laptop 💻
 - Bring your device 📱
-- Bring your brain 🧠
 - Be ready to have FUN! 🤗
 
 

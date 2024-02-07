@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build
 ---
    
 
-# Create Action Project to Get Data from SAP S/4HANA Cloud
+# Create Action to Get Data from SAP S/4HANA Cloud
 <!-- description --> Create an action project to retrieve SAP S/4HANA Cloud data and call the action from your business process, as part of the SAP Build CodeJam.
 
 
@@ -23,17 +23,23 @@ primary_tag: software-product>sap-build
 
 
 ## You will learn
-- How to get access to and create a destination for SAP S/4HANA Cloud APIs on SAP Business Accelerator Hub
+- How to create destination to SAP S/4HANA Cloud demo APIs on SAP Business Accelerator Hub
 - How to create action project
-- How to configure API method input and output fields to improve readability for business users
-- How to test API using destination option
-- How to release and publish action project to be consumed in the SAP Build process Automation
+- How to set action's inputs and outputs
+- How to test the action
+- How to release and publish action
+- How to consume action from project
 
 
 ## Intro
-Actions are SAP Build Process Automation artifacts that you can create to connect business processes with external systems, be it SAP or non-SAP. This is an important piece of the puzzle especially if you want to extend or automate any of your business processes existing on systems like S/4HANA, Ariba and SuccessFactors. These extensions can be easily built using SAP Build Process Automation. Using actions, GET, POST, PATCH and other calls can be made to external systems.
+Actions are SAP Build Process Automation artifacts that you can create to connect business processes with external systems, be it SAP or non-SAP. This is an important piece of the puzzle especially if you want to extend or automate any of your business processes existing on systems like SAP S/4HANA, SAP Ariba and SAP SuccessFactors. These extensions can be easily built using SAP Build Process Automation. Using actions, GET, POST, PATCH and other calls can be made to external systems.
 
-In this tutorial, you will create an action project based on the Business Partner API of SAP S/4HANA Cloud, using the demo service exposed on the SAP Business Accelerator Hub. Specifically, you will take a business partner ID entered by the user in your shopping app and retrieve information about the business partner.
+In this tutorial, you will create an action project based on the Business Partner API of SAP S/4HANA Cloud, using the demo service exposed on the SAP Business Accelerator Hub. Specifically, you will:
+
+- Set up a destination to the API.
+- Send a business partner ID from your app to your process.
+- Retrieve data about that business partner from inside the process.
+- Make decisions in the process based on the retrieved data.
 
 
 
@@ -46,11 +52,21 @@ In this tutorial, you will create an action project based on the Business Partne
 ### Create destination for SAP S/4HANA Cloud 
 In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP Business Accelerator Hub**, you need to create a destination.
 
-1.  Go to the [SAP Business Accelerator Hub](https://api.sap.com/) and log-in (or Create a free account)
+1.  Go to the [SAP Business Accelerator Hub](https://api.sap.com/) and log-in (or create a free account)
 
-    On the top-right, click `API Key` to see your key. Copy it and save on the side.
+    On the top-right, click `Settings`.
+    
+    ![Settings](hub-key1.png)
+    
+    Click `Show API Key` and save the key for later.
 
-2. Download the destination definition file [`S4HANA-Hub-Public`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/codejam-08-action-get/S4HANA-Hub-Public).
+    ![Show API Key](hub-key2.png)
+
+2. Download the destination definition.
+   
+    Click [`S4HANA-Hub-Public`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-08-action-get/S4HANA-Hub-Public), and then click the download button.
+
+    ![Download](Download.png)
 
 2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
 
@@ -59,18 +75,20 @@ In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP 
 
 3. Click **Import Destination**, and then select the `S4HANA-Hub-Public` file you downloaded.
 
-    The draft destination will be filled in except for your API key.
-
     <!-- border -->
     ![New destination](4-create-destination.png)
-4. In the **URL.headers.APIKey** additional property, enter the key you earlier retrieved from the [SAP Business Accelerator Hub](https://api.sap.com/).
+
+    The draft destination will be filled in except for your API key.
+
+    ![Add destination](add-destination.png)
+
+    Enter the key (you saved earlier from the SAP Business Accelerator Hub).
 
     Click **Save**.
 
 If you click **Check Connection**, you will get a 401 response code. This is OK and you have **successfully** created the destination
 
-
->To learn more about the [SAP Business Accelerator Hub](https://api.sap.com/) and how to send up destinations for any API, watch this video from **Daniel Wroblewski**. 
+>To learn more about the [SAP Business Accelerator Hub](https://api.sap.com/) and how to set up destinations for any API, watch this video from **Daniel Wroblewski**. 
 
 ><iframe width="560" height="315" src="https://www.youtube.com/embed/11TUQgQi-9k" frameborder="0" allowfullscreen></iframe>
 
@@ -79,8 +97,11 @@ If you click **Check Connection**, you will get a 401 response code. This is OK 
 
 
 
+
+
+
 ### Enable destination in processes
-SAP Build Process Automation enables administrators to control which destinations – and, therefore, which backend systems – can be connected to from processes. 
+SAP Build Process Automation enables administrators to control which destinations – and, therefore, which backend systems – can be connected to processes during runtime. 
 
 In this step, you will enable the destination to be used in your processes.
 
@@ -100,6 +121,9 @@ In this step, you will enable the destination to be used in your processes.
 
     ![Add](add-dest3.png)
 
+    The destination will be added to the list of destinations that can be used within your processes.
+
+
 
 
 
@@ -111,27 +135,35 @@ In this step, you will enable the destination to be used in your processes.
 
     ![Click Actions](1a_Select_Actions_from_Lobby.png) 
 
-2. Click **Create**.
+    Click **Create**.
 
     ![Click Create](1b_Click_Create.png) 
                 
-3. Choose **OData Destinations** as the API source.
+2. Choose **Other BTP Destinations** as the API source.
 
-    ![Choose OData Destinations](1c_Choose_oData_Destinations.png) 
+    ![Choose Other BTP Destinations](1c_Choose_Other_BTP_Dest.png) 
 
-4. Choose **S4HANA-Hub-BP**.
+3. Choose **S4HANA-Hub-Public**.
+    
+    ![Choose S4HANA Destination](1d_Browse_Choose_S4HANA_Dest.png) 
 
-    You will see all the APIs contained in the business partner service, including those for the `A_BusinessPartner` entity.
+    >**Why do I see the CAP service?**
+    >
+    >You might be wondering why we see the CAP service here, when we only added the SAP S/4HANA service in the Control Tower.
+    >
+    >In the Control Tower, we added the destinations that could be used during runtime – and the `sap.processautomation.enabled` additional property in the destination enables the administrator to select it for runtime.
+    
+    >But destinations have a second property that indicates whether they should be shown in the actions setup screens, `sap.applicationdevelopment.actions.enabled`. When you set up your destinations, you added this to both the CAP and SAP S/4HANA destinations.
 
-    ![Business Partner Entity](1e_Check_for_Business_Partner_Entity.png) 
-
-    Open **A_BusinessPartner** to see the specific APIs available.
+    You will now see all the APIs contained in the Business Partner service, including those for the `A_BusinessPartner` entity. Expand **A_BusinessPartner** to see the specific APIs available.
 
     ![Choose S/4 HANA Hub](1d_Browse_Choose_S4HANA_Hub_Public.png) 
 
+    >This screen is just to show you the APIs available – you do not have to select anything.
+
     Click **Next**.
 
-5. Enter `Business Partner Service` for the **Project Name** and **Description**. 
+4. Enter `Business Partner ` for the **Project Name** and **Description**. 
 
     Click **Create**.
 
@@ -139,7 +171,11 @@ In this step, you will enable the destination to be used in your processes.
 
     You will now see all the APIs in the service, so that you can select the ones you want to include in this action project.
 
-6. Expand the **A_BusinessPartner** entity.   
+5. Expand the **A_BusinessPartner** entity.   
+
+    >It might help to select the **GET** filter and search by `A_BusinessPartner(`.
+
+    >![Search entity](search.png)
 
     Select the **GET** operation that is called **Retrieves business partner data by using business partner number**.  
    
@@ -147,12 +183,13 @@ In this step, you will enable the destination to be used in your processes.
 
     ![BP by Number](1h_GET_BP_by_Number.png) 
 
-7. Click **Add**.
+6. Click **Add**.
 
     The action project **Business Partner** opens under a new tab.
 
     ![Action Project Opens ](2a_Action_Project_Opens.png) 
 
+    >The action will open with the selected APIs. You can always go back and add additional APIs to expose.
 
 
 
@@ -177,7 +214,7 @@ Your action should be open to the **Retrieves business partner data by using bus
 
     Under **Body**, select all the fields by selecting the checkbox next to **d**.
     
-    Then expand the node and deselect only the needed fields highlighted shown in the screenshots below.
+    Then expand the node and deselect only the needed fields highlighted in the screenshots below.
   
     ![Select all Output Fields ](3b_Configure_Service_Outputs.png) 
 
@@ -197,7 +234,7 @@ Your action should be open to the **Retrieves business partner data by using bus
 
 3. Click **Save**.
 
-    ![Save output Fields](3g_Save_Output_Fields.png) 
+    ![Save output fields](3g_Save_Output_Fields.png) 
 
 4. Click the **Test** tab.
 
@@ -227,6 +264,8 @@ To make the action available to your processes, you must release and publish the
 
 1. Click **Release**.
 
+    > If **Release** is disabled, make sure you've saved the project.
+
     ![Release Action Project](4a_Release_Action_Project.png) 
 
     Click **Release** again, to confirm.
@@ -247,7 +286,7 @@ To make the action available to your processes, you must release and publish the
 
     ![Check Action Project Status](5c_Action_Project_Status_Check.png) 
 
-    Back in the SAP Build main page under **Actions**, you can see your action, and its released version.
+    Go back to the SAP Build main page, refresh the page, and under **Actions** you can see your action and its released version.
 
     ![Action Project under Actions List](6a_Action_Project_in_ActionsList.png) 
 
@@ -261,7 +300,7 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
 
 
-1. Return to the SAP Build lobby, and select your **Purchase Approval**  process.
+1. Return to the SAP Build lobby, and open your **Purchase Approval** project.
 
     ![Return to Lobby](7a_Return_to_Lobby.png) 
 
@@ -275,7 +314,7 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
 3. Click **Action**. 
 
-    ![ Choose Action](7e_Choose_Action.png) 
+    ![Choose Action](7e_Choose_Action.png) 
 
     Choose the action created in the previous steps, and click **Add**.
 
@@ -285,15 +324,21 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
     
     The action is added to the process flow.
 
-    ![AAction Added](7h_Action_added.png)
+    ![Action Added](7fa-action-added.png)
 
 4. With the new action block selected, go to the side panel and configure the action.
 
     In the **General** tab, click the **Destination variable** field, click **Create Destination Variable**.
 
+    ![Configure action](7h_Action_added.png)
+
+    Enter `Business_Partner_Destination` for the **Identifier**, and click **Create**.
+
     ![Configure Destination Variable](7h_Action_Destination_Variable.png)
 
-    Enter `BPdest` for the identifier, and click **Create**.
+    >The destination variable creates an environmental variable for the destination. That is, when the process is deployed, you can then select which destination – meaning which backend system – to use in that environment.
+    >
+    >You can change the destination at deployment without having to change the process itself.
 
 5. In the **Inputs** tab, click in the **BusinessPartner** field, and select **Process Inputs > Business Partner** fields.
 
@@ -304,6 +349,8 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
     ![Map Business Partner Input Field](7j_Action_Input.png)
 
 6. In the **Outputs** tab, expand **result** to see all the fields that will be returned by the action and be available inside the process.
+
+    Notice it only includes the fields you selected when defining the action.
 
     ![Examine Action Outputs](7k_Examine_Action_Output.png)
 
@@ -317,17 +364,17 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
     Set this new condition as follows:
     
-    | Field | Value |
-    |-------|-------|
-    | 1st | **BusinessPartnerGrouping** | 
-    | 2nd | **is equal to** |
-    | 3rd | `BP01` |
+    | Field | Value | How to Enter |
+    |-------|-------|-----|
+    | 1st | **BusinessPartnerGrouping** | Select from action fields | 
+    | 2nd | **is equal to** | Select from comparison options |
+    | 3rd | `BP01` | Type in |
     
     At the top, under **Satisfies**, change to **Any**.
     
     You can expand **Summary** to get a verbal summary of the conditions in plain English.
 
-    ![Save and Release the Project](8d_Condition_Save_Release.png)
+    ![Save and Release the Project](8d_Condition_Save.png)
 
 
     Click **Apply**, and then click **Save** (upper right).
@@ -335,32 +382,56 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
     > **What's going on?**
     >
     >Previously, anything less than 1000 was automatically approved. But now, if the related business partner is in group **BP01**, those requests are also automatically approved.
+
+8. Click anywhere on **Approval Form** block.
+
+    In the side panel under **Inputs**, you will now bind the business partner fields because you now have data from the backend.
+
+    Bind the following fields:
+
+    | Field | Action Field |
+    |-------|-------|
+    | BP Grouping | **BusinessPartnerGrouping** | 
+    | Business Partner  | **BusinessPartner** | 
+    | Business Partner Full Name | **BusinessPartnerFullName** | 
+
+    ![Configure approval inputs](9a_Approval_Input_Config.png)
     
-8. Click **Release**, and then confirm by clicking **Release** again
+9. Click **Save** (upper right).
 
-9. Click **Deploy**.
+10. Click **Release**.
 
-    ![Click Deploy](9a_Deploy.png)
+    ![New version](release-confirm.png)
+   
+    Confirm by clicking **Release** again.
 
-    Click **Next**.
+11. Click **Deploy**.
 
-    ![Deploy step 1](9b_Deploy_Step1.png)
+    Select the **Public** environment, and click **Upgrade**.
 
-    - Select **Destination Variable** value.
+    ![Click Deploy](9a_Click_Deploy.png)
 
-        ![Deploy step 2a](9c_Deploy_Step2.png)
+    The triggers that will be deployed will be displayed. There is nothing to do here but confirm.
+    
+    Click **Deploy**.
+    
+    ![alt text](deploy-triggers.png)
 
-    - Click **Next**.
+    Now you will see the environment variables for which you need to provide values. 
 
-        ![Deploy step 2b](9d_Deploy_Step2.png)
+    ![Destinations](deploy-destinations.png)
+    
+    >Previously we did not get this screen because we did not have any variables to configure. But now you defined a variable for managing the destination, so you must select the destination for this variable for this deployment.
 
-    - Click **Deploy**.
+    Select the destination you created for accessing SAP S/4HANA.
 
-        ![Deploy step 3](9e_Deploy_Step3.png)
+    ![Choose destination](deploy-destinations2.png)
+    
+    Click **Deploy**.
 
-    The status of the project changes to **Deployed**. Click the SAP logo at the upper left to return to SAP Build Lobby.
+The status of the project changes to **Deployed**. Click the SAP logo at the upper left to return to SAP Build Lobby.
 
-    ![Deployment Status](9f_Deployed_Status.png)
+![Deployment Status](9f_Deployed_Status.png)
 
 
 
@@ -371,9 +442,6 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
 
 ### Modify app to send business partner
-
-
-
 1. Open the **ShoppingApp** project from SAP Build lobby.
 
     ![Open Shopping App](10a_Shopping_App.png)
@@ -424,13 +492,9 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
     Click **Save**.
 
-    ![Page Variable Binding ](13g_BP_Variable_Bound.png)
-
-    **Save** the binding.
-
     ![Save Binding](13h_Save_Binding.png)
 
-    **Save** the changes to the app (upper right).
+    Click **Save** (upper right).
 
     ![Save Changes to the App](13i_Save_Changes_to_App.png)
 
@@ -456,7 +520,7 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
     ![Cart Page](16a_Cart_Page.png)
 
-    Select **11** for the business partner.
+    Select **1000000** for the business partner.
 
     ![Select Business Partner](16b_Choose_BP.png)
     
@@ -466,9 +530,9 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
     You should get a purchase confirmation message.
     
-    ![Purchase Request Created Message](16dPurchase_Order_Requested.png)
+    ![Purchase Request Created Message](16d_Purchase_Requested.png)
 
-4. In the SAP Build main page, navigate to the **Monitoring** tab.
+4. In the SAP Build Lobby, navigate to the **Monitoring** tab.
 
     ![Click on Monitoring](17a_Click_Monitoring.png)
     
@@ -478,21 +542,37 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
     Select the process you just triggered.
 
-    ![Open the Purchase Approval](17c_Select_Process.png)
+    ![Open the Purchase Approval](17c_Select_Purchase_Process.png)
 
     Examine the **Log**, and you can see that the **Retrieves business partner data by using business partner number** action was executed successfully.
 
-    ![Study and Understand the Process Log](17d_Process_Flow_Log.png)
+    ![Study and Understand the Process Log](17d_Process_Log.png)
+
+    In the process **Context** you can see that data from **S4HANA** is fetched successfully.
+
+    ![Choose Process](17e_Process_Context.png)
+
+    You can also see that the last step is an approval form, waiting to be filled out.
 
 5. Open your **Inbox** by clicking he icon in the header.
 
-    ![Open Inbox](17e_Process_Inbox.png)
-
-    You should see an auto-approve item in the Inbox. Open it, and click **Submit** at the bottom of he page.
+    You should see an **Approve Form** task in the Inbox
+     
+    Open it, and you should now see that the business partner fields in the form are filled in with the backend data.
 
     ![Submit the Auto Approval Notification](17f_Approval_Notification.png)
-    
-    If you go back to the monitoring tab, you will see that the process completed.
 
-    ![Process Completed](17g_Process_Complete.png)
+    Click **Approve** at the bottom of the page.
+    
+    Refresh your Inbox, and now you will see the approval notification form. 
+
+    Click **Submit**.
+
+    ![Approved Notification in the Inbox](17h_Approved_Notification.png)
+
+6. Go back to the monitoring tab and click **Refresh**. 
+
+    The **Purchase Approval Process** flow is now **Completed**.
+
+    ![Process Completed](17i_Process_Completed.png)
 
