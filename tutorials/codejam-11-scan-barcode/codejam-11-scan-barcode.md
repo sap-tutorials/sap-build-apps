@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform,sof
 primary_tag: software-product>sap-build
 ---
   
- 
+
 # Enable App to Select Product by Scanning Barcode 
 <!-- description --> Show some of the native mobile capabilities of SAP Build Apps by allowing users to select a product by scanning a barcode, as part of the SAP Build CodeJam. 
 
@@ -29,7 +29,7 @@ primary_tag: software-product>sap-build
 
 
 ## Intro
-One of the best things about SAP Build Apps is that you can easily enable basic but powerful native mobile features – such as the native option component or the photo selector or the camera or access to the contacts. 
+One of the best things about SAP Build Apps is that you can easily enable basic but powerful native mobile features – such as access to contacts and photos, the camera, location services and more.
 
 In this tutorial, we will let you scan a barcode in order to select a product, instead of having to select from the list on the home page.
 
@@ -64,13 +64,23 @@ Because the mobile preview does not yet support getting user information, you wi
 
     Set it's **Initial value** to some unique value, like your email address or some GUD (or you can create a GUID from some online generator, like [this one](https://guidgenerator.com/)).
 
+    ![Current user](currentuser.png)
+
 3. Open the logic canvas.
 
 4. Click on the **Get record collection**, and in the **Filter condition**, change the binding for **customer** condition.
 
+    ![Get record collection](currentUser2.png)
+    
     Set it to **Data and Variables > App variable > current user**.
 
-5. Click on the **Create record**, and in the **Record** property, change the formula binding to the following formula.
+    ![New filter](currentUser3.png)
+
+5. Click the **Create record**, and in the **Record** property.
+    
+    ![Create record](currentUser4.png)
+   
+    Change the formula binding to the following formula.
    
     ```JavaScript
     {customer: appVars.currentUser, status: "CART"}
@@ -84,25 +94,27 @@ Because the mobile preview does not yet support getting user information, you wi
 
 
 ### Add UI for barcode scanning
-1. In the UI, instead of the title component, replace that with the following:
+1. Toggle back to **View**.
 
-    - Row
-      - Cell #1
-        - Title (this is the original title you had ... just drag it to this Cell)
-      - Cell #2
-        - Container
-          - Text
-          - Icon
+2. Right now, you have a title component.
 
-    ![Change title](1-ChangeTitle.png)
-
+    ![UI title](ui1.png)
+    
+    Add a Row component just above the title.
+    
     >When you drag in a row component, it will automatically contain 2 cells.
 
-    The UI will now look like this.
+    ![Add row](ui2.png)
+    
+    Move the existing title component into Cell #1.
+    
+    In Cell #2, add a container, and in the container add a text and icon component.
 
-    ![UI change](1-change-title-ui.png)
+    The UI should look like this:
 
-2. Select the row component (use the tree view), and in the **Layout** tab click the first **50%**.
+    ![New UI](ui3.png)
+
+3. Select the row component (use the tree view), and in the **Layout** tab click the first **50%**.
 
     ![Alt text](1-row-1.png)
 
@@ -110,7 +122,7 @@ Because the mobile preview does not yet support getting user information, you wi
 
     ![Cell width](1-row-2.png)
 
-    Now click the other side, **0%**, and then enter for the cell width `3`.
+    Now click the other side, now **0%**, and then enter for the cell width `3`.
 
     ![Cell width, again](1-row-3.png)
 
@@ -120,35 +132,37 @@ Because the mobile preview does not yet support getting user information, you wi
 
     Finally, set **Align cell content** to align bottoms.
 
-3. Select the container in Cell #2, and under **Layout**, set the layout to **Horizontal**.
+4. Select the container in Cell #2, and in the **Layout** tab, in the **Layout** section, set the layout to **Horizontal**.
 
     ![Container layout](1-container.png)
 
-3. Select the text component (in Cell #2) and set the following.
+5. Select the text component (in Cell #2) and set the following.
 
     - Under **Properties**, set **Content** to `Click to scan product`.
 
         ![Text](1-text-1.png)
 
-    - Under **Style**, click the **Primary Paragraph** dropdown, and click **Edit**.
+    - In the **Style** tab, click the **Primary Paragraph** dropdown, and click **Edit**.
         
         ![Edit style](1-text-2.png)
 
         Under **Typography**, set **Text size** to **Small text**.
 
-    - Under **Layout**, change **Text align** to **right**.
+    - In the **Layout** tab, in the **Layout** section, change **Text align** to **right**.
 
-4. Select the icon component (in Cell #2), and set the following.
+6. Select the icon component (in Cell #2), and set the following.
 
-    - Under **Properties**, set **Icon** to `barcode`.
+    - Under **Properties**, in the **Icon** property, click **star** and enter `barcode` in the search.
+
+        Click the barcode symbol.
 
         ![Icon](1-icon-1.png)
 
-    - Under **Style**, click the **Primary Paragraph** dropdown, and click **Edit**.
+    - Under **Style**, click the **Primary Icon** dropdown, and click **Edit**.
 
         ![Style edit](1-icon-2.png)
 
-        Under **Typography**, change the **Font size** to `60` (change the binding to a static number).
+        Under **Typography**, change the binding type for **Font size** to **Static number**, and change the font size to `60`.
 
 Your UI should now look like this:
 
@@ -161,7 +175,7 @@ Your UI should now look like this:
 ### Add logic to scan barcode
 Now lets create the logic for handling the tap of the barcode icon.
 
-1. Select the icon component, open the logic canvas.
+1. Select the icon component, open the logic canvas (at the bottom).
 
     ![Open icon logic](2-openlogic.png)
 
@@ -239,7 +253,7 @@ Now we will use the mobile preview app so we can use the native functionality of
 
         ![Preview on EU10](3-preview-2a.png)
 
-4. Take the code and put enter it in the preview portal in SAP Build Apps.
+4. Take the code and enter it in the preview portal in SAP Build Apps.
 
     Press **Enter**.
 
