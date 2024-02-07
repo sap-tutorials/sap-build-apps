@@ -271,9 +271,9 @@ Now, you will add the action so that if the order is approved, the action will u
     
     Under the **Approval Notification 1** form, click the plus sign, **+**.
 
-    ![Add Go-To](goto1.png)
+    ![Add go-to](goto1.png)
     
-    Select **Flow Logic > Go-to-Step**.
+    Select **Controls and Events > Go-to-Step**.
 
     ![Go-to step](goto2.png)
 
