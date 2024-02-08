@@ -175,7 +175,7 @@ To enable the user to choose a category, we need to populate the **Categories** 
     Select **Formula**, and set the formula to the following:
 
     ```JavaScript
-    CONTAINS(UPPERCASE(repeated.current.Name), UPPERCASE(pageVars.filter)) && IF(!IS_EMPTY(pageVars.selectedCategory),repeated.current.MainCategoryId == pageVars.selectedCategory, true)
+    CONTAINS(UPPERCASE(repeated.current.Name), UPPERCASE(pageVars.FilterText)) && IF(!IS_EMPTY(pageVars.SelectCategory),repeated.current.MainCategoryId == pageVars.SelectCategory, true)
     ```
  
     ![Formula for filter](logic3.png)

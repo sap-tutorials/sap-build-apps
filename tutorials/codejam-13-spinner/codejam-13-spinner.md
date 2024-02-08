@@ -33,7 +33,6 @@ As you know your app has a product list and product details pages, but have you 
 
 ![Product Detail page](images/empty-details.png)
 
-
 In this exercise, you will enhance the **Product details** page by adding a spinner and only showing the fields once they are populated with the data.
 
 
@@ -48,7 +47,7 @@ In this exercise, you will enhance the **Product details** page by adding a spin
     
 3. Create a new page variable, and set its properties to the following:
     
-        | Name | Type |
+    | Name | Type |
     |-------|-------|
     | **Variable name** | `showSpinner` | 
     | **Variable value type** | True/false |
@@ -112,7 +111,7 @@ In this exercise, you will enhance the **Product details** page by adding a spin
 
     Set **Variable Name** to **showSpinner**.
 
-    Set **Assigned vale** to **False**.
+    Set **Assigned value** to **False**.
    
     ![Visible Property under Advanced](images/data-hide-spinner.png)
 
