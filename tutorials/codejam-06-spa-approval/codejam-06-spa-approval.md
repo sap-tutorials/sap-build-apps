@@ -16,7 +16,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Create a Business Process Project](codejam-05-spa-simple-process-flow).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Create a Business Process Project](codejam-05-spa-empty-process).
   
  
 

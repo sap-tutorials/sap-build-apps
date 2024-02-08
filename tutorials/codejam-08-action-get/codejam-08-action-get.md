@@ -476,7 +476,7 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
 6.  Click the **Purchase** button and open its logic canvas.
 
-    ![Click on Purchase Button](13a_Select_purchase_Button.png)
+    ![Click on Purchase Button](13a_Select_Purchase_Button.png)
 
     Click the **Create record** flow function, and then on the right, click **Custom object** under **Record**.
 
@@ -534,8 +534,8 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
 4. In the SAP Build Lobby, navigate to the **Monitoring** tab.
 
-    ![Click on Monitoring](17a_Click_Monitoring.png)
-    
+    ![Click on Monitoring](17a-redo.png)
+
     Under **Monitor**, click **Process and Workflow Instances**.
 
     ![Choose Process](17b_Monitor_Process.png)
