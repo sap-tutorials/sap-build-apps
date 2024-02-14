@@ -8,6 +8,6 @@ WebIDEEnabled=true
 sap.processautomation.enabled=true
 sap.build.usage=odata_gen
 ProxyType=Internet
-URL=
+URL=https://orderscapapp.cfapps.eu10.hana.ondemand.com/service/OrderManagement
 Appgyver.Enabled=true
 sap.applicationdevelopment.actions.enabled=true

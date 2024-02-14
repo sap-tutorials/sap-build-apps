@@ -4,12 +4,12 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build
 ---
   
 
-# Configure the Shopping Cart Page
+# 3 - Configure the Shopping Cart Page
 <!-- description --> Set up the shopping cart page – including variables, binding, styling, and logic – as part of the SAP Build CodeJam.
 
 
@@ -39,9 +39,9 @@ Specifically, you will retrieve data from our CAP service – which we created f
 
 
 ### Create a destination for our CAP service
-In order to retrieve data from the CAP service, we need to create a destination in the SAP BTP cockpit, which we can then access from SAP Build Apps.
+In order to retrieve data from the CAP service, you need to create a destination in the SAP BTP cockpit, which you can then access from SAP Build Apps.
 
-To save you time we have given you almost all the information for the destination in a file you can import.
+To save you time, we have given you almost all the information for the destination in a file you can import.
 
 >**IMPORTANT:** Before you begin this step, you will need to get the URL for the service from the CodeJam instructor.
 
@@ -58,20 +58,16 @@ To save you time we have given you almost all the information for the destinatio
 
 3. Click **Import Destination**, and then select the `CodeJamOrdersService` file you downloaded.
 
-    The draft destination will be filled in except for the URL.
+    The draft destination will be filled in.
 
     <!-- border -->
     ![Skeleton destination](images/destination.png)
 
-4.  Enter the URL from your instructor.
-
-    Select **Use default JDK truststore**.
-
     Click **Save**.
 
-5. Test the connectivity to the new destination by clicking **Check Connection**.
+4. Test the connectivity to the new destination by clicking **Check Connection**.
    
-   You should receive **200 – OK**. 
+   You should receive **200: OK**. 
 
 
 
@@ -82,7 +78,7 @@ To save you time we have given you almost all the information for the destinatio
 
 
 ### Create data resource for CAP service
-In order to fetch data from the CAP service, we need to create a data resource for the CAP service.
+In order to fetch data from the CAP service, you need to create a data resource for the CAP service.
 
 1. Back in your **ShoppingApp** project, open the **Data** tab.
 
@@ -100,11 +96,11 @@ In order to fetch data from the CAP service, we need to create a data resource f
 
 3. Click **Install Integration**.
 
-4. With the `Orders` entity selected, click **Enable Data Entity**.
+4. With the **Orders** entity selected, click **Enable Data Entity**.
 
     ![Enable entity](images/resource-4.png)
 
-5. With the `OrderItems` entity selected, click **Enable Data Entity**.
+5. With the **OrderItems** entity selected, click **Enable Data Entity**.
 
 6. Click **Save** (upper right).
 
@@ -120,7 +116,7 @@ You should now be able to see **Orders** and **OrderItems** appearing under the 
 
 
 ### Create data variable
-Now that you we have defined the connection to the CAP service, let's create a data variable, which will automatically include the logic for making the call as well as holding the retrieved data.
+Now that you you have defined the connection to the CAP service, let's create a data variable, which will automatically include the logic for making the call as well as holding the retrieved data.
 
 1. Navigate to the **Cart** page by clicking on the **Home pages** link on the upper-left corner, below the app name.
 
@@ -219,11 +215,11 @@ In order to display the data in the cart from the `OrderItems` entity, you need 
 
 
 ### Add navigation menu item
-Now that we have set up the **Cart** page, we need to let users get to the page. There are 2 ways users can navigate between pages.
+Now that you have set up the **Cart** page, you need to let users get to the page. There are 2 ways users can navigate between pages.
 
-We can can create a button or other UI component, and then create logic to respond to a button click or other event, and then use the **Open Page** flow function. That is what we did to navigate from the product list page to the product detail page.
+You can can create a button or other UI component, and then create logic to respond to a button click or other event, and then use the **Open Page** flow function. That is what you did to navigate from the product list page to the product detail page.
 
-But users might want to navigate to the **Cart** page at any time. So we can create a static menu that is available all the time. Every new app comes with a menu and a single item to return to the home page. In this step, you will create a new menu item for the **Cart** page. 
+But users might want to navigate to the **Cart** page at any time. So you can create a static menu that is available all the time. Every new app comes with a menu and a single item to return to the home page. In this step, you will create a new menu item for the **Cart** page. 
 
 1. Click the **Navigation** tab.
 
@@ -233,7 +229,7 @@ But users might want to navigate to the **Cart** page at any time. So we can cre
 
 2. Click **Add item**.
 
-    This will add a menu item, but likely not to the page we want.
+    This will add a menu item, but likely not to the page you want.
 
 3. Select the new menu item, and set the following properties:
 

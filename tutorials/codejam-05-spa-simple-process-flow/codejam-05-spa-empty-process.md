@@ -3,15 +3,14 @@ parser: v2
 author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
-time: 50
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+time: 30
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build-process-automation
 ---
  
 
 
-# Create a Business Process Project
-
+# 5 - Create a Business Process Project
 <!-- description --> Create an empty business process to better understand how to release, deploy, and monitor processes, as part of the SAP Build CodeJam.
 
 
@@ -22,19 +21,17 @@ primary_tag: software-product>sap-build-process-automation
 
 ## You will learn
 - How to create a SAP Build Process Automation project
-- How to create a Build Process that automates the Purchase Order Approval
-- How to Create Process Instance and Monitor it
+- How to create a Business Process that automates the Purchase Order Approval
+- How to create Process Instance and Monitor it
 
 
 
 ## Intro
+SAP Build Process Automation is a low code/no code tool under the SAP Build portfolio. With this tool, you will get access to a new range of opportunities for running your day-to-day workflows. 
 
 SAP Build Process Automation is a low code/no code tool under SAP Build Portfolio. With this tool, you will get access to a new range of opportunities for running your day-to-day workflows. In this tutorial, you will learn how to create a business process  using visual drag and drop simplicity.
 
-There are many use cases/scenarios where you can bring about innovation using SAP Build Process Automation. In this tutorial, you will see how a Purchase Order Approval process can be can be created which gets triggered by the Purchase order generated in the Shopping cart App. These Purchase Order requests have to be reviewed and approved/Rejected by the Approver. Once approved or rejected, the requester will be notified. So we prepare for this.
-
-
-
+There are many use cases/scenarios where you can bring about innovation using SAP Build Process Automation. In this tutorial, you will see how to create a Simple Business process flow for Purchase Orders Approval. We test the process flow by creating a process instance to make sure functionality works as expected.
 
 
 ### Create a process project
@@ -92,7 +89,7 @@ A process makes decisions based on data sent to it when it is triggered (the pro
 
 In this step, you will specify the inputs required for the process.
 
->In later tutorials we will create an action to get data from APIs.
+>In later tutorials, you will create an action to get data from APIs.
 
 1. Click the **Purchase Approval Process** tab.
 
@@ -108,9 +105,13 @@ In this step, you will specify the inputs required for the process.
 
 3. In the **Configure Process Inputs** window, click **Add Input** to add each input.
 
-    ![Add Process Inputs ](9_Add_Process_Inputs.png)
+    ![Add Process Inputs ](9a_Add_Process_Inputs.png)
 
-    Add the following inputs, flagging them all as **Required**. 
+    ![Add Process Inputs ](9b_Add_Process_Inputs.png)
+
+    Add the following inputs as shown in the above screenshot, flagging them all as **Required**.
+
+    >The **Identifier** field values – which are case-sensitive – are auto populated. DO NOT CHANGE these.
 
     |  Field Name                | Type | Required |
     |  :-------------            | :------------- | :-------------
@@ -121,13 +122,20 @@ In this step, you will specify the inputs required for the process.
   
     >The editor will remove leading and trailing spaces.
 
-    Click **Apply**.
+    After adding all the 4 Inputs, the Dialog should look like this.
 
     ![Complete Adding Process Inputs](10_Complete_Adding_Process_Inputs.png)
 
-4. Click **Save** (upper right) and close the side panel by clicking the **X**.
+    Click **Apply**.
 
+    >**DOUBLE-CHECK** that you set the **Total** field as a number.
+
+4. Click **Save** (upper right).
     ![Save Process Inputs](11_Save_Process_Inputs.png)
+
+
+
+
 
 
 
@@ -143,7 +151,7 @@ A business process is started by defining a trigger, an event that indicates to 
 
 >- **Form:** You can build a form to give to your users that can be filled in and submitted to trigger the process. That form is created within the same project. Forms can also be built with SAPUI5.
 
-For this process, we will define an API trigger, so our app can call an API to trigger it.
+For this process, you will define an API trigger, so our app can call an API to trigger it.
 
 1. Click **Add a Trigger**.
 
@@ -278,7 +286,7 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
     >![Inputs for Starting Instance](15f_Starting_Process_Instance.png)
 
-    Here's a reminder of the inputs you defined (in the JSON, you must use the identifier name):
+    Here's a reminder of the Process inputs you defined in the Process Editor (in the JSON, you must use the same field identifiers in the JSON key value pairs ):
    
     ![Identifiers of Process Inputs as JSON keys](15g_Identifier_as_JSON_Input.png)
 
@@ -301,6 +309,14 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
     ![Success](success.png)
 
+    >If things didn't go well, you may get the following:
+    >
+    >![Error](error.png)
+    >
+    >This is most likely because the identifier names or the types of the input parameters defined in the process do not match the data you just entered to start the process – you sent a number for a string input.
+    >
+    >One thing you may not have done is change the data type of the **total** input parameter to **Number**. If so, you must go back to the **Editable** version of your project, change the type for the **total** input, and release and deploy again. Or, you may have changed the identifiers for an input.
+
 
 
 
@@ -308,7 +324,7 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
 
 ### Monitor the Process  
-Once triggered, we can monitor the process instance from the **Monitor** section of the **Monitoring** tab.
+Once triggered, you can monitor the process instance from the **Monitor** section of the **Monitoring** tab.
 
 1. In the same screen you triggered the process, click **Show instances**.
     
@@ -318,9 +334,9 @@ Once triggered, we can monitor the process instance from the **Monitor** section
 
     >You would then have to filter or search for your instance. The **Show Instances** button takes you there directly.
 
-    >![Monitor Process Flow](16a_Monitor_Process.png)
 
-2. By default, completed processes are not shown in the list. And because we have no actions inside the process, it will start and immediately complete.
+
+2. By default, completed processes are not shown in the list. And because you have no steps inside the process, it will start and immediately complete.
 
     To see your instance, in the filters, click the dropdown for the **Status** filter, and select **Completed**.
 
@@ -336,7 +352,7 @@ Once triggered, we can monitor the process instance from the **Monitor** section
     - When it completed
     - Who started it
     - ID of the instance
-    - Definition ID of the process (this is the ID we need for later)
+    - Definition ID of the process (this is the ID you need later)
 
     ![Examine the Process Flow Context](16b_Examine_Process_Log_Context.png)
 

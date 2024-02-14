@@ -4,11 +4,11 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build
 ---
   
-# Create the Product List Page
+# 1 - Create the Product List Page
 <!-- description --> Import a skeleton project for the SAP Build CodeJam, and create a simple product list page based on ES5 data.
 
 
@@ -30,7 +30,7 @@ In this exercise, you will be importing an already created skeleton app to your 
 
 For this page, the product list page, you will design the entire UI, including styles and layout. For all pages, you will create the data connections, variables, logic, and navigation.
 
-For this product list page, we will connect to the ES5 service to get names, descriptions and images of products. At the end of this exercise, your homepage (product list page) will look something like this.
+For this product list page, you will connect to the ES5 service to get names, descriptions and images of products. At the end of this exercise, your homepage (product list page) will look something like this.
 
 ![Home page](images/restyle-6-preview.png)
 
@@ -142,7 +142,7 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
     ![Variables](images/9-switch-uicanvas-toggle-variables.png)
 
-    >If you get a big text box saying Welcome to variables, you can read it but then you can close it by clicking the X.
+    >If you get a big text box **Welcome to variables**, you can read it but then you can close it by clicking the X.
 
     >![Data Variables](images/9a-data-variable-docs.png)
     >
@@ -202,13 +202,13 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
     >Each component has a default style, plus additional alternative built-in styles you can choose. In addition, you can make changes to the current style, which changes the style for the current instance of the component only.
 
-    >If you want, you can update the default style with your changes so it affects all components (**Overwrite**), or you can save your changes to a new style (**New Style**). 
+    >If you want, you can update the default style with your changes so it affects all components ( **Overwrite** ), or you can save your changes to a new style ( **New Style** ). 
 
-    Expand the **padding** settings, set the padding on all 4 sides to 24px by clicking each rectangle, going to **Theme** tab, and selecting the **XXL** size.
+    Expand the **Padding** settings, set the padding on all 4 sides to 24px by clicking each rectangle, going to **Theme** tab, and selecting the **XXL** size.
    
     ![Style Theme - Padding](images/12b-padding-xxl.png)
 
-    Let’s save the style by scrolling up in the **Style** tab, clicking **New Style**, entering **Layout List Container**, and clicking **OK**. This saves the new style in the **Style** tab and now can be used on other containers in your app.
+    Let’s save the style by scrolling up in the **Style** tab, clicking **New Style**, entering `Layout List Container`, and clicking **OK**. This saves the new style in the **Style** tab and now can be used on other containers in your app.
 
     ![Save style](images/12bb-save-style.png)
 
@@ -224,14 +224,14 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
 
 ### Bind data variable to UI elements
-We created a data variable for the **Products** data, and the logic for retrieving the data was created automatically. Now you need to tell the app how and where you want to display the data.
+You created a data variable for the **Products** data, and the logic for retrieving the data was created automatically. Now you need to tell the app how and where you want to display the data.
 
 To do this, you create bindings for your UI components – in this case, the list item.
 
 
 >**How binding works**
 >
->When we configure a UI component (or later a logic component called a "flow function"), generally we do this with binding.
+>When you configure a UI component (or later a logic component called a "flow function"), generally you do this with binding.
 >
 >For most properties, there is a binding icon that indicates what type of binding is used. For example, you can use **static text** for a text field, or you can show text from a backend service and use a binding to a **data variable** 
 >
@@ -247,6 +247,8 @@ To do this, you create bindings for your UI components – in this case, the lis
 
 1. Select the **Large image list item** on the canvas.
    
+    ![Select list](select-list.png)
+
 2. In the **Properties** tab, you will set the following properties by clicking on the icon next to each field:
 
     ![Binding icon](images/14-icon-opens-modal.png)
@@ -278,7 +280,7 @@ To do this, you create bindings for your UI components – in this case, the lis
 
 3. Click **Save** (upper right).
 
-You may now test the app to see the Products list.
+You may now test the app to see the products list.
 
 
 

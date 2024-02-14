@@ -4,12 +4,12 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build
 ---
   
 
-# Write Logic to Maintain the Cart
+# 4 - Write Logic to Maintain the Cart
 <!-- description --> Add data logic to make the cart functional, as part of the SAP Build CodeJam.
 
 ## Prerequisites
@@ -24,7 +24,7 @@ primary_tag: software-product>sap-build
 
 
 ## Intro
-In this tutorial, we will do the following:
+In this tutorial, you will do the following:
 
 - Create logic to create a cart for the current user.
 - Enable the **Add to Cart** button on the product details page to add items to the cart.
@@ -35,15 +35,15 @@ In this tutorial, we will do the following:
 
 #### Our Data Model
 
-We have a CAP service that stores **Orders**, as well as **OrderItems**. Each order item has a reference to the order it belongs to.
+You have a CAP service that stores **Orders**, as well as **OrderItems**. Each order item has a reference to the order it belongs to.
 
 Each order has one of the following statuses:
 
 - **CART:** Indicates this is the current cart for the current user.
-- **REQUESTED:** Indicates the cart has been submitted for approval (later we will create a process for this). Once the cart has been submitted, the app no longer can use that cart (it is now considered a requested order) and the app must create a new one for the user.
+- **REQUESTED:** Indicates the cart has been submitted for approval (later you will create a process for this). Once the cart has been submitted, the app no longer can use that cart – it is now considered a requested order – and the app must create a new one for the user.
 - **APPROVED:** Indicates the cart – or more accurately, the requested order – has been approved.
 
-The app will maintain the current cart – with status **CART** – inside an app variable. When the app loads, there will be logic to determine if a cart exists or whether we need to create one.
+The app will maintain the current cart – with status **CART** – inside an app variable. When the app loads, there will be logic to determine if a cart exists or whether you need to create one.
 
 
 
@@ -84,15 +84,15 @@ You will create an app variable to store the cart ID of the current user.
 
 
 ### Get or create cart
-We will want to add items to the cart, but in order to add them to the CAP service, we need to know the ID of the cart (order).
+You will want to add items to the cart, but in order to add them to the CAP service, you need to know the ID of the cart (order).
 
-When first running the app, we check if there is a cart stored in the app variable. If not, we check the CAP service to see if there is a stored cart for the current user. If yes, we take that order ID; if not, we create a new order with the status **CART**.
+When first running the app, you check if there is a cart stored in the app variable. If not, you check the CAP service to see if there is a stored cart for the current user. If yes, you take that order ID; if not, you create a new order with the status **CART**.
 
 ![Overall logic](images/cartid-overall-logic.png)
 
 A cart is assigned to the current user by detecting the current user's email address and storing that in the `customer` field.
 
->Since the app uses SAP BTP authentication, we can determine a variety of properties about the current user, including the user's email address. You can find these fields using formulas and the `systemVars.currentUser` object.
+>Since the app uses SAP BTP authentication, you can determine a variety of properties about the current user, including the user's email address. You can find these fields using formulas and the `systemVars.currentUser` object.
 
 >**IMPORTANT:** As of the writing of the tutorial, the current user could only be accessed when running the application on the web, not on a mobile device.
 
@@ -116,9 +116,9 @@ A cart is assigned to the current user by detecting the current user's email add
 
     >![Events](images/events.png)
 
-4. The first **If condition** checks if we have a cart already. If we have a cart, we do nothing. Otherwise, we proceed with retrieving or creating a cart.
+4. The first **If condition** checks if you have a cart already. If you have a cart, you do nothing. Otherwise, you proceed with retrieving or creating a cart.
 
-    Select the utility **if condition** flow function, and click the binding icon for **Condition**. Select **Formula**, and use the following formula:
+    Select the **If condition** flow function, and on the right click the binding icon for **Condition**. Select **Formula**, and use the following formula:
 
     ```JavaScript
     IS_EMPTY(appVars.orderID)
@@ -126,9 +126,9 @@ A cart is assigned to the current user by detecting the current user's email add
 
     ![If condition](images/utility-if-condition-first.png)
 
-    >In case you were wondering, we added a **delay** function at the start of the flow to ensure that all the system variables – including for the user – are available before starting the flow.
+    >In case you were wondering, you added a **delay** function at the start of the flow to ensure that all the system variables – including for the user – are available before starting the flow.
 
-5. If we do not have a cart, we use the **Get record collection** to retrieve the orders for the current user, filtering for any with the status **CART**.
+5. If you do not have a cart, you use the **Get record collection** to retrieve the orders for the current user, filtering for any with the status **CART**.
 
     Select the  **Get record collection** flow function, and set the **Resource name** to **Orders**.
 
@@ -145,9 +145,11 @@ A cart is assigned to the current user by detecting the current user's email add
 
     Make sure to set **ALL** for **Matching ALL of these conditions** (it should already be set).  
 
-6. We now have to see if we were able to retrieve any orders for the current user that is a cart.
+    Click **Save**.
 
-    Out of the top output of the **Get record collection**, we have an **If condition**. Select this flow function, and click the binding icon for **Condition**. Select **Formula**, and use the following formula – to check if there is no existing cart:
+6. You now have to see if you were able to retrieve any orders for the current user that is a cart.
+
+    Out of the top output of the **Get record collection**, you have an **If condition**. Select this flow function, and click the binding icon for **Condition**. Select **Formula**, and use the following formula – to check if there is no existing cart:
 
     ```JavaScript
     IS_EMPTY(outputs["Get record collection"].records)
@@ -155,32 +157,30 @@ A cart is assigned to the current user by detecting the current user's email add
 
     ![If condition](images/cart-flow-3.png)
     
-    Out of the bottom output of the **Get record collection**, we have an **Alert**, in case there is an error in the API call. Select this flow function, and click the binding icon for **Dialog title**. Select **Output value of another node > Get record collection > Error > message**, and then click **Save**.
+    Out of the bottom output of the **Get record collection**, you have an **Alert**, in case there is an error in the API call. Select this flow function, and click the binding icon for **Dialog title**. Select **Output value of another node > Get record collection > Error > message**, and then click **Save**.
 
     ![Alert](images/cart-flow-4.png)
 
     >Feel free to move the flow functions around to make it easy to see them all.
 
 
-7. The second **If condition** determines if there is an existing cart.
-
-    Out of the top output (meaning there is no cart), we have a **Create record** flow function.
-
+7. The **Create record** is used to create a new cart if none has previously been found.
+    
     Select this, and set the **Resource name** to **Orders**.
 
     ![Create cart](images/cart-flow-5.png)
 
-    For **Record**, select the binding icon, select **Formula**, and and use the following formula:
+    For **Record**, select the binding icon, select **Formula**, and use the following formula:
     
     ```JavaScript
     {customer: systemVars.currentUser.email, status: "CART"}
     ```
 
-    >The formula sets the customer to the current user, and sets the status of the record to **CART**, meaning it represents a cart and not an actually order yet.
+    >The formula sets the customer to the current user, and sets the status of the record to **CART**, meaning it represents a cart and not an actual order yet.
 
-    >The formula will appear red with a warning, because the ID field is mandatory but the formula editor does not know that the ID will be auto-generated by the service. Just click **Save**.
+    >The formula will appear red with a warning, because the ID field is mandatory but the SAP Build Apps formula editor does not know that the ID will be auto-generated by the CAP service. Just click **Save**.
 
-8. Out of the top output of the **Create record** flow function, we now have to set the app variable to the ID of the new record we created.
+8. Out of the top output of the **Create record** flow function, you now have to set the app variable to the ID of the new record you created.
 
     ![Assign order ID to new cart](images/cart-flow-6.png)
 
@@ -191,7 +191,7 @@ A cart is assigned to the current user by detecting the current user's email add
     - **Assigned value** to **Output value of another node > Create record > ID**.
 
 
-9. Out of the bottom output of the second **If condition** (meaning there already is a cart), we have a **Set app variable** flow function to set the app variable to the order ID we successfully retrieved.
+9. Out of the bottom output of the second **If condition** (meaning there already is a cart), you have a **Set app variable** flow function to set the app variable to the order ID you successfully retrieved.
 
     ![Assign order ID to existing cart](images/cart-flow-7.png)
 
@@ -203,7 +203,7 @@ A cart is assigned to the current user by detecting the current user's email add
     outputs["Get record collection"].records[0].ID
     ``` 
 
-    >The `[0]` indicates we take the first record in the collection. There should be only one cart at a time, but just in case we just take the first one.
+    >The `[0]` indicates the first record in the collection. There should be only one cart at a time, but just in case you just take the first one.
 
 
 10. Click **Save** (upper right).
@@ -214,7 +214,7 @@ A cart is assigned to the current user by detecting the current user's email add
 
 
 ### Add items to cart
-Now that we have a cart ID, we can add an item to the cart.
+Now that you have a cart ID, you can add an item to the cart.
 
 1. Navigate back to the product details page – by clicking the name of the current page under the app name in the top-left corner.
 
@@ -243,15 +243,17 @@ Now that we have a cart ID, we can add an item to the cart.
 
         ![Bind Create Record to entity](images/3-bind-entity-set-formula.png)
 
-5. Drag an **Alert** and connect it to the bottom output of the **Create Record**.
-    
-    Select the **Alert** and for the **Dialog title** choose **Output value of another node > Create Record > Error > message**.
-    
-    Click **Save**.
-   
-    ![Add Alert dialog](images/4-add-alert-dialog.png)
+5. Drag 2 **Alert** flow functions: connect on to the top output and one to the bottom output of **Create Record**.
 
-    >Note that the **Alert** is connected to the bottom output of the **Create Record**. 
+    ![Alerts](images/alerts.png)
+
+    Select the top **Alert** and for the **Dialog title** choose **Formula**, and use the following formula.
+
+    ```JavaScript
+    data.Products1.Name + " (" + pageVars.quantity +  ") added to cart"
+    ```
+    
+    Select the bottom **Alert** and for the **Dialog title** choose the binding **Output value of another node > Create Record > Error > message**.
 
 6.  Click **Save** (upper right).
 
@@ -264,13 +266,13 @@ Now that we have a cart ID, we can add an item to the cart.
 
 
 ### Add logic to delete record
-Now that we enable someone to add an item to the cart, let's add logic to enable someone to delete an item from the cart.
+Now that you enabled the user to add an item to the cart, let's add logic to enable someone to delete an item from the cart.
 
 1. Navigate back to the cart page – by clicking the name of the current page under the app name in the top-left corner.
 
     Select the **Cart** tile.
 
-2. Click the **Delete** icon in the first row of the cart, and open the logic canvas if it's not already open (by clicking **Add logic to Icon9** at the bottom).
+2. Click the **Delete** icon in the first row of the cart, and open the logic canvas if it's not already open (by clicking **Add logic to Icon - Delete** at the bottom).
 
     ![Delete icon](images/3-delete-icon-logic.png)
 
@@ -284,7 +286,7 @@ Now that we enable someone to add an item to the cart, let's add logic to enable
 
     ![Select Repeat Data ID](images/3c-select-repeat-data-property-current-id.png) 
 
-4. Now that we deleted the item, we want to refresh the list of items.
+4. Now that you deleted the item, you want to refresh the list of items.
 
     Drag a **Get Record Collection** flow function onto the logic canvas and connect it to the top output of the **Delete record**.
 
@@ -302,7 +304,7 @@ Now that we enable someone to add an item to the cart, let's add logic to enable
     
     ![Refresh data](images/3d-refresh-data.png)
 
-5. Now that we retrieved the new list of items, we have to update our data variable.
+5. Now that you retrieved the new list of items, you have to update the data variable.
 
     Drag a **Set data variable** flow function onto the logic canvas and connect it to the top output of the **Get record collection**.
 
@@ -320,9 +322,9 @@ Now that we enable someone to add an item to the cart, let's add logic to enable
 
 
 ### Remove hard-coded cart
-One more thing. Remember we hard-coded a default cart so you could see data in your cart?
+One more thing. Remember you hard-coded a default cart so you could see data in your cart?
 
-Well, we want to remove that so you can have your own cart.
+Well, you want to remove that so you can have your own cart.
 
 1. Toggle back to **Variables**.
 

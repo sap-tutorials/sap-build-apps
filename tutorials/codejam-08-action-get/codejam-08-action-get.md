@@ -4,12 +4,12 @@ author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
    
 
-# Create Action to Get Data from SAP S/4HANA Cloud
+# 8 - Create Action to Get Data from SAP S/4HANA Cloud
 <!-- description --> Create an action project to retrieve SAP S/4HANA Cloud data and call the action from your business process, as part of the SAP Build CodeJam.
 
 
@@ -52,7 +52,7 @@ In this tutorial, you will create an action project based on the Business Partne
 ### Create destination for SAP S/4HANA Cloud 
 In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP Business Accelerator Hub**, you need to create a destination.
 
-1.  Go to the [SAP Business Accelerator Hub](https://api.sap.com/) and log-in (or create a free account)
+1.  Go to the [SAP Business Accelerator Hub](https://api.sap.com/) and log in (or create a free account)
 
     On the top-right, click `Settings`.
     
@@ -149,9 +149,9 @@ In this step, you will enable the destination to be used in your processes.
 
     >**Why do I see the CAP service?**
     >
-    >You might be wondering why we see the CAP service here, when we only added the SAP S/4HANA service in the Control Tower.
+    >You might be wondering why you see the CAP service here, when you only added the SAP S/4HANA service in the Control Tower.
     >
-    >In the Control Tower, we added the destinations that could be used during runtime – and the `sap.processautomation.enabled` additional property in the destination enables the administrator to select it for runtime.
+    >In the Control Tower, you added the destinations that could be used during runtime – and the `sap.processautomation.enabled` additional property in the destination enables the administrator to select it for runtime.
     
     >But destinations have a second property that indicates whether they should be shown in the actions setup screens, `sap.applicationdevelopment.actions.enabled`. When you set up your destinations, you added this to both the CAP and SAP S/4HANA destinations.
 
@@ -173,7 +173,7 @@ In this step, you will enable the destination to be used in your processes.
 
 5. Expand the **A_BusinessPartner** entity.   
 
-    >It might help to select the **GET** filter and search by `A_BusinessPartner(`.
+    >It might help to select the **GET** filter and search by `retrieves business partner data`.
 
     >![Search entity](search.png)
 
@@ -296,7 +296,7 @@ To make the action available to your processes, you must release and publish the
 
 
 ### Add action to process
-Now you've created an action to retrieve data. Now lets add it so we can retrieve data as part of our process.
+You've created an action to retrieve data. Now add it to the process so you can retrieve data inside the process.
 
 
 
@@ -421,7 +421,7 @@ Now you've created an action to retrieve data. Now lets add it so we can retriev
 
     ![Destinations](deploy-destinations.png)
     
-    >Previously we did not get this screen because we did not have any variables to configure. But now you defined a variable for managing the destination, so you must select the destination for this variable for this deployment.
+    >Previously, you did not get this screen because you did not have any variables to configure. But now you defined a variable for managing the destination, so you must select the destination for this variable for this deployment.
 
     Select the destination you created for accessing SAP S/4HANA.
 
@@ -462,6 +462,8 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
     ![Add Page Variable](11b_Add_Page_Variable_Save.png)
 
+    >Since you need to get a business partner from the user, and then pass it to process, you will need a place to store it.
+
 4. Toggle back to **View**.
 
     ![Switch to App View ](12a_Switch_to_View.png)
@@ -490,7 +492,7 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
     Bind the field to **Data and Page Variables > Page Variable > BP**.
 
-    Click **Save**.
+    Click **Save** twice.
 
     ![Save Binding](13h_Save_Binding.png)
 

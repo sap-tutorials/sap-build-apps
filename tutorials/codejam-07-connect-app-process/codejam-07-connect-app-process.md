@@ -4,13 +4,13 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
 
 
-# Trigger Process from Your App
+# 7 - Trigger Process from Your App
 <!-- description --> Enable your app to call the SAP Build Process Automation API in order to trigger your process, as part of the SAP Build CodeJam.
 
 
@@ -115,7 +115,7 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
 
 ### Create data resource for triggering process
-Now that we defined the API for triggering the process, we need a data resource so we can call the API from SAP Build Apps.
+Now that you defined the API for triggering the process, you need a data resource so you can call the API from SAP Build Apps.
 
 1. Open your SAP Build Apps project from the SAP Build lobby.
 
@@ -130,7 +130,7 @@ Now that we defined the API for triggering the process, we need a data resource 
     | Field | Value | 
     |-----|-------|
     | **Data entity name** | `Trigger Workflow` | 
-    | **BTP destination name** | **sap_process_destination_user** | 
+    | **BTP destination name** | **sap_process_destination_USER** | 
 
     ![Name](resource-2.png)
 
@@ -260,33 +260,33 @@ Now that we defined the API for triggering the process, we need a data resource 
 
     Click **Save Data Entity** to close the data resource definition.
 
-> **COMMON ISSUES**
->
->**403:** The destination to the SAP Build Process Automation API is not configured properly. Make sure the client ID, secret, service URL and authentication URL (with `/oath/token` path) are set correctly. Do not add user/password for the authentication URL.
->
->**404:** The API did not recognize the name of your process (i.e., `definitionId` in the request body mapper) or the path to the service is wrong -- both in the **create** tab.
->
->**415:** You did not send the `Content-Type` request header.
->
->**422:** This basically means that the API heard your call but it didn't like something in the request body.
->
->- The format of a field may be wrong, for example, text for a number field or an invalid date format (dates must be in this format: `2023-01-31`). 
->
->**500:** This may mean that your URLs are wrong, especially, you may have the wrong URL for OAuth authentication, such as you forget to add the path `/oauth/token`.
->
->Note that field names are case sensitive. This will not cause an error in the API call, but the values will not be passed to the workflow properly and you will not see the values in the workflow forms.
+    > **COMMON ISSUES**
+    >
+    >**403:** The destination to the SAP Build Process Automation API is not configured properly. Make sure the client ID, secret, service URL and authentication URL (with `/oath/token` path) are set correctly. Do not add user/password for the authentication URL.
+    >
+    >**404:** The API did not recognize the name of your process (i.e., `definitionId` in the request body mapper) or the path to the service is wrong -- both in the **create** tab.
+    >
+    >**415:** You did not send the `Content-Type` request header.
+    >
+    >**422:** This basically means that the API heard your call but it didn't like something in the request body.
+    >
+    >- The format of a field may be wrong, for example, text for a number field or an invalid date format (dates must be in this format: `2023-01-31`). 
+    >
+    >**500:** This may mean that your URLs are wrong, especially, you may have the wrong URL for OAuth authentication, such as you forget to add the path `/oauth/token`.
+    >
+    >Note that field names are case sensitive. This will not cause an error in the API call, but the values will not be passed to the workflow properly and you will not see the values in the workflow forms.
 
-If you've gotten to here, your integration with SAP Build Process Automation is working!!
+    If you've gotten to here, your integration with SAP Build Process Automation is working!!
 
-You can go into the SAP Build Process Automation monitoring and see there the process you just triggered, and check the context to make sure the parameters were sent properly.
+    You can go into the SAP Build Process Automation monitoring and see there the process you just triggered, and check the context to make sure the parameters were sent properly.
 
-![Check process instance](test5.png)
+    ![Check process instance](test5.png)
 
-You can also check the Inbox to see the that the approval form was created properly – you get an approval form because the total was over 1000.
+    You can also check the Inbox to see the that the approval form was created properly – you get an approval form because the total was over 1000.
 
-![Inbox](test6.png)
+    ![Inbox](test6.png)
 
-Close your data resource definition by clicking **Save Data Entity** on the `Configure SAP BTP destination REST API integration` pop-up.
+5. In SAP Build Apps, close your data resource definition by clicking **Save Data Entity**.
 
 
 
@@ -297,7 +297,7 @@ Close your data resource definition by clicking **Save Data Entity** on the `Con
 
 
 ### Add purchase logic
-Now that we have the data connection for triggering our process working, we now want to add logic so it will occur when we click purchase in our app for our cart of items.
+Now that you have the data connection for triggering your process working, you now want to add logic so it will occur when you click **Purchase** in the app for the cart of items.
 
 1. Open the **Cart** page.
 
@@ -315,7 +315,11 @@ Now that we have the data connection for triggering our process working, we now 
 
     - **Resource name:** Set to **Trigger Workflow**.
 
+        ![Trigger Workflow](purchase-logic1.png)
+
     - **Record:** Click **Custom object** and set the fields as follows:
+
+        ![Trigger logic](purchase-logic2.png)
 
         - **orderId:** Set to **Date and Variables > App variable > orderID**
         - **newStatus:** Set to `APPROVED`
@@ -331,7 +335,7 @@ Now that we have the data connection for triggering our process working, we now 
             MAP(data.OrderItems1, {product: item.product, price: item.price, quantity: NUMBER(item.quantity), total: item.price * item.quantity})
             ```
 
-            >We use a formula because we have to modify the data slightly before sending. Specifically, the quantity from the input box component is a string and we need to convert it to a number.
+            >You use a formula because you have to modify the data slightly before sending. Specifically, the quantity from the input box component is a string and you need to convert it to a number.
 
         - **businessPartner:** Leave empty for now
 
@@ -343,7 +347,11 @@ Now that we have the data connection for triggering our process working, we now 
 
     - **ID:** Set to **Date and Variables > App variable > orderID**
 
+        ![Update record](purchase-logic3.png)
+
     - **Record:** Click **Custom object** and set the fields as follows:
+
+        ![Record](purchase-logic4.png)
 
         - **status:** Set to **Static text** with value `REQUESTED`
         - **total:** Set to to the following formula:
@@ -358,6 +366,8 @@ Now that we have the data connection for triggering our process working, we now 
 
     Click **Save**.
 
+    ![Alert](purchase-logic5.png)
+
 7. Click **Save** (upper right).
 
 
@@ -369,11 +379,11 @@ Now that we have the data connection for triggering our process working, we now 
 
 
 ### Add reset logic
-In the same logic for the button, we want to:
+In the same logic for the button, you want to:
 
 - Alert the user that the purchase was successful
 - Reset the cart ID (since it cannot be used anymore)
-- Reset the items in our data variable.
+- Reset the items in your data variable.
 - Go back to the home page
 
 Update the logic as follows.
@@ -396,7 +406,7 @@ Update the logic as follows.
 
 5. Click **Save** (upper right).
 
->There is no need to do anything for the **Set data variable**, since the data variable is automatically set to **OrderItems** since it is the only data variable for this page. And since we want to blank it out, the **Record collection** can be left as set to nothing.
+>There is no need to do anything for the **Set data variable**, since the data variable is automatically set to **OrderItems** since it is the only data variable for this page. And since you want to blank it out, the **Record collection** can be left as set to nothing.
 
 
 

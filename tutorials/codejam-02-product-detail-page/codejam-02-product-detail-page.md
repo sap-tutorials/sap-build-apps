@@ -4,12 +4,12 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build
 ---
   
 
-# Configure the Product Details Page
+# 2 - Configure the Product Details Page
 <!-- description --> Set up the product detail page – including variables, binding, styling, and logic – as part of the SAP Build CodeJam.
 
 
@@ -39,9 +39,9 @@ In this exercise, you will enhance the **Product details** page by connecting to
 
 
 ### Create a page parameter
-The product details page will show the details of a specific product, but we need to be given the ID of the product to display.
+The product details page will show the details of a specific product, but you need to give the ID of the product to display.
 
-Therefore, we will create a page parameter on the ***product details page*** to hold the ID. The page parameter also makes it so when another page (product list page) wants to navigate to the details page, it will be required to provide a product ID. 
+Therefore, you will create a page parameter on the product details page to hold the ID. The page parameter also makes it so when another page (product list page) wants to navigate to the details page, it will be required to provide a product ID. 
 
 
 1. In the upper-left corner, below the app name, **ShoppingApp**, click the link with the name of the current page – **Home page**.
@@ -56,7 +56,7 @@ Therefore, we will create a page parameter on the ***product details page*** to 
    
     ![Variables on Product Details](images/12b-product-details-variables.jpg)
 
-    On the left, click **Page parameters** and add a parameter.
+    On the left, click **Page Parameters**, and then click **Add Parameter**.
 
     Rename the parameter to `productID`. Keep the **Parameter value type** as **text**.   
 
@@ -72,7 +72,7 @@ Therefore, we will create a page parameter on the ***product details page*** to 
 
 
 ### Create a data variable
-Once we know the product for which we want to retrieve its details, we will need a data variable to hold the data, just as we created for the product list page. But this time, we need a variable to hold only a single object, and not a list of objects.
+Once you know the product for which you want to retrieve its details, you will need a data variable to hold the data, just as you created for the product list page. But this time, you need a variable to hold only a single object, and not a list of objects.
 
 
 
@@ -89,7 +89,7 @@ Once we know the product for which we want to retrieve its details, we will need
 
     >There are 3 kinds of data variable, which determines its underlying data type (list vs. object) and the inputs that are required:
     >
-    >**Collection of data records:** A list of objects. This is what was automatically selected when we created a data variable for the products in the product list page. No inputs are required.  
+    >**Collection of data records:** A list of objects. This is what was automatically selected when you created a data variable for the products in the product list page. No inputs are required.  
     >
     >**Single data record:** Just a single object. You will generally have to provide a key so SAP Build Apps knows which object to return.
     >
@@ -141,7 +141,7 @@ In this case, you will create a page variable to store the quantity of the item 
 
 
 ### Map fields to components
-The product details page already contains the UI components needed to display the product details. But now we need connect the data from our data variable to the appropriate fields.
+The product details page already contains the UI components needed to display the product details. But now you need connect the data from your data variable to the appropriate fields.
 
 1. Toggle back to **View**.
 
@@ -165,7 +165,7 @@ The product details page already contains the UI components needed to display th
     
     Click **Save**.
 
-3. For the next 4 fields, we will use formulas. Set the following bindings:
+3. For the next 4 fields, you will use formulas. Set the following bindings:
 
     | UI element   |  Formula |
     |---|---|
@@ -182,7 +182,7 @@ The product details page already contains the UI components needed to display th
     
     >Here, the ID is displayed with a prefix, the price is formatted, the supplier is displayed with a prefix, and the weight units and amount are concatenated. 
 
-    >In an upcoming step, for the total, we will do some calculations as well.
+    >In an upcoming step, for the total, you will do some calculations as well.
 
 5. Select the **Input field - Quantity**.
 
@@ -207,7 +207,7 @@ The product details page already contains the UI components needed to display th
 
     > **What does the formula do?**
 
-    >The formula checks if the price exists. If it doesn't, we just print out nothing. If it exists, we convert it to a number (the API provides it as a string), then multiply it by the quantity, and then format it with 2 decimal places. Finally, we precede everything with a dollar sign.
+    >The formula checks if the price exists. If it doesn't, you just print out nothing. If it exists, you convert it to a number (the API provides it as a string), then multiply it by the quantity, and then format it with 2 decimal places. Finally, you precede everything with a dollar sign.
 
     Click **Save** twice.
 
@@ -223,7 +223,7 @@ The product details page already contains the UI components needed to display th
 
 
 ### Set up navigation to details page
-Our details page is all set up, but there is no way to get to it. So we will set up navigation whenever anyone selects a product on the product list page.
+Your details page is all set up, but there is no way to get to it. So you will set up navigation whenever anyone selects a product on the product list page.
 
 
 1. Navigate back to the **Home page** by clicking on the **Product Details** link on the upper-left corner, below the app name.
@@ -246,7 +246,11 @@ Our details page is all set up, but there is no way to get to it. So we will set
    
     ![Add open page function](images/11a-drag-open-page-logic.png)
 
-4.  Connect the **Open page** flow function to the **Component tap** event like this:
+4.  Connect the **Open page** flow function to the **Component tap** event. 
+
+    Do this by clicking on the little outgoing knob on **Component tap** and dragging it to the incoming knob of **Open Page**.
+
+    Make it look like this:
 
     ![Connect open page function](images/11b-connect-openpage.png)
 
@@ -260,11 +264,13 @@ Our details page is all set up, but there is no way to get to it. So we will set
 
     >Notice that SAP Build Apps now recognizes that this page requires a page parameter called **productID** to be passed, and creates a field for you to configure.
     
-    Set **productID** value to **Data item in repeat > current > Id**.
+    Click on the **X** next to **productID**, and set its value to **Data item in repeat > current > Id**.
+
+    ![Data item in repeat](data-item-repeat.png)
 
     ![Open page set page parameter](images/11c-openpage-set-page-param.png)
 
-    >SAP Build Apps knows we are in the logic canvas of a repeated UI element, so it provides the **Data item in repeat** binding type. When the user will click on a product, SAP Build Apps will send the ID of that product to the **Product Details** page.
+    >SAP Build Apps knows you are in the logic canvas of a repeated UI element, so it provides the **Data item in repeat** binding type. When the user will click on a product, SAP Build Apps will send the ID of that product to the **Product Details** page.
 
 
 6. Click **Save** (upper right). 
@@ -285,7 +291,7 @@ Our details page is all set up, but there is no way to get to it. So we will set
     >3. Click **Open Web Preview**.
     >4. Click on the **ShoppingApp** tile.
 
-2. On the product list page, click the first product in the list.
+2. On the product list page, click **Notebook Basic 18**.
 
     You should be navigated to the respective **Product details** page. The page should look similar to this page.
 
@@ -293,4 +299,4 @@ Our details page is all set up, but there is no way to get to it. So we will set
 
     Change the **quantity** field. The **Total Cost** field should reflect the changes.
 
-    >We have not set the logic for he **Add to Cart** button, so that will not do anything ... yet.
+    >You have not set the logic for he **Add to Cart** button, so that will not do anything ... yet.

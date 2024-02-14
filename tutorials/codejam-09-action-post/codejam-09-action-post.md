@@ -4,12 +4,12 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
 
-# Create Action Project to Post Data to CAP Service
+# 9 - Create Action Project to Post Data to CAP Service
 <!-- description --> Create an action project to update our CAP service and call the action from your process when the order is approved, as part of the SAP Build CodeJam.
 
 
@@ -113,7 +113,7 @@ You already created the destination for the CAP service because you needed it in
 
     Click **Next**.
 
-4. Enter **OrderManagement-Actions** for the project name and description.
+4. Enter `OrderManagement-Actions` for the project name and description.
     
     Click **Create**.
 
@@ -121,7 +121,7 @@ You already created the destination for the CAP service because you needed it in
 
     You will now see the operations available for this service, and you will need to decide which ones to expose.
 
-5. In the **Orders** entity, we want to only update the **status** field. Hence, in the popup, you have to select the **PATCH** method of **/Orders({ID})** API. 
+5. In the **Orders** entity, you want to only update the **status** field. Hence, in the popup, you have to select the **PATCH** method of **/Orders({ID})** API. 
     
     Select the **Filter actions** dropdown, filter option and choose **PATCH**. 
     
@@ -257,7 +257,7 @@ Now, you will add the action so that if the order is approved, the action will u
 
 5. In the side pane, go to the **Inputs** tab.
 
-    Click in the **ID** field (this is one of the inputs defined in the action). We must bind which order to update.
+    Click in the **ID** field (this is one of the inputs defined in the action). You must bind which order to update.
     
     Choose **Process Inputs > Order ID**.
 
@@ -267,7 +267,7 @@ Now, you will add the action so that if the order is approved, the action will u
 
 6. Let's do one more thing to make the process more efficient.
 
-    We updated the CAP service to change the status of our order when an approver approves the purchase. But we also want to update the order status when it is automatically approved.
+    You updated the CAP service to change the status of our order when an approver approves the purchase. But you also want to update the order status when it is automatically approved.
     
     Under the **Approval Notification 1** form, click the plus sign, **+**.
 
@@ -341,7 +341,7 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 ### Build My Orders screen
 In order to better see the status of all my orders and cart, you will create in 5 minutes a page for checking the status of your orders.
 
-1. Open your ShoppingApp project.
+1. Open your SAP Build Apps project.
 
 2. Open the **My Orders** page. 
 
@@ -432,4 +432,4 @@ Back in your app, check the **My Orders** page again, and you will see the statu
 
 ![Order approved](testapp7.png)
 
->You will also notice that there is a new cart. Since we submitted the cart and changed it's status to **REQUESTED**, the app no longer had a cart. And when the app returned to the home page, it created a new cart in the CAP service.
+>You will also notice that there is a new cart. Since you submitted the cart and changed it's status to **REQUESTED**, the app no longer had a cart. And when the app returned to the home page, it created a new cart in the CAP service.

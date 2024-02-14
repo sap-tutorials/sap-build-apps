@@ -4,13 +4,13 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
 
 
-# Add Approval Flow to Process
+# 6 - Add Approval Flow to Process
 <!-- description --> Add conditions and approval workflow to the process, as part of the SAP Build CodeJam.
 
 
@@ -39,7 +39,7 @@ SAP Build Process Automation lets you add different activities and steps to your
 - **Actions:** Gets/posts data to and from backend systems.
 - **Mail:** Sends emails.
 
-Another major activity is **Automation**, which defines a set of steps to be carried out on a machine or virtual machine, such as performing activities with Microsoft Office products, opening and manipulating web sites, and much more. We will not include automations in this exercise.
+Another major activity is **Automation**, which defines a set of steps to be carried out on a machine or virtual machine, such as performing activities with Microsoft Office products, opening and manipulating web sites, and much more. You will not include automations in this exercise.
 
 
 ### Create data type
@@ -47,7 +47,9 @@ You will want to send a list of items to the process, each with a product, price
 
 To do this, you can create a data type with all those fields, and specify that you want a list of them.
 
-1. At the top of your project, select the **Editable** version.
+1. Go back to the SAP Build lobby, and open your project.
+
+    At the top of your project, make sure **Editable** version is selected.
 
 2. On the **Overview** page, click **Create** and select **Data Type**.
 
@@ -71,9 +73,9 @@ To do this, you can create a data type with all those fields, and specify that y
     | `price`| **Number** |
     | `total` | **Number** |
 
-    > If the Type of the fields is not reflected correctly in the table, select the correct **Type** again from the dropdown.
+    >If the **Type** of the fields is not reflected correctly in the table, select the correct **Type** again from the dropdown.
 
-    With all the fields, the screen should look like this:
+    With all the fields, the screen should look like this (make sure the **Type** is correct):
 
     ![Complete data type](images/1-finished.png)
 
@@ -85,7 +87,7 @@ To do this, you can create a data type with all those fields, and specify that y
 
 
 ### Update inputs
-Now that we have a data type, we want to add to the process another input for receiving a list of items.
+Now that you have a data type, you want to add to the process another input for receiving a list of items.
 
 1. Open the **Purchase Approval Process** process.  
 
@@ -141,6 +143,8 @@ The process will include a condition that if the total is less than 1000, the pu
 
     ![Condition added](condition-4.png)
 
+    >There is a red warning triangle, next to the condition only because any new condition needs to be configured – NOT because you did anything wrong. 
+
 2. Click **Open Condition Editor** in the side panel.
 
     A dialog for setting a condition opens.
@@ -173,7 +177,7 @@ The process will include a condition that if the total is less than 1000, the pu
 ### Add an approval form
 If the purchase request meets the conditions for needing approval (total greater than 1000), you will need an approval form, which will be sent to the Inbox of the approver.
 
-1. In the **Purchase Approval Process** process tab, click the **+** sign under the **Default**.
+1. In the **Purchase Approval Process** process tab, click the **+** sign under **Default**.
 
     ![Approval](approval1.png)
     
@@ -204,6 +208,8 @@ If the purchase request meets the conditions for needing approval (total greater
     ![Header](approvalform2.png)
 
 4. Add the following fields by dragging them from the left onto the form. Enter the name, and on the right configuration pane set them to read only.
+
+    >Probably easier to first drag the components and then configure each one.
 
     | Type | Name | Extra Settings |
     |------|------|------|
@@ -249,11 +255,11 @@ If the purchase request meets the conditions for needing approval (total greater
 
 
 ### Add notification form
-Now we will send a notification form if the order is approved.
+Now you will send a notification form if the order is approved.
 
-1. Go back to the process tab.
+1. Go back to the **Purchase Approval Process** process tab.
 
-2. Under **Approve** under the **Approval Form**, click the **+** icon and then select **Form > Blank Form**.
+2. Click the **+** icon under **Approve** under **Approval Form**,  and then select **Form > Blank Form**.
 
     ![Notification form](note1.png)
 
@@ -275,11 +281,11 @@ Now we will send a notification form if the order is approved.
 
 
 ### Set the bindings
-When we create a process, we create generic artifacts but we need to specify the values for the fields in each instance of the artifact.
+When you create a process, you create generic artifacts but you need to specify the values for the fields in each instance of the artifact.
 
-For example, for an approval, we need to specify who will be the approver. Or, for a form with different fields, we must specify from where to take the data to fill those fields.
+For example, for an approval form, you need to specify who will be the approver for each instance of the form. Or, for a form with different fields, you must specify from where to take the data to fill those fields, again, for each instance of the form.
 
-1. Open the process tab.
+1. Open the **Purchase Approval Process** tab.
 
 2. Click on **Approval Form**, and you will configure the fields in the side panel.
 
@@ -309,7 +315,7 @@ For example, for an approval, we need to specify who will be the approver. Or, f
     | **General** | **Subject** | `Your order was approved: ` and then click in the box and select **Process Inputs > Order ID**. 
     | **General** | **Recipients > Users** | Click in the box and select **Process Metadata > Process Started By**. 
 
-4. We can send the same approval form for when the request should be automatically approved.
+4. You can send the same approval form for when the request should be automatically approved.
 
     Under the **If** of the **Condition** step – meaning, the request is for a small amount of money – click the plus sign, **+**.
 
@@ -321,16 +327,16 @@ For example, for an approval, we need to specify who will be the approver. Or, f
 
     It is added as **Approval Notification 1**.
 
-5. Just as we added the binding for the first notification form, we need to do the same for this one.
+5. Just as you added the binding for the first notification form, you need to do the same for this one.
 
-    With **Approval Notification 1** selected and the side panel open, configure the step as follows:
+    With **Approval Notification 1** form selected and the side panel open, configure the step as follows:
 
     | Tab | Field | Source/Binding |
     |-----|-------|----------------|
     | **General** | **Subject** | `Your order was AUTOMATICALLY approved: ` and then click in the box and select **Process Inputs > Order ID**. 
     | **General** | **Recipients > Users** | Click in the box and select **Process Metadata > Process Started By**.
 
-    >Notice we made different subjects for each of the 2 instances of the notification form.
+    >Notice you made different subjects for each of the 2 instances of the notification form.
 
 6. Click **Save**.
 
@@ -452,7 +458,9 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     In the details section, you will see:
     
     - Status is **running**.
+
     - Under **Logs**, you can see a condition was completed, and you can see that because the total was under 1000, it was automatically approved.
+
     - Under **Context**, you can see all the data you provided in the JSON when you started the instance.
     
     ![Monitoring](images/test-3.png)
@@ -479,7 +487,7 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     ![Refresh](images/test-6.png)
 
-    In the logs, you can now see that you the notification was completed, and therefore the process instance is completed.
+    In the logs, you can see that you the notification was completed, and therefore the process instance is completed.
     
     You can also see the status is now **Completed**.
     

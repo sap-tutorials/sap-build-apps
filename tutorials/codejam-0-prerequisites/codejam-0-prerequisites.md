@@ -4,7 +4,7 @@ author_name: Ian Thain
 author_profile: https://github.com/ithain
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build
 ---
   
@@ -64,9 +64,86 @@ When you are done, you can get to your trial account by going to [https://accoun
 
 
 ### Install SAP Build Apps
-To install SAP Build Apps on your SAP BTP trial account, watch and follow along with this video from **Daniel Wroblewski**.
+The instructions for installing SAP Build Apps is shown below. There is also a video from **Daniel Wroblewski** showing the same process.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe> 
+
+
+1. Go to the trial account (not the subaccount). Your screen will look something like this:
+
+    ![Enter subaccount](installapps1.png)
+
+2. From the left-side menu, click **Boosters**.
+
+    Search for the `SAP Build Apps`, and then click the tile for the **Get Started with SAP Build Apps - Detailed Account Setup**.
+
+    ![Booster](installapps2.png)
+
+    Click **Start**.
+
+    ![Start booster](installapps3.png)
+
+3. After the system checks prerequisites, click **Next**.
+
+    ![Check prerequisites](installapps4.png)
+
+    Choose **Select Subaccount**, and click **Next**.
+
+    ![Select subaccount](installapps5.png)
+
+    >Your trial account cannot only have one subaccount, so you must use the existing one.
+
+    On the **Configure Subaccount** page, just click **Next**.
+
+    ![Next](installapps6.png)
+    
+    On the **Add Users** page, just click **Next**.
+
+    ![alt text](installapps7.png)
+
+    On the **Review** page, click **Finish**.
+
+    ![Finish](installapps8.png)
+
+    The wizard will start to install all the needed components.
+
+    ![Installing](installapps9.png)
+
+4. When the installation is complete, you will see the following. 
+    
+    ![Finished](installapps10.png)
+    
+    Click **Navigate to Subaccount**, and then click **Instances and Subscriptions** to see that SAP Build Apps was installed.
+
+    ![Installed](after1.png)
+
+5. But SAP Build Apps must run on a custom identity provider – the part of SAP BTP that defines all the users. And though the custom identity provider and your user in it are automatically created for you, you must create a password for your user.
+
+    An email has already been sent to the email you used to create your SAP BTP trial account.
+
+    ![Email](after2.png)
+
+    Click the blue button **Click here to activate your account**.
+
+5. Enter a password (twice), and click 
+
+    ![Continue](after3.png)
+
+    Your account in the new custom identity provider is activated. 
+
+    The admin screen for the custom identity provider opens. You will not need this and you can close the window.
+
+If you want to test, go back to the **Instances and Subscriptions** screen (it should be open on your previous tab).
+
+Click the icon next to SAP Build Apps. The SAP Build lobby will open up, empty. This indicates you are logged in with your custom identity provider user and all is working OK.
+
+![Working](after4.png)
+
+
+
+
+
+
 
 
 
@@ -74,13 +151,88 @@ To install SAP Build Apps on your SAP BTP trial account, watch and follow along 
 
 
 ### Install SAP Build Process Automation
-To install SAP Build Process Automation, watch and follow along with this video from **Daniel Wroblewski**. 
+The instructions for installing SAP Build Process Automation is shown below. There is also a video from **Daniel Wroblewski** showing the same process.
 
 >STOP the video at **1:10 mins**. You do **NOT** have to install the Desktop Automation agent.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2gB7ipo8TNY" frameborder="0" allowfullscreen></iframe> 
 
-The video will show you how to run the SAP Build Process Automation installer twice, once for the free subscription and the second for the standard service instance. For the instance you will need to give it a name; just call it `spa-service`.
+1. In the **Instances and Subscriptions**, click **Create**. 
+
+    ![Create](spa1.png)
+
+2. Enter the following:
+
+    | Field | Value|
+    |-------|------|
+    |  Service      | **SAP Build Process Automation**     |
+    | Plan        |  **Standard**     |
+    | Instance Name       | `spa-service`     |
+
+    Click **Create**.
+
+    ![Service](spa2.png)
+
+    The wizard will run and you will see **Creation in Progress**.
+
+    ![Creating](spa3.png)
+
+    After a few minutes, it will turn green to **Created**.
+    
+    ![Created](spa4.png)
+
+3. In the same **Instances and Subscriptions**, click **Create** again. 
+
+4. Enter the following:
+
+    | Field | Value|
+    |-------|------|
+    |  Service      | **SAP Build Process Automation**     |
+    | Plan        |  **Free**     |
+
+    Click **Create**.
+
+    ![Free service](spa5.png)
+
+    The wizard will run and you will see **Processing**. This installation will take a little longer, perhaps 5 minutes.
+
+    ![Processing](spa6.png)
+
+    When complete, it will turn green to **Subscribed**.
+
+    ![Subscribed](spa7.png)
+
+5. On the left-side menu, go to **Security > Users**.
+   
+    Select your user for the custom identity provider.
+
+    >That's the user with your email and whose **Identity Provider** field says **Custom IAS tenant**.
+
+    ![User](spa8.png)
+
+6. Once your user is selected, click the 3 dots under **Role Collections**.
+
+    Select **Assign Role Collections**.
+
+    ![Role collection](spa9.png)
+
+    In the dialog, enter `process` in the search box, select all the roles, and click **Assign Role Collection**.
+
+    ![Assign](spa10.png)
+
+If you want to test, go back to the **Instances and Subscriptions** screen.
+
+Click the icon next to SAP Build Process Automation. The SAP Build lobby will open up, empty. This indicates you are logged in with your custom identity provider user and all is working OK.
+
+>This is actually the same SAP Build lobby you opened when you tested SAP Build Apps.
+
+![Working](after4.png)
+
+
+
+
+
+
 
 
 
@@ -126,7 +278,9 @@ Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/t
 
     Click **Save**.
 
-    >No need to test the connectivity because you will get a **401** error whether or not your credentials are correct. 
+    You can test the destination and you should get a **200: OK** response.
+    
+    ![Test ES5](testES5.png)
 
 
 
