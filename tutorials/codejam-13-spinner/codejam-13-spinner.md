@@ -4,12 +4,12 @@ author_name: Ian Thain
 author_profile: https://github.com/ithain
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
 
-# Implement Spinner for Product Details Page 
+# 13 - Implement Spinner for Product Details Page 
 <!-- description --> Set up and use a spinner control to hide UI until all data is available to display, as part of the SAP CodeJam.
 
 
@@ -103,7 +103,7 @@ In this exercise, you will enhance the **Product details** page by adding a spin
 ### Add logic to hide the spinner
 1. Toggle to **Variables**.
 
-2. Select **Data Variables**, then select `Products1`.
+2. Select **Data Variables**, then select **Products1**.
 
     Open the logic canvas.
 

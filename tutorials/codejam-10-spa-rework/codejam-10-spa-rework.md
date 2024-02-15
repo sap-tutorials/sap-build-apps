@@ -4,12 +4,12 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
 
-# Expand Process to Add Rework Flow
+# 10 - Expand Process to Add Rework Flow
 <!-- description --> Use a custom variable and Go-To Step to expand your workflow so the approver can ask the submitter to rework it, as part of the SAP Build CodeJam.
 
 
@@ -52,7 +52,7 @@ Here's the flow:
 ### Add custom variable
 The approver has a field in the approval form to add **Additional Information** when sending the request to the submitter for rework.
 
-The problem is we want this field to be sent to the submitter, bu also returned back to the approval form so the approver knows what they asked for from the submitter. The problem is that the approval form cannot bind a field to one of its own fields.
+The problem is you want this field to be sent to the submitter, bu also returned back to the approval form so the approver knows what they asked for from the submitter. The problem is that the approval form cannot bind a field to one of its own fields.
 
 To solve this, you will create a custom variable.
 
@@ -138,7 +138,7 @@ Now you need to check whether the approver enabled rework. For this, you add a c
 
 
 ### Add rework form
-Now you need to provide a form for the submitter to provide an explanation. Since the submitter wants to see all the same information that the approver got to see, we start by duplicating the approval form.
+Now you need to provide a form for the submitter to provide an explanation. Since the submitter wants to see all the same information that the approver got to see, you start by duplicating the approval form.
 
 
 1. In the **Overview** tab, click the three dots next to the **Approval Form** artifact, and select **Duplicate**.
@@ -149,7 +149,7 @@ Now you need to provide a form for the submitter to provide an explanation. Sinc
 
     ![Name form](reworkform2.png)
 
-2. The data at the top of the form can be kept as is, but we have to not allow the submitter to change the **Additional Information** but we do have to allow them to change **Explanation**.
+2. The data at the top of the form can be kept as is, but you have to not allow the submitter to change the **Additional Information** but you do have to allow them to change **Explanation**.
 
     Click the **Additional Information** text area, and on the right make it **Read Only**.
 

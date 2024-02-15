@@ -202,7 +202,7 @@ In this step, you will enable the destination to be used in your processes.
 
 
 
-### Configure Action project
+### Configure action project
 You have now created an action project and selected the API to expose. But now you must configure – for example, what inputs to require, what outputs to return, and what OData parameters to include.
 
 Your action should be open to the **Retrieves business partner data by using business partner number (GET)** API, and you should see the **Input** tab.

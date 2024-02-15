@@ -131,6 +131,7 @@ In this step, you will specify the inputs required for the process.
     >**DOUBLE-CHECK** that you set the **Total** field as a number.
 
 4. Click **Save** (upper right).
+
     ![Save Process Inputs](11_Save_Process_Inputs.png)
 
 

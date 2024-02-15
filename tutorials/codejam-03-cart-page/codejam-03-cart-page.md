@@ -41,9 +41,7 @@ Specifically, you will retrieve data from our CAP service – which we created f
 ### Create a destination for our CAP service
 In order to retrieve data from the CAP service, you need to create a destination in the SAP BTP cockpit, which you can then access from SAP Build Apps.
 
-To save you time, we have given you almost all the information for the destination in a file you can import.
-
->**IMPORTANT:** Before you begin this step, you will need to get the URL for the service from the CodeJam instructor.
+To save you time, we have given you all the information for the destination in a file you can import.
 
 1. Download the destination definition.
    
@@ -165,7 +163,7 @@ Now that you you have defined the connection to the CAP service, let's create a 
 
 
 ### Bind variables to cart items
-In order to display the data in the cart from the `OrderItems` entity, you need to map the backend data that is in the data variable to the UI components.
+In order to display the data in the cart from the **OrderItems** entity, you need to map the backend data that is in the data variable to the UI components.
 
 
 1. Toggle back to **View**.

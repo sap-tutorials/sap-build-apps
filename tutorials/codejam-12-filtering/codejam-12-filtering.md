@@ -4,12 +4,12 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
 
-# Enable App to Filter Products 
+# 12 - Enable App to Filter Products 
 <!-- description --> Add UI components and logic to enable filtering of the product list, as part of the SAP Build CodeJam. 
 
 
@@ -67,7 +67,7 @@ But will want to be able to filter the list, and you will create 2 filters:
 
 
 ### Add variables
-We need 3 variables:
+You need 3 variables:
 
 - **Categories:** Holds a list of the product categories, so a user can select one to filter the products by.
 - **SelectCategory:** Holds the category selected by the user.
@@ -81,9 +81,9 @@ The text filter will show only products with the text contained in the product n
 
     | Name | Type |
     |-------|-------|
-    | **Categories** | list of objects | 
-    | **SelectCategory** | text |
-    | **FilterText** | text |
+    | `Categories` | list of objects | 
+    | `SelectCategory` | text |
+    | `FilterText` | text |
 
     To set a variable to a list of objects, first set the **Variable value type** to List (at the bottom of the options), and then set the **List item type** to Object.
 
@@ -107,7 +107,7 @@ The text filter will show only products with the text contained in the product n
 
 
 ### Add logic to get list of categories
-To enable the user to choose a category, we need to populate the **Categories** variable with the list of available categories. We will derive this from the list of products we retrieved from the ES5 system.
+To enable the user to choose a category, you need to populate the **Categories** variable with the list of available categories. You will derive this from the list of products you retrieved from the ES5 system.
 
 1. In the **Variables** area, click **Data Variables**.
 
@@ -139,7 +139,7 @@ To enable the user to choose a category, we need to populate the **Categories** 
     >
     >Finally, the formula uses the **UNIQUE_BY_KEY** function to remove duplicate categories.
     >
-    >And why did we do all this?
+    >And why did you do all this?
     >
     >Because a list of objects with the 2 fields **value** and **label** is what the dropdown field needs to display a list.
     >

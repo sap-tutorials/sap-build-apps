@@ -4,12 +4,12 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
 
-# Enable App to Select Product by Scanning Barcode 
+# 11 - Enable App to Select Product by Scanning Barcode 
 <!-- description --> Show some of the native mobile capabilities of SAP Build Apps by allowing users to select a product by scanning a barcode, as part of the SAP Build CodeJam. 
 
 
@@ -31,11 +31,11 @@ primary_tag: software-product>sap-build
 ## Intro
 One of the best things about SAP Build Apps is that you can easily enable basic but powerful native mobile features – such as access to contacts and photos, the camera, location services and more.
 
-In this tutorial, we will let you scan a barcode in order to select a product, instead of having to select from the list on the home page.
+In this tutorial, you will let you scan a barcode in order to select a product, instead of having to select from the list on the home page.
 
->**IMPORTANT:** Currently, it is not possible to get the current user when running the app on a mobile device (this is expected to be enabled in Q1 of 2024, but no guarantees). In the app, we use the current user's email to identify the user and indicate which order's in the CAP service belong to the current user.
+>**IMPORTANT:** Currently, it is not possible to get the current user when running the app on a mobile device (this is expected to be enabled in Q1 of 2024, but no guarantees). In the app, you use the current user's email to identify the user and indicate which order's in the CAP service belong to the current user.
 
->In order to enable our scenario to work on mobile, we will change the way we identify the current user.
+>In order to enable our scenario to work on mobile, you will change the way you identify the current user.
 
 
 
@@ -58,7 +58,7 @@ Because the mobile preview does not yet support getting user information, you wi
 
 1. Go to the **Home page**, and toggle to **Variables**.
 
-2. Create an app variable called **currentUser**.
+2. Create an app variable called `currentUser`.
 
     Set its **Variable value type** to **Text**.
 
@@ -183,11 +183,11 @@ Now lets create the logic for handling the tap of the barcode icon.
 
     ![Basic logic](2-basic-logic.png)
 
-    >The logic opens the barcode scanner, and if the user actually selects a barcode, then we test that value.
+    >The logic opens the barcode scanner, and if the user actually selects a barcode, then you test that value.
     >
-    >- If the value is a product number and in our list of products – held in our data variable – then we navigate to the product details page.
+    >- If the value is a product number and in our list of products – held in our data variable – then you navigate to the product details page.
     >
-    >- If the value is not a product, we just alert the user.
+    >- If the value is not a product, you just alert the user.
 
 3. For the **If condition** flow function, set the **Condition** to the following formula:
 
@@ -217,7 +217,7 @@ The logic should now look like this:
 
 
 ### Test with preview app
-Now we will use the mobile preview app so we can use the native functionality of the device.
+Now you will use the mobile preview app so you can use the native functionality of the device.
 
 >Make sure you have installed the preview app on your device.
 >
