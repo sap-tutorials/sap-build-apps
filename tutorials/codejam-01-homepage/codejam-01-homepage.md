@@ -36,6 +36,44 @@ For this product list page, you will connect to the ES5 service to get names, de
 
 
 
+### Open the SAP Build lobby
+If you already have the SAP Build lobby open from doing the prerequisites, you can skip this step.
+
+Otherwise, here's how top open the lobby.
+
+1. Go to the your trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/).
+
+    Sign in if necessary
+
+2. Click **Got To Your trial Account**.
+
+    ![Go to trial](open1.png)
+
+    This brings you to your "global" trial account.
+
+3. Click your subaccount tile.
+
+    ![Subaccount](open2.png)
+
+3. Click **Instances and Subscriptions**.
+
+    ![Instances and Subscriptions](open3.png)
+
+4. Click the icon next to **SAP Build Apps** or next to **SAP Build Process Automation**.
+
+    ![Open lobby](open4.png)
+
+    Sign in with your custom IDP (identity provider) user you created when installing SAP Build Apps.
+
+    This should open the SAP Build lobby. Yours should be empty.
+
+    ![Lobby](open5.png)
+
+
+
+
+
+
 
 ### Import the skeleton app project
 
@@ -45,7 +83,7 @@ For this product list page, you will connect to the ES5 service to get names, de
 
     ![Download](download.png)
 
-2. Go to SAP Build lobby and click the **Import** button.
+2. In the SAP Build lobby, click the **Import** button.
 
     ![Import button](images/1-import-button.png)
 

@@ -4,7 +4,7 @@ author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
    

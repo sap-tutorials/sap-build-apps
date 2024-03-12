@@ -4,7 +4,7 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
   
@@ -114,7 +114,7 @@ You should now be able to see **Orders** and **OrderItems** appearing under the 
 
 
 ### Create data variable
-Now that you you have defined the connection to the CAP service, let's create a data variable, which will automatically include the logic for making the call as well as holding the retrieved data.
+Now that you have defined the connection to the CAP service, let's create a data variable, which will automatically include the logic for making the call as well as holding the retrieved data.
 
 1. Navigate to the **Cart** page by clicking on the **Home pages** link on the upper-left corner, below the app name.
 
@@ -215,7 +215,7 @@ In order to display the data in the cart from the **OrderItems** entity, you nee
 ### Add navigation menu item
 Now that you have set up the **Cart** page, you need to let users get to the page. There are 2 ways users can navigate between pages.
 
-You can can create a button or other UI component, and then create logic to respond to a button click or other event, and then use the **Open Page** flow function. That is what you did to navigate from the product list page to the product detail page.
+You can create a button or other UI component, and then create logic to respond to a button click or other event, and then use the **Open Page** flow function. That is what you did to navigate from the product list page to the product detail page.
 
 But users might want to navigate to the **Cart** page at any time. So you can create a static menu that is available all the time. Every new app comes with a menu and a single item to return to the home page. In this step, you will create a new menu item for the **Cart** page. 
 

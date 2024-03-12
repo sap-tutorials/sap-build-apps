@@ -4,7 +4,7 @@ author_name: Ian Thain
 author_profile: https://github.com/ithain
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
@@ -34,6 +34,13 @@ As you know your app has a product list and product details pages, but have you 
 ![Product Detail page](images/empty-details.png)
 
 In this exercise, you will enhance the **Product details** page by adding a spinner and only showing the fields once they are populated with the data.
+
+There are 2 ways to show a spinner:
+
+* Using special flow functions to show and hide the entire page.
+* Using a spinner control that you position on the UI where you want to show a spinner, and control with a page variable. 
+
+You'll do both.
 
 
 
@@ -137,3 +144,39 @@ In this exercise, you will enhance the **Product details** page by adding a spin
 
     ![UI displayed](images/IMG_5480.PNG)
 
+
+
+
+
+### Test the app
+The way we just implemented the spinner, with a dedicated spinner UI component, let's us create a spinner for just a part of the screen.
+
+But if we just want to hide the entire screen until the data is ready, there are dedicated spinner flow controls that make this easy.
+
+1. Go back to the **UI Canvas** to the **Product Details** page.
+
+    Remove the spinner component.
+
+    ![Remove spinner](images/flow1.png)
+
+2. In the tree view, select the **Product Details** container, and set the visibility back to true.
+
+    ![Back to true](images/flow1a.png)
+
+3. Click on **Variables > Data Variables**, select **Products1**, and open the logic pane.
+
+    Remove the **Set page variable** flow function.
+
+    ![Remove flow function](images/flow2.png)
+
+4. Add a **Show spinner** flow function at the start of the logic, and then a **Hide spinner** at the end of the logic. Arrange the flow functions like this:
+
+    ![Spinner](images/flow3.png)
+
+5. Click **Save** (upper right).
+
+6. Relaunch the application.
+
+    Select a product. Now, on the **Product Details** page, the entire page – including the navigation bar at the top – is hidden with a large spinner in the center of the page until all the data is retrieved.
+
+    ![Big spinner](images/flow4.png)

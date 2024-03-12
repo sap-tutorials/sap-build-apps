@@ -4,7 +4,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
   
@@ -329,7 +329,7 @@ Now that you have the data connection for triggering your process working, you n
             SUM(MAP(data.OrderItems1,item.price * item.quantity))
             ```
 
-        - **orderItems:** Set to to the following formula:
+        - **orderItems:** Set to the following formula:
 
             ```JavaScript
             MAP(data.OrderItems1, {product: item.product, price: item.price, quantity: NUMBER(item.quantity), total: item.price * item.quantity})
@@ -354,7 +354,7 @@ Now that you have the data connection for triggering your process working, you n
         ![Record](purchase-logic4.png)
 
         - **status:** Set to **Static text** with value `REQUESTED`
-        - **total:** Set to to the following formula:
+        - **total:** Set to the following formula:
 
             ```JavaScript
             SUM(MAP(data.OrderItems1,item.price * item.quantity))

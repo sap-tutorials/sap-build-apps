@@ -64,10 +64,11 @@ When you are done, you can get to your trial account by going to [https://accoun
 
 
 ### Install SAP Build Apps
-The instructions for installing SAP Build Apps is shown below. There is also a video from **Daniel Wroblewski** showing the same process.
+Here is video from **Daniel Wroblewski** showing how to install SAP Build Apps.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe> 
 
+If you prefer, here are the step-by-step instructions.
 
 1. Go to the trial account (not the subaccount). Your screen will look something like this:
 
@@ -151,11 +152,13 @@ Click the icon next to SAP Build Apps. The SAP Build lobby will open up, empty. 
 
 
 ### Install SAP Build Process Automation
-The instructions for installing SAP Build Process Automation is shown below. There is also a video from **Daniel Wroblewski** showing the same process.
+Here is video from **Daniel Wroblewski** showing how to install SAP Build Process Automation.
 
 >STOP the video at **1:10 mins**. You do **NOT** have to install the Desktop Automation agent.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2gB7ipo8TNY" frameborder="0" allowfullscreen></iframe> 
+
+If you prefer, here are the step-by-step instructions.
 
 1. In the **Instances and Subscriptions**, click **Create**. 
 
@@ -194,13 +197,21 @@ The instructions for installing SAP Build Process Automation is shown below. The
 
     ![Free service](spa5.png)
 
-    The wizard will run and you will see **Processing**. This installation will take a little longer, perhaps 5 minutes.
+    The wizard will run and you will see **Processing**. 
 
     ![Processing](spa6.png)
 
-    When complete, it will turn green to **Subscribed**.
+    >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. You can proceed to the next step in this tutorial and to the following tutorials, since they involve SAP Build Apps only.
+    
+    >**But** when the subscription is complete, remember to return to this step and finish it. 
+
+
+    When complete, the status will turn green to **Subscribed**.
 
     ![Subscribed](spa7.png)
+
+
+
 
 5. On the left-side menu, go to **Security > Users**.
    

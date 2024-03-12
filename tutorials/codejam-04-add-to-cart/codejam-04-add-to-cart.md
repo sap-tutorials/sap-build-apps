@@ -4,7 +4,7 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
   
@@ -118,7 +118,7 @@ A cart is assigned to the current user by detecting the current user's email add
 
 4. The first **If condition** checks if you have a cart already. If you have a cart, you do nothing. Otherwise, you proceed with retrieving or creating a cart.
 
-    Select the **If condition** flow function, and on the right click the binding icon for **Condition**. Select **Formula**, and use the following formula:
+    Select the **If condition** flow function, and on the right pane, click the binding icon for **Condition**. Select **Formula**, and use the following formula:
 
     ```JavaScript
     IS_EMPTY(appVars.orderID)

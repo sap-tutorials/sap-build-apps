@@ -4,8 +4,8 @@ author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps--enterprise-edition, software-product>sap-build-process-automation]
-primary_tag: software-product>sap-build-process-automation
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
+primary_tag: software-product>sap-build
 ---
  
 
@@ -27,7 +27,6 @@ primary_tag: software-product>sap-build-process-automation
 
 
 ## Intro
-SAP Build Process Automation is a low code/no code tool under the SAP Build portfolio. With this tool, you will get access to a new range of opportunities for running your day-to-day workflows. 
 
 SAP Build Process Automation is a low code/no code tool under SAP Build Portfolio. With this tool, you will get access to a new range of opportunities for running your day-to-day workflows. In this tutorial, you will learn how to create a business process  using visual drag and drop simplicity.
 
