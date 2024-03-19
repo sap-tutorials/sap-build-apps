@@ -264,8 +264,12 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 ### Bind data variable to UI elements
 You created a data variable for the **Products** data, and the logic for retrieving the data was created automatically. Now you need to tell the app how and where you want to display the data.
 
-To do this, you create bindings for your UI components – in this case, the list item.
+To do this, you create bindings for your UI components – in this case, the list item. You indicate what data you want to display in your component, whether from:
 
+* Static values
+* Calculated values
+* Values from variables
+* ... or other sources
 
 >**How binding works**
 >
@@ -273,7 +277,7 @@ To do this, you create bindings for your UI components – in this case, the lis
 >
 >For most properties, there is a binding icon that indicates what type of binding is used. For example, you can use **static text** for a text field, or you can show text from a backend service and use a binding to a **data variable** 
 >
->In the example below it shows an icon with **ABC**, meaning that this is static text and will not change.
+>In the example below, it shows an icon with **ABC**, meaning that this is static text and will not change.
 
 >![Binding](binding.png) 
 
@@ -287,22 +291,39 @@ To do this, you create bindings for your UI components – in this case, the lis
    
     ![Select list](select-list.png)
 
-2. In the **Properties** tab, you will set the following properties by clicking on the icon next to each field:
+2. In the **Properties** tab, there are properties we will want to set, specifically:
+   
+   * The title 
+   * The description
+   * The image
 
-    ![Binding icon](images/14-icon-opens-modal.png)
+    ![alt text](images/bind1.jpg)
 
-    Clicking on these icons will show different options for data binding.
+    But we want the component to be repeated for each item in our list (each product). So first, we will set the **Repeat with** value.
+    
+    Click the icon next to **Repeat with**.
+    
+    ![Repeated](images/bind2.jpg)
 
-    ![Binding options](images/14a-modal-options.png)
+    Select **Data and Variables**.
 
-    Do the bindings as follows:
+    ![Data and Variables](images/bind3.jpg)
+
+    Then select **Data variable**, and then select your **Products1** data variable, and click **Save**.
+    
+    ![Products1](images/bind4.jpg)
+
+3. Back in the **Properties** tab you can now select each of the binding icons for the 3 properties we want to set.
+
+    ![Bindings](images/bind5.jpg)
+    
+    Set each property by clicking the binding icon and the setting the binding as follows:
 
     | Field | Binding |
     |-------|---------|
-    | Repeat with | **Data and Variables > Data variable > Products1** |
     | Title label | **Data item in repeat > current > Name** |
     | Description text | **Data item in repeat > current > Description** |
-    | Image source | Formula > `'https://sapes5.sapdevcenter.com' + repeated.current.ImageUrl` |
+    | Image source (see note below) | Formula > `'https://sapes5.sapdevcenter.com' + repeated.current.ImageUrl` |
 
     >To set a formula, click on the default formula. 
     >
@@ -316,10 +337,19 @@ To do this, you create bindings for your UI components – in this case, the lis
     >
     >One of the strengths of the formula editor is that it checks the data types of the properties you are setting to try to determine if the formula is compatible. Here, it is expecting a value defined as an image URL, but our text – which is a valid URL – will work just as well.
 
-3. Click **Save** (upper right).
+4. Click **Save** (upper right).
 
 You may now test the app to see the products list.
 
+>**What's with the repeat?**
+>
+>The **Repeat with** property lets you create multiple copies of a component by supplying a list – this will repeat the component based on the number of elements in your list, for example, the number of products in our list. The list can be hardcoded, or can be located in a variable (like in our case), or based on a formula.
+>
+>Once you set the **Repeat with** property, you then get the **Data item in repeat** binding option for the other properties in the component. You can now access values within each list item. So the data in the first item will be displayed in the first copy of the component, the data in the second item in the second copy of the component, and so on.
+
+>![Data item in repeat](images/bind6.jpg)
+
+>That is what we did. We had a data variable as a list of product objects, repeated our component based on the number of products in the data variable, and then accessed individual fields (like the title and description) to be displayed in the component. 
 
 
 

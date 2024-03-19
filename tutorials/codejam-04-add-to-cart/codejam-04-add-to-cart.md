@@ -276,7 +276,9 @@ Now that you enabled the user to add an item to the cart, let's add logic to ena
 
     ![Delete icon](images/3-delete-icon-logic.png)
 
-3. Drag a **Delete Record** flow function onto the logic canvas and connect it to the **Component tap**.
+    >We have already added a few flow functions to prevent you from deleting our demo order.
+
+3. Drag a **Delete Record** flow function onto the logic canvas and connect it to the top output of the **IF condition**.
 
     With the **Delete Record** selected, set the following:
     
