@@ -69,7 +69,7 @@ Otherwise, here's how top open the lobby.
 
     ![Lobby](open5.png)
 
-
+  
 
 
 
