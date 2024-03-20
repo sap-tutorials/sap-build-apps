@@ -1,0 +1,11 @@
+#
+#Wed Mar 20 09:04:37 UTC 2024
+Type=HTTP
+HTML5.DynamicDestination=true
+Authentication=NoAuthentication
+Name=APIHUB-SalesOrderB-1
+URL.headers.APIKey=
+WebIDEEnabled=true
+ProxyType=Internet
+URL=https\://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_SALES_ORDER_SRV
+Appgyver.Enabled=true
