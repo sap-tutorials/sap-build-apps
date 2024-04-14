@@ -12,7 +12,7 @@ primary_tag: software-product>sap-build
 # 11 - Enable App to Select Product by Scanning Barcode 
 <!-- description --> Show some of the native mobile capabilities of SAP Build Apps by allowing users to select a product by scanning a barcode, as part of the SAP Build CodeJam. 
 
-
+ 
 
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Add Rework Flow to Your Process](codejam-10-spa-rework).

@@ -7,8 +7,7 @@ time: 40
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
-  
-
+   
 
 # 6 - Add Approval Flow to Process
 <!-- description --> Add conditions and approval workflow to the process, as part of the SAP Build CodeJam.
@@ -460,6 +459,8 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     - Status is **running**.
 
     - Under **Logs**, you can see a condition was completed, and you can see that because the total was under 1000, it was automatically approved.
+
+        >The entire process is not yet completed because the notification form must still be acknowledged.
 
     - Under **Context**, you can see all the data you provided in the JSON when you started the instance.
     

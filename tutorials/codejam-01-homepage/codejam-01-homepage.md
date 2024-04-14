@@ -293,13 +293,13 @@ To do this, you create bindings for your UI components – in this case, the lis
 
 2. In the **Properties** tab, there are properties we will want to set, specifically:
    
-   * The title 
-   * The description
-   * The image
+    * The title 
+    * The description
+    * The image
 
     ![alt text](images/bind1.jpg)
 
-    But we want the component to be repeated for each item in our list (each product). So first, we will set the **Repeat with** value.
+    But we want the component to be repeated for each item in our list (each product). So first, we will set the **Repeat with** property.
     
     Click the icon next to **Repeat with**.
     
@@ -403,7 +403,7 @@ In the preview, you might have noticed that the product images are a little larg
 
         >Click anywhere to close the selection dialog.
 
-    - Under **Width and Height**, change the **Custom** values to **Set width** and **Set height**, and set them both to 64px. Delete all the other values so it looks like this:
+    - Under **Width and Height**, change the **Custom** values to **Set width** and **Set height**, and set them both to **64px**. Delete all the other values so it looks like this:
 
         ![Width and height](images/restyle-4.png)
 

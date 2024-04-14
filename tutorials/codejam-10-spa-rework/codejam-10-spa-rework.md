@@ -58,6 +58,8 @@ To solve this, you will create a custom variable.
 
 1. Open the process, and open the side panel.
 
+    >Make sure you are in the **Editable** version of the process.
+
 2. Click **Variables**, and then open **Custom Variables**.
 
     ![Custom variables](custom1.png)
@@ -165,7 +167,7 @@ Now you need to provide a form for the submitter to provide an explanation. Sinc
 
 3. Click the **Button Settings** icon at the bottom of the form. 
 
-    Under **Reject**, select from the dropdown **Custom**, and enter in the box `Retry`.
+    Under **Approve**, select from the dropdown **Custom**, and enter in the box `Retry`.
 
     Under **Reject**, change the custom text to `Cancel Request`.
 

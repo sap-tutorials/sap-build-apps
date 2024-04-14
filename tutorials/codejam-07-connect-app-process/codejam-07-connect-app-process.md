@@ -194,6 +194,8 @@ Now that you defined the API for triggering the process, you need a data resourc
 
     Click **Save** (upper right).
 
+>The **Request body mapper** enables you to use a formula to define the request body for an API call. For the SAP Build Process Automation API for triggering a workflow, you must send a JSON object with the ID of the process you want to trigger, followed by a `context` field with all the process inputs. 
+
 
 
 

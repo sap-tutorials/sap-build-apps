@@ -232,7 +232,7 @@ Now that you have a cart ID, you can add an item to the cart.
 
 4. Select the **Create Record** function, and in the **Properties** tab on the right side, set the following:
 
-    - **Resource name** to  `OrderItems`.
+    - **Resource name** to  **OrderItems**.
     - **Record** to the following formula.
 
         ```JavaScript
@@ -282,7 +282,7 @@ Now that you enabled the user to add an item to the cart, let's add logic to ena
 
     With the **Delete Record** selected, set the following:
     
-    - **Resource name** to `OrderItems`.
+    - **Resource name** to **OrderItems**.
 
     - **ID** to **Data item in repeat > current > ID**. 
 

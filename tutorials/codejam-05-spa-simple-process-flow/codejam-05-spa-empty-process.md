@@ -121,7 +121,7 @@ In this step, you will specify the inputs required for the process.
   
     >The editor will remove leading and trailing spaces.
 
-    After adding all the 4 Inputs, the Dialog should look like this.
+    After adding all the 4 inputs, the dialog should look like this.
 
     ![Complete Adding Process Inputs](10_Complete_Adding_Process_Inputs.png)
 
@@ -313,7 +313,7 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
     >
     >![Error](error.png)
     >
-    >This is most likely because the identifier names or the types of the input parameters defined in the process do not match the data you just entered to start the process – you sent a number for a string input.
+    >This is most likely because the identifier names or the types of the input parameters defined in the process do not match the data you just entered to start the process – for example, you sent a number for a string input.
     >
     >One thing you may not have done is change the data type of the **total** input parameter to **Number**. If so, you must go back to the **Editable** version of your project, change the type for the **total** input, and release and deploy again. Or, you may have changed the identifiers for an input.
 
@@ -358,7 +358,7 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     Under **Logs** you can see all the events that occurred, such as its triggering, approval forms completed, API calls performed, and any other action that was taken as part of the process.
 
-    Under **Context**, you can see the data that was passed to th eprocess, or that was retrieved during steps that involved data. 
+    Under **Context**, you can see the data that was passed to the process, or that was retrieved during steps that involved data. 
 
 
 **Congratulations!** You have created your first simple SAP Build Process Automation process.

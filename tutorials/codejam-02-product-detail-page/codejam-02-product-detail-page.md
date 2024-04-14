@@ -12,7 +12,7 @@ primary_tag: software-product>sap-build
 # 2 - Configure the Product Details Page
 <!-- description --> Set up the product detail page – including variables, binding, styling, and logic – as part of the SAP Build CodeJam.
 
-
+ 
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Create the Product List Page](codejam-01-homepage).
 

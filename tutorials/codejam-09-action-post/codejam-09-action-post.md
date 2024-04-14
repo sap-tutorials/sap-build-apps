@@ -159,6 +159,8 @@ Let's make sure everything is connected properly and test the action.
 
     Once the execution is successful, you should see **200: OK** response.
 
+    No data was changed since we did not supply any values for any of the fields.
+
     >If for some reason you entered an order ID that did not exist, the service will create it, and you will get a **201: OK** status code.
 
     >If for some reason you entered a value that was not a GUID, you will get **400: BAD REQUEST** or **404: NOT FOUND** status code.
@@ -428,7 +430,7 @@ Check the process in the monitor tab, and you can see all the steps completed.
 
 ![Process complete](testapp6.png)
 
-Back in your app, check the **My Orders** page again, and you will see the status of the Order updated.
+Back in your app, refresh the page and check the **My Orders** page again, and you will see the status of the order updated.
 
 ![Order approved](testapp7.png)
 
