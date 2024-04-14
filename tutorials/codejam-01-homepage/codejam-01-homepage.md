@@ -294,7 +294,9 @@ To do this, you create bindings for your UI components – in this case, the lis
 2. In the **Properties** tab, there are properties we will want to set, specifically:
    
     * The title 
+
     * The description
+
     * The image
 
     ![alt text](images/bind1.jpg)
