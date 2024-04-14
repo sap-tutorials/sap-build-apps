@@ -266,10 +266,13 @@ You created a data variable for the **Products** data, and the logic for retriev
 
 To do this, you create bindings for your UI components – in this case, the list item. You indicate what data you want to display in your component, whether from:
 
-* Static values
-* Calculated values
-* Values from variables
-* ... or other sources
+- Static values
+
+- Calculated values
+
+- Values from variables
+
+- ... or other sources
 
 >**How binding works**
 >
@@ -293,11 +296,11 @@ To do this, you create bindings for your UI components – in this case, the lis
 
 2. In the **Properties** tab, there are properties we will want to set, specifically:
    
-    * The title 
+    - The title 
 
-    * The description
+    - The description
 
-    * The image
+    - The image
 
     ![alt text](images/bind1.jpg)
 
