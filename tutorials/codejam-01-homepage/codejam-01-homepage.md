@@ -295,14 +295,14 @@ To do this, you create bindings for your UI components – in this case, the lis
     ![Select list](select-list.png)
 
 2. In the **Properties** tab, there are properties we will want to set, specifically:
-   
+
     - The title 
 
     - The description
 
     - The image
 
-    ![alt text](images/bind1.jpg)
+    ![Properties](images/bind1.jpg)
 
     But we want the component to be repeated for each item in our list (each product). So first, we will set the **Repeat with** property.
     
