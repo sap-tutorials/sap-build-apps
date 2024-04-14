@@ -288,19 +288,11 @@ To do this, you create bindings for your UI components – in this case, the lis
 >
 >If you want to keep the binding type, but change the actual binding (e.g., the text to display), then update the field to the right of the binding icon.
 
-
-
 1. Select the **Large image list item** on the canvas.
    
     ![Select list](select-list.png)
 
-2. In the **Properties** tab, there are properties we will want to set, specifically:
-
-    - The title 
-
-    - The description
-
-    - The image
+2. In the **Properties** tab, there are properties we will want to set, specifically: ***title***, ***description***, ***image***.
 
     ![Properties](images/bind1.jpg)
 
