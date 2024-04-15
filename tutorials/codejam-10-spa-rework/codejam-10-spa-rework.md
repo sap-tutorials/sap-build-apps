@@ -4,8 +4,8 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
-primary_tag: software-product>sap-build
+tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation]
+primary_tag: sap-conversational-ai>sap-build
 ---
   
 

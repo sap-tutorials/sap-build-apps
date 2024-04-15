@@ -4,8 +4,8 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
-primary_tag: software-product>sap-build
+tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps ]
+primary_tag: sap-conversational-ai>sap-build
 ---
   
 

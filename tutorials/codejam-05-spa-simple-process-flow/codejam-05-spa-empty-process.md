@@ -4,8 +4,8 @@ author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
-primary_tag: software-product>sap-build
+tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation]
+primary_tag: sap-conversational-ai>sap-build
 ---
  
 
