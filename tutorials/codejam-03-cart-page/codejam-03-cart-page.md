@@ -4,8 +4,8 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
+primary_tag: software-product>sap-build
 ---
   
 
@@ -102,7 +102,7 @@ In order to fetch data from the CAP service, you need to create a data resource 
 
 6. Click **Save** (upper right).
 
-7. Click **Exit** to return to the previous screen. 
+    Click **Exit** to return to the previous screen. 
    
 You should now be able to see **Orders** and **OrderItems** appearing under the **Integrations > CodeJamOrdersService** section.
 
@@ -162,33 +162,41 @@ Now that you have defined the connection to the CAP service, let's create a data
 
 
 
-### Bind variables to cart items
+### Bind variable to cart items
 In order to display the data in the cart from the **OrderItems** entity, you need to map the backend data that is in the data variable to the UI components.
 
 
 1. Toggle back to **View**.
-   
-2. Select the **Text - Product** text component (not the header). 
 
-    You can click on the text component on the canvas, or you can select it under the Tree View: **Row - Cart Item > Cell #1 > Text - Product**.
+2. Select the **Row - Items** component.
+   
+    Set the **Repeat with** to the data variable **OrderItems1** (you just created).
+    
+    ![Set repeat](set-repeat.png)
+
+    With the repeat set, we'll bind the individual text components.
+   
+3. In the Tree View, select **Row - Cart Item > Cell #1 > Text - Product**.
 
     ![Bind product](images/bind-1.png)
 
-    Once selected, in the **Properties** pane, click the binding icon for the **Content** property.
+    Once selected, in the **Properties** pane, click the **ABC** binding icon for the **Content** property.
 
-    Choose **Data item in repeat > current > product**.
+    Choose **Data item in repeat > current > product**, and set **Preview Value** to `Product`.
+
+    ![Binding](images/bind-1a.png)
 
     Click **Save**.
 
-3. Repeat the binding for **Quantity**, **Price** and **Total** as follows:
+4. Repeat the binding for **Quantity**, **Price** and **Total** as follows:
 
-    | UI Component    |   Tree View Location  |   Binding  |
-    | --- | --- | --- |
-    | Quantity    |    Cell #2 > Text - Quantity   |  Data item in repeat > current > quantity    |
-    | Price    |   Container 10 > Text - Price   |  Data item in repeat > current > price   |
-    |  Total   |   Container 11 > Text - Total |   Data item in repeat > current > total   |
+    | UI Component    |   Tree View Location  |   Binding  | Preview |
+    | --- | --- | --- | --- |
+    | Quantity    |    Cell #2 > Text - Quantity   |  Data item in repeat > current > quantity    | `Qty` |
+    | Price    |   Container 10 > Text - Price   |  Data item in repeat > current > price   | `Price` |
+    |  Total   |   Container 11 > Text - Total |   Data item in repeat > current > total   | `Total` |
 
-4. Select the **Cart Total: $** field and click the binding icon for its **Content** property.
+5. Select the **Cart Total: $** field and click the binding icon for its **Content** property.
 
     ![Cart total binding](images/bind-2.png)
 

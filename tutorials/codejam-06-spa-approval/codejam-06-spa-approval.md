@@ -4,8 +4,8 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
+primary_tag: software-product>sap-build
 ---
    
 
@@ -290,7 +290,9 @@ For example, for an approval form, you need to specify who will be the approver 
 
     ![Binding](binding1.png)
 
-    Configure the fields as follows (you likely will need to copy the text below to a plain text editor, and then from there copy into the fields, or type in the text):
+    Configure the fields as follows.
+    
+    >You likely will need to copy the text we give you below to a plain text editor (e.g., Notepad), and then from there copy into the fields, or type in the text.
 
     | Tab | Field | Source/Binding |
     |-----|-------|----------------|
@@ -488,9 +490,9 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     ![Refresh](images/test-6.png)
 
-    In the logs, you can see that you the notification was completed, and therefore the process instance is completed.
+    In the logs, you can see that the notification was completed, and therefore the process instance is completed.
     
-    You can also see the status is now **Completed**.
+    You can also see the status at the top as **Completed**.
     
 7. You can test the process again – go back to **Monitoring > Manage**, click your process and click **Start New Instance** – this time with the following JSON, which has an amount above 1000, meaning it will require an approval: 
 

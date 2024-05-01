@@ -4,8 +4,8 @@ author_name: Ian Thain
 author_profile: https://github.com/ithain
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
+primary_tag: software-product>sap-build
 ---
   
 
@@ -176,7 +176,7 @@ If you prefer, here are the step-by-step instructions.
 
     ![Service](spa2.png)
 
-    The wizard will run and you will see **Creation in Progress**.
+    The wizard will run and you will see **Creation in Progress** (the service appears under **Instances**).
 
     ![Creating](spa3.png)
 
@@ -203,14 +203,11 @@ If you prefer, here are the step-by-step instructions.
 
     >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. You can proceed to the next step in this tutorial and to the following tutorials, since they involve SAP Build Apps only.
     
-    >**But** when the subscription is complete, remember to return to this step and finish it. 
-
+    >**But when the subscription is complete,** remember to return to this step and finish it. 
 
     When complete, the status will turn green to **Subscribed**.
 
     ![Subscribed](spa7.png)
-
-
 
 
 5. On the left-side menu, go to **Security > Users**.
@@ -231,11 +228,9 @@ If you prefer, here are the step-by-step instructions.
 
     ![Assign](spa10.png)
 
-If you want to test, go back to the **Instances and Subscriptions** screen.
+If you want to test, go back to the **Instances and Subscriptions** screen. Click the icon next to SAP Build Process Automation, which will open the SAP Build lobby.
 
-Click the icon next to SAP Build Process Automation. The SAP Build lobby will open up, empty. This indicates you are logged in with your custom identity provider user and all is working OK.
-
->This is actually the same SAP Build lobby you opened when you tested SAP Build Apps.
+Click on **Create** and try to create a new Process Automation project – if you can, this indicates you are logged in with your custom identity provider user and all is working OK.
 
 ![Working](after4.png)
 

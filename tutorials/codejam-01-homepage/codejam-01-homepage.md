@@ -4,8 +4,8 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
+primary_tag: software-product>sap-build
 ---
   
 # 1 - Create the Product List Page
@@ -45,7 +45,7 @@ Otherwise, here's how top open the lobby.
 
     Sign in if necessary
 
-2. Click **Got To Your trial Account**.
+2. Click **Go To Your Trial Account**.
 
     ![Go to trial](open1.png)
 
@@ -93,11 +93,16 @@ Otherwise, here's how top open the lobby.
 
     Select the file, and click **Import**.
 
-    The project should now be added to the lobby.
+    When complete, the project should now be added to the lobby.
+
+    Click **Close**.
     
     ![Project added](images/3-project-imported-lobby.png)    
     
 4. Click the project **ShoppingApp** to open it.
+
+
+
 
 
 
@@ -152,7 +157,7 @@ Now you must create the connection between your app and the ES5 system.
 
 4. Click **Install Integration** (top right).
    
-5. Select the **Products** entity, and click **Enable Data Entity**.
+5. Select the **Products** entity (you can use the search at the top of the column), and click **Enable Data Entity**.
 
     ![Enable entities](images/6d-datatab-integrations.png)
 
@@ -164,9 +169,14 @@ Now you must create the connection between your app and the ES5 system.
 
     Click **Exit** (upper right) to return to the previous – **Data** – screen. 
 
+    ![Exit](images/6e-datatab-integrations-exit.png)
+
     You should now see the **Products** entity in the **Data** tab.
 
     ![Products](images/products.png)
+
+
+
 
 
 
@@ -177,8 +187,6 @@ Data variables are used for holding data from external data sources, such as SAP
 All this makes it possible to build SAP extensions that interact with and enhance core systems.
 
 1. Switch to the **UI Canvas** tab and then toggle to **Variables**.
-
-    ![Variables](images/9-switch-uicanvas-toggle-variables.png)
 
     >If you get a big text box **Welcome to variables**, you can read it but then you can close it by clicking the X.
 
@@ -214,6 +222,8 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
 2. From the **Core** tab of the left pane, drag a **Container** component from under **Layout > Container** onto the canvas into the white area.
 
+    ![Container](first-component.png)
+
     >Container components let you group components and configure the group of components as a single unit.
 
     With the container selected, in the **Properties** tab, change the **Component display name** to `Container - Products List`.
@@ -228,7 +238,15 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
 4. With the **Title** component selected, and in the **Properties** tab on the right pane, enter `Buy some hardware today!` for the **Content** property. 
 
+    ![Change title](images/12-drag-title-change-text.png)
+
 5. From the **Core > Lists** section nearly at the bottom of the left-side components pane, drag a **Large image list item** into the **Container - Products List** container (after the title component).
+
+    Use the **Tree View** this time.
+
+    ![Tree view](first-tree-view.png)
+
+    &nbsp;
 
     ![Drag Large image list item inside Container](images/13-drag-largeimagelistitem-container.png)
 
@@ -292,7 +310,11 @@ To do this, you create bindings for your UI components – in this case, the lis
    
     ![Select list](select-list.png)
 
-2. In the **Properties** tab, there are properties we will want to set, specifically: ***title***, ***description***, ***image***.
+2. In the **Properties** tab, there are properties we will want to set, specifically: 
+
+    - **Title**
+    - **Description**
+    - **Image**
 
     ![Properties](images/bind1.jpg)
 

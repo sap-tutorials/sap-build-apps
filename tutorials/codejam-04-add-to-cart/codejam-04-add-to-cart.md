@@ -4,8 +4,8 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps ]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps ]
+primary_tag: software-product>sap-build
 ---
   
 
@@ -94,8 +94,6 @@ A cart is assigned to the current user by detecting the current user's email add
 
 >Since the app uses SAP BTP authentication, you can determine a variety of properties about the current user, including the user's email address. You can find these fields using formulas and the `systemVars.currentUser` object.
 
->**IMPORTANT:** As of the writing of the tutorial, the current user could only be accessed when running the application on the web, not on a mobile device.
-
 1. Navigate back to the home page – by clicking the name of the current page under the app name in the top-left corner.
 
     Select the **Home page** tile.
@@ -105,6 +103,8 @@ A cart is assigned to the current user by detecting the current user's email add
     ![Open logic](images/getcart-1.png)
 
 3. To the **Page focused** event, add flow functions and then connect them so they look like this.
+
+    >It may look complicated, but it is fairly simple and we will go through it step by step 😺.
 
     ![Overall logic](images/cartid-overall-logic.png)
 
@@ -272,13 +272,15 @@ Now that you enabled the user to add an item to the cart, let's add logic to ena
 
     Select the **Cart** tile.
 
-2. Click the **Delete** icon in the first row of the cart, and open the logic canvas if it's not already open (by clicking **Add logic to Icon - Delete** at the bottom).
+2. Click the **Delete** icon in the first row of the cart (or select it in the tree view.
+
+    Then open the logic canvas if it's not already open.
 
     ![Delete icon](images/3-delete-icon-logic.png)
 
-    >We have already added a few flow functions to prevent you from deleting our demo order.
+3. Drag a **Delete Record** flow function onto the logic canvas and connect it to the top output of the existing **IF condition**.
 
-3. Drag a **Delete Record** flow function onto the logic canvas and connect it to the top output of the **IF condition**.
+    ![Add delee](images/3-delete-add-delete.png)
 
     With the **Delete Record** selected, set the following:
     
@@ -288,9 +290,11 @@ Now that you enabled the user to add an item to the cart, let's add logic to ena
 
     ![Select Repeat Data ID](images/3c-select-repeat-data-property-current-id.png) 
 
-4. Now that you deleted the item, you want to refresh the list of items.
+1. Now that you deleted the item, you want to refresh the list of items.
 
     Drag a **Get Record Collection** flow function onto the logic canvas and connect it to the top output of the **Delete record**.
+
+    ![Refresh data](images/3d-refresh-data.png)
 
     With **Get Record Collection** selected, set the following:
 
@@ -304,11 +308,12 @@ Now that you enabled the user to add an item to the cart, let's add logic to ena
     
     Click **Save**.
     
-    ![Refresh data](images/3d-refresh-data.png)
 
-5. Now that you retrieved the new list of items, you have to update the data variable.
+2. Now that you retrieved the new list of items, you have to update the data variable.
 
     Drag a **Set data variable** flow function onto the logic canvas and connect it to the top output of the **Get record collection**.
+
+    ![Set data variable](images/3e-set-data.png)
 
     With **Set data variable** selected, set the following:
 
@@ -316,9 +321,8 @@ Now that you enabled the user to add an item to the cart, let's add logic to ena
 
     - **Record collection** to **Output value of another node > Get record collection > Collection of records**.
 
-    ![Set data variable](images/3e-set-data.png)
 
-6. Click **Save** (upper right).
+3. Click **Save** (upper right).
 
 
 
@@ -356,9 +360,16 @@ Your cart should be empty. This is because you now have your own cart, which sta
 
 ![Empy cart](images/empycart.png)
 
-Go back to the home page (use the left-side navigation) and click the first product, then on the product details page, change the quantity to `7`  and click **Add to Cart**.
+>Note we added a display of your cart ID, so you can debug if necessary and see what the app thinks is your cart ID, or if it is missing.
+
+Go back to the home page (use the left-side navigation) and click the first product, then on the product details page, and change the quantity to `7`.
 
 ![Add to cart](images/emptycart-2.png)
+
+Click **Add to Cart**.
+
+![Add to cart](images/empycart1.png)
+
 
 Go to the **Cart** page. You should now see the product you selected in your cart. 
 

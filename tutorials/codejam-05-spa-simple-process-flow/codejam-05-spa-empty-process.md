@@ -4,8 +4,8 @@ author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
+primary_tag: software-product>sap-build
 ---
  
 
@@ -268,13 +268,11 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
 
     With the process selected, you will see information about the process, most notably:
 
-    - Its **ID**. You will need this ID when you make an API call to trigger this process.
+    - Its **ID**. This ID must be passed whenever an API call is made to trigger the process, though SAP Build Apps will handle sending his ID for you.
 
     - Buttons for showing all the instances of this process that were triggered, and for starting a new instance of the process.
 
-    >**IMPORTANT:** Make note of the process ID.
-
-4. Click **Start New Instance**.
+3. Click **Start New Instance**.
 
     This opens a dialog that lets you trigger a process – for testing  – without using a form, API call, or external event.
 
@@ -361,6 +359,6 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     Under **Context**, you can see the data that was passed to the process, or that was retrieved during steps that involved data. 
 
 
-**Congratulations!** You have created your first simple SAP Build Process Automation process.
+**Congratulations!** You have created your first SAP Build Process Automation process.
 
 

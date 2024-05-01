@@ -4,8 +4,8 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
+primary_tag: software-product>sap-build
 ---
   
 
@@ -140,7 +140,7 @@ In this case, you will create a page variable to store the quantity of the item 
 
 
 
-### Map fields to components
+### Bind data fields to components
 The product details page already contains the UI components needed to display the product details. But now you need connect the data from your data variable to the appropriate fields.
 
 1. Toggle back to **View**.
@@ -153,9 +153,9 @@ The product details page already contains the UI components needed to display th
     
     Select **Data and Variables > **Data variable** > Products1 > Name**. Then set the preview value to `Product Name`.
 
-    Click **Save**.
-
     ![Data variable](images/map-2.png)
+
+    Click **Save**.
 
 3. Select the UI component **Text - Description** (use the Tree view).
     
@@ -165,24 +165,35 @@ The product details page already contains the UI components needed to display th
     
     Click **Save**.
 
-3. For the next 4 fields, you will use formulas. Set the following bindings:
+    ![Description](images/map-2a.png)
+
+3. For the next 4 fields, you will use formulas. 
+
+    Let's start **Text - ID** by selecting it, then clicking the binding icon for **Content**.
+
+    ![Formula binding](formulas1.png)
+
+    Select **Formula**, click the existing formula, and replace it with this formula:
+
+    ```JavaScript
+    "ID: " + data.Products1.Id
+    ```
+
+4. Do the same for the next 3 fields:
 
     | UI element   |  Formula |
     |---|---|
-    | **Text - ID**   |  `"ID: " + data.Products1.Id` |
     | **Text - Price**  | `"Price: $" + FORMAT_LOCALIZED_DECIMAL(NUMBER(data.Products1.Price), "en", 2,2)`  |
     | **Text - Supplier**  | `"Supplier: " + data.Products1.SupplierName` |
     | **Text - Weight**  |  `"Weight: " + data.Products1.WeightMeasure + " " + data.Products1.WeightUnit`  |
 
-    The end result after the mapping to these fields should look like this.
+    The end result should look like this.
 
     ![ Mapping fields ](images/4-mapping-product-details-fields.png)
 
-    >Formulas let you manipulate the data before displaying.
+    >Formulas let you manipulate data before displaying.
     
     >Here, the ID is displayed with a prefix, the price is formatted, the supplier is displayed with a prefix, and the weight units and amount are concatenated. 
-
-    >In an upcoming step, for the total, you will do some calculations as well.
 
 5. Select the **Input field - Quantity**.
 
@@ -264,14 +275,17 @@ Your details page is all set up, but there is no way to get to it. So you will s
 
     >Notice that SAP Build Apps now recognizes that this page requires a page parameter called **productID** to be passed, and creates a field for you to configure.
     
-    Click on the **X** next to **productID**, and set its value to **Data item in repeat > current > Id**.
+    Click on the **X** next to **productID**.
+
+    ![Product ID](navigate-ID.png)
+    
+    Set its value to **Data item in repeat > current > Id**.
 
     ![Data item in repeat](data-item-repeat.png)
 
-    ![Open page set page parameter](images/11c-openpage-set-page-param.png)
-
     >SAP Build Apps knows you are in the logic canvas of a repeated UI element, so it provides the **Data item in repeat** binding type. When the user will click on a product, SAP Build Apps will send the ID of that product to the **Product Details** page.
 
+    ![Open page set page parameter](images/11c-openpage-set-page-param.png)
 
 6. Click **Save** (upper right). 
 
