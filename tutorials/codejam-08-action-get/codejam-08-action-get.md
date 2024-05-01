@@ -4,8 +4,8 @@ author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
+primary_tag: software-product>sap-build
 ---
    
 
@@ -111,13 +111,13 @@ In this step, you will enable the destination to be used in your processes.
 
     ![Add destination](add-dest1.png)
 
-3. Click **New Destination**.
+3. Click **Add**.
 
     ![New destination](add-dest2.png)
 
     Select your destination, **SHANA-Hub-Public**.
 
-    Click **Add**.
+    Click **OK**.
 
     ![Add](add-dest3.png)
 
@@ -139,7 +139,7 @@ In this step, you will enable the destination to be used in your processes.
 
     ![Click Create](1b_Click_Create.png) 
                 
-2. Choose **Other BTP Destinations** as the API source.
+2. Choose **OData Destinations** as the API source.
 
     ![Choose Other BTP Destinations](1c_Choose_Other_BTP_Dest.png) 
 
@@ -169,6 +169,8 @@ In this step, you will enable the destination to be used in your processes.
 
     ![Action Project Name](1f_Action_Project_Name.png) 
 
+    After about a minute, the action project will be created and open.
+    
     You will now see all the APIs in the service, so that you can select the ones you want to include in this action project.
 
 5. Expand the **A_BusinessPartner** entity.   
@@ -295,6 +297,8 @@ To make the action available to your processes, you must release and publish the
 
 
 
+
+
 ### Add action to process
 You've created an action to retrieve data. Now add it to the process so you can retrieve data inside the process.
 
@@ -316,9 +320,12 @@ You've created an action to retrieve data. Now add it to the process so you can 
 
     ![Choose Action](7e_Choose_Action.png) 
 
-    Choose the action created in the previous steps, and click **Add**.
-
+    Choose the action created in the previous steps. You may want to filter by your action project.
+    
     ![Browse Action Library using filters for Action Project](7f_Set_Filter_Add_Action.png)
+
+    Click **Add**.
+
 
     >If you had many actions, you could use the filters at the top.
     
@@ -340,7 +347,7 @@ You've created an action to retrieve data. Now add it to the process so you can 
     >
     >You can change the destination at deployment without having to change the process itself.
 
-5. In the **Inputs** tab, click in the **BusinessPartner** field, and select **Process Inputs > Business Partner** fields.
+5. In the **Inputs** tab, click in the **BusinessPartner** field, and select **Process Inputs > Business Partner** field.
 
     ![Configure Action Inputs](7i_Action_Input_Config.png)
 
@@ -429,9 +436,21 @@ You've created an action to retrieve data. Now add it to the process so you can 
     
     Click **Deploy**.
 
-The status of the project changes to **Deployed**. Click the SAP logo at the upper left to return to SAP Build Lobby.
+    The status of the project changes to **Deployed**. 
 
-![Deployment Status](9f_Deployed_Status.png)
+    ![Deployment Status](9f_Deployed_Status.png)
+
+12. Go back to the SAP Build lobby, refresh the page.
+
+    Next to your process project, click the 3 dots and select **Publish to Library**.
+
+    ![Republish](republish.png)
+
+    In the dialog, click **Publish**.
+
+
+
+
 
 
 
@@ -442,6 +461,8 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
 
 ### Modify app to send business partner
+Now that the process expects a business partner, we must change the app to provide one.
+
 1. Open the **ShoppingApp** project from SAP Build lobby.
 
     ![Open Shopping App](10a_Shopping_App.png)
@@ -480,34 +501,20 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
     ![Click on Purchase Button](13a_Select_Purchase_Button.png)
 
-    Click the **Create record** flow function, and then on the right, click **Custom object** under **Record**.
-
-    >This is the flow function that triggers your process.
+    Click the **Trigger process** flow function, and then on the right, click the **Business Partner** binding icon.
 
     ![Open Add Logic Panel](13b_Open_Add_Logic_Panel.png)
 
-    Click on the binding icon for the **BusinessPartner** field.
-
-    ![Click on BusinessPartner](13c_Select_BP_Field.png)
-
     Bind the field to **Data and Page Variables > Page Variable > BP**.
 
-    Click **Save** twice.
-
-    ![Save Binding](13h_Save_Binding.png)
+    ![Bind to BP](13b-bind-BP.png)
 
     Click **Save** (upper right).
 
-    ![Save Changes to the App](13i_Save_Changes_to_App.png)
 
 
 
-
-
-
-
-
-### Test process
+### Test app
 1. Relaunch the app. 
 
 2. Select a product.
@@ -520,8 +527,6 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
 3. Click **Cart** in the left navigation menu.
 
-    ![Cart Page](16a_Cart_Page.png)
-
     Select **1000000** for the business partner.
 
     ![Select Business Partner](16b_Choose_BP.png)
@@ -530,7 +535,7 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
     ![Click Purchase](16c_Click_Purchase.png)
 
-    You should get a purchase confirmation message.
+    You should get a purchase confirmation message – it may take a minute.
     
     ![Purchase Request Created Message](16d_Purchase_Requested.png)
 
@@ -578,3 +583,4 @@ The status of the project changes to **Deployed**. Click the SAP logo at the upp
 
     ![Process Completed](17i_Process_Completed.png)
 
+You can test again with the other business partner to see if your purchase gets automatically approved.

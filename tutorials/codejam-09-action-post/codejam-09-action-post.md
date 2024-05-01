@@ -4,8 +4,8 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
+primary_tag: software-product>sap-build
 ---
   
 
@@ -52,13 +52,13 @@ You already created the destination for the CAP service because you needed it in
 
     ![Add destination](add-dest1.png)
 
-3. Click **New Destination**.
+3. Click **Add**.
 
     ![New destination](add-dest2.png)
 
     Select your destination, **CodeJamOrdersService**.
 
-    Click **Add**.
+    Click **OK**.
 
     ![Add](add-dest3.png)
 
@@ -99,7 +99,7 @@ You already created the destination for the CAP service because you needed it in
 
     ![Create Actions](images/1a-actions-create.png)
 
-3. Select **Live API > Other BTP Destinations**.
+3. Select **Live API > OData Destinations**.
    
     ![Select OData](images/1b-select-live-other-btp-destinations.png)
 
@@ -230,13 +230,11 @@ Now, you will add the action so that if the order is approved, the action will u
 
     ![Invoke Action](images/5b-actions-on-pop-up.png)
 
-3. In the **Browse library** pop-up, select the **Update entity in Orders** tile.
-
-    >If you are on a system with lots of actions, use the search text to find your **OrderManagementService** action, or select your project from **Projects** dropdown.
+3. In the **Browse library** pop-up, filter by the **OrderManagementService** action project.
 
     ![Select action](add-action2.png)
 
-    Click **Add**.
+    Click **Add** next to the **Patch** API.
 
     The action gets added and a side pane opens.
 
@@ -298,13 +296,13 @@ Now, you will add the action so that if the order is approved, the action will u
 
 
 
-### Release and deploy process
+### Release, deploy and publish process
 
 1. Click **Release** (top right).
 
     ![Release after actions](images/6-release-after-action.png)
 
-    In the pop-up, for **Version Comment**, enter `Added Action to update Orders entity`.
+    In the pop-up, for **Release Notes**, enter `Added Action to update Orders entity`.
     
     Click **Release**. 
 
@@ -315,8 +313,6 @@ Now, you will add the action so that if the order is approved, the action will u
     Select the **Public** environment, and click **Upgrade**.
 
     ![Select environment](deploy1.png)
-
-
 
     The triggers that will be deployed will be displayed. There is nothing to do here but confirm.
     
@@ -332,9 +328,15 @@ Now, you will add the action so that if the order is approved, the action will u
 
     Click **Deploy**.
 
-The status of the project changes to **Deployed**. Click the SAP logo at the upper left to return to SAP Build Lobby.
+    The status of the project changes to **Deployed**. Click the SAP logo at the upper left to return to SAP Build Lobby.
 
+3. Go back to the SAP Build lobby, refresh the page.
 
+    Next to your process project, click the 3 dots and select **Publish to Library**.
+
+    ![Republish](republish.png)
+
+    In the dialog, click **Publish**.
 
 
 
@@ -365,7 +367,9 @@ In order to better see the status of all my orders and cart, you will create in 
 
     ![Orders](myorders5.png)
 
-    Click **Properties**, then click the **X** next to **Filter conditions**.
+    Click **Properties**, expand the **Optional** node.
+    
+    Click the **X** next to **Filter conditions**.
 
     ![Filter](myorders6.png)
 
@@ -398,40 +402,44 @@ In order to better see the status of all my orders and cart, you will create in 
 
 
 
-### Test process
+### Test the app
 
-Go into your app, select the **Notebook Basic 18**, and add it to your cart.
+1. Go into your app, select the **Notebook Basic 18**, and add it to your cart.
 
-Go to the **My Orders** page and you will see your cart.
+2. Go to the **My Orders** page and you will see your cart.
 
-![Cart](testapp1.png)
+    ![Cart](testapp1.png)
 
-Go to the **Cart** page, and you will see your cart with the item you just selected.
+3. Go to the **Cart** page, and you will see your cart with the item you just selected.
 
-Select the business partner **100000**, and then click **Purchase**.
+    Select the business partner **100000**, and then click **Purchase**.
 
-![Cart item](testapp2.png)
+    ![Cart item](testapp2.png)
 
-Go back to the **My Orders** page, and you will see that your cart now has a total – 1570 – and its status is now **REQUESTED**.
+    The cart is sent to the process to be approved.
 
-![Requested](testapp3.png)
+    ![Purchase](testapp2a.png)
 
-Open your Inbox, and you can see the approval form.
+4. Go back to the **My Orders** page, and you will see that your cart now has a total – 1570 – and its status is now **REQUESTED**.
 
-![Approval form](testapp4.png)
+    ![Requested](testapp3.png)
 
-Click **Approve**. The form disappears. Refresh the Inbox and you should see the notification form.
+5. Open your Inbox, and you can see the approval form.
 
-![Notification form](testapp5.png)
+    ![Approval form](testapp4.png)
 
-Click **Submit**. The process continues to update the status of the order, and then completes.
+    Click **Approve**. The form disappears. Refresh the Inbox and you should see the notification form.
 
-Check the process in the monitor tab, and you can see all the steps completed.
+    ![Notification form](testapp5.png)
 
-![Process complete](testapp6.png)
+    Click **Submit**. The process continues to update the status of the order, and then completes.
 
-Back in your app, refresh the page and check the **My Orders** page again, and you will see the status of the order updated.
+6. Check the process in the monitor tab, and you can see all the steps completed.
 
-![Order approved](testapp7.png)
+    ![Process complete](testapp6.png)
 
->You will also notice that there is a new cart. Since you submitted the cart and changed it's status to **REQUESTED**, the app no longer had a cart. And when the app returned to the home page, it created a new cart in the CAP service.
+    Back in your app, refresh the page and check the **My Orders** page again, and you will see the status of the order updated.
+
+    ![Order approved](testapp7.png)
+
+    >You will also notice that there is a new cart. Since you submitted the cart and changed it's status to **REQUESTED**, the app no longer had a cart. And when the app returned to the home page, it created a new cart in the CAP service.
