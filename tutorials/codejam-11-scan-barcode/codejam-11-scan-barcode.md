@@ -33,9 +33,7 @@ One of the best things about SAP Build Apps is that you can easily enable basic 
 
 In this tutorial, you will let you scan a barcode in order to select a product, instead of having to select from the list on the home page.
 
->**IMPORTANT:** Currently, it is not possible to get the current user when running the app on a mobile device (this is expected to be enabled in Q1 of 2024, but no guarantees). In the app, you use the current user's email to identify the user and indicate which order's in the CAP service belong to the current user.
 
->In order to enable our scenario to work on mobile, you will change the way you identify the current user.
 
 
 
@@ -53,48 +51,15 @@ To get and set up the SAP Build Apps Mobile Preview App, watch and follow along 
 
 
 
-### Change customer logic
-Because the mobile preview does not yet support getting user information, you will select a string and hardcode it as your user ID.
-
-1. Go to the **Home page**, and toggle to **Variables**.
-
-2. Create an app variable called `currentUser`.
-
-    Set its **Variable value type** to **Text**.
-
-    Set it's **Initial value** to some unique value, like your email address or some GUD (or you can create a GUID from some online generator, like [this one](https://guidgenerator.com/)).
-
-    ![Current user](currentuser.png)
-
-3. Open the logic canvas.
-
-4. Click on the **Get record collection**, and in the **Filter condition**, change the binding for **customer** condition.
-
-    ![Get record collection](currentUser2.png)
-    
-    Set it to **Data and Variables > App variable > current user**.
-
-    ![New filter](currentUser3.png)
-
-5. Click the **Create record**, and in the **Record** property.
-    
-    ![Create record](currentUser4.png)
-   
-    Change the formula binding to the following formula.
-   
-    ```JavaScript
-    {customer: appVars.currentUser, status: "CART"}
-    ```
-
-6. Click **Save** (upper right).
-
-
-
 
 
 
 ### Add UI for barcode scanning
-1. Toggle back to **View**.
+1. Go to the home page.
+   
+    Make sure you are toggled to **View**.
+
+    ![Back home](backhome.png)
 
 2. Right now, you have a title component.
 
@@ -107,6 +72,8 @@ Because the mobile preview does not yet support getting user information, you wi
     ![Add row](ui2.png)
     
     Move the existing title component into Cell #1.
+    
+    ![Move title](barcode-movetitle.png)
     
     In Cell #2, add a container, and in the container add a text and icon component.
 
@@ -150,11 +117,13 @@ Because the mobile preview does not yet support getting user information, you wi
 
     - In the **Layout** tab, in the **Layout** section, change **Text align** to **right**.
 
-6. Select the icon component (in Cell #2), and set the following.
+6. Select the icon component (the star in Cell #2), and set the following.
 
-    - Under **Properties**, in the **Icon** property, click **star** and enter `barcode` in the search.
+    - Under **Properties**, in the **Icon** property, click the word **star**.
 
-        Click the barcode symbol.
+        ![Select star](selectstar.png)
+        
+        Enter `barcode` in the search, and click the barcode symbol.
 
         ![Icon](1-icon-1.png)
 
@@ -188,6 +157,8 @@ Now lets create the logic for handling the tap of the barcode icon.
     >- If the value is a product number and in our list of products – held in our data variable – then you navigate to the product details page.
     >
     >- If the value is not a product, you just alert the user.
+    >
+    >**IMPORTANT:** You must connect the top output of he QR code flow function with the If condition flow function.
 
 3. For the **If condition** flow function, set the **Condition** to the following formula:
 

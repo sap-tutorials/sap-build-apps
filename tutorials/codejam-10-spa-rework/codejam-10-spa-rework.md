@@ -4,8 +4,8 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, sap-conversational-ai>sap-build, sap-conversational-ai>sap-build-apps, sap-conversational-ai>sap-build-process-automation]
-primary_tag: sap-conversational-ai>sap-build
+tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
+primary_tag: software-product>sap-build
 ---
   
 
@@ -52,7 +52,7 @@ Here's the flow:
 ### Add custom variable
 The approver has a field in the approval form to add **Additional Information** when sending the request to the submitter for rework.
 
-The problem is you want this field to be sent to the submitter, bu also returned back to the approval form so the approver knows what they asked for from the submitter. The problem is that the approval form cannot bind a field to one of its own fields.
+The problem is you want this field to be sent to the submitter, but also returned back to the approval form so the approver knows what they asked for from the submitter. The problem is that the approval form cannot bind a field to one of its own fields.
 
 To solve this, you will create a custom variable.
 
@@ -111,7 +111,11 @@ You need to modify the approval form to enable the approver to indicate that the
 ### Add condition
 Now you need to check whether the approver enabled rework. For this, you add a condition step.
 
-1. Under **Reject** under the approval form, click the plus sign, **+**, and select **Controls and Events > Condition**.
+1. Go back to the tab with your process.
+   
+    Under **Reject** under the approval form, click the plus sign, **+**, and select **Controls and Events > Condition**.
+
+    >You may need to expand the approval form.
 
     ![Condition](condition1.png)
 
@@ -120,6 +124,8 @@ Now you need to check whether the approver enabled rework. For this, you add a c
     ![Condition result](condition2.png)
 
 2. In the side panel, change the name to `Rework?`. 
+
+    ![Rework condition](rework-condition.png)
 
 3. Click **Open Condition Editor**.
 
