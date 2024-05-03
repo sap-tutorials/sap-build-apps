@@ -92,7 +92,7 @@ If you prefer, here are the step-by-step instructions.
 
     ![Select subaccount](installapps5.png)
 
-    >Your trial account cannot only have one subaccount, so you must use the existing one.
+    >Your trial account can have only one subaccount, so you must use the existing one.
 
     On the **Configure Subaccount** page, just click **Next**.
 
@@ -164,7 +164,7 @@ If you prefer, here are the step-by-step instructions.
 
     ![Create](spa1.png)
 
-2. Enter the following:
+2. Set the following fields:
 
     | Field | Value|
     |-------|------|
@@ -230,7 +230,7 @@ If you prefer, here are the step-by-step instructions.
 
 If you want to test, go back to the **Instances and Subscriptions** screen. Click the icon next to SAP Build Process Automation, which will open the SAP Build lobby.
 
-Click on **Create** and try to create a new Process Automation project – if you can, this indicates you are logged in with your custom identity provider user and all is working OK.
+Click on **Create** and try to create **Build an Automated Process > Business Process** project – if you can, this indicates you are logged in with your custom identity provider user and all is working OK.
 
 ![Working](after4.png)
 
@@ -262,7 +262,7 @@ Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/t
 
 1. Download the destination definition.
    
-    Click [`ES5-Shop`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-0-prerequisites/ES5-Shop), and then click the download button.
+    Click this [ES5-Shop](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-0-prerequisites/ES5-Shop) link to the GitHub download page for the destination, and then click the download button in the GitHub menu.
 
     ![Download](Download.png)
 

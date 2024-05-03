@@ -57,7 +57,7 @@ To connect Build Apps to Process Automation a destination needs to be created fo
     <!-- border -->
     ![Key name](8.png)  
 
-   The service key is created and you can view the credentials by clicking **View**.
+    The service key is created and you can view the credentials by clicking **View**.
 
     <!-- border -->
     ![key credentials](9.png)  
@@ -74,8 +74,8 @@ To connect Build Apps to Process Automation a destination needs to be created fo
     ![Credentials](9a.png)
 
 4. Download the destination definition.
-   
-    Click [`sap_process_automation_service_user_access`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-07-connect-app-process/sap_process_automation_service_user_access), and then click the download button.
+
+    Click this [`sap_process_automation_service_user_access`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-07-connect-app-process/sap_process_automation_service_user_access) link to the GitHub download page for the destination, and then click the download button in the GitHub menu.
 
     ![Download](Download.png)
 
@@ -84,7 +84,7 @@ To connect Build Apps to Process Automation a destination needs to be created fo
     <!-- border -->
     ![Open destinations](3-open-destinations.png)
 
-    Click **Import Destination**, and then select the `spa_process_destination_USER` file you downloaded.
+    Click **Import Destination**, and then select the `sap_process_automation_service_user_access` file you downloaded.
 
     <!-- border -->
     ![New destination](4-create-destination.png)
@@ -93,7 +93,7 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
     ![Add destination](add-destination.png)
 
-8. Enter values for the following fields, based on the service key information you saved earlier. For **api** and **url**, you will have to append some text.
+8. Enter values for the following fields, based on the service key information you saved earlier. 
 
     | Destination Field | Value from Service Key |
     |--------------------|--------------|
@@ -101,12 +101,13 @@ To connect Build Apps to Process Automation a destination needs to be created fo
     | Client Secret | **clientsecret**  |
     | Token Service URL | **url** + `/oauth/token`  |
 
-    The skeleton destination you imported assumes you are using US10 region. Double-check the **URL** field in the destination is the same as the **api** field in your service key.
+    >The skeleton destination you imported assumes you are using US10 region and setting the **URL** field accordingly. Double-check the **URL** field in the destination, which should be the same as the **api** field in your service key.
 
     Select **Use default JDK truststore**.
 
     Click **Save**.
 
+If you click **Check Connection**, you will get a 401 response code. This is OK and you have **successfully** created the destination
 
 
 
