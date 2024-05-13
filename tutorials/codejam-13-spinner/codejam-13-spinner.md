@@ -162,7 +162,7 @@ You'll do both.
 
 
 
-### Test the app
+### Use spinner flow functions
 The way we just implemented the spinner, with a dedicated spinner UI component, lets us create a spinner for just a part of the screen.
 
 But if we just want to hide the entire screen until the data is ready, there are dedicated spinner flow controls that make this easy.
