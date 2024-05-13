@@ -181,35 +181,19 @@ Now that you enabled the process, let's set up the logic to trigger it.
 
     Go to the **Cart** page.
 
-3. Click on the **Purchase** button.
+2. Click on the **Purchase** button.
 
     Open up the button's logic canvas.
 
     ![Trigger](images/trigger1.png)
 
-4. Click **Marketplace**.
-
-    ![Marketplace](images/trigger2.png)
-    
-    Search for **Trigger Process**.
-    
-    ![Search](images/trigger3.png)
-    
-    Select the **Trigger Process** flow function, and click **Install**.
-
-    ![Install](images/trigger4.png)    
-
-    The flow function is added to the **Installed** tab.
-    
-    ![Installed](images/trigger5.png)
-
-5. With the **Purchase** button still selected, drag a **Trigger process** flow function onto the canvas, and connect it to the **Component Tap** event.
+3. From the **Core** tab on the left, drag a **Trigger process** flow function onto the canvas, and connect it to the **Component Tap** event.
 
     The process should automatically have your process selected for the **Process** field.
 
     ![Add flow function](images/trigger6.png)
 
-6. You now need to bind all the fields that the process needs.
+4. You now need to bind all the fields that the process needs.
 
     Bind the fields as follows:
 
