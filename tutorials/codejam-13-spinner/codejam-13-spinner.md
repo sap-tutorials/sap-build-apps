@@ -93,15 +93,29 @@ You'll do both.
 ### Set visibility of UI
 1. In the Tree View, select the **Product Details** container.
 
-2. Under **Advanced Properties**, set the **Visible** property to a **formula**, and set the formula to the following:
+2. Under **Advanced Properties**, click on the binding icon for the **Visible** property. 
+
+    ![Visible Property under Advanced](images/visibility-data-0.png)
+
+    Select **Formula** and set the formula to the following:
 
     ```JavaScript
     !pageVars.showSpinner
     ```
-   
-    ![Visible Property under Advanced](images/visibility-data.png)
+
+    Before saving the formula, set the **Optional preview data** to **True**.
+
+    ![Visible Property under Advanced](images/visibility-data-formula.png)
+
+    Save the formula, and then click **Save** (upper right).
 
     This will set it to the opposite of the spinner. So when the spinner is visible, the product details UI is not, and vice versa.
+
+    >**What does the formula do?**
+    >
+    >The formula will show the page components only when the spinner is hidden. So initially, the spinner is shown and the page is hidden; when the data is all retrieved, the spinner is hidden and the page components are shown.
+    >
+    We set the **Optional preview value** because by default the **Visible** property is false and this will hide all the page components while we are designing them. So in order to see them while we work on building the page, we set the preview to **True**.
 
 
 
@@ -149,7 +163,7 @@ You'll do both.
 
 
 ### Test the app
-The way we just implemented the spinner, with a dedicated spinner UI component, let's us create a spinner for just a part of the screen.
+The way we just implemented the spinner, with a dedicated spinner UI component, lets us create a spinner for just a part of the screen.
 
 But if we just want to hide the entire screen until the data is ready, there are dedicated spinner flow controls that make this easy.
 
@@ -159,7 +173,7 @@ But if we just want to hide the entire screen until the data is ready, there are
 
     ![Remove spinner](images/flow1.png)
 
-2. In the tree view, select the **Product Details** container, and set the visibility back to true.
+2. In the tree view, select the **Product Details** container, and set the visibility back to **True**.
 
     ![Back to true](images/flow1a.png)
 

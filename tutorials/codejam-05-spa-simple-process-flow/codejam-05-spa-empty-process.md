@@ -15,7 +15,6 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-
 - You have completed the previous tutorial for the SAP Build CodeJam, [Write Logic to Maintain the Cart](codejam-04-add-to-cart).
   
 
@@ -31,6 +30,17 @@ primary_tag: software-product>sap-build
 SAP Build Process Automation is a low code/no code tool under SAP Build Portfolio. With this tool, you will get access to a new range of opportunities for running your day-to-day workflows. In this tutorial, you will learn how to create a business process  using visual drag and drop simplicity.
 
 There are many use cases/scenarios where you can bring about innovation using SAP Build Process Automation. In this tutorial, you will see how to create a Simple Business process flow for Purchase Orders Approval. We test the process flow by creating a process instance to make sure functionality works as expected.
+
+
+### Finish installing SAP Build Process Automation
+You installed SAP Build Process Automation in Step 3 of the [codejam-0-prerequisites](prerequisites tutorial). But the subscription to the service takes a long time and you may have skipped the final few actions in that step.  
+
+If you did not complete that step, go back and finish adding the role collections to your user.
+
+If you completed that step, just continue below.
+
+
+
 
 
 ### Create a process project

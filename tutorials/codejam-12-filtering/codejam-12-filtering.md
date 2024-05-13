@@ -147,6 +147,8 @@ To enable the user to choose a category, you need to populate the **Categories**
 
 5. Click **Save** (upper right).
 
+>The ES5-Shop service has an entity called **MainCategories**, and we could have instead just retrieved the categories from there. But the above a little simpler, especially as the list of products is not so long.
+
 
 
 
@@ -158,11 +160,13 @@ To enable the user to choose a category, you need to populate the **Categories**
 
     ![Dropdown binding](logic1.png)
 
-    For the binding, select **Data and Variables > Page variable > Categories**.
+    For the binding, select **Data and Variables > Page variable > Categories**, and click **Save**.
 
-    With the dropdown field selected, click the binding **X** next to the **Selected value** property, and bind the property to **Data and Variables > Page variable > SelectCategory**
+    With the dropdown field still selected, click the binding **X** next to the **Selected value** property, and bind the property to **Data and Variables > Page variable > SelectCategory**.
 
-3. Select the input field, and then select the binding icon for **option list**.
+    ![Selected binding](logic1b.png)
+
+3. Select the input field, and then select the binding icon for **Value**.
 
     ![Input field binding](logic1a.png)
 
@@ -180,6 +184,14 @@ To enable the user to choose a category, you need to populate the **Categories**
  
     ![Formula for filter](logic3.png)
 
+    >**What does the formula do?**
+    >
+    >The formula will return **True** if both of the following are true:
+    >
+    >- The name of the product contains the text entered for the filter
+    >
+    >- The selected category is the same as the current item's category. If no category is selected in the dropdown, then this test returns true.
+    
 5. Click **Save**.
 
 

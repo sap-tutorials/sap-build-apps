@@ -191,7 +191,7 @@ If you prefer, here are the step-by-step instructions.
     | Field | Value|
     |-------|------|
     |  Service      | **SAP Build Process Automation**     |
-    | Plan        |  **Free**     |
+    |  Plan        |  **Free**     |
 
     Click **Create**.
 
@@ -201,16 +201,15 @@ If you prefer, here are the step-by-step instructions.
 
     ![Processing](spa6.png)
 
-    >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. You can proceed to the next step in this tutorial and to the following tutorials, since they involve SAP Build Apps only.
+    >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. You do not have to wait and can skip the rest of this step for now as you won't be using SAP Build Process Automation until much later in this tutorial mission.
     
-    >**But when the subscription is complete,** remember to return to this step and finish it. 
+    >**But when the subscription is complete,** and you reach the point that you must use SAP Build Process Automation, remember to return to this step and finish it (we will remind you). 
 
-    When complete, the status will turn green to **Subscribed**.
+5. When the subscription for SAP Build Process Automation is complete, the status will turn green to **Subscribed**.
 
     ![Subscribed](spa7.png)
-
-
-5. On the left-side menu, go to **Security > Users**.
+   
+    On the left-side menu, go to **Security > Users**.
    
     Select your user for the custom identity provider.
 
