@@ -79,7 +79,7 @@ Otherwise, here's how top open the lobby.
 
 1. Download this skeleton project.
 
-    Click [ShoppingApp.zip.gpg](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-01-homepage/ShoppingApp.mtar), and then click the download button.
+    Click [ShoppingApp.mtar](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-01-homepage/ShoppingApp.mtar), and then click the download button.
 
     ![Download](download.png)
 
