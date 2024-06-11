@@ -272,7 +272,7 @@ Now that you enabled the user to add an item to the cart, let's add logic to ena
 
     Select the **Cart** tile.
 
-2. Click the **Delete** icon in the first row of the cart (or select it in the tree view.
+2. Click the **Delete** icon in the first row of the cart (or select it in the tree view).
 
     Then open the logic canvas if it's not already open.
 

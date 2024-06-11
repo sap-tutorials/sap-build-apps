@@ -33,7 +33,7 @@ There are many use cases/scenarios where you can bring about innovation using SA
 
 
 ### Finish installing SAP Build Process Automation
-You installed SAP Build Process Automation in Step 3 of the [codejam-0-prerequisites](prerequisites tutorial). But the subscription to the service takes a long time and you may have skipped the final few actions in that step.  
+You installed SAP Build Process Automation in Step 3 of the [prerequisites tutorial](codejam-0-prerequisites). But the subscription to the service takes a long time and you may have skipped the final few actions in that step.  
 
 If you did not complete that step, go back and finish adding the role collections to your user.
 
