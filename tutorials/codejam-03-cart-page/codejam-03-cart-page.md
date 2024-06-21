@@ -176,7 +176,7 @@ In order to display the data in the cart from the **OrderItems** entity, you nee
 
     With the repeat set, we'll bind the individual text components.
    
-3. In the Tree View, select **Row - Cart Item > Cell #1 > Text - Product**.
+3. In the Tree View, select **Row - Items > Cell #1 > Text - Product**.
 
     ![Bind product](images/bind-1.png)
 
@@ -193,8 +193,8 @@ In order to display the data in the cart from the **OrderItems** entity, you nee
     | UI Component    |   Tree View Location  |   Binding  | Preview |
     | --- | --- | --- | --- |
     | Quantity    |    Cell #2 > Text - Quantity   |  Data item in repeat > current > quantity    | `Qty` |
-    | Price    |   Container 10 > Text - Price   |  Data item in repeat > current > price   | `Price` |
-    |  Total   |   Container 11 > Text - Total |   Data item in repeat > current > total   | `Total` |
+    | Price    |   Cell #3 > Text - Price   |  Data item in repeat > current > price   | `Price` |
+    |  Total   |   Cell #4 > Text - Total |   Data item in repeat > current > total   | `Total` |
 
 5. Select the **Cart Total: $** field and click the binding icon for its **Content** property.
 

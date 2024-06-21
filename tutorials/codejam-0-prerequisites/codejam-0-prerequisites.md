@@ -201,7 +201,7 @@ If you prefer, here are the step-by-step instructions.
 
     ![Processing](spa6.png)
 
-    >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. You do not have to wait and can skip the rest of this step for now as you won't be using SAP Build Process Automation until much later in this tutorial mission.
+    >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. You do not have to wait and can skip the rest of Step 3 for now(and move to Step 4) as you won't be using SAP Build Process Automation until much later in [tutorial 5] (https://developers.sap.com/tutorials/codejam-05-spa-empty-process.html) in this tutorial mission.
     
     >**But when the subscription is complete,** and you reach the point that you must use SAP Build Process Automation, remember to return to this step and finish it (we will remind you). 
 
@@ -229,7 +229,7 @@ If you prefer, here are the step-by-step instructions.
 
 If you want to test, go back to the **Instances and Subscriptions** screen. Click the icon next to SAP Build Process Automation, which will open the SAP Build lobby.
 
-Click on **Create** and try to create **Build an Automated Process > Business Process** project – if you can, this indicates you are logged in with your custom identity provider user and all is working OK.
+Click on **Create** and try to create **Build an Automated Process > Business Process** project – if you can proceed with the creation, this indicates you are logged in with your custom identity provider user and all is working OK. At this point, there is no need to create a Business Process.
 
 ![Working](after4.png)
 
