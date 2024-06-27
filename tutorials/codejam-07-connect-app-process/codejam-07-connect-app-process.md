@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-buil
 primary_tag: software-product>sap-build
 ---
   
-
+ 
 
 # 7 - Trigger Process from Your App
 <!-- description --> Enable your app to call the SAP Build Process Automation API in order to trigger your process, as part of the SAP Build CodeJam.
