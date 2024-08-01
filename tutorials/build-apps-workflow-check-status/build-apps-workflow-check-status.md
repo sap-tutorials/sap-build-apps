@@ -7,7 +7,7 @@ time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build
 ---
-
+ 
 # Check Status of Process from SAP Build App
 <!-- description --> After triggering a process, you can check the status of that process by calling SAP Build Process Automation APIs from your SAP Build app.
 
