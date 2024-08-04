@@ -182,7 +182,7 @@ Now you must create the connection between your app and the ES5 system.
 
 
 ### Create a data variable
-Data variables are used for holding data from external data sources, such as SAP systems or third-party APIs. They come with a logic canvas that automatically comes with logic for retrieving the data – you do not have to worry about this logic. You can "bind" the data in the variable with your UI components in order to display the data. 
+Data variables are used for holding data from external data sources, such as SAP systems or third-party APIs. They come with a logic canvas that automatically comes with logic for retrieving the data – you do not have to worry about this logic. You can "bind" the data in the variable with your UI components in order to display the data.  
 
 All this makes it possible to build SAP extensions that interact with and enhance core systems.
 
@@ -246,7 +246,7 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
     ![Tree view](first-tree-view.png)
 
-    &nbsp;
+    The UI should look like this:
 
     ![Drag Large image list item inside Container](images/13-drag-largeimagelistitem-container.png)
 
@@ -319,7 +319,6 @@ To do this, you create bindings for your UI components – in this case, the lis
     ![Properties](images/bind1.jpg)
 
     At first, we want the component to be repeated for each item in our list (each product). The **Repeat with** property is already bound to the data variable **Products1** since there is only one data variable created.
-    
 
 3. Back in the **Properties** tab, you can now select each of the binding icons for the 3 properties we want to set.
 
