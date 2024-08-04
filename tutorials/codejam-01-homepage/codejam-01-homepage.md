@@ -318,21 +318,10 @@ To do this, you create bindings for your UI components – in this case, the lis
 
     ![Properties](images/bind1.jpg)
 
-    But we want the component to be repeated for each item in our list (each product). So first, we will set the **Repeat with** property.
+    At first, we want the component to be repeated for each item in our list (each product). The **Repeat with** property is already bound to the data variable **Products1** since there is only one data variable created.
     
-    Click the icon next to **Repeat with**.
-    
-    ![Repeated](images/bind2.jpg)
 
-    Select **Data and Variables**.
-
-    ![Data and Variables](images/bind3.jpg)
-
-    Then select **Data variable**, and then select your **Products1** data variable, and click **Save**.
-    
-    ![Products1](images/bind4.jpg)
-
-3. Back in the **Properties** tab you can now select each of the binding icons for the 3 properties we want to set.
+3. Back in the **Properties** tab, you can now select each of the binding icons for the 3 properties we want to set.
 
     ![Bindings](images/bind5.jpg)
     
@@ -404,7 +393,7 @@ In the preview, you might have noticed that the product images are a little larg
 
 1. In your project, click the **UI Canvas** tab.
 
-    Double-click the **Large Image List Item** component. 
+    Select the **Large Image List Item** component and from the **properties** tab, choose the **component template editor** icon. 
 
     ![Restyle](images/restyle-1.png)
 
