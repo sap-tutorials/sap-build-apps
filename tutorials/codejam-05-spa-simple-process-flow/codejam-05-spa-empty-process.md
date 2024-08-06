@@ -33,11 +33,15 @@ There are many use cases/scenarios where you can bring about innovation using SA
 
 
 ### Finish installing SAP Build Process Automation
-You installed SAP Build Process Automation in Step 3 of the [prerequisites tutorial](codejam-0-prerequisites). But the subscription to the service takes a long time and you may have skipped the final few actions in that step.  
+You installed SAP Build Process Automation in **Step 3** of the [prerequisites tutorial](codejam-0-prerequisites). But the subscription to the service takes a long time and you may have skipped the final few actions in that step.  
 
-If you did not complete that step, go back and finish adding the role collections to your user.
+- 👉 If you did not complete that step, go back to **the [prerequisites tutorial](codejam-0-prerequisites), Step 3, Bullet 5** and finish adding the role collections to your user.
 
-If you completed that step, just continue below.
+    >If in the next step of this tutorial you get the following error when creating your automation project, you did not complete the prerequisites.
+
+    >![No privileges](NoPrivileges.png)
+
+- 👉 If you completed that step, just continue below.
 
 
 
@@ -167,7 +171,7 @@ For this process, you will define an API trigger, so our app can call an API to 
 
     ![Create a Trigger](12a_Add_a_Trigger.png)
 
-2. Choose **Call an API**.
+2. Choose **API Trigger**.
 
     ![Select Call an API](12b_Select_Call_an_API.png)
 
@@ -360,7 +364,7 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     - When it completed
     - Who started it
     - ID of the instance
-    - Definition ID of the process (this is the ID you need later)
+    - ID of the process, or "Definition ID"
 
     ![Examine the Process Flow Context](16b_Examine_Process_Log_Context.png)
 

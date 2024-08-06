@@ -503,18 +503,18 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
         "orderId": "100000",
         "total": 1500,
         "orderItems": [
-        {
-        "product": "Pencils",
-        "quantity": 2,
-        "price": 14.5,
-        "total": 29
-        },
-        {
+            {
             "product": "Pencils",
             "quantity": 2,
             "price": 14.5,
             "total": 29
-        }
+            },
+            {
+            "product": "Pencils",
+            "quantity": 2,
+            "price": 14.5,
+            "total": 29
+            }
         ]
     }
     ```

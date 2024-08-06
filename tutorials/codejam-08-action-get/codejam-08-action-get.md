@@ -117,10 +117,16 @@ In this step, you will enable the destination to be used in your processes.
 
     Select your destination, **SHANA-Hub-Public**.
 
-    Click **OK**.
+    Click **Next**.
 
     ![Add](add-dest3.png)
 
+    On the second screen, keep the settings to allow the destination in **All Environments".
+
+    Click **Add Destination**.
+
+    ![Add](add-dest4.png)
+    
     The destination will be added to the list of destinations that can be used within your processes.
 
 
@@ -163,7 +169,11 @@ In this step, you will enable the destination to be used in your processes.
 
     Click **Next**.
 
-4. Enter `Business Partner ` for the **Project Name** and **Description**. 
+4. Enter:
+
+    - `Business Partner ` for the **Name**
+
+    - `API to read Business Partner from SAP S/4HANA Cloud` for the **Description**
 
     Click **Create**.
 
@@ -320,14 +330,16 @@ You've created an action to retrieve data. Now add it to the process so you can 
 
     ![Choose Action](7e_Choose_Action.png) 
 
-    Choose the action created in the previous steps. You may want to filter by your action project.
+    Choose **Browse Library**.
+    
+    ![Browse Library](7e2_Browse_Library.png) 
+
+    
+    Choose your action created in the previous steps. You may want to filter by your action project.
     
     ![Browse Action Library using filters for Action Project](7f_Set_Filter_Add_Action.png)
 
     Click **Add**.
-
-
-    >If you had many actions, you could use the filters at the top.
     
     The action is added to the process flow.
 

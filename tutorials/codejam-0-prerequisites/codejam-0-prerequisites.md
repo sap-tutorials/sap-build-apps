@@ -229,7 +229,7 @@ If you prefer, here are the step-by-step instructions.
 
 If you want to test, go back to the **Instances and Subscriptions** screen. Click the icon next to SAP Build Process Automation, which will open the SAP Build lobby.
 
-Click on **Create** and try to create **Build an Automated Process > Business Process** project – if you can proceed with the creation, this indicates you are logged in with your custom identity provider user and all is working OK. At this point, there is no need to create a Business Process.
+Click on **Create** and try to create **Build an Automated Process > Business Process** project – if you can save the new project, this indicates you are logged in with your custom identity provider user and all is working OK. You can delete the test project.
 
 ![Working](after4.png)
 
