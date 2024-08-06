@@ -96,6 +96,8 @@ A cart is assigned to the current user by detecting the current user's email add
 
 1. Navigate back to the home page – by clicking the name of the current page under the app name in the top-left corner.
 
+    ![Page navigation](images/PageNavigation.png)
+
     Select the **Home page** tile.
 
 2. If the logic canvas is not open, click on an empty place on the UI canvas, and then click **Add logic to HOME PAGE** link at the bottom of the page. This opens the page's logic canvas.

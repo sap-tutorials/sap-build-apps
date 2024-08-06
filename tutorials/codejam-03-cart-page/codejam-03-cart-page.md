@@ -29,11 +29,17 @@ primary_tag: software-product>sap-build
 
 
 ## Intro
-In this exercise, you will be enhancing the **Cart** page of the SAP Build CodeJam app with data and functionality.
+In this exercise, you will be enhancing the **Cart** page of the SAP Build CodeJam app.
 
-Specifically, you will retrieve data from our CAP service – which we created for this CodeJam to maintain the data for our cart and later for the order once it is requested. You will then bind that data to your UI components, as well as logic for deleting data from the CAP service.
+You will:
 
+- Retrieve data from our CAP service – which we created for this CodeJam to maintain the data for your cart and later for the order once it is requested.
 
+- Bind that data to your UI components.
+
+- Create logic for deleting an order item from the cart (i.e., from the CAP service).
+
+>A CAP service is a service built with the Cloud Application Programming Model. CAP is beyond the scope of this CodeJam, though we offer a separate CodeJam just on CAP. For more information about CAP, see [SAP Cloud Application Programming Model](https://pages.community.sap.com/topics/cloud-application-programming). 
 
 
 
