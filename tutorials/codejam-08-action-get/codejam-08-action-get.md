@@ -333,7 +333,6 @@ You've created an action to retrieve data. Now add it to the process so you can 
     Choose **Browse Library**.
     
     ![Browse Library](7e2_Browse_Library.png) 
-
     
     Choose your action created in the previous steps. You may want to filter by your action project.
     

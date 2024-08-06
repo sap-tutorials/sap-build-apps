@@ -58,9 +58,15 @@ You already created the destination for the CAP service because you needed it in
 
     Select your destination, **CodeJamOrdersService**.
 
-    Click **OK**.
+    Click **Next**.
 
     ![Add](add-dest3.png)
+
+    On the second screen, keep the settings to allow the destination in **All Environments".
+
+    Click **Add Destination**.
+
+    ![Add](add-dest4.png)
 
     The destination will be added to the list of destinations that can be used within your processes for runtime.
 
@@ -107,7 +113,7 @@ You already created the destination for the CAP service because you needed it in
 
     ![Select CodeJam Orders](images/1c-select-codejamordersservice.png)
     
-    >CodeJamOrdersService was already configured as a destination in the SAP BTP cockpit – with the additional property `sap.applicationdevelopment.actions.enabled` – and hence is visible here.
+    >**CodeJamOrdersService** was already configured as a destination in the SAP BTP cockpit – with the additional property `sap.applicationdevelopment.actions.enabled` – and hence is visible here.
 
     After selecting the destination, you will see a list of all the entities and all the API calls you can make.
 
@@ -133,7 +139,7 @@ You already created the destination for the CAP service because you needed it in
 
     Click **Add**.
 
-    The PATCH method to update the Orders entity is now selected and the action project is saved.
+    The **PATCH** method to update the **Orders** entity is now selected and the action project is saved.
 
     ![Path operation](images/2-update-entity-orders-final.png)
 
@@ -248,7 +254,7 @@ Now, you will add the action so that if the order is approved, the action will u
 
     ![Create variable](add-action3.png)
     
-    Enter **MyCAPDest** in the **Identifier** field, and click **Create**.
+    Enter `MyCAPDest` in the **Identifier** field, and click **Create**.
 
     >Destination variable identifiers cannot have spaces.
 
