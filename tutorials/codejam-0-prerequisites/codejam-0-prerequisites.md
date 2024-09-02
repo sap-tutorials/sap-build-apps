@@ -27,7 +27,7 @@ primary_tag: software-product>sap-build
 - How to set up the SAP BTP trial account
 - How to set up SAP Build Apps
 - How to set up SAP Process Automation
-- How to get access to and create a destination for the SAP Gateway Demo System (ES5)
+- How to create a destination for the CAP service
 
 
 
@@ -54,7 +54,7 @@ If you already have an SAP ID but not an SAP BTP trial account, you can go direc
 If you do not already have an SAP ID, follow this tutorial: [Get a Free Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 <!-- border -->
-![Get ES5 account tutorial](BTPTut.png)
+![Get trial account tutorial](BTPTut.png)
 
 When you are done, you can get to your trial account by going to [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/).
 
