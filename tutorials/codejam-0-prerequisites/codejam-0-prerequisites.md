@@ -246,7 +246,7 @@ In order to work with the CAP service, you need to create a destination in the S
    
     Click [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-03-cart-page/CodeJamOrdersService), and then click the download button.
 
-    ![Download](download.png)
+    ![Download](downloadCAP.png)
 
 2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
 
