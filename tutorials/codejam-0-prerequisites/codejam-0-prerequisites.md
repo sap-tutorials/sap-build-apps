@@ -272,51 +272,6 @@ In order to work with the CAP service, you need to create a destination in the S
 
 
 
-### Get ES5 account
-Follow the tutorial [Create an account to the SAP Gateway Demo System (ES5)](https://developers.sap.com/tutorials/gateway-demo-signup.html).
-
-<!-- border -->
-![Get ES5 account tutorial](es5tut.png)
-
->ES5 is a publicly available demo system for SAP NetWeaver, which includes many of the services provided by typical SAP backends. We will use it to provide a list of products and images for our app, and mimic how an SAP Build Apps app would connect to an SAP backend. 
-
-
-
-
-
-### Create destination for ES5
-Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/trial/#/home/trial) where you will create connectivity between SAP BTP and the SAP Gateway Demo system account.
-
-1. Download the destination definition.
-   
-    Click this [ES5-Shop](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-0-prerequisites/ES5-Shop) link to the GitHub download page for the destination, and then click the download button in the GitHub menu.
-
-    ![Download](Download.png)
-
-2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
-
-    <!-- border -->
-    ![Open destinations](3-open-destinations.png)
-
-3. Click **Import Destination**, and then select the `ES5-Shop` file you downloaded.
-
-    <!-- border -->
-    ![New destination](4-create-destination.png)
-
-    The draft destination will be filled in except for your credentials.
-
-    ![Add destination](add-destination.png)
-
-4.  Enter your ES5 user and password.
-
-    Click **Save**.
-
-    You can test the destination and you should get a **200: OK** response.
-    
-    ![Test ES5](testES5.png)
-
-
-
 
 
 
