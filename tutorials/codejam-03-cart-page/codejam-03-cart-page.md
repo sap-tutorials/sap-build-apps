@@ -41,37 +41,7 @@ You will:
 
 >A CAP service is a service built with the Cloud Application Programming Model. CAP is beyond the scope of this CodeJam, though we offer a separate CodeJam just on CAP. For more information about CAP, see [SAP Cloud Application Programming Model](https://pages.community.sap.com/topics/cloud-application-programming). 
 
-
-
-
-### Create a destination for our CAP service
-In order to retrieve data from the CAP service, you need to create a destination in the SAP BTP cockpit, which you can then access from SAP Build Apps.
-
-To save you time, we have given you all the information for the destination in a file you can import.
-
-1. Download the destination definition.
-   
-    Click [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-03-cart-page/CodeJamOrdersService), and then click the download button.
-
-    ![Download](download.png)
-
-2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
-
-    <!-- border -->
-    ![Open destinations](images/3-open-destinations.png)
-
-3. Click **Import Destination**, and then select the `CodeJamOrdersService` file you downloaded.
-
-    The draft destination will be filled in.
-
-    <!-- border -->
-    ![Skeleton destination](images/destination.png)
-
-    Click **Save**.
-
-4. Test the connectivity to the new destination by clicking **Check Connection**.
-   
-   You should receive **200: OK**. 
+>In the prerequisites you already created a destination to that CAP service.
 
 
 

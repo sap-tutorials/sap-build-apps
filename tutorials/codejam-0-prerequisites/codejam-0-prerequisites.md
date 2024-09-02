@@ -237,6 +237,34 @@ Click on **Create** and try to create **Build an Automated Process > Business Pr
 
 
 
+### Create a destination for our CAP service
+We will be using a CAP service created for you to maintain your shopping cart ... we will talk more about that later. 
+
+In order to work with the CAP service, you need to create a destination in the SAP BTP cockpit, which you can then access from your SAP Build Apps project.
+
+1. Download the destination definition.
+   
+    Click [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-03-cart-page/CodeJamOrdersService), and then click the download button.
+
+    ![Download](download.png)
+
+2. In the SAP BTP cockpit, click **Connectivity >  Destinations**.
+
+    <!-- border -->
+    ![Open destinations](images/3-open-destinations.png)
+
+3. Click **Import Destination**, and then select the `CodeJamOrdersService` file you downloaded.
+
+    The draft destination will be filled in.
+
+    <!-- border -->
+    ![Skeleton destination](images/destination.png)
+
+    Click **Save**.
+
+4. Test the connectivity to the new destination by clicking **Check Connection**.
+   
+   You should receive **200: OK**. 
 
 
 
