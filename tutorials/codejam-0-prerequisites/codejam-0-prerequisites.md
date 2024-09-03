@@ -126,7 +126,7 @@ If you prefer, here are the step-by-step instructions.
 
     Click the blue button **Click here to activate your account**.
 
-5. Enter a password (twice), and click 
+5. Enter a password (twice), and click **Continue**.
 
     ![Continue](after3.png)
 
@@ -201,9 +201,11 @@ If you prefer, here are the step-by-step instructions.
 
     ![Processing](spa6.png)
 
-    >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. You do not have to wait and can skip the rest of step 3 for now (and move to Step 4) as you won't be using SAP Build Process Automation until much later in [tutorial 5] (https://developers.sap.com/tutorials/codejam-05-spa-empty-process.html) in this tutorial mission.
+    >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. If you are doing these prerequisites before the CodeJam, just continue.
     
-    >**But when the subscription is complete,** and you reach the point that you must use SAP Build Process Automation, remember to return to this step and finish it (we will remind you). 
+    >But if you are doing these at the event (which we do NOT recommend), you do not have to wait and can skip the rest of step 3 for now (and move to Step 4) as you won't be using SAP Build Process Automation until much later in [tutorial 5](https://developers.sap.com/tutorials/codejam-05-spa-empty-process.html) in this tutorial mission.
+    
+    >**But when the subscription is complete,** and you reach the point that you must use SAP Build Process Automation, remember to return to this step and finish it (we will remind you in Tutorial 5). 
 
 5. When the subscription for SAP Build Process Automation is complete, the status will turn green to **Subscribed**.
 
@@ -244,7 +246,7 @@ In order to work with the CAP service, you need to create a destination in the S
 
 1. Download the destination definition.
    
-    Click [`CodeJamOrdersService`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-03-cart-page/CodeJamOrdersService), and then click the download button.
+    Click [CodeJamOrdersService](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-03-cart-page/CodeJamOrdersService), and then click the download button.
 
     ![Download](downloadCAP.png)
 
@@ -264,7 +266,9 @@ In order to work with the CAP service, you need to create a destination in the S
 
 4. Test the connectivity to the new destination by clicking **Check Connection**.
    
-   You should receive **200: OK**. 
+    ![Test destination](images/test-dest.png)
+
+    You should receive **200: OK**. 
 
 
 

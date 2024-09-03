@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build
 ---
   
 # 1 - Create the Product List Page
-<!-- description --> Import a skeleton project for the SAP Build CodeJam, and create a simple product list page based on ES5 data.
+<!-- description --> Import a skeleton project for the SAP Build CodeJam, and create a simple product list page based on data in our CAP service.
 
 
 ## Prerequisites
@@ -30,7 +30,7 @@ In this exercise, you will be importing an already created skeleton app to your 
 
 For this page, the product list page, you will design the entire UI, including styles and layout. For all pages, you will create the data connections, variables, logic, and navigation.
 
-For this product list page, you will connect to the ES5 service to get names, descriptions and images of products. At the end of this exercise, your homepage (product list page) will look something like this.
+For this product list page, you will connect to our CAP service to get names, descriptions and images of products. At the end of this exercise, your homepage (product list page) will look something like this.
 
 ![Home page](images/restyle-6-preview.png)
 
@@ -133,9 +133,9 @@ SAP BTP destinations are connections to backend services – each specifies the 
 
 
 ### Enable a data entity
-Since you have already performed the steps in the prerequisites tutorial, you should have a destination to the ES5 shopping API that points to a service to return a list of products.
+Since you have already performed the steps in the prerequisites tutorial, you should have a destination to our CAP service, including to the **Products** entity that returns a list of products.
 
-Now you must create the connection between your app and the ES5 system.
+Now you must create the connection between your app and our CAP service.
 
 1. Open the **Data** tab.
 
@@ -147,9 +147,9 @@ Now you must create the connection between your app and the ES5 system.
     
     ![BTP destinations](images/6a-datatab-integrations.png)
 
-3. Find the **ES5-Shop** destination, and click it.
+3. Find the **CodeJamOrdersService** destination, and click it.
 
-    ![ES5-Shop](images/6b-datatab-integrations.png)
+    ![CodeJamOrdersService](images/6b-datatab-integrations.png)
 
     This will show all the entities available in this service.
 
@@ -164,6 +164,10 @@ Now you must create the connection between your app and the ES5 system.
     You should see the entity as **Enabled**.
 
     ![Enabled](enabled.png)
+
+    You can also click on **Browse Real Data** to see the data inside the service entity.
+
+    ![Browse data](images/6d-real-data.png)
 
 6. Click **Save** (upper right).
 
@@ -330,7 +334,7 @@ To do this, you create bindings for your UI components – in this case, the lis
     |-------|---------|
     | Title label | **Data item in repeat > current > Name** |
     | Description text | **Data item in repeat > current > Description** |
-    | Image source (see note below) | Formula > `'https://sapes5.sapdevcenter.com' + repeated.current.ImageUrl` |
+    | Image source (see note below) | Formula > `'https://ui5.sap.com/test-resources/sap/m/demokit/cart/webapp/localService/mockdata/images/' + repeated.current.ImageUrl` |
 
     >To set a formula, click on the default formula. 
     >
