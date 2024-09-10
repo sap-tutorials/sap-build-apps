@@ -4,8 +4,8 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
-primary_tag: software-product>sap-build-apps--enterprise-edition
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps]
+primary_tag: software-product>sap-build-apps
 ---
  
 
