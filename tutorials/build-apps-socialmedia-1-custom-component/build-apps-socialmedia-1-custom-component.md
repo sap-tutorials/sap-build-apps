@@ -13,7 +13,8 @@ primary_tag: software-product>sap-build-apps
 <!-- description --> Create a composite component made by mashing up a Large Image List Item with a Star Rating, so users can rate products.
 
 ## Prerequisites
-- You have set up SAP Build App and have entered the lobby.
+- You have set up SAP Build App and have entered the lobby, as described in this video: <iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe>
+
 
 
 ## You will learn
