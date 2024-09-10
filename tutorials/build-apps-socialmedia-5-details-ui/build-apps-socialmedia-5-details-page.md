@@ -163,7 +163,7 @@ In the previous tutorial, you set up all of the data variables and global logic 
     - For **Set app variable**, set the **Ratings** variable to the following formula:
 
         ```JavaScript
-        outputs["Execute cloud function"].values.ratings
+        outputs["Run cloud function"].values.ratings
         ```
 
         >Don't worry if the formula is red (remember, we did not specify the schema). 

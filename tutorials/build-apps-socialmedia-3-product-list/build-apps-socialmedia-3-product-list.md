@@ -7,7 +7,7 @@ time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build-apps
 ---
- 
+  
 
 # Create a Product List Page with Ratings
 <!-- description --> Now that you have your backend, you can finish the product list page by adding data resources and binding the properties of your list item composite component.
