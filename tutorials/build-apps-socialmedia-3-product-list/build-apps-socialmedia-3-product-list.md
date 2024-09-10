@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build-apps--enterprise-edition
 ---
@@ -50,6 +50,11 @@ SAP Build Apps lets you create a navigation menu so you can go directly to diffe
 
 ### Enable SAP BTP authentication
 You need to enable SAP BTP authentication since you want to use entities and functions from Visual Cloud Functions in your app.
+
+>SAP BTP authentication may be enabled already, if after clicking the **Auth** tab, you see this screen. If so, you can skip this step.
+
+>![SAP BTP authentication complete](BTPAuthDone.png)
+
 
 1. Go to the **Auth** tab.
 
@@ -192,8 +197,6 @@ For more information on creating destinations that can be consumed by SAP Build 
     
     Select **Products**.
 
-    Open the logic pane for the **Products1** data variable, and remove the Delay flow function.
-
     ![Remove delay](data-var.png)
 
 4. Click **Save** (upper right).
@@ -216,7 +219,7 @@ Now that we have all the data in variables, we want to bind them to the list com
     | Field | Binding |
     |-------|---------|
     | Repeat with| The data variable **Products1**|
-    | Title label | Data item in repeat: `current.ProductName` |
+    | Title label | Data item in repeat – **current.ProductName** |
     | Rating | Formula<div>&nbsp;</div>`DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(repeated.current.ProductID)).avg,0)` |
     | RatingCount | `DEFAULT(FIND_BY_KEY(appVars.Ratings, "productID", STRING(repeated.current.ProductID)).count,0)` |
     | Image source | For fun, I wanted each product to have a picture. The simplest was to take a service that returns a picture. Here's some formulas to return random pictures (no guarantee these will be working – feel free to use your own images):<div>&nbsp;</div>`"https://picsum.photos/100?random=" + repeated.current.ProductID`<div>&nbsp;</div>`"https://cataas.com/cat/says/" + repeated.current.ProductID`  |
@@ -227,9 +230,9 @@ Now that we have all the data in variables, we want to bind them to the list com
 
 2. Still with the Large Image List Item selected, and in the **Style** tab, set the following:
 
-    - Edit the **(unnamed)** style.
+    - Edit the **default** style.
 
-    - Under **Effects**, enable the shadow, set shadow to `Content Shadow 1` and set the shadow color to static color `#AF9E8D`.
+    - Under **Effects**, enable the shadow, set shadow size to **Medium**, and set the shadow color to static color `#AF9E8D`.
 
     - Click **Save**, then **Exit**.
 
@@ -240,24 +243,20 @@ Now that we have all the data in variables, we want to bind them to the list com
 
     ![Page logic panel](logic-canvas-page.png)
 
-2. For the Page mounted event, add an **Execute cloud function** flow function, and then a **Set app variable** flow function.
+2. For the Page mounted event, add an **Run cloud function** flow function, and then a **Set app variable** flow function, and connect them like this.
     
-    ![Alt text](execute-function.png)
-    
-    Connect them like ths:
-
     ![Rating logic](ratings-logic.png)
 
-3. Configure the Execute cloud function to call the `AverageRating` function (this is probably already set since you only have one function).
+3. Configure the "Run cloud function" to call the `AverageRating` function (this is probably already set since you only have one function).
 
     ![Configure function](ratings-logic1.png)
 
-4. Configure the Set app variable.
+4. Configure the "Set app variable".
 
     | Field | Value |
     |------|--------|
     | Variable name | `Ratings` |
-    | Assigned value | Formula<div>&nbsp;</div>`outputs["Execute cloud function"].values.ratings` |
+    | Assigned value | Formula<div>&nbsp;</div>`outputs["Run cloud function"].values.ratings` |
 
     >Again, the formula editor might show the formula in red because we did not set the schema for the app variable.
 

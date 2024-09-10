@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build-apps--enterprise-edition
 ---
@@ -37,7 +37,7 @@ Select **Build an Application**.
 
 ![Build an application](new-project-appgyver.png)
 
-Select **Application Backend**.
+Select **SAP Build Apps**, and then **Application Backend**.
 
 ![Create project](new-project-create.png)
 
@@ -105,7 +105,7 @@ Functions are created using the standard SAP Build Apps formula, based on JavaSc
 
     ![New function](function-new.png)
 
-2. Click the **+** sign in the middle,then **List records**.
+2. Click the **+** sign in the middle, then **List records**.
 
     ![Add entity to function](function-add-entity.png)
     

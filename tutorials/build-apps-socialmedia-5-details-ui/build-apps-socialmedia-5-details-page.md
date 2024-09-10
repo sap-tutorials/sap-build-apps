@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 25
+time: 40
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build-apps--enterprise-edition
 ---
@@ -69,17 +69,15 @@ In the previous tutorial, you set up all of the data variables and global logic 
 
 
 ### Let users rate product
-1. Add a List divider component next onto the canvas.
+1. In the **Installed** tab, add a List divider component next onto the canvas.
+
+    >If it is not installed, go to the Marketplace and install it.
 
     ![List divider](listdivider.png)
     
-    Double-click the list divider, which opens the style editor. 
-    
-    >The style editor is similar to the template editor (which is opened by the icon at the bottom of the **Properties** tab), except that the style editor only lets you change the styles of the component or the component's parts. 
-   
-    Change the following properties under **Style**:
+    Under **Style**, edit the current style and change the following properties:
 
-    - **Border color** to Positive (under **Follow smart content color**)
+    - **Border color** to Positive (under **SAP Morning Horizon**)
     - **Border width** to **Thick**
     - Click **Exit**.
 
@@ -91,19 +89,19 @@ In the previous tutorial, you set up all of the data variables and global logic 
 
     >The lines look like boxes but will be displayed as lines.
 
-4. In between the dividers, add a container, with a text and star rating component, so it looks like this.
+3. In between the dividers, add a container, with a text and star rating component, so it looks like this.
 
     ![Let user rate](RatingComponent.png)
 
     Change the layout of the container to horizontal.
 
-5. For the text box, change the width to **Fit content**.
+4. For the text box, change the width to **Fit content**.
 
     Edit the current style, and change **Typography > Text size** to small text.
 
     Set the Content to `Rate this product`.
 
-6. For the star rating, change the following bindings:
+5. For the star rating, change the following bindings:
 
     | Field | Value | 
     |-------|---------|
@@ -111,7 +109,7 @@ In the previous tutorial, you set up all of the data variables and global logic 
     | Value | **Page variable > rating** | 
     | View only? | **Page variable > ratingcomplete** | 
 
-7. Click on the star rating, and open the logic pane. 
+6. Click on the star rating, and open the logic pane. 
 
     Change the event to **Component: Star rating > Property 'Value' changed**.
 
@@ -137,7 +135,7 @@ In the previous tutorial, you set up all of the data variables and global logic 
     >
     >All of this should update the overall rating for the product at the top of the page. 
 
-8. Set the bindings for the flow functions.
+7. Set the bindings for the flow functions.
 
     - For **If condition**, set the condition to the following formula:
   
@@ -145,9 +143,9 @@ In the previous tutorial, you set up all of the data variables and global logic 
         pageVars.rating != 0
         ```
 
-    - For **Create record**, set the resource to Rating.
+    - For **Create record**, set the resource to **Rating**.
 
-        For the Rating record, click **Custom object** and set the following:
+        For the **Rating** record, click **Custom object** and set the following:
 
         | Field | Value | 
         |-------|---------|
@@ -160,7 +158,7 @@ In the previous tutorial, you set up all of the data variables and global logic 
 
     - For **Set page variable**, set the variable **ratingcomplete** to true.
 
-    - For **Execute cloud function**, set the function to AverageRating.
+    - For **Run cloud function**, set the function to **AverageRating**.
 
     - For **Set app variable**, set the **Ratings** variable to the following formula:
 
@@ -170,9 +168,9 @@ In the previous tutorial, you set up all of the data variables and global logic 
 
         >Don't worry if the formula is red (remember, we did not specify the schema). 
 
-9. Click **Save**.
+8. Click **Save**.
 
-10. Click **Save** (upper right).
+9.  Click **Save** (upper right).
 
 You can now test this functionality. Open the app, navigate to the product page of one of the products, and give it a rating.
 
@@ -294,7 +292,7 @@ If you want, you can go back to the product list, then navigate again to this pr
 3. For the container:
 
     - Go to the **Style** tab, and edit the **Layout Container** style and change padding to 4px all around.
-    - Under **Effects**, enable the shadow, set shadow to `Content Shadow 1` and set the shadow color to static color `#AF9E8D`.
+    - Under **Effects**, enable the shadow, set shadow size to **Medium** and set the shadow color to static color `#AF9E8D`.
     - Go to the **Properties** tab, and set **Repeat with** to **Data variable > Comment1**. 
 
 4. For the first text component in the container:

@@ -72,7 +72,7 @@ The component will look like this in runtime mode.
    
     ![Lobby create](new-project-lobby-create.png)
 
-    Select **Build an Application**.
+    Select **SAP Build Apps**, and then **Build an Application**.
 
     ![Build an application](new-project-appgyver.png)   
 
@@ -87,7 +87,7 @@ The component will look like this in runtime mode.
     >SAP Build Apps lets you create apps by dragging and dropping components onto the canvas, and then configuring those components by changing, for example, the text in a text component or the image to display in an image component. 
 
 
-2. Select the text component, and click the **X** to delete it.
+2. Select the text component, and delete it.
 
     ![Delete text](delete-text.png)
 
@@ -114,19 +114,16 @@ You will make a custom component based on 2 components from the component market
     
     ![Marketplace](marketplace.png)
 
-2. Search for **large image list item**, and click on the component thumbnail.
+2. Search for **star rating**, and click on the component thumbnail.
     
     ![Marketplace large image list item](marketplace-large-image.png)
 
     Click **Install** (right).
 
-    >If the component is already installed, instead of the **Install** button, it will show **Installed** on the right.
-    >
-    >![Already installed](already-installed.png)
+     The component will now be in the **Installed** tab.
 
-    The component will now be in the **Installed** tab.
+    ![Marketplace large image list item](marketplace-large-image2.png)
 
-3. Open the Marketplace back up, search for **star rating**, and install that component.
 
 4. In the **Installed** tab, find the Large Image List Item, click the 3 dots, and select **Duplicate template**.
 
@@ -165,7 +162,7 @@ Our goal is to both show a list of products, and also to show a rating for each.
     >The template editor lets you make changes to existing components, but the changes will affect all such components in the current project. That is why we made a duplicate, in case we would want to use the original version.
    
 
-3. In the template editor, select the paragraph component and click the **X** to delete it.
+3. In the template editor, select the paragraph component and delete it.
 
     ![Delete paragraph](template-delete-para.png)
 

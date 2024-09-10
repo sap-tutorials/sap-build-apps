@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
 primary_tag: software-product>sap-build-apps--enterprise-edition
 ---
@@ -71,7 +71,7 @@ In this tutorial, you create the required variables, binding and logic, and in t
 
     | Field | Type | Purpose |
     |-------|---------|--------|
-    | productID | Text | The product to be displayed on the product page, received when the user clicks on a certain product in the list of products |
+    | **productID** | Text | The product to be displayed on the product page, received when the user clicks on a certain product in the list of products |
 
     >**Page parameters** are variables that are required to pass when navigating to a particular page.
 
@@ -93,8 +93,6 @@ In this tutorial, you create the required variables, binding and logic, and in t
 
     ![Products data variable](products-data-var.png)
 
-    Click on the new data variable, open the logic pane, and remove the Delay flow function. 
-
 6. Click **Save** (upper right).
 
 
@@ -103,7 +101,7 @@ In this tutorial, you create the required variables, binding and logic, and in t
 ### Enable refresh of comments
 We want to refresh our comments data at many points in our app (e.g., user adds comment or user pages through comments). So we will put the logic in a central place, and create an event that we can call anytime.
 
-1. Return to the view of the canvas, then click in an open spot on the canvas, and then open the logic pane.
+1. Return to the **view** of the canvas, then click in an open spot on the canvas, and then open the logic pane.
 
 2. In the logic, create a logic flow like this:
  
@@ -189,5 +187,7 @@ Whenever someone clicks on one of the products on the List of Products page, we 
     ![Navigate](navigate.png)
 
 1. Click **Save**.
+
+You can run the app again. Now, when you click a product it will navigate to the **Product Page**, though it will be empty. 
 
 
