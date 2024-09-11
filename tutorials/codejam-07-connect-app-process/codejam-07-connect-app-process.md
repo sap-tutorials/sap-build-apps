@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-buil
 primary_tag: software-product>sap-build
 ---
   
- 
+
 
 # 7 - Trigger Process from Your App
 <!-- description --> Enable your app to call the SAP Build Process Automation API in order to trigger your process, as part of the SAP Build CodeJam.
@@ -195,7 +195,9 @@ Now that you enabled the process, let's set up the logic to trigger it.
 
 4. You now need to bind all the fields that the process needs.
 
-    Bind the fields as follows:
+    Under **Input Parameters**, click **Custom object**, and set the following:
+
+    ![Input parameters for trigger](InputParametersTrigger.png)
 
     | Field | Binding |
     | ----- | -------|
@@ -204,17 +206,17 @@ Now that you enabled the process, let's set up the logic to trigger it.
     | **total:** | Set to the following formula: `SUM(MAP(data.OrderItems1,item.price * item.quantity))` |
     | **orderItems:** | Set to the following formula: `MAP(data.OrderItems1, {product: item.product, price: item.price, quantity: NUMBER(item.quantity), total: item.price * item.quantity})` |
 
-    ![Bindings for trigger](images/trigger7.png)
-
     >You use a formula because you have to modify the data slightly before sending. Specifically, the quantity from the input box component is a string and you need to convert it to a number.
 
     Leave **businessPartner:** empty for now.
 
-7. Add **Update record** (for updating the CAP service) and **Alert** flow functions, as follows:
+    Click **Save**.
+
+5. Add **Update record** (for updating the CAP service) and **Alert** flow functions, as follows:
 
     ![Update CAP](images/trigger8.png)
 
-8. Configure the **Update record**, which is called to change the status of the order and set its total field, as follows:
+6. Configure the **Update record**, which is called to change the status of the order and set its total field, as follows:
 
     - **Resource name:** Set to **Orders**.
 
@@ -235,13 +237,13 @@ Now that you enabled the process, let's set up the logic to trigger it.
         
         Click **Save**.
 
-9. Configure the **Alert** by setting the **Dialog title** to **Output value of another node > Trigger process > Error > message**.
+7. Configure the **Alert** by setting the **Dialog title** to **Output value of another node > Trigger process > Error > message**.
 
     Click **Save**.
 
     ![Alert](purchase-logic5.png)
 
-10. Click **Save** (upper right).
+8.  Click **Save** (upper right).
 
 
 
@@ -267,7 +269,7 @@ Update the logic as follows.
 
 2. Configure the **Alert** by setting the **Dialog title** to static text:
 
-    ```
+    ```Text
     Order requested. Returning to Home Page.
     ```
 
@@ -307,6 +309,8 @@ Update the logic as follows.
     If all goes well, you should get a confirmation box.
     
     ![Run app](run1.png)
+
+    If you navigate to the **Cart** page, you'll see there is nothing in your cart (and if you are really sharp, you'll notice that the UUID for your cart has changed).
 
 3. Now go back to the **Monitoring** tab and you should see that your app started an instance of your process.
 
