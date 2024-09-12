@@ -66,17 +66,13 @@ In order to fetch data from the CAP service, you need to create a data resource 
 
     You will see a list of entities for this OData service.
 
-    ![Entities](images/resource-3.png)
-
-3. Click **Install Integration**.
-
-4. With the **Orders** entity selected, click **Enable Data Entity**.
+3. With the **Orders** entity selected, click **Enable Data Entity**.
 
     ![Enable entity](images/resource-4.png)
 
-5. With the **OrderItems** entity selected, click **Enable Data Entity**.
+4. With the **OrderItems** entity selected, click **Enable Data Entity**.
 
-6. Click **Save** (upper right).
+5. Click **Save** (upper right).
 
     Click **Exit** to return to the previous screen. 
    

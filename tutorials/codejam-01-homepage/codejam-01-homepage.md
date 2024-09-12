@@ -224,7 +224,7 @@ All this makes it possible to build SAP extensions that interact with and enhanc
    
     ![View](images/9-switch-uicanvas-toggle-variables.png)
 
-2. From the **Core** tab of the left pane, drag a **Container** component from under **Layout > Container** onto the canvas into the white area.
+2. From the **Core** tab of the left pane, drag a **Container** component from under **Essentials > Container** onto the canvas into the white area.
 
     ![Container](first-component.png)
 
@@ -244,7 +244,7 @@ All this makes it possible to build SAP extensions that interact with and enhanc
 
     ![Change title](images/12-drag-title-change-text.png)
 
-5. From the **Core > Lists** section nearly at the bottom of the left-side components pane, drag a **Large image list item** into the **Container - Products List** container (after the title component).
+5. From the **Core > List** section nearly at the bottom of the left-side components pane, drag a **Large image list item** into the **Container - Products List** container (after the title component).
 
     Use the **Tree View** this time.
 
