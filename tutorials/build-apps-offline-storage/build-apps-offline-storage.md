@@ -4,14 +4,8 @@ author_name: Merituuli Melkko
 author_profile: https://github.com/mmelkko
 auto_validation: true
 time: 25
-tags:
-  [
-    tutorial>intermediate,
-    software-product>sap-business-technology-platform,
-    software-product>sap-build,
-    software-product>sap-build-apps--enterprise-edition,
-  ]
-primary_tag: software-product>sap-build
+tags: [tutorial>intermediate, software-product>sap-business-technology-platform,    software-product>sap-build, software-product>sap-build-apps]
+primary_tag: software-product>sap-build-apps
 ---
 
 # Store User Preferences on Device
@@ -33,7 +27,7 @@ Store the user’s preferences or other data that should persist every time the 
 
 This tutorial shows you how to store a user’s preferences on the user’s device so the user can have a consistent experience every time they open the app. In this tutorial, we will store information on the language the user prefers and whether the app should be in light or dark mode. The same principles can be used to store other similar data as well.
 
----
+
 
 ### Set up on-device storage
 
