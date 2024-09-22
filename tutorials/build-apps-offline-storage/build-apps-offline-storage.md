@@ -153,11 +153,7 @@ Now that the data variable exists, you might notice that it has some automatical
 
     ![Set create record values](step3img6.png)
 
-<<<<<<< Updated upstream
-Add after the Set data variable node 2 Set app variable nodes and set values via a formula from the data variable’s first result to each of the 2 app variables. The formula for each of the 2 app variables will look something like `data.Preferences[0].darkMode` for `darkMode` for example.
-=======
     Connect the **Create record**’s success output to **Get record collection**.
->>>>>>> Stashed changes
 
     ![Connect loops on logic canvas](step3img7.png)
 
@@ -290,9 +286,6 @@ It is recommended to use theme variables in formulas instead of going with stati
     
     In this **If condition**, check first whether preferenceId is empty and then that at least one of the app variables (`language` or `darkMode`) doesn’t match the value in the data variable. The following formula would do this:
 
-<<<<<<< Updated upstream
-Once the data gets saved in the data variable, your app will function correctly and remember the settings the user last had on this device. When previewed, your app should look something like this .
-=======
     ```JavaScript
     (appVars.darkMode==data.Preferences1[0].darkMode&&appVars.language==data.Preferences1[0].language)
     ```
@@ -321,6 +314,5 @@ Once the data gets saved in the data variable, your app will function correctly 
     [outputs["Update record"].response]
     ```
 Preview the app.
->>>>>>> Stashed changes
 
 <img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step7gif1.gif" alt="Final view of application functionality"/>
