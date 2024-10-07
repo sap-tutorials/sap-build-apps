@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-business-technology-platform,sof
 primary_tag: software-product>sap-build-apps--enterprise-edition
 ---
  
-
+ 
 # Perform S/4HANA CRUD Operations in SAP Build Apps
 <!-- description --> Using SAP Build Apps, create an app that performs all the CRUD operations for the SAP S/4HANA Cloud business partner address API, and handles $expand for nested entities and API rules.
 
