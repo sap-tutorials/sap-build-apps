@@ -4,10 +4,10 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
-primary_tag: software-product>sap-build-apps--enterprise-edition
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps]
+primary_tag: software-product>sap-build-apps
 ---
- 
+  
  
 # Perform S/4HANA CRUD Operations in SAP Build Apps
 <!-- description --> Using SAP Build Apps, create an app that performs all the CRUD operations for the SAP S/4HANA Cloud business partner address API, and handles $expand for nested entities and API rules.
