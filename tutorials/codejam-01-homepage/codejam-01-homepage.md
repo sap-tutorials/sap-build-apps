@@ -137,7 +137,7 @@ Since you have already performed the steps in the prerequisites tutorial, you sh
 
 Now you must create the connection between your app and our CAP service.
 
-1. Open the **Data** tab.
+1. Open the **Integrations** tab.
 
     ![Enable data entities](images/6-datatab-integrations.png)
 
@@ -171,11 +171,11 @@ Now you must create the connection between your app and our CAP service.
 
 6. Click **Save** (upper right).
 
-    Click **Exit** (upper right) to return to the previous – **Data** – screen. 
+    Click **Exit** (upper right) to return to the previous – **Integrations** – screen. 
 
     ![Exit](images/6e-datatab-integrations-exit.png)
 
-    You should now see the **Products** entity in the **Data** tab.
+    You should now see the **Products** entity in the **Integrations** tab.
 
     ![Products](images/products.png)
 
@@ -300,7 +300,7 @@ To do this, you create bindings for your UI components – in this case, the lis
 >
 >When you configure a UI component (or later a logic component called a "flow function"), generally you do this with binding.
 >
->For most properties, there is a binding icon that indicates what type of binding is used. For example, you can use **static text** for a text field, or you can show text from a backend service and use a binding to a **data variable** 
+>For most properties, there is a binding icon that indicates what type of binding is used. For example, you can use **static text** for a text field, or you can show text from a backend service and use a binding to a data variable. 
 >
 >In the example below, it shows an icon with **ABC**, meaning that this is static text and will not change.
 
