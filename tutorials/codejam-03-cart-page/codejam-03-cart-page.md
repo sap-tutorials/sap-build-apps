@@ -52,27 +52,26 @@ You will:
 
 
 ### Create data resource for CAP service
-In order to fetch data from the CAP service, you need to create a data resource for the CAP service.
+Previously, we made a data resource to the CAP service and enabled the **Products** entity. Now we need some other entities.
 
-1. Back in your **ShoppingApp** project, open the **Data** tab.
 
-    Click **Add Integration**.
+1. Back in your **ShoppingApp** project, open the **Integrations** tab.
+
+2. Look **SAP Systems**, and under **CodeJamOrdersService**
+
+    Click **Enable More Data Entities**.
 
     ![Data resource](images/resource-1.png)
 
-2. Click **BTP Destinations**, and then select the **CodeJamOrdersService** destination.
-
+3. Select **Orders**, and click **Enable Data Entity**.
+   
     ![Destination](images/resource-2.png)
 
-    You will see a list of entities for this OData service.
+    Select **OrderItems**, and click **Enable Data Entity**.
 
-3. With the **Orders** entity selected, click **Enable Data Entity**.
+    ![Data resource](images/resource-3.png)
 
-    ![Enable entity](images/resource-4.png)
-
-4. With the **OrderItems** entity selected, click **Enable Data Entity**.
-
-5. Click **Save** (upper right).
+4. Click **Save** (upper right).
 
     Click **Exit** to return to the previous screen. 
    
@@ -182,7 +181,7 @@ In order to display the data in the cart from the **OrderItems** entity, you nee
     >
     >The formula uses the **MAP** function, one of the more powerful and useful functions. Here, the function goes through all the order items, multiplies the quantity and the price, and creates a new list with just integers representing the total cost of each item.
     >
-    >The **SUM** function then ads it all together, and then the formula formats the result.
+    >The **SUM** function then adds it all together, and then the formula formats the result.
 
     Click **Save** twice. 
 
