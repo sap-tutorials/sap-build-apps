@@ -303,7 +303,7 @@ We will now tell our project to use this process.
    
     ![Select process](trigger-3.png)
  
-    Note: If you are unable to see the process here, please ensure that the Step 6 of ![Run the Sales Order Business Process](spa-academy-run-salesorderprocess.md) is complete.
+    Note: If you are unable to see the process here, please ensure that the Step 6 of ![Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
 
 5. Click **Enable process**.
 
