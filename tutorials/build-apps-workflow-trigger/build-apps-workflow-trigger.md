@@ -303,6 +303,8 @@ We will now tell our project to use this process.
    
     ![Select process](trigger-3.png)
  
+    Note: If you are unable to see the process here, please ensure that the Step 6 of ![Run the Sales Order Business Process](spa-academy-run-salesorderprocess.md) is complete.
+
 5. Click **Enable process**.
 
     ![Enable process](trigger-4.png)
@@ -497,7 +499,7 @@ Go to the **Monitoring** tab from the lobby, then under **Monitor** section, acc
 
 - You can see the new process instance.
 - You can see the process ID is the same as in the toast message in the app.
-- You can see the context, which is the values sent with the API (4 of them, in yellow, you entered in the input fields and the others were hardcoded in the formula for the **Create record** flow function).
+- You can see the context, which is the values sent with the API (4 of them, in yellow, you entered in the input fields and the others were hardcoded in the formula for the **Trigger Process** flow function).
 - You can also see the execution log, which shows that the process stopped at the approval step (since it was at least 100,000) and is awaiting approval. If you expand the approval step you can see more information, including who the approval request was sent to.
 
 ![Preview in process automation](launch-preview-SPA.png)
