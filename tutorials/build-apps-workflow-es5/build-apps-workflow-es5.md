@@ -4,19 +4,17 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
   
 
-# Populate Dropdown with SAP Data (ES5)
-<!-- description --> Populate a dropdown field with SAP data, in this case with data from ES5 gateway demo system.
+# Populate Dropdown with Products
+<!-- description --> Populate a dropdown field with product data, so that you can provide the user with a choice field.
+
 
 ## Prerequisites
-- You or IT has set up a user with the ES5 gateway demo system, as described in the tutorial [Create an Account on the SAP Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
-- You or IT has created a destination called **ES5-Shop** to the `ES5 EPM_REF_APPS_SHOP_SRV` OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html). The only difference in the URL path.
-
- 
+- You have completed the the tutorial [Create SAP Build App to Trigger Workflow](build-apps-workflow-trigger)
 
 ## You will learn
 - How to create a data source to SAP data
@@ -28,34 +26,26 @@ primary_tag: software-product>sap-build
 ## Intro
 Previously, we created an input box for the user to enter a material ID for the sales order. Now, we want to make a call to an SAP backend, retrieve product data, and populate a dropdown box so the user can choose from a list of products.
 
->**Before You Begin:** You or IT needs to have set up a user with the ES5 gateway demo system, as described in the tutorial [Create an Account on the SAP Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html).
 
->Then, you or IT needs to have created a destination called **ES5-Shop** to the `ES5 EPM_REF_APPS_SHOP_SRV` OData service -- a similar service setup is described in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
->
 
 ---
 
-### What data will you use?
->**IMPORTANT:** If you are in a workshop, the ES5-Shop destination has already been created for you and you can skip this step.
+### Create a destination to the CAP service
+You will use a CAP service that we created for this tutorial, which contains an entity called **Products**, to population a dropdown box.
 
-SAP Build Apps can make API calls via destinations to backend services set up in SAP BTP. So you need to set up a destination to the ES5 gateway service.
-
-The instructions for setting up the destination are in the tutorial [Connect the SAP BTP Training Subaccount to Your Gateway Demo System Account (ES5)](https://developers.sap.com/tutorials/workzone-connect-gateway.html).
-
-We will use a product table from the Shop service, so the URL for the destination must be:
-
-```URL
-https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV
-```
+Follow the instructions in Step 4 of [Set Up Prerequisites for SAP Build CodeJam](codejam-0-prerequisites).
 
 
- 
 
 
-### Create a data resource to ES5
+
+
+
+### Create a data resource
 A data resource defines a connection to a backend, and when executed, will bring back the data we want.
 
-1. Go to the **Data** tab, and the **Add Integration**.
+
+1. Go to the **Integrations** tab, and the **Add Integration**.
 
     ![Data tab](data-new.png)
 
@@ -63,11 +53,11 @@ A data resource defines a connection to a backend, and when executed, will bring
 
     ![Destinations](data-destinations.png)
 
-3. Select your ES5 destination.
+3. Select your **CodeJamOrdersService** destination.
 
-    ![ES5 destination](data-es5-dest.png)
+    >If you just created the destination, you may need to click **Refresh**.
 
-    >**IMPORTANT:** If you are in a workshop, use the **ES5-Shop** destination already set up for you.
+    ![CAP service destination](data-es5-dest.png)
     
 4. Click **Install Integration**.
 
@@ -80,8 +70,12 @@ A data resource defines a connection to a backend, and when executed, will bring
 5. Click **Save** (upper right).
    
 
+
+
+
+
 ### Create data variable
-After retrieving the data, we need a place to put it, with the proper schema so we can reference all its fields.
+After retrieving the data, you need a place to put it, with the proper schema so we can reference all its fields.
 
 1. Click **UI Canvas**, and then click **Variables**.
 
@@ -93,31 +87,7 @@ After retrieving the data, we need a place to put it, with the proper schema so 
 
     ![Add data variable](data-var-add.png)
 
-3. Click on the new variable, and open the logic pane (if it is not already open) by clicking **Create sales order** at the bottom of the page.
-
-    ![Open logic canvas](data-var-logic.png)
-
-4. Click on the **Delay** flow function, and delete it by clicking the **X**.
-
-    ![Delete delay](data-var-delete.png)
-
-    >The default data logic retrieves the data and then waits 5 seconds and retrieves it again, over and over. We don;t need this constant retrieval so we deleted it.
-
-5. Click on the new variable again, and on the right-side of the page, go to **Paging** and click on the **X**, and then click **Object with properties**.
-   
-    ![Paging](data-var-page.png)
-
-    For **Page size**, click the **X**, select **Static number**, and change the number to `10`.
-
-    For **Include total count**, click the **X**, select **Static true/false**, and change the value to `True`.
-
-    ![Paging configure](data-var-page2.png)
-    
-    Click **Save**.
-
-    >We set the paging because ES5 has many, many products and we did not want to show so many. In some cases (like with S/4HANA data), there might be so many results that the API call will time out and return no results. 
-
-6. Click **Save** (upper right).
+3. Click **Save** (upper right).
    
 
 
@@ -125,12 +95,10 @@ After retrieving the data, we need a place to put it, with the proper schema so 
 
 ### Create dropdown for materials
 1. On your **Create Sales Order** page, go back to UI canvas by clicking **View**.
-
-    >You can close the logic pane if it interferes with your work.
    
 2. Drag a dropdown field next to the input box for the **Material**.
 
-    ?Make sure for the 2nd container for the material you have text, input, and dropdown components at the same level.
+    >Make sure for the 2nd container for the material you have text, input, and dropdown components at the same level.
    
     ![Add dropdown](dropdown-add.png)
 
@@ -151,9 +119,11 @@ After retrieving the data, we need a place to put it, with the proper schema so 
     >
     >A dropdown field wants the options as a list of objects, with each object having 2 fields: `Name` for the display name, and `Id` for the underlying value of the option. The `Map` function takes the data in the data variable and converts it to the format we need.
 
-4. You will have to bind the dropdown field to the `Trigger Workflow1` data variable (as we did for the input field for material).
+    Click on the **Save** button on the formula pop up.
+
+4. You will have to bind the dropdown field to the `SalesOrderDetails` page variable (as we did for the input field for material).
     
-    From the properties tab, for the **Selected value** field, set the binding to: **Data and variables > Data variable > Trigger Workflow1 > material**. 
+    From the properties tab, for the **Selected value** field, set the binding to: **Data and variables > Page variable > SalesOrderDetails > material**. 
 
     ![Selected value](dropdown-selected-value.png)
 
@@ -179,7 +149,7 @@ Run the app again.
     | Amount  | `2000` |
     | Delivery Date  | `2023-04-01` |
 
-For the material, select `Notebook Basic 15` from the dropdown for the material -- one of the products from the ES5 system.
+For the material, select `Notebook Basic 15` from the dropdown for the material -- one of the products from the CAP service.
 
 This will also update the text field with the ID for the product.
 

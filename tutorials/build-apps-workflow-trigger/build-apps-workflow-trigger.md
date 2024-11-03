@@ -4,7 +4,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps--enterprise-edition]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform,software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
   
@@ -239,7 +239,7 @@ If you really want, you can skip doing the stylizing and instead import the proj
 
 2. Click the 3 dots next to **History** in the upper-right corner.
 
-     ![Skip UI](replace.png)
+    ![Skip UI](replace.png)
 
 3. Select **Replace**.
 
@@ -247,7 +247,9 @@ If you really want, you can skip doing the stylizing and instead import the proj
 
 5. Click **Replace**
 
-Click **Done** and you can go to the next step.
+    The project will be filled in with the UI for entering a sales order.
+
+    ![Replace](replaced.png)
 
 [OPTION END]
 
@@ -287,7 +289,7 @@ ANd when you created the process and then deployed, you further published it so 
 
 We will now tell our project to use this process.
 
-1. Open the **Data** tab, at the top of the page.
+1. Open the **Integrations** tab, at the top of the page.
 
 2. Click **Add Integration**.
    
@@ -304,7 +306,11 @@ We will now tell our project to use this process.
     ![Select process](trigger-3.png)
  
     Note: If you are unable to see the process here, please ensure that the Step 6 of ![Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
+<<<<<<< Updated upstream
 
+=======
+ 
+>>>>>>> Stashed changes
 5. Click **Enable process**.
 
     ![Enable process](trigger-4.png)
@@ -353,6 +359,10 @@ You need a place to put the values the user will enter, so that you can later pa
     | customer | Text |
     | deliverydate | Date text |
     | material | Text |
+
+    Your variable should look like this:
+
+    ![Page variable completed](pagevariable.png)
 
 5. Click **Save** (upper right).
 
@@ -418,13 +428,13 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
 3. Click on the **Trigger Process** flow function and configure it in the **Properties** pane on the right.
 
-    For **Process**, this should already be set to **Order Process**, since you have only one process enabled.
+    For **Process**, this should already be set to **Order Processing**, since you have only one process enabled.
 
     ![Create record binding](logic-create-record-binding.png)
     
     For **Input Parameters**, click **Custom object** and bind the fields for amount, material, custom, and delivery date to the page variable you just created.
 
-    For example, click **Custom object**.
+    For example, click **Material**.
 
     ![Logic for binding](extra-logic1.png)
 
@@ -432,7 +442,7 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     ![More logic for binding](extra-logic2.png)
 
-    Do this for customer (ship to party), amount and delivery date.
+    Do this for **customer** (ship to party), **amount** and **deliverydate** (expectedDeliveryDate).
 
     Click **Save**.
 
