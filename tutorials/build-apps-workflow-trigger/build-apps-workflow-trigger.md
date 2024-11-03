@@ -15,8 +15,7 @@ primary_tag: software-product>sap-build
 ## Prerequisites
 - You set up SAP Build App and entered the lobby.
 - You set up SAP Process Automation, and created the process described in the tutorial group [Create a Sales Order Process and Enable Triggering Via API](https://developers.sap.com/group.sap-build-apps-process-trigger-enable.html).
-- You know the `definitionId` for the process you created.
-- You have set up the destination to SAP Build Process Automation, as described in [Create Destination to Trigger Process from any Service](https://developers.sap.com/tutorials/spa-create-service-instance-destination.html).
+- You have set up a service key for the SAP Build Process Automation service, and a destination to the service, as described in Step 1 of [7 - Trigger Process from Your App](codejam-07-connect-app-process).
 
 
 
@@ -32,25 +31,12 @@ primary_tag: software-product>sap-build
 ## Intro
 This tutorial shows you how to use SAP Build Apps to create and stylize a simple, one-page app that triggers an SAP Build Process Automation workflow.
 
-Specifically, the app lets the user enter sales order details and then send these to a process for approval. (In a real-world scenario, the sales order would then be created in S/4HANA Cloud, but that is not part of our flow.)
+Specifically, the app lets the user enter sales order details and then send these to a process for approval. (In a real-world scenario, the sales order would then be created in SAP S/4HANA Cloud, but that is not part of our flow.)
 
 Your app will look something like this:
 
 ![Your app](page1-goal.png)
 
-&nbsp;
-
->**Before You Begin:** You will need:
->
->- The name of the SAP BTP destination to your SAP Build Process Automation instance. The destination **MUST** be configured with the URL of the entire path of the SAP Build Process Automation [Workflow Instances API](https://api.sap.com/api/SPA_Workflow_Runtime/resource).
-
->   **For workshops, the destination will be created for you and the name of the destinations will be provided to you**. 
->
->- The `definitionId` for your specific workflow, which you can find within your trigger in SAP Build Process Automation project. You can get this by going to your triggers in the deployed version of your project, and clicking **View**.
-
->   Copy the payload to a text editor, and there you can copy just the definition ID.
-
->   ![Definition ID](definitionId.png)
 
 
 ---
@@ -91,6 +77,9 @@ This is done on the logic canvas. Select a component (or no component if you wan
 You then drag and drop flow functions and connect them to events. The flow functions are executed whenever that event occurs. And, of course, each flow function has properties to bind 😺.
 
 ![Flow functions](flows.png)
+
+
+
 
 
 ### Create a new app project
@@ -305,12 +294,8 @@ We will now tell our project to use this process.
    
     ![Select process](trigger-3.png)
  
-    Note: If you are unable to see the process here, please ensure that the Step 6 of ![Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
-<<<<<<< Updated upstream
-
-=======
+    >If you are unable to see the process here, please ensure that the Step 6 of ![Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
  
->>>>>>> Stashed changes
 5. Click **Enable process**.
 
     ![Enable process](trigger-4.png)
