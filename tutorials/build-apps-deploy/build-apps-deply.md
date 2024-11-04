@@ -37,6 +37,8 @@ As of the writing of this tutorial, you could only deploy to an Cloud Foundry or
 
 >![Space members](org-space-members.png)
 
+>If you are working in a trial account, you will automatically be added to the Cloud Foundry org and space.
+
 ---
 
 
@@ -67,6 +69,8 @@ As of the writing of this tutorial, you could only deploy to an Cloud Foundry or
     
 
 
+
+
 ### Build the app
 1. Click the 3 dots on the configuration, and select **Build**.
 
@@ -83,6 +87,8 @@ As of the writing of this tutorial, you could only deploy to an Cloud Foundry or
     After about 5 minutes, the status will change from **Building** to **Delivered**.
 
     ![Build completed](build3c.png)
+
+
 
 
 
@@ -132,7 +138,7 @@ Before deploying, you must have a build that completed successfully, showing a s
 
     ![Select org](deploy8.png)
 
-    Once you select an organization, you will get a list of spaceds to which you belong. Select the one you want to deploy to. Most users doing this tutorial will only have one, and it will be named dev.
+    Once you select an organization, you will get a list of spaces to which you belong. Select the one you want to deploy to. Most users doing this tutorial will only have one, and it will be named **dev**.
 
     ![Select space](deploy9.png)
 
@@ -142,13 +148,18 @@ Before deploying, you must have a build that completed successfully, showing a s
 
     ![Deployment starts](deploy9a.png)
 
-5. Once the deployment ends successfully, you will get a linkto the deployed app. Click the link to open the app.
+5. Once the deployment ends successfully, you will get a link to the deployed app. Click the link to open the app.
 
     ![Deployment successful](deploy9b.png)
 
     Once deployed, you can go back to the cockpit and see the app under **HTML5 Applications**, with the same number as in the URL you got above.
 
     ![Deployment successful](deploy9c.png)
+
+
+
+
+
 
 ### Running the app
 You can click the link returned when you deployed the app. But you may get the following unless you have set up SAP Build Apps to work with SAP Build Work Zone, which is the component that runs your deployed apps.
@@ -171,7 +182,12 @@ Here is a summary of what needs to be done as of the time of publishing this tut
 
     Select the checkbox, and click **Enable**.
 
+    ![Work Zone Settings](wzsettings.png)
+
     After a few seconds, you should see a success message.
+
+    ![Work Zone Settings](wzsettings2.png)
+
 
 2. Go to the SAP BTP cockpit, navigate to **Instances and Subscriptions**.
 
@@ -200,3 +216,5 @@ Here is a summary of what needs to be done as of the time of publishing this tut
     Click **Save**.
     
     ![New dependency](run6.png)
+
+Now run your app again by clicking the link you received when you deployed the app.
