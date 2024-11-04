@@ -25,8 +25,6 @@ primary_tag: software-product>sap-build
 ## Intro
 After creating an app in SAP Build Apps, and after viewing the preview on the web and on your mobile device, you can then deploy it directly to SAP BTP, like any other HTML5 application.
 
-As of the writing of this tutorial, you could only deploy to an Cloud Foundry org's default space.
-
 >**IMPORTANT:** You need to be a member of the Cloud Foundry org and space to which you will be deploying to.
 
 >If you are an admin of the SAP BTP subaccount, you can see who is an org member by going to the cockpit and navigating to **Cloud Foundry > Org Members**.

@@ -96,7 +96,7 @@ After retrieving the data, you need a place to put it, with the proper schema so
    
 2. Drag a dropdown field next to the input box for the **Material**.
 
-    >Make sure for the 2nd container for the material you have text, input, and dropdown components at the same level.
+    >You will likely have to expand the tree view. Also make sure for **Container 3**, for the material, you have text, input, and dropdown components at the same level.
    
     ![Add dropdown](dropdown-add.png)
 
@@ -155,4 +155,4 @@ This will also update the text field with the ID for the product.
 
 Click **Get Approval** to trigger the workflow. 
 
-Go to the Build lobby and access the **Monitor** tab, and you should see your instance, showing the `orderAmount` of 2000 and the `material` as `HT-1000`.
+Go to the Build lobby and access the **Monitor** tab, and you should see your instance, showing the `orderAmount` of **2000** and the `material` as **HT-1000**.

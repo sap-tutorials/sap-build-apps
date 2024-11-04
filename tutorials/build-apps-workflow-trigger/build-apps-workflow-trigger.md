@@ -54,9 +54,9 @@ Every component has properties, for example: the text to display, the value of t
 
 Each property is bound to something, for example:
 
-- **Static text -- in the screenshot, the button component's **Label** property is bound to the static text **Button**
+- **Static text** -- in the screenshot, the button component's **Label** property is bound to the static text **Button**
 
-- **Variable** (whose value can be updated elsewhere)
+- **Variable** -- whose value can be updated elsewhere, for example in response to user action
 
 - **Data from an SAP backend**
   
@@ -286,11 +286,7 @@ SAP BTP authentication also has the benefit of requiring authentication in your 
 
 
 ### Create data resource to process
-As part of setting up SAP Build Process Automation, you created an SAP BTP destination that points to SAP Build Process Automation APIs, so that you can trigger workflows.
-
-ANd when you created the process and then deployed, you further published it so it can be discoverable by SAP Build Apps.
-
-We will now tell our project to use this process.
+When you created your process and then deployed, you also published it so it can be discoverable by SAP Build Apps. You will now tell your project to use this process.
 
 1. Open the **Integrations** tab, at the top of the page.
 
@@ -302,13 +298,13 @@ We will now tell our project to use this process.
 
     ![Open library](trigger-2.png)
 
-4. Click the process you published.
+4. You can see each process you (or a colleague) published, plus that process's project name. 
    
-    You can see the name of the process, as well as the project name.
+    Click the process you published, **Order Processing**.  
    
     ![Select process](trigger-3.png)
  
-    >If you are unable to see the process here, please ensure that the Step 6 of [Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
+    >If you are unable to see the process here, please ensure that Step 6 of [Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
  
 5. Click **Enable process**.
 
@@ -338,7 +334,7 @@ You need a place to put the values the user will enter, so that you can later pa
 
     Change the name of the variable to **SalesOrderDetails**.
 
-    Make the variable of type **Object**, and remove the **id** field.
+    Make the variable of type **Object**.
 
     ![Page variable](pagevar-1.png)
 
@@ -439,7 +435,11 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     ![Create record binding](logic-create-record-binding.png)
     
-    For **Input Parameters**, click **Custom object**. Here you could create all kinds of separate bindings for each of the fields from our process. But we will use a formula instead.
+    For **Input Parameters**, click **Custom object**. Here you could create all kinds of separate bindings for each of the fields from our process. But we will use a formula instead to make it easier.
+
+   ![Close binding UI](logic-create-record-binding2.png)    
+
+    Click the **X** to close the dialog.
 
 4. Under **Input Parameters**, click the binding type.
    
@@ -506,7 +506,7 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
     | Amount  | `100000` |
     | Delivery Date  | `2023-03-31` |
 
-6. Click **Get Approval**. When the toast message appears take a screenshot.
+6. Click **Get Approval**. 
 
 Your process should be triggered and require approval (since the amount is 100,000 or above).
 
@@ -519,9 +519,12 @@ You can also see the results of the call in SAP Build Process Automation.
 Go to the **Monitoring** tab from the lobby, then under **Monitor** section, access the **Process and Workflow Instances** tile. The first one should be the one you just triggered.
 
 - You can see the new process instance.
+  
 - You can see the process ID is the same as in the toast message in the app.
-- You can see the context, which is the values sent with the API (4 of them, in yellow, you entered in the input fields and the others were hardcoded in the formula for the **Trigger Process** flow function).
-- You can also see the execution log, which shows that the process stopped at the approval step (since it was at least 100,000) and is awaiting approval. If you expand the approval step you can see more information, including who the approval request was sent to.
+  
+- You can see the context, which is the values sent when triggering the process (4 of them, in yellow, you entered in the input fields and the others were hardcoded in the formula for the **Trigger Process** flow function).
+  
+- You can also see the execution log, which shows that the process was automatically approved and stopped when it sent a notification, which needs to be acknowledged.If you expand the approval step you can see more information, including who the approval request was sent to.
 
 ![Preview in process automation](launch-preview-SPA.png)
 
