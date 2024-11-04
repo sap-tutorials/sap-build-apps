@@ -28,8 +28,6 @@ Previously, we created an input box for the user to enter a material ID for the 
 
 
 
----
-
 ### Create a destination to the CAP service
 You will use a CAP service that we created for this tutorial, which contains an entity called **Products**, to population a dropdown box.
 
@@ -42,7 +40,7 @@ Follow the instructions in Step 4 of [Set Up Prerequisites for SAP Build CodeJam
 
 
 ### Create a data resource
-A data resource defines a connection to a backend, and when executed, will bring back the data we want.
+A data resource defines a connection to a backend, and when executed, will bring back the data we want. Here, we need to define the connection to the CAP service hat contains our products.
 
 
 1. Go to the **Integrations** tab, and the **Add Integration**.
@@ -63,7 +61,7 @@ A data resource defines a connection to a backend, and when executed, will bring
 
     ![Add integration](data-add-integration.png)
 
-    Select the `Products` entity on the left, and click **Enable Data Entity** on the right.
+    Select the **Products** entity on the left, and click **Enable Data Entity** on the right.
 
     ![Enable entity](data-enable-entity.png)
 
@@ -119,7 +117,7 @@ After retrieving the data, you need a place to put it, with the proper schema so
     >
     >A dropdown field wants the options as a list of objects, with each object having 2 fields: `Name` for the display name, and `Id` for the underlying value of the option. The `Map` function takes the data in the data variable and converts it to the format we need.
 
-    Click on the **Save** button on the formula pop up.
+    Click **Save** twice on the formula pop up.
 
 4. You will have to bind the dropdown field to the `SalesOrderDetails` page variable (as we did for the input field for material).
     

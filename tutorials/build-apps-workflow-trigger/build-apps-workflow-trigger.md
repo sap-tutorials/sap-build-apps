@@ -13,8 +13,8 @@ primary_tag: software-product>sap-build
 <!-- description --> Trigger a workflow created in SAP Build Process Automation from an app created with SAP build Apps.
 
 ## Prerequisites
-- You set up SAP Build App and entered the lobby.
-- You set up SAP Process Automation, and created the process described in the tutorial group [Create a Sales Order Process and Enable Triggering Via API](https://developers.sap.com/group.sap-build-apps-process-trigger-enable.html).
+- You set up SAP Build App and entered the lobby, as described in [Set Up SAP Build Apps on an SAP BTP Trial Account](https://www.youtube.com/watch?v=ZpQM2B1v2GY).<div><iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe></div>
+- You set up SAP Build Process Automation, and created the process described in the tutorial group [Create a Sales Order Process and Enable Triggering Via API](https://developers.sap.com/group.sap-build-apps-process-trigger-enable.html).
 - You have set up a service key for the SAP Build Process Automation service, and a destination to the service, as described in Step 1 of [7 - Trigger Process from Your App](codejam-07-connect-app-process).
 
 
@@ -39,8 +39,6 @@ Your app will look something like this:
 
 
 
----
-
 ### A few important UI concepts
 
 Before you begin, we want to help you understand how apps are developed with SAP Build Apps.
@@ -55,16 +53,22 @@ Every component has properties, for example: the text to display, the value of t
 ![Properties](properties.png)
 
 Each property is bound to something, for example:
-* Static text
-* A variable (whose value can be updated elsewhere)
-* Data from a backend
-* A formula
+
+- **Static text -- in the screenshot, the button component's **Label** property is bound to the static text **Button**
+
+- **Variable** (whose value can be updated elsewhere)
+
+- **Data from an SAP backend**
+  
+- **Formula**
+
+- **Output of flow function in logic**
 
 For the property, you click the binding button ...
 
 ![Binding button](bindingbutton.png)
 
-... and then select from a menu of bindings.
+... and then select from a menu of binding types.
 
 ![Bindings](bindingbutton2.png)
 
@@ -74,7 +78,7 @@ This is done on the logic canvas. Select a component (or no component if you wan
 
 ![Logic canvas](logiccanvas.png)
 
-You then drag and drop flow functions and connect them to events. The flow functions are executed whenever that event occurs. And, of course, each flow function has properties to bind 😺.
+You then drag and drop flow functions and connect them to events. The flow functions are executed whenever that event occurs. And, of course, each flow function has its own properties to bind 😺.
 
 ![Flow functions](flows.png)
 
@@ -82,26 +86,36 @@ You then drag and drop flow functions and connect them to events. The flow funct
 
 
 
+
+
 ### Create a new app project
-Go to the SAP Build lobby, and click **Create**.
+1. Go to the SAP Build lobby, and click **Create**.
 
-![Create project](new-project-create.png)
+    ![Create project](new-project-create.png)
 
-Select **Build an Application**.
+2. Select **Build an Application**.
 
-![Build an application](new-project-appgyver.png)   
+    ![Build an application](new-project-appgyver.png)   
 
-Select **Web & Mobile Application**.
+    Select **SAP Build Apps**.
 
-![Select project type](new-project-web-project.png)
+    ![SAP Build Apps](new-project-appgyver2.png)   
 
->**IMPORTANT:** In the next step, if you are in a workshop, please use a unique identify for the name of your app, such as `Create Sales Order 001 DBW` – based on your SAP BTP user name or and based on your initials.
- 
-For the project name, enter `Create Sales Order`, then click **Create**.
+    Select **Web & Mobile Application**.
+
+    ![Select project type](new-project-web-project.png)
+
+3. For the project name, enter `Create Sales Order`.
+   
+    For the description, enter `Application to enable business users to request creation of a sales order`.
+   
+    Click **Create**.
   
-![Name project](new-project-name.png)
+    ![Name project](new-project-name.png)
 
-
+    Your new project should open in a new browser tab.
+   
+    ![Open project](new-project-open.png)
 
 
 
@@ -110,7 +124,7 @@ By default your new application contains a page with title and text fields. In t
 
 This is known as creating the user interface, also known as the UI.
 
->Note that there are 2 tabs for this tutorial step. 
+>Note that there are 2 tabs for this tutorial step (above). 
 >
 >- You can do the first tab, **Basic steps**, which we recommend and which will teach you about UI components, stylizing them, and organizing them on the page.
 >
@@ -294,7 +308,7 @@ We will now tell our project to use this process.
    
     ![Select process](trigger-3.png)
  
-    >If you are unable to see the process here, please ensure that the Step 6 of ![Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
+    >If you are unable to see the process here, please ensure that the Step 6 of [Run the Sales Order Business Process](spa-academy-run-salesorderprocess) is complete.
  
 5. Click **Enable process**.
 
@@ -328,15 +342,15 @@ You need a place to put the values the user will enter, so that you can later pa
 
     ![Page variable](pagevar-1.png)
 
-4. To the page variable, add fields to the object by doing the following:
-   
-    - Selecting page variable.
+4. Select the **id** field of the page variable, and click **Remove Object Property**.
 
-    - Add the name of the new field on the right in **Add New Property**, then press **Enter**.
+    ![Delete field](pagevar-delete.png)
 
-    - Select the new field, and change its type.
+5. Select the page variable, and under **Add new property** enter `amount`, and then press **Enter** or click the **+** icon.
+    
+    ![Add field](pagevar-add-field.png)
 
-    Do this for the following fields:
+    Do this for all the needed fields:
 
     | Name | Type |
     |-----|------|
@@ -345,6 +359,14 @@ You need a place to put the values the user will enter, so that you can later pa
     | deliverydate | Date text |
     | material | Text |
 
+    Your variable should look like this, with all fields of type text:
+
+    ![Page variable completed](pagevariable0.png)
+
+6. Select **amount** and change its type to **Number**.
+    
+    Select **deliverydate** and change its type to **Date text**.
+    
     Your variable should look like this:
 
     ![Page variable completed](pagevariable.png)
@@ -417,25 +439,29 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     ![Create record binding](logic-create-record-binding.png)
     
-    For **Input Parameters**, click **Custom object** and bind the fields for amount, material, custom, and delivery date to the page variable you just created.
+    For **Input Parameters**, click **Custom object**. Here you could create all kinds of separate bindings for each of the fields from our process. But we will use a formula instead.
 
-    For example, click **Material**.
+4. Under **Input Parameters**, click the binding type.
+   
+    ![Binding type](extra-logic1.png)
 
-    ![Logic for binding](extra-logic1.png)
+    Select **Formula**.
 
-    Click on the **ABC** binding type, and select **Data and Variables > Page Variables > SalesOrderDetails > material**, then click **Save**.
+    ![Binding type](extra-logic2.png)
 
-    ![More logic for binding](extra-logic2.png)
-
-    Do this for **customer** (ship to party), **amount** and **deliverydate** (expectedDeliveryDate).
+    Enter the following formula:
+    
+    ```JavaScript
+    {salesorderdetails: {division: "1010", material: pageVars.SalesOrderDetails.matterial, orderAmount: NUMBER(pageVars.SalesOrderDetails.amount), shipToParty: pageVars.SalesOrderDetails.customer, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: pageVars.SalesOrderDetails.deliverydate}}
+    ```
 
     Click **Save**.
 
-4. Drag a **Toast** flow function onto the canvas, and connect the **top** output of the **Trigger process** flow function to it.
+5. Drag a **Toast** flow function onto the canvas, and connect the **top** output of the **Trigger process** flow function to it.
 
     ![Toast](bind-toast.png)
 
-5. Click on the **Toast** flow function and configure it in the **Properties** pane on the right.
+6. Click on the **Toast** flow function and configure it in the **Properties** pane on the right.
 
     For **Toast message**, click on the **ABC**, and then select **Formula > Formula**.
 
@@ -449,7 +475,7 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     Click **Save**.
 
-6. Click **Save** (upper right).
+7. Click **Save** (upper right).
 
 
 
