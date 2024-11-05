@@ -126,113 +126,12 @@ This is known as creating the user interface, also known as the UI.
 
 >Note that there are 2 tabs for this tutorial step (above). 
 >
->- You can do the first tab, **Basic steps**, which we recommend and which will teach you about UI components, stylizing them, and organizing them on the page.
->
->- You can instead do the second tab, **Import Project**, which will bypass the nitty gritty of adding and stylizing components, and instead teach you how to import an SAP Build Apps project into an existing project. This way is much faster.
- 
+>- With **Quick Import of UI**, you can skip most of the work and simply import our skeleton project. You will bypass the nitty gritty of adding and stylizing components, but you will learn how to import one SAP Build Apps project into an existing project. This way is much faster.
 
-[OPTION BEGIN [Basic Steps]]
+>- With **Create from Scratch**, you can create the UI yourself. This will take longer but you will learn about UI components, stylizing them, and organizing them on the page.
 
-1. Select the text field, and click the **X** to delete it.
 
-    ![Delete text](UI-delete-text.png)
-
-2. Click on an open area (this brings up the **Properties** tab for the app instead of for a specific component), and in the **Properties** tab, change the **Page name** to `Create Sales Order`.
-
-    ![Page name](UI-page-name.png)
-
-4. Click the title field, and in the **Properties** tab change the **Content** text to `Sales Order Workflow`.
-
-    ![Title](UI-title.png)
-
-5. To the canvas, drag a Container component. 
-
-    >Container components let you group components and configure the collection of the components as a single unit.
-
-    With the container selected, in the **Properties** tab, change the **Component display name** to `Form`.
-
-    ![Container](UI-container.png)
-
-    Still with the container selected, open the **Style** tab, click the dropdown icon for the Layout Container, and click **Edit**. 
-
-    ![Container style](UI-container-style.png)
-
-    - For the background color, select **Level 4 background**.
-
-    - For padding, set the padding on all 4 sides to 16px by clicking each rectangle, going to **Theme**, and selecting the **L** size.
-
-        ![Padding](UI-padding.png)
-
-    - For **Effects**, create a shadow by setting these properties:
-
-        | Field | Value |
-        |-------|----------|
-        | **Enable Shadow**    | True   |
-        | **Shadow size**    | Content Shadow 0   |
-        | **Shadow color**    | `#8e8989`<div>&nbsp;</div>Click the **X**, and then select **Static color**. You can then copy and paste in the color code, or use the color picker to choose a color. ![Color picker](UI-color.png)|
-
-    - Let's save the style by scrolling up in the **Style** tab, clicking **New Style**, entering `Layout Form Container`, and clicking **OK**. 
-
-        ![New style](newstyle.png)
-
-    This saves the new style in the **Style** tab.
-
-6. Into this container ( **Form** ), drag in another container.
-   
-    >It may be easier to drag it into the **Tree** view on the lower right, so you can put it precisely where you want. The **Tree** makes it easier to select specific components and to create a hierarchy of components on the page.
-
-    Inside the new container add a text and input field. The result should look like this:
-
-    ![Inside container](UI-container2.png)
-
-    Select the new, inner container ( **Container1** from the **Tree** view), go to **Layout** tab, and under **Layout** set the container to **Horizontal**. Then, set **Align components** to middle.
-
-    ![Container layout](UI-container-layout.png)
-    
-    Select the text field, go to the **Layout** tab, then **Width and Height**, and set the width to exactly 75px.
-
-    ![Text width](UI-text-width.png)
-    
-    Select the input field, and in the **Properties** tab, delete `Label` from the **Label** property.  
-
-7. From the **Tree** view, select the inside container ( **Container1** ).
-
-    ![Copy](copy1.png)
- 
-    Duplicate the container by clicking on the **Duplicate** icon.
-   
-    ![Duplicate](copy2.png)
- 
-    Repeat this 2 more times, until you have 4 fields.
-
-    ![Multiple fields](UI-multiple-fields.png)
-
-8.  Click on each field label and change it to the following field names, in this order:
-
-    | Fields | 
-    |-------|
-    | Customer    | 
-    | Material    | 
-    | Amount    | 
-    | Delivery Date    | 
-
-    ![Name fields](UI-name-fields.png)
-
-9.  At the bottom of the page (outside the outside container), add a button.
-
-    In the **Properties** tab, set the **Label** to `Get Approval`.
-
-    ![Add button](UI-button.png)
-
-    In the **Style** tab, next to **Primary Button**, click the dropdown button and select **Edit**.
-
-    For **Background color**, change the color `Brand` to `Highlight`.
-
-10. Click **Save** (upper right).
-
-[OPTION END]
-
-[OPTION BEGIN [Import Project]]
+[OPTION BEGIN [Quick Import of UI]]
 
 We really want you to see some of things related to stylizing you can do with SAP Build Apps. But we understand that stylizing a UI may be tedious for some people.
 
@@ -255,6 +154,109 @@ If you really want, you can skip doing the stylizing and instead import the proj
     ![Replace](replaced.png)
 
 [OPTION END]
+
+
+
+[OPTION BEGIN [Create from Scratch]]
+
+1. Select the text field, and delete it.
+
+    ![Delete text](UI-delete-text.png)
+
+2. Click on an open area (this brings up the **Properties** tab for the app instead of for a specific component), and in the **Properties** tab, change the **Page name** to `Create Sales Order`.
+
+    ![Page name](UI-page-name.png)
+
+3. Double-click the title field, and change the text to `Sales Order Workflow`.
+
+    ![Title](UI-title.png)
+
+4. To the canvas, drag a container component. 
+
+    >Container components let you group components and configure the collection of the components as a single unit.
+
+    With the container selected, change its name to `Form`.
+
+    ![Container](UI-container.png)
+
+    Still with the container selected, open the **Style** tab, click the dropdown icon for the Layout Container, and click **Edit**. 
+
+    ![Container style](UI-container-style.png)
+
+    - For the background color, under **Universal Background Colors**, select **Level 4 background**.
+
+    - For padding, set the padding on all 4 sides to 16px by clicking each rectangle, going to **Theme**, and selecting the **L** size.
+
+        ![Padding](UI-padding.png)
+
+    - For **Effects**, create a shadow by setting these properties:
+
+        | Field | Value |
+        |-------|----------|
+        | **Enable Shadow**    | True   |
+        | **Shadow size**    | Content Shadow 0   |
+        | **Shadow color**    | `#8e8989`<div>&nbsp;</div>Click the **X**, and then select **Static color**. You can then copy and paste in the color code, or use the color picker to choose a color. ![Color picker](UI-color.png)|
+
+    - Let's save the style by scrolling up in the **Style** tab, clicking **New Style**, entering `Layout Form Container`, and clicking **OK**. 
+
+        ![New style](newstyle.png)
+
+    This saves the new style in the **Style** tab.
+
+5. Into this container ( **Form** ), drag in another container.
+   
+    >It may be easier to drag it into the **Tree** view on the lower right, so you can put it precisely where you want. The **Tree** makes it easier to select specific components and to create a hierarchy of components on the page.
+
+    Inside the new container add a text and input field. The result should look like this:
+
+    ![Inside container](UI-container2.png)
+
+    Select the new, inner container ( **Container1** from the **Tree** view), go to **Layout** tab, and under **Layout** set the container to **Horizontal**. Then, set **Align components** to middle.
+
+    ![Container layout](UI-container-layout.png)
+    
+    Select the text field, go to the **Layout** tab, then **Width and Height**, and set the width to exactly 75px.
+
+    ![Text width](UI-text-width.png)
+    
+    Select the input field, and in the **Properties** tab, delete `Label` from the **Label** property.  
+
+    ![Input box properties](UI-input-properties.png)
+
+6. From the **Tree** view, select the inside container ( **Container1** ).
+
+    ![Copy](copy1.png)
+ 
+    Duplicate the container by clicking on the **Duplicate** icon.
+   
+    ![Duplicate](copy2.png)
+ 
+    Repeat this 2 more times, until you have 4 fields.
+
+    ![Multiple fields](UI-multiple-fields.png)
+
+7.  Click on each field label and change it to the following field names, in this order:
+
+    | Fields | 
+    |-------|
+    | Customer    | 
+    | Material    | 
+    | Amount    | 
+    | Delivery Date    | 
+
+    ![Name fields](UI-name-fields.png)
+
+8.  At the bottom of the page (outside the outside container), add a button.
+
+    In the **Properties** tab, set the **Label** to `Get Approval`.
+
+    ![Add button](UI-button.png)
+
+9. Click **Save** (upper right).
+
+[OPTION END]
+
+
 
 
 
