@@ -81,7 +81,7 @@ After retrieving the data, you need a place to put it, with the proper schema so
 
 2. On the left, click **Data Variables**.
    
-    Then click **Add Data Variable**, and select `Product`
+    Then click **Add Data Variable**, and select `Products`
 
     ![Add data variable](data-var-add.png)
 
