@@ -452,7 +452,7 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
     Enter the following formula:
     
     ```JavaScript
-    {salesorderdetails: {division: "1010", material: pageVars.SalesOrderDetails.matterial, orderAmount: NUMBER(pageVars.SalesOrderDetails.amount), shipToParty: pageVars.SalesOrderDetails.customer, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: pageVars.SalesOrderDetails.deliverydate}}
+    {salesorderdetails: {division: "1010", material: pageVars.SalesOrderDetails.material, orderAmount: NUMBER(pageVars.SalesOrderDetails.amount), shipToParty: pageVars.SalesOrderDetails.customer, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: pageVars.SalesOrderDetails.deliverydate}}
     ```
 
     Click **Save**.
