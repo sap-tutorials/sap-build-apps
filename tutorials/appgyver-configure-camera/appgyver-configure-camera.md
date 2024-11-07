@@ -148,3 +148,7 @@ As the alert is currently set to display a static text response only, we want to
     ![Rule](rule.png)
 
     Here is a QR code. Scan it and enter the text below.
+
+    ![QR coe](qrcode.png)
+
+    
