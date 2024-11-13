@@ -14,8 +14,8 @@ parser: v2
 
 ## Prerequisites
 - Access to an SAP Build Apps system – follow these instructions to install SAP Build Apps on your trial system. 
-    - For written instrucions, see **Step 2** of [Set Up Prerequisites for SAP Build CodeJam](https://developers.sap.com/tutorials/codejam-0-prerequisites.html#76cc6857-c70a-4e56-a03a-41e6043a67fe) 
     - For video instructions, see the following: <div>&nbsp;</div><iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe>
+    - For written instructions, do ONLY **Step 2** of [Set Up Prerequisites for SAP Build CodeJam](https://developers.sap.com/tutorials/codejam-0-prerequisites.html#76cc6857-c70a-4e56-a03a-41e6043a67fe) **→ YOU ONLY HAVE TO DO STEP 2 (install SAP Build Apps) OF THIS TUTORIAL!!!**
 - Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release).
 
 
