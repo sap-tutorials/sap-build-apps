@@ -13,9 +13,9 @@ parser: v2
 
 
 ## Prerequisites
-- Access to an SAP Build Apps system. Use one of the following:
-    - [SAP Build Apps, free edition](https://www.appgyver.com/community).
-    - SAP Build Apps on an SAP BTP trial account <div>&nbsp;</div><iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe>
+- Access to an SAP Build Apps system – follow these instructions to install SAP Build Apps on your trial system. 
+    - For written instrucions, see **Step 2** of [Set Up Prerequisites for SAP Build CodeJam](https://developers.sap.com/tutorials/codejam-0-prerequisites.html#76cc6857-c70a-4e56-a03a-41e6043a67fe) 
+    - For video instructions, see the following: <div>&nbsp;</div><iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe>
 - Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release).
 
 
@@ -24,6 +24,8 @@ parser: v2
   - How to add and edit visual elements in the SAP Build Apps Composer tool
 
 ## Intro
+>**IMPORTANT:** Make sure to follow the above prerequisites for installing SAP Build Apps -- the booster will install SAP Build Apps and the Cloud Identity Service, as well as assign you the needed roles. 
+
 In this mission you will learn how to create a no-code application using the SAP Build Apps Composer tool. The application you create will enable you to scan a barcode on a smartphone and retrieve information from a public API. To do this, you will need to download the Preview app (available through [iTunes](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) and [Google Play store](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)).
 
 The application you'll create across the tutorials will read barcodes from food packaging and display information about the product using the Open Food Facts API:
