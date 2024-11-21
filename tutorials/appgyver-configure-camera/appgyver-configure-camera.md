@@ -21,6 +21,9 @@ Logic flows are used to capture events in an application, such as a page loading
 
 To create a barcode scanning app, you need to configure a logic flow that tells your application to open the camera device once the user taps the **Scan** button. To do this, we'll show you how to add the logic to the button, then how to take advantage of SAP Build Apps's QR and Barcode component.
 
+
+
+
 ### Add logic to button
 
 Open your app, and in the UI canvas, click the **Scan** button and then click **Add Logic to BUTTON 1** (bottom right).

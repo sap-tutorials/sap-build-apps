@@ -27,7 +27,7 @@ To improve on this, you will configure a data source that has food information r
    
     ![Add data source](add_data_source.png)
 
-2. Click **SAP Build Apps classic data entities**.
+2. Under **SAP Build Apps classic data entities**, click **Create Data Entity**.
 
     Select **Universal REST API integration**.
 
@@ -50,6 +50,8 @@ To improve on this, you will configure a data source that has food information r
     >The API enables us to send a barcode as part of the URL, and then returns information about the food with that barcode.
 
     In the dialog, add a field called **barcode** of type **text**. Click **Add**.
+
+    >Make sure there are no spaces before or after **barcode**.
 
     ![Additional inputs](additional-inputs2.png)
 
@@ -83,7 +85,7 @@ You now need to configure which information is taken from the Open Food Facts AP
     Enter the following formula:
 
     ```JavaScript
-    "/product/" + query.additionalInputs.barcode
+    "/product/" + query.additionalInputs.barcode + "?fields=product_name,nutriments,image_front_url"
     ```
 
     Click **Save** twice.
