@@ -166,35 +166,19 @@ Finally, we want to store the data we retrieve when the user scans a barcode int
 
 6. Now you will select the data to store in the variable.
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (if the app hangs, just click to exit). So we have provided a second way to store the data using a formula.
-
-    -  Under **data**, select the binding type square.
+    Under **data**, select the binding type square.
         
-        ![Select binding type](binddata1.png)
+    ![Select binding type](binddata1.png)
 
-        Select **Output value of another node**. 
+    Select **Output value of another node**. 
         
-        Select **Get Record**.
+    Select **Get Record**.
         
-        Select **Record**.
+    Select **Record**.
 
-        >It may take 30 seconds for the browser to catch up. Just wait.
+    ![Bind output](select_get_record.png)
 
-        ![Bind output](select_get_record.png)
-
-    - Instead, you can do the same thing with a formula. Most, if not all, bindings can be done with the UI or manually with a formula.
-
-        Under **data**, select the binding type square.
-        
-        Select **Formula** (instead of **Output value of another node**), click the existing formula and replace it with the following:
-
-        ```JavaScript
-        outputs["Get record"].record
-        ```
-
-        Click **Save** twice.
-
-    Click **Save** to save this logic (no matter how you entered it).
+    Click **Save**.
 
     ![Save the logic](save_data_variable.png)
 

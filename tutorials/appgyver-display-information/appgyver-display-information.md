@@ -34,7 +34,7 @@ To start with, you'll add further visual information to your app in the form of 
 
 
 
-
+ 
 
 
 
@@ -61,11 +61,10 @@ You will now bind the **Product Name** field to the text component.
 
     ![Product name variable](product_name.png)
 
-    The browser may hang, but only for a few seconds.
+    Click **Save**.
 
     ![Product name result](product_name2.png)
 
-    Click **Save**.
 
 3. Click **Save** (upper right).
 

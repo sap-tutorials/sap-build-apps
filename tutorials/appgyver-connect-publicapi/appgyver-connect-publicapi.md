@@ -38,7 +38,7 @@ To improve on this, you will configure a data source that has food information r
     | Field | Value |
     |-------|-------|
     | **Data entity name** | `OpenFoodFacts` |
-    | **Base API URL** | <https://world.openfoodfacts.org/api/v0> |
+    | **Base API URL** | <https://world.openfoodfacts.net/api/v0> |
     | **Data entity description** | Data from Open Food Facts API |
 
     ![Enter data resource information](Enter_data_resource.png)
@@ -91,7 +91,7 @@ You now need to configure which information is taken from the Open Food Facts AP
     Click **Save** twice.
 
 
-
+ 
 
 
 
