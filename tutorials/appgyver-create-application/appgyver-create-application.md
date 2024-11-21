@@ -178,14 +178,7 @@ The application is now saved and available to preview using the preview app on y
  
 
 ### Preview app on your device
->👉 **IMPORTANT:** Depending on which SAP Build Apps you are using – with the community edition or SAP BTP trial -- you will select different buttons to get started with the preview app.
-
->- If you are using the community edition, the first thing you do is click the **SAP Build Apps** tile.
-
->- If you are using SAP BTP trial (region US20), you will click **Other login options**.
-
->The instructions below assume you are using a trial account, but also provide alternatives if you are using an SAP BTP account in region EU10.
-
+>If you forgot to do the prerequisites, make sure you download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release).
 
 1. Assuming you are using an SAP BTP trial account, open the SAP Build Apps preview app on your mobile device, and click **Other login options**.
 
