@@ -1,4 +1,4 @@
-q---
+---
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-business-technology-platform]
