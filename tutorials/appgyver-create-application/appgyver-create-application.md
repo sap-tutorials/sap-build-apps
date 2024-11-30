@@ -18,14 +18,6 @@ parser: v2
     - For written instructions, do ONLY **Step 2** of [Set Up Prerequisites for SAP Build CodeJam](https://developers.sap.com/tutorials/codejam-0-prerequisites.html#76cc6857-c70a-4e56-a03a-41e6043a67fe) **→ YOU ONLY HAVE TO DO STEP 2 (Install SAP Build Apps) OF THIS TUTORIAL!!!**
 - Download the SAP Build Apps previewer app on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release).
 
-    <center>
-
-    | iOS | Android | 
-    | ------ | --------- |
-    | ![](iOS.png) | ![](Android.png) |
-
-    </center>
-
 ## You will learn
   - How to create a no-code project with SAP Build Apps
   - How to add and edit visual elements in the SAP Build Apps Composer tool
@@ -46,7 +38,7 @@ Yes, no one reads the documentation.
 
 But you need to follow the documentation to set up SAP Build Apps correctly on a trial account. The setup is simple, but it does require a custom identity provider and specific roles, so it's worth taking an extra 2 minutes to make sure everything is set OK. 
 
-If you setup SAP Build Apps properly, skip this step. Otherwise, we have tried to make it as simple as possible by giving you a choice:
+If you set up SAP Build Apps properly, skip this step. Otherwise, we have tried to make it as simple as possible by giving you a choice:
 
 - [2-minute video](https://www.youtube.com/watch?v=ZpQM2B1v2GY)
 - [Written instructions](https://developers.sap.com/tutorials/codejam-0-prerequisites.html#76cc6857-c70a-4e56-a03a-41e6043a67fe) – the written instructions are in a single step -- **Step 2** -- in our SAP Build CodeJam prerequisites tutorial. **You only have to do Step 2, Install SAP Build Apps**.
