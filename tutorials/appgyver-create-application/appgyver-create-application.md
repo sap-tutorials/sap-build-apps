@@ -44,16 +44,14 @@ In this mission you will learn how to create a no-code application using SAP Bui
 ### Did you set up SAP Build Apps correctly?
 Yes, no one reads the documentation.
 
-So you decided to skip the instructions and the prerequisites and set up SAP Build Apps by yourself, like a homeowner thinking they can save money by fixing their own plumbing. Ever see the movie "The Money Pit" with Tom Hanks and Shelley Long. It did not go well. 
+But you need to follow the documentation to set up SAP Build Apps correctly on a trial account. The setup is simple, but it does require a custom identity provider and specific roles, so it's worth taking an extra 2 minutes to make sure everything is set OK. 
 
-![The Money Pit](moneypit.png)
-
-SAP Build Apps is simple to install, but does require you to use a custom identity provider, so it is worth taking an extra 2 minutes to make sure everything is set up fine. We have tried to make it as simple as possible by giving you a choice:
+If you setup SAP Build Apps properly, skip this step. Otherwise, we have tried to make it as simple as possible by giving you a choice:
 
 - [2-minute video](https://www.youtube.com/watch?v=ZpQM2B1v2GY)
 - [Written instructions](https://developers.sap.com/tutorials/codejam-0-prerequisites.html#76cc6857-c70a-4e56-a03a-41e6043a67fe) – the written instructions are in a single step -- **Step 2** -- in our SAP Build CodeJam prerequisites tutorial. **You only have to do Step 2, Install SAP Build Apps**.
 
->While we're on the subject of CodeJams, we would like to bring the SAP Build CodeJams to you –- either the beginner workshop or the advanced-topics workshop. If you are interested, see our [blog](https://community.sap.com/t5/sap-codejam-blog-posts/so-you-want-to-host-a-codejam-everything-you-need-to-know/ba-p/221415) about CodeJams and add a comment that you want to host a CodeJam.
+>**ADVERTISEMENT:** The Developer Advocates deliver SAP Build CodeJams –- both beginner and more-advanced workshops -- and we are always looking for hosts. If you are interested, see our [blog](https://community.sap.com/t5/sap-codejam-blog-posts/so-you-want-to-host-a-codejam-everything-you-need-to-know/ba-p/221415) about what's required to host a CodeJam and add a comment there that you want to host one.
 
 >![SAP Build CodeJam](IMG_7196small.JPG)
 
