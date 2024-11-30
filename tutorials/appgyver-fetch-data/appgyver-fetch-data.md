@@ -25,7 +25,7 @@ This again uses the **Retrieve** request, as when you were testing the data reso
 ### Remove alert component
 As you no longer need your application to send an alert, as this was just used as a test, you need to remove this flow function.
 
-1. Open your app, and go to **UI Canvas** tab.
+1. Open your app, and go to **User Interface** tab.
 
 2. Click the **Scan** button, then click **Add Logic for Button1**.
 
@@ -49,7 +49,7 @@ You now need to add your new logic flow for what should happen after the barcode
 
     ![Add Get Record component](get_record.png)
 
-2. Connect the top output of the **Scan QR/Barcode** flow funcion to the input of the **Get Record flow function.
+2. Connect the top output of the **Scan QR/Barcode** flow function to the input of the **Get Record flow** function.
 
     ![Add connector](add_connector.png)
 
@@ -68,7 +68,7 @@ After adding a **Get Record**, you need to indicate what backend you want to mak
 
     ![Currently bound options](currently_bound.png)
 
-2. Next to the barcode input, click the **X**.
+2. Next to the **barcode** input, click the **X**.
 
     ![Binding type](bind1.png)
 
@@ -84,7 +84,7 @@ After adding a **Get Record**, you need to indicate what backend you want to mak
 
     Click **Save**.
 
-The Get Record flow function should now be able to fetch data for any food barcode you scan with your application.
+The **Get Record** flow function should now be able to fetch data for any food barcode you scan with your application.
 
 
 
@@ -96,7 +96,7 @@ The Get Record flow function should now be able to fetch data for any food barco
 ### Add data variables
 You now need to configure your application to store the data it receives. To do this, you need to add data variables.
 
-1. Switch to the **Variables** view.
+1. Switch to the **Variables** tab.
 
     ![Switch to variables view](variables_view.png)
 
@@ -104,15 +104,15 @@ You now need to configure your application to store the data it receives. To do 
 
     ![Data variables](data_variables.png)
 
-    After reading, click the **Welcome to variables** message to hide it (if the message appears).
-
-    ![Welcome message](data_variables2.png)
+    >After reading, click the **Welcome to variables** message to hide it (if the message appears).
+    >
+    >![Welcome message](data_variables2.png)
 
 3. Click **Add Data Variable**.
 
     ![Add data variables](add_data_variable.png)
 
-    Select your **Open Food Facts** variable.
+    Select your **Open Food Facts** data resource, whose schema will be used for the data variable as well.
 
     ![Select open food facts](open_food_facts.png)
 
@@ -140,7 +140,7 @@ You now need to configure your application to store the data it receives. To do 
 ### Store API data in data variable
 Finally, we want to store the data we retrieve when the user scans a barcode into the data variable.
 
-1. Click **View** to switch back to the user interface view. 
+1. Click **User Interface**. 
 
     ![Change view](change_view.png)
 
@@ -171,9 +171,9 @@ Finally, we want to store the data we retrieve when the user scans a barcode int
     ![Select binding type](binddata1.png)
 
     Select **Output value of another node**. 
-        
+    
     Select **Get Record**.
-        
+    
     Select **Record**.
 
     ![Bind output](select_get_record.png)
@@ -182,7 +182,7 @@ Finally, we want to store the data we retrieve when the user scans a barcode int
 
     ![Save the logic](save_data_variable.png)
 
-7. Click **Save** (upper right) to save your draft application.
+1. Click **Save** (upper right) to save your draft application.
 
     ![Link text e.g., Destination screen](save_draft.png)
 

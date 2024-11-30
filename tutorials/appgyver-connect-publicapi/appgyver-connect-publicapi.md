@@ -7,7 +7,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
- 
+  
 # Connect Your SAP Build Application to a Public API
 <!-- description --> Connect your application to a public API and then test that it's pulling the right information.
 
@@ -37,9 +37,9 @@ To improve on this, you will configure a data source that has food information r
 
     | Field | Value |
     |-------|-------|
-    | **Data entity name** | `OpenFoodFacts` |
-    | **Base API URL** | <https://world.openfoodfacts.net/api/v0> |
-    | **Data entity description** | Data from Open Food Facts API |
+    | Data entity name | **OpenFoodFacts** |
+    | Base API URL | <https://world.openfoodfacts.net/api/v0> |
+    | Data entity description | **Data from Open Food Facts API** |
 
     ![Enter data resource information](Enter_data_resource.png)
 
@@ -51,7 +51,7 @@ To improve on this, you will configure a data source that has food information r
 
     In the dialog, add a field called **barcode** of type **text**. Click **Add**.
 
-    >Make sure there are no spaces before or after **barcode**.
+    >Make sure you do not add an extra space to the end of **barcode**.
 
     ![Additional inputs](additional-inputs2.png)
 
@@ -88,10 +88,12 @@ You now need to configure which information is taken from the Open Food Facts AP
     "/product/" + query.additionalInputs.barcode + "?fields=product_name,nutriments,image_front_url"
     ```
 
+    >The API contains 100s of fields. We added a filter to make it easier to work with in the project. 
+
     Click **Save** twice.
 
 
- 
+
 
 
 
@@ -114,17 +116,19 @@ You will now test to see if the resource is configured properly.
 
 3. Scroll down a little to see the response.
 
-    In this response, you can see information about the product. This includes the product categories, allergen information, and the brand that manufactured the product.
+    In this response, you can see just the information we need: product name, nutritional information, and an image. 
 
     ![View the results](test_results.png)
 
+ 
 
+ 
 
 ### Set schema from response
 
 After a successful test you should now set the data schema. This stores the data structure from the URL, enabling the application to easily identify the types of information it is fetching.
 
-1. In the same window where you did the test, click **Autodetect Schema from Response**.
+1. In the same window where you did the test, scroll back up and click **Autodetect Schema from Response**.
 
     ![Set schema](set_schema.png)
 

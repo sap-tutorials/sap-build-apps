@@ -34,7 +34,7 @@ To start with, you'll add further visual information to your app in the form of 
 
 
 
- 
+
 
 
 
@@ -55,7 +55,7 @@ You will now bind the **Product Name** field to the text component.
     
     ![Select data and variables](data_variables2.png)
 
-    Click your **Open food facts** variable.
+    Click your **OpenFoodFacts1** variable.
 
     Scroll down to and select the `product_name` field. For this, we suggest using your browser's search.
 
@@ -64,7 +64,6 @@ You will now bind the **Product Name** field to the text component.
     Click **Save**.
 
     ![Product name result](product_name2.png)
-
 
 3. Click **Save** (upper right).
 
@@ -95,11 +94,9 @@ We'll now add the calorific information to your app, using the same steps provid
 
     ![Product name variable](calorie4.png)
 
-    The browser may hang, but only for a few seconds.
+    Click **Save**.
 
     ![Product name result](calorie5.png)
-
-    Click **Save**.
 
 4. Click **Save** (upper right).
 

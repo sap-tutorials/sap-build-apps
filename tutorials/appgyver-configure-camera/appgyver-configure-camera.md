@@ -8,7 +8,7 @@ author_profile: https://github.com/thecodester
 parser: v2
 ---
  
-
+ 
 # Configure SAP Build Application to Open Device Camera
 <!-- description --> Configure the logic flow in your application to enable your device to open your camera on demand, whenever the user clicks the Scan button.
 
@@ -21,9 +21,6 @@ Logic flows are used to capture events in an application, such as a page loading
 
 To create a barcode scanning app, you need to configure a logic flow that tells your application to open the camera device once the user taps the **Scan** button. To do this, we'll show you how to add the logic to the button, then how to take advantage of SAP Build Apps's QR and Barcode component.
 
-
-
-
 ### Add logic to button
 
 Open your app, and in the UI canvas, click the **Scan** button and then click **Add Logic to BUTTON 1** (bottom right).
@@ -32,7 +29,11 @@ Open your app, and in the UI canvas, click the **Scan** button and then click **
 
 You should now see the logic canvas.
 
-![Logic canvas](Add_logic.png)
+![Logic canvas](Add_logic2.png)
+
+
+
+
 
 
 ### Add scan QR/barcode component
@@ -55,6 +56,8 @@ In the logic panel, you can see the **Event - Component Tap**, which is triggere
     >This connection simply indicates the flow direction, which in this case is the button being tapped and then that triggering the camera device opening.
 
     ![Connect flow function](add_connector.png)
+
+
 
 
 
@@ -128,7 +131,7 @@ As the alert is currently set to display a static text response only, we want to
 
 2. Using your device, open your draft application in the SAP Build Apps preview app.
 
-    >If the app timed out, you will have to go back to the launch tab to start it again, as described in the first tutorial.
+    >If the app timed out, you will have to again click **Preview** to start it again, as described in the first tutorial.
 
     ![Open smart phone app](IMG_3953.PNG)
 
