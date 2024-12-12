@@ -177,9 +177,9 @@ You can create a button or other UI component, and then in the logic for the but
 
 But users might want to navigate to the **Cart** page at any time. So you can create a static menu that is available all the time. Every new app comes with a menu and a single item to return to the home page. In this step, you will create a new menu item for the **Cart** page. 
 
-1. Click **Settings > Navigation**.
+1. Click **App Settings > Navigation**.
 
-    You will see the **Home page** menu item.
+    You will see the **Home page** menu item already created for you.
 
     ![Navigation](images/nav-1.png)
 
@@ -235,7 +235,7 @@ Currently, you are viewing a dummy cart. Now let's create your own cart.
 
     You should see the default logic.
 
-4. Switch the logic by first disconnecting the connection between **Page focused** and **Set app variable**.
+4. Switch the logic by first disconnecting the connection between **Page focused** and **Set app variable** -- to disconnect, click the connection and press the **Delete** key.
 
     Then connect **Page focused** to **Delay**.
 
@@ -390,7 +390,7 @@ Go to the **Cart** page. You should now see the product you selected in your car
 
 You can also test deleting items from the cart ... it takes a few seconds for the UI to update after deleting an item.
 
-ANd behind the scenes, you are reading and updating a CAP service.
+And behind the scenes, you are reading and updating a CAP service.
 
 😃
 

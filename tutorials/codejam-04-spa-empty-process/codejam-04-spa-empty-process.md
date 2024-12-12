@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
  
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Write Logic to Maintain the Cart](codejam-04-add-to-cart).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Write Logic to Maintain the Cart](codejam-03-cart-page).
   
 
 ## You will learn
@@ -210,13 +210,17 @@ Releasing a project creates a version or snapshot of the changes, and deploying 
 
     ![Confirm Release Project](13b_Confirm_Release_Project.png)
 
-3. At the top you have a dropdown that shows all the released and deployed version, plus the current editable version.
+3. At the top you have a dropdown that shows all the released and deployed versions, plus the current editable version.
 
     Select the version you just released (1.0.0). 
 
     >You could also click **Show project version**, which is displayed after releasing a version.
 
     ![Examine Release Status Overview](13c_Check_Release_Status.png)
+
+    This displays the released version.
+
+    >![Released version](released-version.png)
 
 >Whenever you need to make changes to your process project, make sure you have the **Editable** version.
 
@@ -250,11 +254,11 @@ Releasing a project creates a version or snapshot of the changes, and deploying 
 
     >Deploying will take a couple of seconds/minutes depending upon how big your project is and how many artifacts it has. Any errors during deployment are displayed in the **Deployment Console** at the bottom of the screen.
 
-    Once the deployment is successful, the status will change at the top of the page to **Deployed**. 
+    Once the deployment is successful, you will see that this release has been deployed, and that it is the active version (since you can have deployed many releases).
     
     ![Deployment Status](14d_Deployment_Status.png)
 
-4. OPen your browser tab with he SAP Build lobby.
+4. Go back to the SAP Build lobby, which should be open in one of your browser tabs.
 
     >Alternatively, you can return to the lobby from your project by clicking the SAP logo in the top-left corner.
 
@@ -353,10 +357,10 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     To see your instance, in the filters, click the dropdown for the **Status** filter, and select **Completed**.
 
+    ![Process instance](16a2_Monitor_Process.png)
+
     Now you should see your process instance.
 
-    ![Process instance](16a2_Monitor_Process.png)
-    
 4. Click on your process instance.
 
     In the details section at the top, you can see:

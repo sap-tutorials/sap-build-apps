@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Create a Business Process Project](codejam-05-spa-empty-process).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Create a Business Process Project](codejam-04-spa-empty-process).
   
  
 
@@ -256,7 +256,7 @@ To do this, you will use the Script Task, which lets you write JavaScript snippe
 
     The result should show you that it added all the item quantities, and set the custom variable to 12.
 
-    ![Run test](script8.png)
+    ![Run test](script9.png)
 
     This value can now be used elsewhere in the process.
 
@@ -318,10 +318,12 @@ If the purchase request meets the conditions for needing approval (total greater
     | Text | `BP Grouping` | Read Only | 
     | Text | `Order ID` | Read Only | 
     | Table | `Order Items` | Read Only | 
-    | Text | `Total Items` | Read Only | 
+    | Number | `Total Items` | Read Only | 
     | Text Area | `Additional Information` |  | 
     
     ![Approval form fields](approvalform3.png)
+
+    >Make sure all but the last field are read-only.
 
 6. Select the **Order Items** table and click the **+** icon.
 
@@ -401,7 +403,7 @@ For example, for an approval form, you need to specify who will be the approver 
     | **General** | **Recipients > Users** | Click in the box and select **Process Metadata > Process Started By**. 
     | **Inputs** | **Order ID** | Click in the box and select **Process Inputs > Order ID**. 
     | **Inputs** | **Order Items** | Click in the box and select **Process Inputs > Order Items**. 
-    | **Inputs** | **Total Items** | Click in the box and select **Custom Variables > Sume of All Items**. 
+    | **Inputs** | **Total Items** | Click in the box and select **Custom Variables > Sum of All Items**. 
 
     Expand **Order Items**, and you will see that the system automatically mapped the correct input fields to each of the table fields in form. 
     
@@ -556,7 +558,7 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     ![Show instances](showinstances.png)
 
-    Since this process instance added notifications and approval step, it won't automatically be completed and you will see it with the default filter.
+    Since this process instance added notifications and an approval step, it won't automatically be completed and you will see it with the default filter.
 
     ![Running process](images/test-2.png)
 

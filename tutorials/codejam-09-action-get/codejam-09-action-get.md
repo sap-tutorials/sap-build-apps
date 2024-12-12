@@ -3,7 +3,7 @@ parser: v2
 author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
-time: 40
+time: 30
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Trigger Process from Your App](codejam-07-connect-app-process).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Trigger Process from Your App](codejam-08-work-zone-app).
 
 
 
@@ -24,11 +24,8 @@ primary_tag: software-product>sap-build
 
 ## You will learn
 - How to create destination to SAP S/4HANA Cloud demo APIs on SAP Business Accelerator Hub
-- How to create action project
-- How to set action's inputs and outputs
-- How to test the action
-- How to release and publish action
-- How to consume action from project
+- How to create and publish an action project
+- How to consume an action from a process
 
 
 ## Intro
@@ -66,7 +63,7 @@ In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP 
 
 2. Download the destination definition.
    
-    Click [`S4HANA-Hub-Public`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-08-action-get/S4HANA-Hub-Public), and then click the download button.
+    Click [S4HANA-Hub-Public](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-08-action-get/S4HANA-Hub-Public), and then click the download button.
 
     ![Download](Download.png)
 

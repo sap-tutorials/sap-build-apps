@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 30
+time: 20
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Add Approval Flow to Process](codejam-06-spa-approval).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Add Approval Flow to Process](codejam-07-build-deploy-app).
 
 
 
@@ -203,7 +203,7 @@ You get a preview of the page.
 
     Double-click **Everyone** to open it.
 
-    ![Open Everyone](images/wz-role1.png)e
+    ![Open Everyone](images/wz-role1.png)
 
 2. Click **Edit**.
 

@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 15
+time: 20
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Add Approval Flow to Process](codejam-06-spa-approval).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Add Approval Flow to Process](codejam-05-spa-approval-flow).
 
 
 
@@ -75,7 +75,7 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
 4. Download the destination definition.
 
-    Click this [`sap_process_automation_service_user_access`](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-07-connect-app-process/sap_process_automation_service_user_access) link to the GitHub download page for the destination, and then click the download button in the GitHub menu.
+    Click [sap_process_automation_service_user_access](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-07-connect-app-process/sap_process_automation_service_user_access) to go to the GitHub download page for the destination template, and then click the download button in the GitHub menu.
 
     ![Download](Download.png)
 
@@ -163,7 +163,7 @@ The process is published, but we need to reference it in our SAP Build Apps proj
 
     ![Library](images/enable-add-integration-library.png)
 
-    You should now see your process you published.
+    You should now see the process you published.
 
     ![Browse process](images/enable-browse-library.png)
 
