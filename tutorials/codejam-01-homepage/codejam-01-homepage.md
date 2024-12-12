@@ -95,9 +95,9 @@ Otherwise, here's how to open the lobby.
 
     ![Select and import](images/2a-browse-files-select-import.png)
 
-    When complete, the project should now be added to the lobby.
+    When complete, the project should be added to the lobby.
 
-    Click **Close**.
+    In the **Import** dialog, click **Close**.
     
     ![Project added](images/3-project-imported-lobby.png)    
     
@@ -234,6 +234,7 @@ You can "bind" the data in the variable with your UI components in order to disp
 
 
 ### Add container to the homepage
+Containers are components that can hold other components, and let you configure the spacing, the background color and more. Containers give you a lot of flexible to make the UI the way you want.
 
 1. Click **User Interface**.
    
@@ -242,8 +243,6 @@ You can "bind" the data in the variable with your UI components in order to disp
 2. From the **Core** tab of the left pane, under **Essentials**, drag a **Container** component onto the canvas.
 
     ![Container](first-component.png)
-
-    >Container components let you group components and configure the group of components as a single unit.
 
 3. With the container selected, double-click the component's name (in the canvas).
     
@@ -311,7 +310,7 @@ You can "bind" the data in the variable with your UI components in order to disp
 
 
 ### Stylize the container
-As an example of how to stylize a component, lets add space around our container.
+As an example of how to stylize a component, let's add space around our container.
 
 1. From the **Tree** view (bottom right), select the container **Container - Products List** again.
 
@@ -323,7 +322,17 @@ As an example of how to stylize a component, lets add space around our container
 
     >If you want, you can update the default style with your changes so it affects all components ( **Overwrite** ), or you can save your changes to a new style ( **New Style** ). 
 
-2. Expand the **Padding** settings, set the padding on all 4 sides to 24px by clicking each rectangle, going to **Theme** tab, and selecting the **XXL** size.
+2. Expand the **Padding** settings. Here you can set the padding for all 4 directions.
+
+    ![Padding](padding.png)
+    
+    Set the padding on all 4 sides to 24px. For each rectangle:
+    
+    - Click the rectangle.
+    
+    - Go to the **Theme** tab.
+
+    - Selecting the **XXL** size.
    
     ![Style Theme - Padding](images/12b-padding-xxl.png)
 

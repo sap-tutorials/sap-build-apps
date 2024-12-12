@@ -41,7 +41,7 @@ In this exercise, you will enhance the **Product details** page by connecting to
 ### Create a page parameter
 The product details page will show the details of a specific product, but it must have the ID of a product to display.
 
-Therefore, you will create a **Page parameters** on the product details page to hold the ID. Page parameters are variables that are defined on a page and are required to be passed when navigating to that page.
+Therefore, you will create a **Page parameter** on the product details page to hold the ID. Page parameters are variables that are defined on a page and are required to be passed when navigating to that page.
 
 1. In the upper-left corner, open the page selector and choose **Product Details**.
    

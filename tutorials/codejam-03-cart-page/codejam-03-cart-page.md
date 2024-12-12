@@ -7,7 +7,7 @@ time: 15
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
-  
+
 
 # 3 - Configure the Shopping Cart Page
 <!-- description --> Set up the shopping cart page –- including variables, binding, styling, and logic -– and update your CAP service as part of the SAP Build CodeJam.
