@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build
 ---
   
 
-# 12 - Enable App to Filter Products 
+# 13 - Enable App to Filter Products 
 <!-- description --> Add UI components and logic to enable filtering of the product list, as part of the SAP Build CodeJam. 
 
 

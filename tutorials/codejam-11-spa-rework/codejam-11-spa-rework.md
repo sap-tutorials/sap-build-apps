@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build
 ---
   
 
-# 10 - Expand Process to Add Rework Flow
+# 11 - Expand Process to Add Rework Flow
 <!-- description --> Use a custom variable and Go-To Step to expand your workflow so the approver can ask the submitter to rework it, as part of the SAP Build CodeJam.
 
 

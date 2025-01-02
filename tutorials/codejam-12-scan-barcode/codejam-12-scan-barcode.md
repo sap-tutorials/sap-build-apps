@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build
 ---
   
 
-# 11 - Enable App to Select Product by Scanning Barcode 
+# 12 - Enable App to Select Product by Scanning Barcode 
 <!-- description --> Show some of the native mobile capabilities of SAP Build Apps by allowing users to select a product by scanning a barcode, as part of the SAP Build CodeJam. 
 
  

@@ -9,7 +9,7 @@ primary_tag: software-product>sap-build
 ---
   
 
-# 13 - Implement Spinner for Product Details Page 
+# 14 - Implement Spinner for Product Details Page 
 <!-- description --> Set up and use a spinner control to hide UI until all data is available to display, as part of the SAP CodeJam.
 
 
