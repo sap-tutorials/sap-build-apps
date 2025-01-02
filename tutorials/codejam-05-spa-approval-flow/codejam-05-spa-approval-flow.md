@@ -492,23 +492,20 @@ When you are complete with the changes to your project, you must release and dep
 ### Test the process
 Note that all forms will be sent to **Process started by** – which is you. You will act as both the approver and the requester.
 
-1. Go back to the **Monitoring** section in the SAP Build lobby menu.
+1. Go back to the **Control Tower**.
+
+2. As you did before, navigate to **Environments > Public > Processes and Workflows** .
 
     ![Return to Lobby to Choose Monitor](14f_Choose_Monitor_on_Lobby.png)
 
-2. Under **Manage**, click **Processes and Workflows**.
-
-    ![Monitor Overview](15_Choose_Processes_Workflows.png)
-
-    This area shows you all the processes that have been deployed.
-
-3. Select your process, and then click **Start New Instance**.
-
-    This opens the dialog that lets you trigger a process – for testing  – without using a form, API call, or external event.
+3. With your process selected, click **Start New Instance**.
 
     ![Start New Process Instance](15e_Start_New_Instance.png)
 
-5. In the dialog, delete the JSON and replace it with the following:
+    This opens the dialog that lets you trigger a process – for testing  – without using a form, API call, or external event.
+
+
+4. In the dialog, delete the JSON and replace it with the following:
 
     ```JavaScript
     {
@@ -533,7 +530,9 @@ Note that all forms will be sent to **Process started by** – which is you. You
     }
     ```
 
-6. Click **Start New Instance and Close**.
+    Click **Start New Instance and Close**.
+
+    ![New Instances](15_Choose_Processes_Workflows.png)
 
     If all goes well you will get a message **Instance started**.
 

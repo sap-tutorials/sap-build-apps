@@ -274,39 +274,47 @@ Releasing a project creates a version or snapshot of the changes, and deploying 
 SAP Build Process Automation lets you trigger a process manually, generally so you can quickly test it.
 
 
-1. In the SAP Build lobby, choose **Monitoring**. 
+1. In the SAP Build lobby, choose **Control Tower**. 
 
-    ![Return to Lobby to Choose Monitor](14f_Choose_Monitor_on_Lobby.png)
+    ![Open Control Tower](14f_Choose_Monitor_on_Lobby.png)
 
-2. Under **Manage**, click **Processes and Workflows**.
+2. Click **Environments**.
 
-    ![Monitor Overview](15_Choose_Processes_Workflows.png)
+    ![Environments](15_Choose_Processes_Workflows.png)
+
+    Select the **Public** environment.
+    
+    ![Public environment](15a_project.png)
+
+    You will see all the projects with processes deployed to this environment.
+
+3. Click **More > Processes and Workflows**.
+
+    ![Processes and Workflows](15b_Proceses-Workflows.png)
 
     This area shows you all the processes that have been deployed. If you are using SAP Build Process Automation for the first time in your trial account, there is only one process and it is already selected.
 
     If it isn't selected, select it.
 
-    ![First project](15a_project.png)
+    ![Deployed processes](15c_processes.png)
 
     >For when you have many more processes, you can perform a free text search, or you can select the project and then see all the processes in that project.
 
     With the process selected, you will see information about the process, most notably its **ID**. This ID must be passed whenever an API call is made to trigger the process, though SAP Build Apps will handle sending this ID for you.
 
-3. Click **Start New Instance**.
+4. Click **Start New Instance**.
 
-    This opens a dialog that lets you trigger a process – for testing  – without using a form, API call, or external event.
-
-    ![Start New Process Instance](15e_Start_New_Instance.png)
+    ![Start process instance](15e_Start_New_Instance.png)
 
     This opens a dialog that lets you trigger a process – for testing  – without using a form, API call, or external event. The dialog lets you provide the required inputs for the process, in JSON format.
     
     >**IMPORTANT:** You must provide the values for the inputs that you defined as "process inputs," in JSON format. BUT ... the example JSON you will see in the dialog is not related AT ALL to what you need to provide. Therefore, you will delete this JSON.  
 
-    >![Inputs for Starting Instance](15f_Starting_Process_Instance.png)
+    >![Instance inputs](15f_Starting_Process_Instance.png)
 
     Here's a reminder of the Process inputs you defined in the Process Editor (in the JSON, you must use the same field identifiers in the JSON key value pairs):
    
-    ![Identifiers of Process Inputs as JSON keys](15g_Identifier_as_JSON_Input.png)
+    ![Input IDs](15g_Identifier_as_JSON_Input.png)
 
 5. Delete the JSON in the dialog, and replace it with the following:
 
@@ -318,7 +326,7 @@ SAP Build Process Automation lets you trigger a process manually, generally so y
     }
     ```
 
-    ![JSON Key Value Pair for your Process](15h_JSON_Context.png)
+    ![Inputs for your process](15h_JSON_Context.png)
 
 6. Click **Start New Instance and Close**.
 
@@ -360,6 +368,8 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     ![Process instance](16a2_Monitor_Process.png)
 
     Now you should see your process instance.
+
+    >Notice that because you navigated from your deployed process from the Control Tower, the list of processes is filtered for just that project (see highlighted filter).
 
 4. Click on your process instance.
 
