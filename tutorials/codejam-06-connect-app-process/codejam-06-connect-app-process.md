@@ -75,7 +75,7 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
 4. Download the destination definition.
 
-    Click [sap_process_automation_service_user_access](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-07-connect-app-process/sap_process_automation_service_user_access) to go to the GitHub download page for the destination template, and then click the download button in the GitHub menu.
+    Click [sap_process_automation_service_user_access](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-06-connect-app-process/sap_process_automation_service_user_access) to go to the GitHub download page for the destination template, and then click the download button in the GitHub menu.
 
     ![Download](Download.png)
 

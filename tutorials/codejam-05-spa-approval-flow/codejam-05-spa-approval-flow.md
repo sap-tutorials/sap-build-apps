@@ -209,7 +209,7 @@ To do this, you will use the Script Task, which lets you write JavaScript snippe
 
     ![Script Task](script5.png)
 
-4. With the Script Task selected, click **Open Edior**.
+4. With the Script Task selected, click **Open Editor**.
 
     ![Open editor](script6.png)
 
