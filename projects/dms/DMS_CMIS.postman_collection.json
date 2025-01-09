@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "841648c6-7da7-4c57-bcac-643e5d705b0f",
+		"name": "DMS CMIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2165237"
+	},
+	"item": [
+		{
+			"name": "DMS List Repositories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS List Repositories (non-CMIS)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/rest/v2/repositories",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"rest",
+						"v2",
+						"repositories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Create Repository (non-CMIS)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"repository\": {\r\n\t\t\"displayName\": \"MyRepo\",\r\n\t\t\"description\": \"My Tech Byte (API)\",\r\n\t\t\"repositoryType\": \"internal\",\r\n\t\t\"isVersionEnabled\":\"true\",\r\n\t\t\"isVirusScanEnabled\":\"true\",\r\n\t\t\"skipVirusScanForLargeFile\": \"false\",\r\n\t\t\"hashAlgorithms\":\"SHA-256\",\r\n        \"externalId\": \"MyRepo\",\r\n        \"isContentBridgeEnabled\": true\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/rest/v2/repositories/",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"rest",
+						"v2",
+						"repositories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Delete Repository",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"repository\": {\r\n\t\t\"displayName\": \"Tech Byte Repo Repository\",\r\n\t\t\"description\": \"My Tech Byte\",\r\n\t\t\"repositoryType\": \"internal\",\r\n\t\t\"isVersionEnabled\":\"true\",\r\n\t\t\"isVirusScanEnabled\":\"true\",\r\n\t\t\"skipVirusScanForLargeFile\": \"false\",\r\n\t\t\"hashAlgorithms\":\"SHA-256\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/rest/v2/repositories/{(repo}}",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"rest",
+						"v2",
+						"repositories",
+						"{(repo}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Delete All Repositories (non CMIS)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/rest/v2/repositories/",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"rest",
+						"v2",
+						"repositories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS List Root Documents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS List Root Documents Short",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root?filter=cmis:name",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "cmis:name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS List Children (object ID)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root?objectId=DzX04u_1PD5uNT2IfcmNzztROjky-92pHkAK1-SoE5U&cmisselector=children&filter=cmis:name",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					],
+					"query": [
+						{
+							"key": "objectId",
+							"value": "DzX04u_1PD5uNT2IfcmNzztROjky-92pHkAK1-SoE5U"
+						},
+						{
+							"key": "cmisselector",
+							"value": "children"
+						},
+						{
+							"key": "filter",
+							"value": "cmis:name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS List Children (Path)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root/invoice_id-1729439705161-28",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root",
+						"invoice_id-1729439705161-28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Create Folder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cmisaction",
+							"value": "createFolder",
+							"type": "text"
+						},
+						{
+							"key": "propertyId[0]",
+							"value": "cmis:objectTypeId",
+							"type": "text"
+						},
+						{
+							"key": "propertyValue[0]",
+							"value": "cmis:folder",
+							"type": "text"
+						},
+						{
+							"key": "propertyId[1]",
+							"value": "cmis:name",
+							"type": "text"
+						},
+						{
+							"key": "propertyValue[1]",
+							"value": "My Folder Name4",
+							"type": "text"
+						},
+						{
+							"key": "succinct",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root/My Folder Name2",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root",
+						"My Folder Name2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Upload Document",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cmisaction",
+							"value": "createDocument",
+							"type": "text"
+						},
+						{
+							"key": "propertyId[0]",
+							"value": "cmis:objectTypeId",
+							"type": "text"
+						},
+						{
+							"key": "propertyValue[0]",
+							"value": "cmis:document",
+							"type": "text"
+						},
+						{
+							"key": "propertyId[1]",
+							"value": "cmis:name",
+							"type": "text"
+						},
+						{
+							"key": "propertyValue[1]",
+							"value": "mcdavid",
+							"type": "text"
+						},
+						{
+							"key": "succinct",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "filename",
+							"value": "mcdavid.jpg",
+							"type": "text"
+						},
+						{
+							"key": "includeAllowableActions",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Download Document",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root?objectId=CmzwUiaF2ftmImNBfkfxwhxVTslfjoLBZ1kT85OI_rE",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					],
+					"query": [
+						{
+							"key": "objectId",
+							"value": "CmzwUiaF2ftmImNBfkfxwhxVTslfjoLBZ1kT85OI_rE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Update Object",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cmisaction",
+							"value": "update",
+							"type": "text"
+						},
+						{
+							"key": "propertyId[0]",
+							"value": "cmis:name",
+							"type": "text"
+						},
+						{
+							"key": "propertyValue[0]",
+							"value": "New Name",
+							"type": "text"
+						},
+						{
+							"key": "objectId",
+							"value": "Nr1aPxJAp7QDtakBSWQuv3v_Tcj_cqB5JHRLEzPyO5I",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Delete Object",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cmisaction",
+							"value": "delete",
+							"type": "text"
+						},
+						{
+							"key": "objectId",
+							"value": "gk-0PwFXyz-7y86ojx67ZEl5p31KRqrErrUVCGVGkqU",
+							"type": "text"
+						},
+						{
+							"key": "allVersions",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root/",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS CMIS Query",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}?cmisSelector=query&q=SELECT cmis:name FROM cmis:folder WHERE cmis:objectId='DzX04u_1PD5uNT2IfcmNzztROjky-92pHkAK1-SoE5U'",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}"
+					],
+					"query": [
+						{
+							"key": "cmisSelector",
+							"value": "query"
+						},
+						{
+							"key": "q",
+							"value": "SELECT cmis:name FROM cmis:folder WHERE cmis:objectId='DzX04u_1PD5uNT2IfcmNzztROjky-92pHkAK1-SoE5U'"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "{{authenticationurl}}/oauth/authorize",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{authenticationurl}}/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{clientsecret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{clientid}}",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "http://localhost",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "folder-id",
+			"value": "eae8c6800022b9bc3e89d566"
+		}
+	]
+}
