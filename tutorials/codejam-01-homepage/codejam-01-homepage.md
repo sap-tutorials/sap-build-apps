@@ -11,7 +11,7 @@ primary_tag: software-product>sap-build
 # 1 - Create the Product List Page
 <!-- description --> Import a skeleton project for the SAP Build CodeJam, and create a simple product list page based on data in our CAP service.
 
-
+ 
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Set Up Prerequisites for SAP Build CodeJam](codejam-0-prerequisites).
 
@@ -240,6 +240,14 @@ Containers are components that can hold other components, and let you configure 
    
     ![View](images/9-switch-uicanvas-toggle-variables.png)
 
+    Since we want eventually our app o be a mobile app, let's change the form factor by clicking the UI size dropdown on the upper right, and selecting **Mobile**.
+
+    ![Mobile](images/9-switch-mobile.png)
+
+    The canvas should look like this.
+
+    ![Mobile](images/9-switch-mobile2.png)
+
 2. From the **Core** tab of the left pane, under **Essentials**, drag a **Container** component onto the canvas.
 
     ![Container](first-component.png)
@@ -280,7 +288,7 @@ Containers are components that can hold other components, and let you configure 
 
     ![Tree view](first-tree-view.png)
 
-    Make sure both the title and list item are inside the container.
+    Make sure both the title and list item are inside the container at the same level.
     
     The UI should look like this:
 
@@ -405,6 +413,8 @@ To do this, you create bindings for your UI components, indicating what data you
     >
     >One of the strengths of the formula editor is that it checks the data types of the properties you are setting to try to determine if the formula is compatible. Here, it is expecting a value defined as an image URL, but our text – which is a valid URL – will work just as well.
 
+    Click **Save** in the formula editor.
+    
 3. Click **Save** (upper right).
 
 >**What's with the repeat?**

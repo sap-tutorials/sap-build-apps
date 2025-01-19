@@ -52,9 +52,9 @@ You installed SAP Build Process Automation in **Step 3** of the [prerequisites t
 
     ![Build Lobby](1_Create_Business_Project_Lobby.png)
 
-    Select **Create**.
+    >If you also installed SAP Build Code, you will get a dropdown after clicking **Create**. If so, click **Create** again.
 
-    ![Create](1a_Create_Business_Project_Lobby.png)
+    >![Create](1a_Create_Business_Project_Lobby.png)
 
 
 2. Choose **Build an Automated Process**.
@@ -96,6 +96,9 @@ You installed SAP Build Process Automation in **Step 3** of the [prerequisites t
 
     ![Empty Business Process](6_Empty_Business_Process.png)
 
+    >You will get in-app help to give you information about different parts of the user interface. If you click he questions marks around the screen, you can get additional information.
+    >
+    >You can hide the help by clicking the information button in the top right of he screen, in the header.
 
 
 

@@ -248,6 +248,8 @@ Your details page is all set up, but there is no way to get to it. So you will s
 
     When the user will click on a product, SAP Build Apps will send the ID of that product to the **Product Details** page.
 
+    Click **Save**.
+
 6. Click **Save** (upper right). 
 
 
@@ -257,7 +259,10 @@ Your details page is all set up, but there is no way to get to it. So you will s
 
 ### Test the app
 
-1. Go back to your preview page, which should update when you save your project.
+1. Go back to your preview page, which should update whenever you save your project.
+
+    ![Preview tab](preview-tab.png)
+
 
     >If your session timed out, start over by doing the following:
     >

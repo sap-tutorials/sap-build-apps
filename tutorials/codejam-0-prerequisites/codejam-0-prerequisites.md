@@ -203,7 +203,7 @@ If you prefer, here are the step-by-step instructions.
 
     >**IMPORTANT:** It may take as long as a half-hour to complete the subscription to SAP Build Process Automation. If you are doing these prerequisites before the CodeJam, just continue.
     
-    >But if you are doing these at the event (which we do NOT recommend), you do not have to wait and can skip the rest of step 3 for now (and move to Step 4) as you won't be using SAP Build Process Automation until much later in [tutorial 4](https://developers.sap.com/tutorials/codejam-05-spa-empty-process.html) in this tutorial mission.
+    >But if you are doing these at the event (which we do NOT recommend), you do not have to wait and can skip the rest of step 3 for now (and move to Step 4) as you won't be using SAP Build Process Automation until much later in [tutorial 4](codejam-04-spa-empty-process) in this tutorial mission.
     
     >**But when the subscription is complete,** and you reach the point that you must use SAP Build Process Automation, remember to return to this step and finish it (we will remind you in Tutorial 4). 
 

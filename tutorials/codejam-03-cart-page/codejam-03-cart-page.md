@@ -26,6 +26,7 @@ primary_tag: software-product>sap-build
 
 
 
+
 ## Intro
 In this exercise, you will be enhancing the **Cart** page of the SAP Build CodeJam app.
 
@@ -235,7 +236,7 @@ Currently, you are viewing a dummy cart. Now let's create your own cart.
 
     You should see the default logic.
 
-4. Switch the logic by first disconnecting the connection between **Page focused** and **Set app variable** -- to disconnect, click the connection and press the **Delete** key.
+4. Switch the logic by first disconnecting the connection between **Page focused** and **Set app variable**: to do this, click the connection and press the **Delete** key.
 
     Then connect **Page focused** to **Delay**.
 

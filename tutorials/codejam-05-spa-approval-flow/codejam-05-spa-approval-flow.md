@@ -147,7 +147,7 @@ The process will include a condition that if the total is less than 1000, the pu
 
     >There is a red warning triangle, next to the condition only because any new condition needs to be configured – NOT because you did anything wrong. 
 
-2. Click **Open Condition Editor** in the side panel.
+2. Click **Open Condition Editor**.
 
     A dialog for setting a condition opens.
 
@@ -565,7 +565,7 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     In the details section, you will see:
     
-    - Status is **running**.
+    - Status is **Running**.
 
     - Under **Logs**, you can see a condition was completed, and you can see that because the total was under 1000, it was automatically approved.
 
@@ -626,7 +626,7 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     }
     ```
 
-    Now if you go to check your latest instance, you will see that the approval step is activated.
+    Now if you go to check your latest instance, you will see that the script task was executed and the approval step is activated.
 
     ![Approval step](images/test-again-1.png)
 
