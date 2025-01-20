@@ -31,6 +31,30 @@ primary_tag: software-product>sap-build
 
 
 
+### Add role for SAP Build Work Zone
+To enable you to reach SAP Build Work Zone from the SAP Build Loby, you need to add a role to your user.
+
+1. Go back to the BTP Cockpit.
+
+    Go to **Security > Users**.
+
+    Click on your user with **Custom IAS tenant**.
+
+    ![Open user](images/role1.png)
+
+2. In the side panel, click the 3 dots, and then click **Assign Role Collection**.
+
+    ![Assign role collection](images/role2.png)
+
+3. Search for the **Launchpad_Admin** role, select it, and click **Assign Role Collection**.
+
+    ![Launchpad_Admin role](images/role3.png)
+
+    >You must log out of SAP Build and log back in for the new role collection to take effect.
+
+
+
+
 ### Open SAP Build Work Zone, standard edition
 1. In the SAP Build lobby, click **Create > Create**.
 
@@ -97,7 +121,9 @@ primary_tag: software-product>sap-build
 
     ![Update content](images/wz-add-app2.png)
 
-    It will take a few minutes to update. When **Updated** is displayed, continue to the next step.
+    It will show **Updating ...** and take a few minutes to update. When **Updated** is displayed, continue to the next step.
+
+ 
 
  
 

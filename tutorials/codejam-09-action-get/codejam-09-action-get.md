@@ -44,7 +44,7 @@ In this tutorial, you will create an action project based on the Business Partne
 
 
 
-
+ 
 
 ### Create destination for SAP S/4HANA Cloud 
 In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP Business Accelerator Hub**, you need to create a destination.
@@ -61,9 +61,11 @@ In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP 
 
     ![Show API Key](hub-key2.png)
 
+    >The last time we tested, the **Copy Key and Close** button did not work, so you may have to select the key and copy it manually.
+
 2. Download the destination definition.
    
-    Click [S4HANA-Hub-Public](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-08-action-get/S4HANA-Hub-Public), and then click the download button.
+    Click [S4HANA-Hub-Public](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-09-action-get/S4HANA-Hub-Public), and then click the download button.
 
     ![Download](Download.png)
 
@@ -85,7 +87,7 @@ In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP 
 
     Click **Save**.
 
-If you click **Check Connection**, you will get a 401 response code. This is OK and you have **successfully** created the destination
+If you click **Check Connection**, you will get a 401 response code. This is OK, and you have **successfully** created the destination.
 
 >To learn more about the [SAP Business Accelerator Hub](https://api.sap.com/) and how to set up destinations for any API, watch this video from **Daniel Wroblewski**. 
 
@@ -191,9 +193,7 @@ In this step, you will enable the destination to be used in your processes.
 
     Select the **GET** operation that is called **Retrieves business partner data by using business partner number**.  
    
-    >Be careful! There are a lot of APIs that look the same. You can use the search to help make finding the right one easier.
-
-    ![BP by Number](1h_GET_BP_by_Number.png) 
+    >Be careful! There are a lot of APIs that look the same. Use the search to help make finding the right one easier.
 
 6. Click **Add**.
 
@@ -286,7 +286,7 @@ To make the action available to your processes, you must release and publish the
 
     The action project status is changed to **Released**. 
 
-2. Click **Publish to Library**.
+2. Click **Publish**.
 
     ![Publish to Library](5a_Publish_to_Library.png)
 
@@ -346,7 +346,7 @@ You've created an action to retrieve data. Now add it to the process so you can 
 
 4. With the new action block selected, go to the side panel and configure the action.
 
-    In the **General** tab, click the **Destination variable** field, click **Create Destination Variable**.
+    In the **General** tab, click the **Destination Variable** field, click **Create Destination Variable**.
 
     ![Configure action](7h_Action_added.png)
 
@@ -372,7 +372,7 @@ You've created an action to retrieve data. Now add it to the process so you can 
 
     ![Examine Action Outputs](7k_Examine_Action_Output.png)
 
-7. Click the condition block, and from the side panel click **Open Condition Editor**.
+7. Click the condition block, and from the side panel click the 3 dots and then **Open Condition Editor**.
 
     ![Configure Condition](8a_Condition_Configuration.png)
 
@@ -415,15 +415,25 @@ You've created an action to retrieve data. Now add it to the process so you can 
 
     ![Configure approval inputs](9a_Approval_Input_Config.png)
     
-9. Click **Save** (upper right).
+8. You may see an error next to your script task.
 
-10. Click **Release**.
+    If you do:
+   
+    * Open the editor for the **Script Task**.
+
+    * Click **Apply**.
+
+    ![Script error](scripterror.png)
+
+1.  Click **Save** (upper right).
+
+2.  Click **Release**.
 
     ![New version](release-confirm.png)
    
     Confirm by clicking **Release** again.
 
-11. Click **Show Project Version**.
+3.  Click **Show Project Version**.
 
     ![Show version](9a_show_version.png)
 
@@ -455,7 +465,7 @@ You've created an action to retrieve data. Now add it to the process so you can 
 
     ![Deployment Status](9f_Deployed_Status.png)
 
-12. Go back to the SAP Build lobby, refresh the page.
+4.  Go back to the SAP Build lobby, refresh the page.
 
     Next to your process project, click the row of the project, or click the chevron.
     
@@ -529,6 +539,8 @@ Now that the process expects a business partner, we must change the app to provi
     On the right, under **Input Parameters**, click **Custom object**. 
     
     In the dialog, bind **Business Partner** to **Data and Page Variables > Page Variable > BP**.
+
+    Click **Save**.
 
     ![Bind to BP](13b-bind-BP.png)
 

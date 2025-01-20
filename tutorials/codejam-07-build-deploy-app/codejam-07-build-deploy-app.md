@@ -125,13 +125,50 @@ primary_tag: software-product>sap-build
 
 5. When the deployment finishes, you should get a URL to your deployed app.
 
+    **Save the URL**.
+
     ![App URL](images/deploy9.png)
 
-    If you click the link, your app should be displayed.
+    >If you lose the link to your app, you can see all your deployed apps in your trial account, under **HTML5 Applications**.
+
+    >![HTML5 Applications](images/deploy10.png)
+
+    If you click the link, you will get an error, because we have to set up SAP Build Work Zone to work with SAP Build Apps.
+
+    ![App error](images/internalerror.png)
 
 
-If you lose the link to your app, you can see all your deployed apps in your trial account, under **HTML5 Applications**.
 
-![HTML5 Applications](images/deploy10.png)
+### Set up Work Zone
+
+1. Go back to the BTP Cockpit, and open **Instances and Subscriptions**.
+
+    Click the icon next to SAP Build Work Zone, standard edition.
+
+    ![Open Work Zone](images/wz1.png)
+
+2. Open the **Settings** screen.
+
+    ![Open Settings](images/wz2.png)
+
+3. Select the **Identity Auhentication** tab.
+
+    Enable the check box, and click **Enable**.
+
+    ![Enable identity authentication](images/wz3.png)
+
+    A message **In process** will briefly appear.
+
+    ![In process](images/wz4.png)
+
+    It will then turn to **Success**.
+
+    ![Success](images/wz5.png)
+
+4. Run the app by opening a browser to the URL you saved in the previous step.
+
+    ![App running](images/wz6.png)
+
+
 
 

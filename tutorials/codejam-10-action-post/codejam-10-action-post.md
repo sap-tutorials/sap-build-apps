@@ -155,7 +155,7 @@ Here we will do something simple: whenever someone calls this API, the action wi
 
     ![Open status](approved1.png)
 
-2. Enable **Static**, and enter **APPROVED** for he value.
+2. Enable **Static**, and enter **APPROVED** for the value.
 
     ![Set status](approved2.png)
 
@@ -180,8 +180,6 @@ Let's make sure everything is connected properly and test the action.
 3. Click **Test**.
 
     Once the execution is successful, you should see **200: OK** response.
-
-    No data was changed since we did not supply any values for any of the fields.
 
     >If for some reason you entered an order ID that did not exist, the service will create it, and you will get a **201: OK** status code.
 
@@ -213,7 +211,7 @@ You will now release the action project to create a version and then publish thi
     ![Release status](images/4a-release-status.png)
 
     
-3. Click **Publish to Library** (top right).
+3. Click **Publish** (top right).
 
     ![Publish](images/4b-publish-to-library.png)
 
@@ -437,7 +435,7 @@ In order to better see the status of all my orders and cart, you will create in 
 
 ### Test the app
 
-1. Click **Preview**, and then open up the preview for he app.
+1. Click **Preview**, and then open up the preview for the app.
 
 2. Select the **Notebook Basic 18**, and add it to your cart.
 
