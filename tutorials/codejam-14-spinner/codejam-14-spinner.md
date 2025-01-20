@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Enable App to Filter Products](codejam-12-filtering).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Enable App to Filter Products](codejam-13-filtering).
 
 
 

@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 ## Prerequisites
 - You set up SAP Build App and entered the lobby, as described in [Set Up SAP Build Apps on an SAP BTP Trial Account](https://www.youtube.com/watch?v=ZpQM2B1v2GY).<div><iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe></div>
 - You set up SAP Build Process Automation, and created the process described in the tutorial group [Create a Sales Order Process and Enable Triggering Via API](https://developers.sap.com/group.sap-build-apps-process-trigger-enable.html).
-- You have set up a service key for the SAP Build Process Automation service, and a destination to the service, as described in Step 1 of [7 - Trigger Process from Your App](codejam-07-connect-app-process).
+- You have set up a service key for the SAP Build Process Automation service, and a destination to the service, as described in Step 1 of [6 - Trigger Process from Your App](codejam-06-connect-app-process).
 
 
 

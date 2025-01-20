@@ -231,7 +231,7 @@ You will now release the action project to create a version and then publish thi
 
 ### Add action to process
 
-You have already set up the approval form as part of the tutorial [Add Approval Flow to Process](codejam-06-spa-approval). 
+You have already set up the approval form as part of the tutorial [Add Approval Flow to Process](codejam-05-spa-approval-flow). 
 
 Now, you will add the action so that if the order is approved, the action will update the status of the order.
 

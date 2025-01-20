@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Create Action to Post Data to CAP Service](codejam-09-action-post).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Create Action to Post Data to CAP Service](codejam-10-action-post).
 
 
 

@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Enable App to Select Product by Scanning Barcode](codejam-11-scan-barcode).
+- You have completed the previous tutorial for the SAP Build CodeJam, [Enable App to Select Product by Scanning Barcode](codejam-12-scan-barcode).
 
 
 
@@ -207,7 +207,7 @@ To enable the user to choose a category, you need to populate the **Categories**
 ### Test app
 After saving your project, your app on the preview app should be refreshed.
 
->If your preview app timed out, just follow the instructions in the last step of the previous tutorial [Enable App to Select Product by Scanning Barcode](codejam-11-scan-barcode).
+>If your preview app timed out, just follow the instructions in the last step of the previous tutorial [Enable App to Select Product by Scanning Barcode](codejam-12-scan-barcode).
 
 After opening the app, you should see all the products.
 

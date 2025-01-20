@@ -15,7 +15,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the tutorial for the SAP Build CodeJam, [Implement Spinner for Product Details Page](codejam-13-spinner).
+- You have completed the tutorial for the SAP Build CodeJam, [Implement Spinner for Product Details Page](codejam-14-spinner).
 
 
 
