@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-buil
 primary_tag: software-product>sap-build
 ---
  
-
+ 
 
 # 4 - Create a Business Process Project
 <!-- description --> Create an empty business process to better understand how to release and deploy a process, and then start and monitor a process instance, as part of the SAP Build CodeJam.
