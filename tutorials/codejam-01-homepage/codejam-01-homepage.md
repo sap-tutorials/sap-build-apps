@@ -14,7 +14,7 @@ primary_tag: software-product>sap-build
  
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Set Up Prerequisites for SAP Build CodeJam](codejam-0-prerequisites).
-
+ 
 
 ## You will learn
 - How to create a new SAP Build Apps project
