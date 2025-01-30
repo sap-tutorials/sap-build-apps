@@ -14,7 +14,7 @@ primary_tag: software-product>sap-build
  
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Set Up Prerequisites for SAP Build CodeJam](codejam-0-prerequisites).
- 
+
 
 ## You will learn
 - How to create a new SAP Build Apps project
@@ -452,5 +452,26 @@ To do this, you create bindings for your UI components, indicating what data you
    
     ![List of Products](images/18-view-product-list.png)
 
+
+### Further study
+
+- [Marketplace Documentation](https://help.sap.com/docs/build-apps/service-guide/marketplace)
+  
+- [Marketplace Components (video)](https://www.youtube.com/watch?v=IHoINjwU_4Y)
+
+- [Lists and Repeat (video)](https://youtu.be/BPi8zXIF9RQ)
+
+
+>**Things to Ponder**
+>
+>How do containers help you in organizing your pages?
+>
+>How does the formula editor help you? Why does it sometimes warn you unnecessarily?
+>
+>When you set the binding on a property, can you pick any binding type? If yes, why? If not, why not?
+>
+>In order to set repeat, what type of binding do you need (trick question)? 
+>
+>When you create a Repeat, what binding type do you now have access to?
 
 

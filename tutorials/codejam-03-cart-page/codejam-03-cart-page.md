@@ -397,7 +397,25 @@ And behind the scenes, you are reading and updating a CAP service.
 
 
 
+### Further study
 
+- [Formula editor functions (Help Portal)](https://help.sap.com/docs/build-apps/references/bit-and?locale=en-US)
+  
+- [JavaScript in your app, an example (video)](https://youtu.be/sZ0_3qy9b-k?t=1110)
+
+- [The secret behind building formulas (Daniel's blog post)](https://community.sap.com/t5/sap-builders-discussions/april-citizen-developer-challenge-sap-build-apps-task-2-formulas/m-p/13665194)
+
+
+
+>**Things to Ponder**
+>
+>If each variable is basically the same -- they hold data -- why use data variables? What are the 3 big advantages for using a data variable?
+>
+>What does the main logic for this page do? When is it executed?
+>
+>What other types of events can I capture and create logic for?
+>
+>What are the 2 ways you can navigate to a new page? 
 
 
 

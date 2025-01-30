@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-buil
 primary_tag: software-product>sap-build
 ---
  
- 
+
 
 # 4 - Create a Business Process Project
 <!-- description --> Create an empty business process to better understand how to release and deploy a process, and then start and monitor a process instance, as part of the SAP Build CodeJam.
@@ -393,4 +393,32 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
 **Congratulations!** You have created your first SAP Build Process Automation process.
 
+
+
+
+
+
+### Further study
+
+- [Getting started YouTube playlist for SAP Build Process Auomation (Rekha's video series)](https://www.youtube.com/watch?v=1vElTfSxGWM&list=PL6RpkC85SLQBePo670YRglVJqaX_YaUtJ)
+  
+- [SAP Build Process Automation features (sap.com)](https://www.sap.com/products/technology-platform/process-automation/features.html)
+  
+- [Examples of processes (Devoberfest video)](https://www.youtube.com/watch?v=pyFhHNxznuU)
+
+- [What is SAP Build Process Automation (video)](https://www.sap.com/assetdetail/2022/02/6c062d52-177e-0010-bca6-c68f7e60039b.html)
+
+- [Environments (Help Portal)](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/environments?locale=en-US&q=environments)
+
+
+
+>**Things to Ponder**
+>
+>We created simple process inputs (strings and numbers). What if we wanted more complex types?
+>
+>What is the difference between a process and a process instance?
+>
+>What are the different ways to trigger (start) a process instance?
+>
+>You deployed the process to an environment. What is the purpose of an environment?
 

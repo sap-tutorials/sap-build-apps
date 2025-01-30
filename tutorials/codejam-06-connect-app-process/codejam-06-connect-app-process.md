@@ -336,3 +336,25 @@ Update the logic as follows.
     Click **Approve** (the form should disappear), and then refresh the list of tasks. Now you should see the approval notification, with the same order ID. 
 
     ![Notification](run4.png)
+
+
+
+
+### Further study
+
+- [Trigger Processes from SAP Build Apps #1 (video with free project)](https://www.youtube.com/watch?v=8RVo3-h2n-I)
+
+
+  
+
+
+
+>**Things to Ponder**
+>
+>We created a destination to SAP Build Process Automation using the authentication type OAuth2JWTBearer. What if we had used a simple OAuthClientCredentials type?
+>
+>What are all the flow functions related to processes inside SAP Build Apps?
+>
+>What does the MAP function do (that you used for calculating the total)? Why should you be careful when using this function? 
+>
+>What scenarios can you imagine where you'd want to create an app that would trigger a process?

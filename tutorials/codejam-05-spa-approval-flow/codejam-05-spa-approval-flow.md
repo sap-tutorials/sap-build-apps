@@ -641,3 +641,28 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
     If you approve, you can refresh the inbox and you will get the notification form – this time without it saying automatically approved.
 
     ![Notify](notify.png)
+
+
+
+
+
+### Further study
+
+- [Transform Data with JavaScript in SAP Build Process Automation (Devtoberfest video)](https://www.youtube.com/watch?v=Su2QvsCqjt4)
+
+- [Using Conditions to Control the Process Flow (Learning Journey)](https://learning.sap.com/courses/low-code-no-code/using-conditions-to-control-the-process-flow_df45b353-142d-42a3-91e4-4c8d13a1aace)
+  
+
+
+
+>**Things to Ponder**
+>
+>We created a condition step to branch the process between 2 paths. Could we have created more than 2 paths, with a condition for each? What if no condition is met?
+>
+>When binding fields to inputs of steps, which fields can you use – that is, where are those fields first defined?
+>
+>If I use the same form in different places in the process, is there any way to make them appear different when they are sent to users? 
+>
+>When monitoring a process instance, the Logs show the execution of all the steps. But some are shown as "Tasks". What is the significance of that word? 
+>
+>When opening a form in your Inbox, open the Show Log button (on the lower right). What does it show? What do you think the "Claim" button does?

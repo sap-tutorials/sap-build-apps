@@ -279,3 +279,32 @@ Your details page is all set up, but there is no way to get to it. So you will s
     Change the **quantity** field. The **Total Cost** field should reflect the changes.
 
     >You have not set the logic for he **Add to Cart** button, so that will not do anything ... yet.
+
+
+
+
+
+### Further study
+
+- [What are variables? (video)](https://www.youtube.com/watch?v=rZzYI7tz3xM)
+  
+- [Describing Flow Functions (Learning Journey)](https://learning.sap.com/learning-journeys/develop-apps-with-sap-build-apps-using-drag-and-drop-simplicity/describing-flow-functions-_d0181f8f-c084-4959-9bbe-8fb288a76249)
+
+- [Flow Functions (Help Portal)](https://help.sap.com/docs/build-apps/service-guide/flow-functions)
+
+- [Flow Functions List (Help Portal)](https://help.sap.com/docs/build-apps/references/can-open-url?locale=en-US)
+
+
+
+
+
+>**Things to Ponder**
+>
+>What are the different types of variables?
+>
+>What are the 3 types of data variables, and how do they differ in their schema and in their predefined logic?
+>
+>Why do we want page parameters (in other words, why not just set up an app variable, set it, then navigate to your page)?
+>
+>Each time you want to test a change, do you need to click **Preview**? 
+

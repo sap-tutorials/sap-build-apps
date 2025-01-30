@@ -280,9 +280,29 @@ In order to work with the CAP service, you need to create a destination in the S
 
 
 
-### Congratulations!
+### Further study
 Congratulations, you are now ready for our **SAP Build CodeJam**. Have a safe journey and the SAP Advocates Team looks forward to seeing you on the day of your event.
 
-Make sure you keep watching your specific **CodeJam event page** [here](https://groups.community.sap.com/t5/sap-codejam/eb-p/codejam-events).
+In the meantime, here are some additional resources that provides more information about SAP Build low-code tooling.
 
->**IMPORTANT:** You do not need to continue until you arrive at your event.
+- [Fun Overview Video of SAP Build](https://www.sap.com/assetdetail/2022/11/18c567fd-4d7e-0010-bca6-c68f7e60039b.html)
+  
+- [SAP Build YouTube Playlist from Developer Advocates](https://www.youtube.com/playlist?list=PL6RpkC85SLQA-fRzv03OPgWLFAj0v6AVn)
+
+- [Overview Video of SAP Build Apps](https://youtu.be/alwEHrzNRRU)
+
+- [Overview Video of SAP Build Process Automation](https://www.youtube.com/watch?v=S-cEA8EVCfU)
+
+- [Overview Video of SAP Build Work Zone](https://www.youtube.com/watch?v=UJpaF4DcHWc)
+
+
+>**Things to Ponder**
+>
+>Who do you think the audience is for SAP Build low-code tools?
+>
+>What type of scenarios do you think SAP Build low-code tools are good for?
+>
+>Do you know the concept of Fusion Development? 
+>
+>Why do we have to create a new user for SAP Build Apps, when we have n existing user?
+
