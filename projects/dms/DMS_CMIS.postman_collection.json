@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "841648c6-7da7-4c57-bcac-643e5d705b0f",
+		"_postman_id": "68ef7eb7-1d2c-4ba4-80ff-c1c46a72b0c1",
 		"name": "DMS CMIS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "2165237"
@@ -237,7 +237,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{endpoint}}/browser/{{repo}}/root?filter=cmis:name",
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root?filter=cmis:name,cmis:lastModifiedBy",
 					"protocol": "https",
 					"host": [
 						"{{endpoint}}"
@@ -250,7 +250,7 @@
 					"query": [
 						{
 							"key": "filter",
-							"value": "cmis:name"
+							"value": "cmis:name,cmis:lastModifiedBy"
 						}
 					]
 				}
@@ -274,7 +274,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{endpoint}}/browser/{{repo}}/root?objectId=DzX04u_1PD5uNT2IfcmNzztROjky-92pHkAK1-SoE5U&cmisselector=children&filter=cmis:name",
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root?objectId=dLJz3o1rOntgg-p2d-zmdpbs1QfPdPbwmuNes7An36c&cmisselector=children&filter=cmis:name",
 					"protocol": "https",
 					"host": [
 						"{{endpoint}}"
@@ -287,7 +287,7 @@
 					"query": [
 						{
 							"key": "objectId",
-							"value": "DzX04u_1PD5uNT2IfcmNzztROjky-92pHkAK1-SoE5U"
+							"value": "dLJz3o1rOntgg-p2d-zmdpbs1QfPdPbwmuNes7An36c"
 						},
 						{
 							"key": "cmisselector",
@@ -319,7 +319,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{endpoint}}/browser/{{repo}}/root/invoice_id-1729439705161-28",
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root",
 					"protocol": "https",
 					"host": [
 						"{{endpoint}}"
@@ -327,8 +327,52 @@
 					"path": [
 						"browser",
 						"{{repo}}",
-						"root",
-						"invoice_id-1729439705161-28"
+						"root"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Get Properties",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root?objectId=o4rScw-r1_wP09f2joRAZQo3fi8i_o1vCYNNbMVHwf0&cmisselector=properties&filter=cmis:name",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					],
+					"query": [
+						{
+							"key": "objectId",
+							"value": "o4rScw-r1_wP09f2joRAZQo3fi8i_o1vCYNNbMVHwf0"
+						},
+						{
+							"key": "cmisselector",
+							"value": "properties"
+						},
+						{
+							"key": "filter",
+							"value": "cmis:name"
+						}
 					]
 				}
 			},
@@ -375,7 +419,7 @@
 						},
 						{
 							"key": "propertyValue[1]",
-							"value": "My Folder Name4",
+							"value": "My New Sub Folder Name",
 							"type": "text"
 						},
 						{
@@ -386,7 +430,7 @@
 					]
 				},
 				"url": {
-					"raw": "https://{{endpoint}}/browser/{{repo}}/root/My Folder Name2",
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root/My%20Folder",
 					"protocol": "https",
 					"host": [
 						"{{endpoint}}"
@@ -395,7 +439,7 @@
 						"browser",
 						"{{repo}}",
 						"root",
-						"My Folder Name2"
+						"My%20Folder"
 					]
 				}
 			},
@@ -442,7 +486,7 @@
 						},
 						{
 							"key": "propertyValue[1]",
-							"value": "mcdavid",
+							"value": "my cat",
 							"type": "text"
 						},
 						{
@@ -452,7 +496,7 @@
 						},
 						{
 							"key": "filename",
-							"value": "mcdavid.jpg",
+							"value": "cat.jpg",
 							"type": "text"
 						},
 						{
@@ -463,12 +507,12 @@
 						{
 							"key": "media",
 							"type": "file",
-							"src": ""
+							"src": []
 						}
 					]
 				},
 				"url": {
-					"raw": "https://{{endpoint}}/browser/{{repo}}/root",
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root/My%20Folder",
 					"protocol": "https",
 					"host": [
 						"{{endpoint}}"
@@ -476,7 +520,8 @@
 					"path": [
 						"browser",
 						"{{repo}}",
-						"root"
+						"root",
+						"My%20Folder"
 					]
 				}
 			},
@@ -506,7 +551,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{endpoint}}/browser/{{repo}}/root?objectId=CmzwUiaF2ftmImNBfkfxwhxVTslfjoLBZ1kT85OI_rE",
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root?objectId=o4rScw-r1_wP09f2joRAZQo3fi8i_o1vCYNNbMVHwf0&cmisselector=content",
 					"protocol": "https",
 					"host": [
 						"{{endpoint}}"
@@ -519,7 +564,11 @@
 					"query": [
 						{
 							"key": "objectId",
-							"value": "CmzwUiaF2ftmImNBfkfxwhxVTslfjoLBZ1kT85OI_rE"
+							"value": "o4rScw-r1_wP09f2joRAZQo3fi8i_o1vCYNNbMVHwf0"
+						},
+						{
+							"key": "cmisselector",
+							"value": "content"
 						}
 					]
 				}
@@ -557,12 +606,68 @@
 						},
 						{
 							"key": "propertyValue[0]",
-							"value": "New Name",
+							"value": "my cute cat",
 							"type": "text"
 						},
 						{
 							"key": "objectId",
-							"value": "Nr1aPxJAp7QDtakBSWQuv3v_Tcj_cqB5JHRLEzPyO5I",
+							"value": "o4rScw-r1_wP09f2joRAZQo3fi8i_o1vCYNNbMVHwf0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{endpoint}}/browser/{{repo}}/root",
+					"protocol": "https",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"browser",
+						"{{repo}}",
+						"root"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DMS Move",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cmisaction",
+							"value": "move",
+							"type": "text"
+						},
+						{
+							"key": "sourceFolderId",
+							"value": "lCbPoL9NKquX7El7U1-tC0sCHOkygZVuhFW5C_GMlaU",
+							"type": "text"
+						},
+						{
+							"key": "targetFolderId",
+							"value": "dLJz3o1rOntgg-p2d-zmdpbs1QfPdPbwmuNes7An36c",
+							"type": "text"
+						},
+						{
+							"key": "objectId",
+							"value": "DKFMr6YtoOt9lHmhSlAI3W7zyfIJBsDvGqtMohQgFT8",
 							"type": "text"
 						}
 					]
@@ -608,7 +713,7 @@
 						},
 						{
 							"key": "objectId",
-							"value": "gk-0PwFXyz-7y86ojx67ZEl5p31KRqrErrUVCGVGkqU",
+							"value": "DKFMr6YtoOt9lHmhSlAI3W7zyfIJBsDvGqtMohQgFT8",
 							"type": "text"
 						},
 						{
@@ -735,12 +840,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"key": "folder-id",
-			"value": "eae8c6800022b9bc3e89d566"
 		}
 	]
 }
