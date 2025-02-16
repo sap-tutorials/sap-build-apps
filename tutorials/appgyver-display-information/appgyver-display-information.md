@@ -7,7 +7,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 parser: v2
 ---
- 
+  
 # Display Fetched Data in Your App
 <!-- description --> Display data fetched from a public API, such as product names and calorific information, in your SAP Build app.
 
