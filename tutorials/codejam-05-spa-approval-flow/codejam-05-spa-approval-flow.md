@@ -111,7 +111,7 @@ Now that you have a data type, you want to add to the process another input for 
 
     | Name | Type | Required | List |
     |------|------|------|------|
-    | `Order Items` | **Order Item Type** | Checked | Checked |
+    | `Order Items` | **Order Item Type** |  ☑️ | ☑️ |
 
     Click **Apply**.
 
@@ -259,6 +259,8 @@ To do this, you will use the Script Task, which lets you write JavaScript snippe
     ![Run test](script9.png)
 
     This value can now be used elsewhere in the process.
+
+    >Note: If you get an error at this step, redo the **Step 2: Update inputs** of this tutorial.
 
 6. Click **Apply**.
 
