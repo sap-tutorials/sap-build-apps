@@ -304,5 +304,5 @@ In the meantime, here are some additional resources that provides more informati
 >
 >Do you know the concept of Fusion Development? 
 >
->Why do we have to create a new user for SAP Build Apps, when we have n existing user?
+>Why do we have to create a new user for SAP Build Apps, when we have an existing user?
 
