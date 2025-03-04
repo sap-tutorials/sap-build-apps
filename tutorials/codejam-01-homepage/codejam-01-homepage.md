@@ -459,7 +459,7 @@ To do this, you create bindings for your UI components, indicating what data you
   
 - [Marketplace Components (video)](https://www.youtube.com/watch?v=IHoINjwU_4Y)
 
-- [Lists and Repeat (video)](https://youtu.be/BPi8zXIF9RQ)
+- [Lists and Repeat (video)](https://youtu.be/KjofkK3JW6k)
 
 
 >**Things to Ponder**
