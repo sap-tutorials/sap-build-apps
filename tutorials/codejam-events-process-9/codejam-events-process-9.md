@@ -13,6 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description --> Create a second approval that can veto the badge but only within 24 hours, using custom variables, conditions and form events.
 
 
+
 ## Prerequisites
 - You have completed the previous tutorial for the event-driven processes CodeJam, [Create Actions to Get Data from S/4HANA](codejam-events-process-8).
 
