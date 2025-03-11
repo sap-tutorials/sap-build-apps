@@ -1,0 +1,1356 @@
+{
+    "specversion": "1.0",
+    "type": "sap.dmo.dvh.Vehicle.Created.v1",
+    "source": "/eu10/sap.dmo.dvh",
+    "subject": "808E6E30B65149978A443429B29FB300",
+    "id": "a823e884-5edc-4194-a81a-f3a3632417ee",
+    "time": "2018-04-08 08:31:00",
+    "datacontenttype": "application/json",
+    "sappassport": "string",
+    "data": {
+        "vehicle": {
+            "vehicleIdentifyingElements": {
+                "id": "808E6E30B65149978A443429B29FB300",
+                "externalID": "vehicle-008",
+                "vin": "1234567898888888"
+            },
+            "additionalBusinessPartner": [
+                {
+                    "id": "string",
+                    "role": "string"
+                }
+            ],
+            "description": [
+                {
+                    "short": "string",
+                    "long": "string",
+                    "language": "string"
+                }
+            ],
+            "vehicleImageURL": "string",
+            "sourceSystemID": "string",
+            "buildDate": "string",
+            "plannedIndicator": true,
+            "batchNumber": "string",
+            "businessTypeCode": "string",
+            "availabilityCode": "string",
+            "plantID": "string",
+            "plantName": "string",
+            "storageLocationID": "string",
+            "storageLocationDescription": "string",
+            "modelSpecification": {
+                "modelExternalID": "string",
+                "modelName": "string",
+                "manufacturerName": "string"
+            },
+            "vehicleSpecification": {
+                "interiorColor": "string",
+                "exteriorColor": "string",
+                "upholstery": "Leather",
+                "upholsteryColor": "string",
+                "wheelType": "Alloy",
+                "rimSize": {
+                    "value": 0,
+                    "uom": "string"
+                },
+                "rimSizeRear": {
+                    "value": 0,
+                    "uom": "string"
+                },
+                "tireSize": "255/45 R 20",
+                "tireSizeRear": "255/45 R 20",
+                "odometerReading": {
+                    "value": 0,
+                    "uom": "string"
+                },
+                "usedVehicle": true,
+                "homologationNumber": "string",
+                "steeringType": "string",
+                "gearBox": "string",
+                "template": [
+                    {
+                        "id": "string",
+                        "attributeGroup": [
+                            {
+                                "id": "string",
+                                "attribute": [
+                                    {
+                                        "id": "string",
+                                        "value": [
+                                            "string"
+                                        ],
+                                        "uom": "string",
+                                        "minValue": "string",
+                                        "maxValue": "string",
+                                        "operator": "string"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "location": {
+                "modificationTypeCode": "1",
+                "externalID": "string",
+                "id": "string"
+            },
+            "document": [
+                {
+                    "modificationTypeCode": "3",
+                    "externalID": "string",
+                    "id": "string"
+                }
+            ],
+            "component": [
+                {
+                    "modificationTypeCode": "3",
+                    "externalID": "string",
+                    "id": "string"
+                }
+            ],
+            "insuranceContract": [
+                {
+                    "modificationTypeCode": "2",
+                    "policyNumber": "string",
+                    "validityStartDate": "2024-03-28",
+                    "validityEndDate": "2024-03-28",
+                    "companyCode": "string",
+                    "companyName": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "netAmount": "Maximum value 9999999999999.99",
+                    "currency": "string",
+                    "paymentFrequencyCode": "string",
+                    "additionalText": "string",
+                    "sourceSystemID": "string",
+                    "typeCode": "string",
+                    "classCode": "string",
+                    "insuredID": "string",
+                    "insuredName": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "invoice": [
+                {
+                    "modificationTypeCode": "2",
+                    "number": "string",
+                    "itemNumber": "string",
+                    "categoryCode": "string",
+                    "date": "2024-03-28",
+                    "netAmount": "Maximum value 9999999999999.99",
+                    "grossAmount": "Maximum value 9999999999999.99",
+                    "currency": "string",
+                    "typeCode": "string",
+                    "paymentStatusCode": "string",
+                    "paymentDate": "2024-03-28",
+                    "counterPartyID": "string",
+                    "counterPartyName": "string",
+                    "cancellationInvoice": true,
+                    "cancelledInvoice": true,
+                    "cancelledInvoiceNumber": "string",
+                    "additionalText": "string",
+                    "documentTypeCode": "string",
+                    "documentTypeName": "string",
+                    "materialNumber": "string",
+                    "materialDescription": "string",
+                    "quantity": "string",
+                    "uomCode": "string",
+                    "taxAmount": "Maximum value 9999999999999.99",
+                    "taxCode": "string",
+                    "taxName": "string",
+                    "billToPartyID": "string",
+                    "billToPartyName": "string",
+                    "postingDate": "2024-03-28",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "sourceSystemID": "string",
+                    "supplierInvoiceReference": "string",
+                    "companyCode": "string",
+                    "companyName": "string",
+                    "plantID": "string",
+                    "plantName": "string",
+                    "purchasingOrganizationID": "string",
+                    "purchasingOrganizationName": "string",
+                    "salesOrganizationID": "string",
+                    "salesOrganizationName": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "financialDocument": [
+                {
+                    "modificationTypeCode": "2",
+                    "vehicleID": "string",
+                    "typeCode": "string",
+                    "number": "string",
+                    "itemNumber": "string",
+                    "companyCode": "string",
+                    "fiscalYear": "string",
+                    "typeName": "string",
+                    "companyName": "string",
+                    "postingDate": "2024-03-28",
+                    "documentDate": "2024-03-28",
+                    "transactionAmount": "Maximum value 9999999999999.99",
+                    "transactionCurrency": "string",
+                    "companyCodeAmount": "Maximum value 9999999999999.99",
+                    "companyCodeCurrency": "string",
+                    "baseUomCode": "string",
+                    "baseUomName": "string",
+                    "accountNumber": "string",
+                    "internalOrderNumber": "string",
+                    "costCenterNumber": "string",
+                    "costCenterDescription": "string",
+                    "profitCenter": "string",
+                    "controllingArea": "string",
+                    "quantity": "string",
+                    "debitIndicator": true,
+                    "postingPeriod": true,
+                    "documentTypeCode": "string",
+                    "documentTypeName": "string",
+                    "assignmentNumber": "string",
+                    "postingKey": "string",
+                    "transactionKey": "string",
+                    "chartOfAccounts": "string",
+                    "alternativeAccountNumber": "string",
+                    "customerNumber": "string",
+                    "taxReportingCountry": "string",
+                    "invoiceTypeCode": "string",
+                    "invoiceTypeName": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "wbsElement": "string",
+                    "wbsElementDescription": "string",
+                    "glAccountDescription": "string",
+                    "additionalText": "string",
+                    "sourceSystemID": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "plannedMaintenanceInterval": [
+                {
+                    "modificationTypeCode": "2",
+                    "typeCode": "string",
+                    "nextServiceDate": "2024-03-28",
+                    "nextServiceCounter": 0,
+                    "uomCode": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "additionalText": "string",
+                    "sourceSystemID": "string",
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "procurement": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "itemNumber": "string",
+                    "supplierID": "string",
+                    "supplierName": "string",
+                    "date": "2024-03-28",
+                    "amount": "Maximum value 9999999999999.99",
+                    "currency": "string",
+                    "typeCode": "string",
+                    "statusCode": "string",
+                    "costCenterNumber": "string",
+                    "costCenterDescription": "string",
+                    "assetNumber": "string",
+                    "internalOrderNumber": "string",
+                    "sourceSystemID": "string",
+                    "organizationID": "string",
+                    "organizationName": "string",
+                    "groupID": "string",
+                    "groupName": "string",
+                    "plantID": "string",
+                    "plantName": "string",
+                    "companyCode": "string",
+                    "companyName": "string",
+                    "additionalText": "string",
+                    "quantity": "string",
+                    "uomCode": "string",
+                    "uomName": "string",
+                    "materialNumber": "string",
+                    "materialDescription": "string",
+                    "leasingContractID": "string",
+                    "contractStartDate": "2024-03-28",
+                    "contractEndDate": "2024-03-28",
+                    "paymentFrequencyCode": "string",
+                    "serviceAmount": "Maximum value 9999999999999.99",
+                    "serviceRateFrequencyCode": "string",
+                    "earlyTerminationChargeAmount": "Maximum value 9999999999999.99",
+                    "mileageLimit": 0,
+                    "mileageLimitUomCode": "string",
+                    "mileageLimitFrequencyCode": "string",
+                    "documentTypeCode": "string",
+                    "documentTypeName": "string",
+                    "taxAmount": "Maximum value 9999999999999.99",
+                    "taxCode": "string",
+                    "taxName": "string",
+                    "deliveryDate": "2024-03-28",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "registration": [
+                {
+                    "modificationTypeCode": "2",
+                    "licensePlateNumber": "string",
+                    "firstRegistration": true,
+                    "startDate": "2024-03-28",
+                    "ownerID": "string",
+                    "ownerName": "string",
+                    "endDate": "2024-03-28",
+                    "typeCode": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "sourceSystemID": "string",
+                    "additionalText": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "sales": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "itemNumber": "string",
+                    "soldToPartyID": "string",
+                    "soldToPartyName": "string",
+                    "date": "2024-03-28",
+                    "amount": "Maximum value 9999999999999.99",
+                    "currency": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "quantity": "string",
+                    "uomCode": "string",
+                    "uomName": "string",
+                    "materialNumber": "string",
+                    "materialDescription": "string",
+                    "counterPartyID": "string",
+                    "counterPartyName": "string",
+                    "billToPartyID": "string",
+                    "billToPartyName": "string",
+                    "shipToPartyID": "string",
+                    "shipToPartyName": "string",
+                    "sourceSystemID": "string",
+                    "channelID": "string",
+                    "channelName": "string",
+                    "organizationID": "string",
+                    "organizationName": "string",
+                    "divisionID": "string",
+                    "divisionName": "string",
+                    "additionalText": "string",
+                    "typeCode": "string",
+                    "documentTypeCode": "string",
+                    "documentTypeName": "string",
+                    "deliveryDate": "2024-03-28",
+                    "quotationStartDate": "2024-03-28",
+                    "quotationEndDate": "2024-03-28",
+                    "orderReason": "string",
+                    "rejectionReason": "string",
+                    "customerReference": "string",
+                    "customerReferenceDate": "2024-03-28",
+                    "plantID": "string",
+                    "plantName": "string",
+                    "companyCode": "string",
+                    "companyName": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "serviceContract": [
+                {
+                    "modificationTypeCode": "2",
+                    "contractID": "string",
+                    "contractItemID": "string",
+                    "companyCode": "string",
+                    "companyName": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "startDate": "2024-03-28",
+                    "endDate": "2024-03-28",
+                    "typeCode": "string",
+                    "netValueAmount": "Maximum value 9999999999999.99",
+                    "currency": "string",
+                    "sourceSystemID": "string",
+                    "additionalText": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "serviceHistory": [
+                {
+                    "modificationTypeCode": "2",
+                    "serviceOrderNumber": "string",
+                    "serviceOrderItemNumber": "string",
+                    "completionDate": "2024-03-28",
+                    "typeCode": "string",
+                    "supplierName": "string",
+                    "statusCode": "string",
+                    "startDate": "2024-03-28",
+                    "mileage": 0,
+                    "mileageUomCode": "string",
+                    "additionalText": "string",
+                    "netAmount": "Maximum value 9999999999999.99",
+                    "currency": "string",
+                    "sourceSystemID": "string",
+                    "serviceHistoryPart": [
+                        {
+                            "modificationTypeCode": "2",
+                            "number": "string",
+                            "description": "string",
+                            "quantity": "string",
+                            "manufacturer": "string",
+                            "treadDepth": "string",
+                            "treadDepthUomCode": "string"
+                        }
+                    ],
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "usage": [
+                {
+                    "modificationTypeCode": "2",
+                    "contractNumber": "string",
+                    "driverID": "string",
+                    "contractStartDate": "2024-03-28T06:34:10.044Z",
+                    "driverFirstName": "string",
+                    "driverLastName": "string",
+                    "usageStartDate": "2024-03-28T06:34:10.044Z",
+                    "usageEndDate": "2024-03-28T06:34:10.044Z",
+                    "contractEndDate": "2024-03-28T06:34:10.044Z",
+                    "typeCode": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "paymentAmount": "Maximum value 9999999999999.99",
+                    "paymentFrequencyCode": "string",
+                    "mileageLimit": 0,
+                    "mileageLimitFrequencyCode": "string",
+                    "mileageUomCode": "string",
+                    "mileageAtUsageStart": "string",
+                    "mileageAtUsageEnd": "string",
+                    "earlyTerminationChargeAmount": "Maximum value 9999999999999.99",
+                    "amountCurrency": "string",
+                    "sourceSystemID": "string",
+                    "additionalText": "string",
+                    "additionalDriver": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "firstName": "string",
+                            "lastName": "string",
+                            "validFrom": "2024-03-28",
+                            "validTo": "2024-03-28",
+                            "additionalText": "string"
+                        }
+                    ],
+                    "cardProvider": [
+                        {
+                            "modificationTypeCode": "2",
+                            "cardNumber": "string",
+                            "providerName": "string",
+                            "cardName": "string",
+                            "validFrom": "2024-03-28",
+                            "validTo": "2024-03-28",
+                            "statusCode": "string",
+                            "statusName": "string",
+                            "additionalText": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "warranty": [
+                {
+                    "modificationTypeCode": "2",
+                    "number": "string",
+                    "typeCode": "string",
+                    "periodValue": 0,
+                    "periodCode": "string",
+                    "uomCode": "string",
+                    "startDate": "2024-03-28",
+                    "counterFrom": 0,
+                    "counterTo": 0,
+                    "providerID": "string",
+                    "providerName": "string",
+                    "sourceSystemID": "string",
+                    "additionalText": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "sourceSystemStatus": [
+                {
+                    "modificationTypeCode": "2",
+                    "statusID": "string",
+                    "code": "string",
+                    "dateTime": "2024-03-28",
+                    "sourceSystemID": "string"
+                }
+            ],
+            "relatedProcurement": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "itemNumber": "string",
+                    "supplierID": "string",
+                    "supplierName": "string",
+                    "date": "2024-03-28",
+                    "amount": "Maximum value 9999999999999.99",
+                    "currency": "string",
+                    "typeCode": "string",
+                    "statusCode": "string",
+                    "costCenterNumber": "string",
+                    "costCenterDescription": "string",
+                    "sourceSystemID": "string",
+                    "organizationID": "string",
+                    "organizationName": "string",
+                    "groupID": "string",
+                    "groupName": "string",
+                    "plantID": "string",
+                    "plantName": "string",
+                    "companyCode": "string",
+                    "companyName": "string",
+                    "additionalText": "string",
+                    "contractStartDate": "2024-03-28",
+                    "contractEndDate": "2024-03-28",
+                    "taxAmount": "Maximum value 9999999999999.99",
+                    "grossAmount": "Maximum value 9999999999999.99",
+                    "batchNumber": "string",
+                    "materialNumber": "string",
+                    "materialDescription": "string",
+                    "taxCode": "string",
+                    "taxName": "string",
+                    "deliveryDate": "2024-03-28",
+                    "quantity": "string",
+                    "uomCode": "string",
+                    "documentTypeCode": "string",
+                    "documentTypeName": "string",
+                    "materialGroupID": "string",
+                    "materialGroupName": "string",
+                    "performanceStartDateTime": "2024-03-28",
+                    "performanceEndDateTime": "2024-03-28",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "materialDocument": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "documentItemNumber": "string",
+                    "documentYear": 0,
+                    "documentDate": "2024-03-28",
+                    "postingDate": "2024-03-28",
+                    "typeCode": "string",
+                    "materialNumber": "string",
+                    "materialDescription": "string",
+                    "quantity": "string",
+                    "uomCode": "string",
+                    "issuingPlantID": "string",
+                    "issuingPlantName": "string",
+                    "issuingStorageLocationID": "string",
+                    "issuingStorageLocationName": "string",
+                    "receivingPlantID": "string",
+                    "receivingPlantName": "string",
+                    "receivingStorageLocationID": "string",
+                    "receivingStorageLocationName": "string",
+                    "goodsMovementTypeCode": "string",
+                    "goodsMovementTypeName": "string",
+                    "goodsMovementCancelled": true,
+                    "reversedDocumentID": "string",
+                    "reversedDocumentItemID": "string",
+                    "reversedDocumentYear": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "sourceSystemID": "string",
+                    "additionalText": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "deliveries": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "itemNumber": "string",
+                    "typeCode": "string",
+                    "statusCode": "string",
+                    "sourceSystemID": "string",
+                    "salesOrganizationID": "string",
+                    "salesOrganizationName": "string",
+                    "shippingPointID": "string",
+                    "shippingPointName": "string",
+                    "shipToPartyID": "string",
+                    "shipToPartyName": "string",
+                    "plantID": "string",
+                    "plantName": "string",
+                    "quantity": "string",
+                    "uomCode": "string",
+                    "documentTypeCode": "string",
+                    "documentTypeName": "string",
+                    "grossWeight": 0,
+                    "netWeight": "string",
+                    "weightUomCode": "string",
+                    "deliveryDate": "2024-03-28",
+                    "batchNumber": "string",
+                    "warehouseIDNumber": "string",
+                    "warehouseIDName": "string",
+                    "storageBinID": "string",
+                    "storageBinName": "string",
+                    "storageLocationID": "string",
+                    "storageLocationName": "string",
+                    "deliveryBlock": "string",
+                    "shippingCondition": "string",
+                    "shippingConditionName": "string",
+                    "loadingPoint": "string",
+                    "loadingPointName": "string",
+                    "transportationGroup": "string",
+                    "transportationGroupName": "string",
+                    "route": "string",
+                    "materialNumber": "string",
+                    "materialDescription": "string",
+                    "additionalText": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "relatedObject": [
+                {
+                    "modificationTypeCode": "2",
+                    "number": "string",
+                    "validFrom": "2024-03-28T06:34:10.045Z",
+                    "validTo": "2024-03-28",
+                    "typeCode": "string",
+                    "statusCode": "string",
+                    "statusName": "string",
+                    "sourceSystemID": "string",
+                    "primaryDifferentiatorTypeCode": "string",
+                    "primaryDifferentiatorValue": "string",
+                    "primaryDifferentiatorValueDescription": "string",
+                    "secondaryDifferentiatorTypeCode": "string",
+                    "secondaryDifferentiatorValue": "string",
+                    "secondaryDifferentiatorValueDescription": "string",
+                    "additionalText": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "sparePart": [
+                {
+                    "modificationTypeCode": "2",
+                    "id": "string",
+                    "partID": "string",
+                    "accessory": true,
+                    "batchNumber": "string",
+                    "sparepartName": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "extensionEntity1": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "documentItem": "string",
+                    "purposeCode": "string",
+                    "purposeName": "string",
+                    "documentStatusCode": "string",
+                    "documentStatusName": "string",
+                    "sourceSystemID": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "extensionEntity2": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "documentItem": "string",
+                    "purposeCode": "string",
+                    "purposeName": "string",
+                    "documentStatusCode": "string",
+                    "documentStatusName": "string",
+                    "sourceSystemID": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "extensionEntity3": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "documentItem": "string",
+                    "purposeCode": "string",
+                    "purposeName": "string",
+                    "documentStatusCode": "string",
+                    "documentStatusName": "string",
+                    "sourceSystemID": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "extensionEntity4": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "documentItem": "string",
+                    "purposeCode": "string",
+                    "purposeName": "string",
+                    "documentStatusCode": "string",
+                    "documentStatusName": "string",
+                    "sourceSystemID": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ],
+            "extensionEntity5": [
+                {
+                    "modificationTypeCode": "2",
+                    "documentNumber": "string",
+                    "documentItem": "string",
+                    "purposeCode": "string",
+                    "purposeName": "string",
+                    "documentStatusCode": "string",
+                    "documentStatusName": "string",
+                    "sourceSystemID": "string",
+                    "document": [
+                        {
+                            "modificationTypeCode": "3",
+                            "externalID": "string",
+                            "id": "string"
+                        }
+                    ],
+                    "businessTransactionDocumentReference": [
+                        {
+                            "modificationTypeCode": "3",
+                            "documentTypeCode": "string",
+                            "documentTypeName": "string",
+                            "typeCode": "string",
+                            "typeName": "string",
+                            "documentNumber": "string",
+                            "documentItemNumber": "string",
+                            "code": "string",
+                            "year": 0,
+                            "date": "2024-03-28",
+                            "sourceSystemID": "string",
+                            "dateTime": "2024-03-28"
+                        }
+                    ],
+                    "attribute": [
+                        {
+                            "modificationTypeCode": "2",
+                            "id": "string",
+                            "value": [
+                                "string"
+                            ],
+                            "uom": "string",
+                            "minValue": "string",
+                            "maxValue": "string",
+                            "operator": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
