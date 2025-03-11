@@ -1,0 +1,132 @@
+{
+  "asyncapi": "2.0.0",
+  "info": {
+    "title": "EDP CodeJam - Custom Business Partner Event",
+    "version": "1.0.0",
+    "description": "A custom business partner event created for the Event-driven processes CodeJam. A business partner is an organization (company, subsidiary), person or group of people or organizations in which your company has a business interest. The following events are available for business partner:\r\n\r\n* Business partner created\r\n\r\n"
+  },
+  "x-sap-api-type": "EVENT",
+  "x-sap-shortText": "Informs a remote system about created business partners in the simulated SAP S/4HANA Cloud system.",
+  "x-sap-stateInfo": {
+    "state": "ACTIVE"
+  },
+  "channels": {
+    "ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/Dan_Wroblewski": {
+      "subscribe": {
+        "message": {
+          "$ref": "#/components/messages/sap_s4_cust_ext_ZBUSINESSPARTNER_Created_v1"
+        }
+      }
+    }
+  },
+  "components": {
+    "messages": {
+      "sap_s4_cust_ext_ZBUSINESSPARTNER_Created_v1": {
+        "name": "cust.ext.codejam.ZBUSINESSPARTNER.Created.v1",
+        "summary": "BusinessPartner Created",
+        "description": "This event is raised when Business Partner is created.",
+        "headers": {
+          "properties": {
+            "type": {
+              "const": "cust.ext.codejam.ZBUSINESSPARTNER.Created.v1"
+            },
+            "datacontenttype": {
+              "const": "application/json"
+            }
+          }
+        },
+        "payload": {
+          "$ref": "#/components/schemas/sap_s4_cust_ext_ZBUSINESSPARTNER_Created_v1"
+        },
+        "traits": [
+          {
+            "$ref": "#/components/messageTraits/CloudEventContext"
+          }
+        ]
+      }
+    },
+    "schemas": {
+      "sap_s4_cust_ext_ZBUSINESSPARTNER_Created_v1": {
+        "type": "object",
+        "properties": {
+          "BusinessPartner": {
+            "description": "# Definition\r\n\r\nKey identifying a **business partner** in the SAP system. The key is unique within a client.",
+            "type": "string",
+            "maxLength": 10
+          },
+          "FirstName": {
+            "description": "# Definition\r\n\r\nFirst name of a **business partner** in the SAP system.",
+            "type": "string",
+            "maxLength": 40
+          },
+          "LastName": {
+            "description": "# Definition\r\n\r\nLast name of a **business partner** in the SAP system.",
+            "type": "string",
+            "maxLength": 40
+          },
+          "YY1_SAPCommunityUsername": {
+            "description": "# Definition\r\n\r\nSAP Community Username associated to the Business Partner. Also, this value will be surface to the topic where it will be published and as a header in the CloudEvent (sapcommunityusername).",
+            "type": "string",
+            "maxLength": 50
+          }
+        }
+      }
+    },
+    "messageTraits": {
+      "CloudEventContext": {
+        "headers": {
+          "type": "object",
+          "properties": {
+            "specversion": {
+              "description": "The version of the CloudEvents specification which the event uses. This enables the interpretation of the context.",
+              "type": "string",
+              "const": "1.0"
+            },
+            "type": {
+              "description": "Type of occurrence which has happened. Often this property is used for routing, observability, policy enforcement, etc.",
+              "type": "string",
+              "minLength": 1
+            },
+            "source": {
+              "description": "This describes the event producer.",
+              "type": "string",
+              "format": "uri-reference"
+            },
+            "subject": {
+              "description": "The subject of the event in the context of the event producer (identified by source).",
+              "type": "string",
+              "minLength": 1
+            },
+            "id": {
+              "description": "ID of the event.",
+              "type": "string",
+              "minLength": 1,
+              "examples": ["6925d08e-bc19-4ad7-902e-bd29721cc69b"]
+            },
+            "time": {
+              "description": "Timestamp of when the occurrence happened. Must adhere to RFC 3339.",
+              "type": "string",
+              "format": "date-time",
+              "examples": ["2018-04-05T17:31:00Z"]
+            },
+            "datacontenttype": {
+              "description": "Describe the data encoding format",
+              "type": "string",
+              "const": "application/json"
+            }
+          },
+          "required": [
+            "id",
+            "specversion",
+            "source",
+            "type"
+          ]
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Business Documentation",
+    "url": "https://developers.sap.com/tutorial-navigator.html"
+  }
+}
