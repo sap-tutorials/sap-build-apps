@@ -3,7 +3,7 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 20
+time: 15
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
@@ -126,7 +126,7 @@ In order to trigger a process from SAP Build Apps, you must first publish the pr
 
     ![Select project](images/publish-process.png)
 
-    The side panel sould open.
+    The side panel should open.
 
 2. Click **Versions**.
 
@@ -140,7 +140,7 @@ In order to trigger a process from SAP Build Apps, you must first publish the pr
 
     A confirmation dialog is displayed. Click **Publish**.
     
-    You should get a dialog that the process was published.
+    **Published to Library** should now appear next to the latest version of you project.
 
     ![All OK](images/publish-process-ok.png)
 

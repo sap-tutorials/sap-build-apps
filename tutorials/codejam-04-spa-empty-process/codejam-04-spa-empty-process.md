@@ -3,7 +3,7 @@ parser: v2
 author_name: Rekha DR
 author_profile: https://github.com/Rekha-DR
 auto_validation: true
-time: 20
+time: 15
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
@@ -133,9 +133,9 @@ In this step, you will specify the inputs required for the process.
 
     |  Field Name                | Type | Required |
     |  :-------------            | :------------- | :-------------
-    |  `Order ID`                  | **String** | Yes |
-    |  `Total`                  | **Number** | Yes |
-    |  `Business Partner`          | **String** | Yes |
+    |  `Order ID`                  | **String** | 	☑️  |
+    |  `Total`                  | **Number** | 	☑️  |
+    |  `Business Partner`          | **String** | 	☑️  |
   
     >The editor will remove leading and trailing spaces.
 
@@ -421,4 +421,6 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 >What are the different ways to trigger (start) a process instance?
 >
 >You deployed the process to an environment. What is the purpose of an environment?
+>
+>When we created a process project, it asked us to create a process artifact separately. Why did it not just automatically create a process artifact?
 

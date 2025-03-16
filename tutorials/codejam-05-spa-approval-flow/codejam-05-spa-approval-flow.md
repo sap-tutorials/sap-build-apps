@@ -111,7 +111,7 @@ Now that you have a data type, you want to add to the process another input for 
 
     | Name | Type | Required | List |
     |------|------|------|------|
-    | `Order Items` | **Order Item Type** |  ☑️ | ☑️ |
+    | `Order Items` | **Order Item Type** | ☑️ | ☑️ |
 
     Click **Apply**.
 
@@ -260,7 +260,7 @@ To do this, you will use the Script Task, which lets you write JavaScript snippe
 
     This value can now be used elsewhere in the process.
 
-    >Note: If you get an error at this step, redo the **Step 2: Update inputs** of this tutorial.
+    >If you get an error at this step, redo the **Step 2: Update inputs** of this tutorial.
 
 6. Click **Apply**.
 
@@ -555,7 +555,7 @@ Note that all forms will be sent to **Process started by** – which is you. You
 ### Monitor the Process  
 Once triggered, you can monitor the process instance from the **Monitor** section of the **Monitoring** tab.
 
-1. You can use the shortcut of the **Show Instances** from the **Manage** tab to show your instances.
+1. You can use the shortcut button **Show Instances** to show your instances.
 
     ![Show instances](showinstances.png)
 
@@ -571,11 +571,13 @@ Once triggered, you can monitor the process instance from the **Monitor** sectio
 
     - Under **Logs**, you can see a condition was completed, and you can see that because the total was under 1000, it was automatically approved.
 
+        ![Logs](images/test-3.png)
+
         >The entire process is not yet completed because the notification form must still be acknowledged.
 
     - Under **Context**, you can see all the data you provided in the JSON when you started the instance.
     
-    ![Monitoring](images/test-3.png)
+        ![Context](images/test-3a.png)
 
 4. Open the Inbox by clicking the **My Inbox** icon in the header.
 

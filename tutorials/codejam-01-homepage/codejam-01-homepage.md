@@ -3,7 +3,7 @@ parser: v2
 author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
-time: 30
+time: 25
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
@@ -240,7 +240,7 @@ Containers are components that can hold other components, and let you configure 
    
     ![View](images/9-switch-uicanvas-toggle-variables.png)
 
-    Since we want eventually our app o be a mobile app, let's change the form factor by clicking the UI size dropdown on the upper right, and selecting **Mobile**.
+    Since we want eventually our app to be a mobile app, let's change the form factor by clicking the UI size dropdown on the upper right, and selecting **Mobile**.
 
     ![Mobile](images/9-switch-mobile.png)
 
@@ -472,6 +472,6 @@ To do this, you create bindings for your UI components, indicating what data you
 >
 >In order to set repeat, what type of binding do you need (trick question)? 
 >
->When you create a Repeat, what binding type do you now have access to?
+>When you create a repeat, what binding type do you now have access to?
 
 

@@ -3,7 +3,7 @@ parser: v2
 author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
-time: 15
+time: 20
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
@@ -262,7 +262,7 @@ Now that you have a cart ID, you can add an item to the cart.
 
     ![Open details page](images/add-items-1.png)
 
-2. Select the **Add to Cart** button and click at the bottom **Add logic to Button - Add to Cart**. This opens the logic canvas pane.
+2. Select the **Add to Cart** button and make sure the logic canvas at the bottom is open (if not, click at the bottom **Add logic to Button - Add to Cart** to open the logic canvas). 
 
     ![Open Logic Canvas](images/1-add-logic-link.png)
 
@@ -416,6 +416,8 @@ And behind the scenes, you are reading and updating a CAP service.
 >What other types of events can I capture and create logic for?
 >
 >What are the 2 ways you can navigate to a new page? 
+>
+>When we deleted an item in the cart, we wanted to refresh the cart, so we retrieved the item records again and saved them to the data variable. How else could we have updated our UI, that perhaps would have been faster?
 
 
 
