@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description --> Create an action project for defining the API call for retrieving additional data about the business partner, who ID was sent in the event. 
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Add Approval Step and Use Inbox](codejam-events-process-7c).
+- You have completed the previous tutorial for the event-driven processes CodeJam, [Add Approval Step and Use Inbox](codejam-events-process-7).
 
 ## You will learn
 - How to create an action (for calling APIs)
