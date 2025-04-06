@@ -64,8 +64,8 @@
             "type": "string",
             "maxLength": 40
           },
-          "YY1_SAPCommunityUsername": {
-            "description": "# Definition\r\n\r\nSAP Community Username associated to the Business Partner. Also, this value will be surface to the topic where it will be published and as a header in the CloudEvent (sapcommunityusername).",
+          "YY1_SAPCommunityDisplayName": {
+            "description": "# Definition\r\n\r\nSAP Community Display Name associated to the Business Partner. Also, this value will be surface to the topic where it will be published and as a header in the CloudEvent (sapcommunityuname).",
             "type": "string",
             "maxLength": 50
           }
@@ -113,6 +113,12 @@
               "description": "Describe the data encoding format",
               "type": "string",
               "const": "application/json"
+            }
+            ,
+            "sapcommunitydispname": {
+              "description": "Display name in the SAP Community",
+              "type": "string",
+              "maxLength": 20
             }
           },
           "required": [

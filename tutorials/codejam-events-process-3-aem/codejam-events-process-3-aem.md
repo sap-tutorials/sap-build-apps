@@ -32,7 +32,7 @@ So far, we've learned about events in the SAP ecosystem, CloudEvents and the dif
 
 >🔐 Your instructor will provide you with the details to access the SAP Integration Suite, advanced event mesh instance.
 
-👉 Navigate to the instance URL provided – in the format `https://[region].console.pubsub.em.services.cloud.sap/login?tenant-id=[our-tenant-id]`. Enter the user credentials provided to you – in the format `EDI-[country]-[SAPCommunityUsername]@sap.com`.
+👉 Navigate to the instance URL provided – in the format `https://[region].console.pubsub.em.services.cloud.sap/login?tenant-id=[our-tenant-id]`. Enter the user credentials provided to you – in the format `EDI-[country]-[SAPCommunityDisplayName]@sap.com`.
 
 You'll get the start page.
 
@@ -73,7 +73,7 @@ Mission control is divided into two sections:
 
 The event broker service is the main object that we interact with in AEM. It is the service that provides the messaging capabilities to our client applications. An event broker service can be created in different cloud providers, be deployed to different regions, be part of a cluster and also be part of a mesh.
 
-In our case, we have four event broker services (only three are in our mesh – click Cluster Manager to see all of them):
+In our case, we have four event broker services (only three are in our mesh – click `Cluster Manager` to see all of the event broker services):
 
 - AMER-USEast-Broker
 
@@ -149,44 +149,44 @@ Now, let's explore an event broker service available in our instance.
 
    - Click on the `Open Broker Manager` button.
 
-        ![Open Broker Manager](assets/try1.png)
+    ![Open Broker Manager](assets/try1.png)
     
    - On the `Publisher` side, expand the area for entering the credentials.
   
-        ![Expand credentials](assets/try2.png)
+    ![Expand credentials](assets/try2.png)
 
    - From the **participants handbook**, enter the credentials:`Broker URL`, `Message VPN`, `Client Username` and `Client Password`.
 
-        ![Publisher - Establish connection](assets/publisher-establish-connection.png)
+    ![Publisher - Establish connection](assets/publisher-establish-connection.png)
 
    - Click **Connect**.
 
-        You should now see **Connected**.
+    You should now see **Connected**.
 
-        ![Publisher - Connected](assets/try3.png)
+    ![Publisher - Connected](assets/try3.png)
 
    - On the `Subscriber` side, expand the credentials area, and select **Same as Publisher** checkboxes for the first three credentials.
 
-        ![Subscriber credentials](assets/try4.png)
+    ![Subscriber credentials](assets/try4.png)
 
-        Click **Connect**.
+    Click **Connect**.
 
    - After establishing the connection, subscribe to the topic `try-me` by clicking the **Subscribe** button.
 
-        ![Subscribe](assets/try5.png)
+    ![Subscribe](assets/try5.png)
 
    - Back on the **Publisher** side, publish a message to the topic `try-me` by clicking the **Publish** button.
 
-        Check the message being consumed on the **Subscriber** side.
+    Check the message being consumed on the **Subscriber** side.
 
-        ![Try Me! - Message exchange](assets/try6.png)
+    ![Try Me! - Message exchange](assets/try6.png)
 
 
 ### Event Meshes
 
 As we learned in the previous section, an event mesh is composed of multiple event brokers that can span different regions and data centers. An event broker can only belong to a single mesh and the communication between event broker services in a mesh is powered by Dynamic Message Routing.
 
-> Dynamic Message Routing is the underlying technology enabling message exchange between different event broker services (nodes) in an event mesh. DMR allows connected nodes to automatically determine how to forward event messages within the same site (horizontal scaling) or between sites (multi-site scaling) to exchange subscription information.
+> **Dynamic Message Routing** is the underlying technology enabling message exchange between different event broker services (nodes) in an event mesh. DMR allows connected nodes to automatically determine how to forward event messages within the same site (horizontal scaling) or between sites (multi-site scaling) to exchange subscription information.
 
 > What's great about DMR is that the event brokers dynamically discover how to route messages between each other, without the need for manual configuration. A client application doesn't need to know the exact event broker service to which it should publish or subscribe messages. The event mesh takes care of routing the messages to the correct destination.
 

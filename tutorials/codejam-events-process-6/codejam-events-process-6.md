@@ -8,7 +8,7 @@ tags: [ tutorial>intermediate, software-product>sap-build, software-product:tech
 primary_tag: software-product>sap-build
 ---
 
-# 6 - Capture Events in SAP Build Process Automation 
+# 6 - Capture Events in SAP Build Process Automation
 
 <!-- description --> Now that you've created events and sent them to your SAP Build Process Automation tenant, create a project that can be triggered by those events.
 
@@ -23,7 +23,7 @@ primary_tag: software-product>sap-build
 
 
 ### Download event spec
-Since we want to use events, we must let SAP Build know which events we want consume in our SAP Build projects, by creating an event project. Such event projects can be based on standard S/4HANA events, or our  own custom events.
+Since we want to use events, we must let SAP Build know which events we want consume in our SAP Build projects, by creating an event project. Such event projects can be based on standard SAP S/4HANA Cloud events, or our  own custom events.
 
 Since we created a custom event, we will have to provide an event definition, or spec. Below is part of that spec.
 
@@ -33,7 +33,7 @@ Download our [Business Partner event spec](https://github.com/sap-tutorials/sap-
  
 
 ### Open SAP Build
-1. In the cockpit of your trial account, go to **Instances and bscriptions**.
+1. In the cockpit of your trial account, go to **Instances and Subscriptions**.
 
     ![Instances and Subscriptions](assets/open1.png)
 
@@ -45,7 +45,7 @@ Download our [Business Partner event spec](https://github.com/sap-tutorials/sap-
 
     ![SAP Build Lobby](assets/open3.png)
 
-    On the left are a bunch of supporting / adminstrative tasks, including a place for defining events.
+    On the left are a bunch of supporting / administrative tasks, including a place for defining events.
 
 
 
@@ -174,11 +174,11 @@ Every process needs a trigger to start a new instance of the process.
 
     ![Select event](assets/trigger3.png)
 
-    For the event detials, including name, keep all the defaults. Click **Create**.
+    For the event details, including name, keep all the defaults. Click **Create**.
 
     ![Name event](assets/trigger4.png)
 
-4. Click **Save** (upper righ).
+4. Click **Save** (upper right).
 
 You can now see he trigger at the start of the process. The process is ready to be triggered by our event.
 
@@ -250,7 +250,7 @@ You can now see he trigger at the start of the process. The process is ready to 
 
     ![Deploy triggers](assets/release7.png)
 
-The status of the project will change to **Deployed**, with a marker that says the project is **Acive**
+The status of the project will change to **Deployed**, with a marker that says the project is **Active**
 
 ![Deployed](assets/release8.png)
 
@@ -261,12 +261,12 @@ The status of the project will change to **Deployed**, with a marker that says t
 ### Trigger process (manually)
 Now we want to trigger the process. 
 
-But we are going to do it manually without creating an S/4HANA business partner and then an event to trigger the process – we will postpone our gratification do that in the next tutorial, so be patient.
+But we are going to do it manually without creating a business partner and then an event to trigger the process – we will postpone our gratification do that in the next tutorial, so be patient.
 
 
 1. On the main SAP Build page, select **Control Tower**.
 
-    >You should have a browser tab open to the main SAP Build page. If not, click on the SAP logo. 
+    >You should have a browser tab open to the main SAP Build page. If not, click on the SAP logo.
 
     ![Control Tower](assets/run1.png)
 
@@ -310,9 +310,9 @@ But we are going to do it manually without creating an S/4HANA business partner 
         "BusinessPartner": "1005773",
         "FirstName": "Alan",
         "LastName": "Turing",
-        "YY1_SAPCommunityUsername": "[SAPCommunityUsername]"
+        "YY1_SAPCommunityDisplayName": "[SAPCommunityDisplayName]"
     },
-    "sapcommunityusername": "[SAPCommunityUsername]"
+    "sapcommunitydispname": "[SAPCommunityDisplayName]"
     }
     ```
 

@@ -7,11 +7,9 @@ time: 20
 tags: [ tutorial>intermediate, software-product>sap-build, software-product:technology-platform/sap-business-technology-platform/sap-integration-suite, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
-
+ 
 # 9 - Add 2nd Approval With Custom Variables, Conditions and Form Events
-
 <!-- description --> Create a second approval that can veto the badge but only within 24 hours, using custom variables, conditions and form events.
-
 
 
 ## Prerequisites
@@ -190,7 +188,7 @@ This is a very simple use of the Script Task, but we wanted to introduce it to y
     | Field | Value |
     |-------|--------|
     | **BP ID** | Process Inputs > data > BusinessPartner | 
-    | **Community ID** | Process Inputs > data > YY1_SAPCommunityUsername | 
+    | **Community ID** | Process Inputs > data > YY1_SAPCommunityDisplayName | 
     | **Country** | Retrieves busines partner > result > Business Partner > Business Partner | 
     | **First Name** | Process Inputs > data > FirstName | 
     | **Grouping** | Retrieves busines partner > result > Business Partner > Grouping | 

@@ -50,9 +50,9 @@ By the end of this tutorial, we will achieve a communication scenario like the o
 
 A REST delivery point (RDP) is a provisioned object on an event broker service that facilitates message delivery to REST consumers. The RDP can be bound to message queues to deliver messages from those queues to REST consumers. The RDP maintains a list of REST consumers, which are identified by their remote connection information.
 
-For this tutorial, we will use the `APJ-IN-Broker` event broker service and we will reuse the queue we created in the previous tutorial: `EDP_BP_Created_[SAPCommunityUsername]`. 
+For this tutorial, we will use the `APJ-IN-Broker` event broker service and we will reuse the queue we created in the previous tutorial: `EDP_BP_Created_[SAPCommunityDisplayName]`. 
 
-This queue is subscribed to the `default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityUsername]` topic, where the events for the BusinessPartner object created in the simulated SAP S/4HANA Cloud are being published.
+This queue is subscribed to the `default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]` topic, where the events for the BusinessPartner object created in the simulated SAP S/4HANA Cloud are being published.
 
 
 
@@ -60,7 +60,7 @@ This queue is subscribed to the `default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINES
 
 ### Create a REST Delivery Point
 
-Now that we have our queue, we are ready to create a REST Delivery Point (RDP) to forward messages from the `EDP_BP_Created_[SAPCommunityUsername]` queue to a REST consumer.
+Now that we have our queue, we are ready to create a REST Delivery Point (RDP) to forward messages from the `EDP_BP_Created_[SAPCommunityDisplayName]` queue to a REST consumer.
 
 1. Inside the `APJ-IN-Broker` service broker, click **Open Broker Manager**.
 
@@ -68,13 +68,13 @@ Now that we have our queue, we are ready to create a REST Delivery Point (RDP) t
 
     Click **REST**.
 
-    ![REST client](assets/rest1.png)
+    ![REST client](assets/Rest1.png)
 
 3. Click **+ REST Delivery Point**.
 
-    ![New REST client](assets/rest2.png)
+    ![New REST client](assets/Rest2.png)
 
-    Enter a name, `EDP-SBPA-BPCreated-[SAPCommunityUsername]`, (replacing `[SAPCommunityUsername]` with your SAP Community username).
+    Enter a name, `EDP-SBPA-BPCreated-[SAPCommunityDisplayName]`, (replacing `[SAPCommunityDisplayName]` with your SAP Community display name).
 
     ![RDP Creation](assets/rdp-creation.png)
 
@@ -104,7 +104,7 @@ Now that we've created a REST Delivery Point, we have to specify where we want e
 
 1. Navigate to the **REST Consumers** tab.
    
-2. Click **+ REST Consumer**, and enter the name `SBPA_[SAPCommunityUsername]`, (replacing `[SAPCommunityUsername]` with your SAP Community username) 
+2. Click **+ REST Consumer**, and enter the name `SBPA_[SAPCommunityDisplayName]`, (replacing `[SAPCommunityDisplayName]` with your SAP Community display name) 
     
     Click **Create**.
 
@@ -146,7 +146,7 @@ The newly created REST consumer will be listed in the REST Consumers tab. Now we
 
 2. Click **+ Queue Binding**. 
     
-    Select the queue you previously created, named `EDP_BP_Created_[SAPCommunityUsername]` but with your SAP Community username.
+    Select the queue you previously created, named `EDP_BP_Created_[SAPCommunityDisplayName]` but with your SAP Community display name.
 
     ![Queue binding set up](assets/queue-binding.png)
 
@@ -214,7 +214,7 @@ First, let's see all the objects that we've configured.
 
     ![RDP object](assets/rdp-objects.png)
 
-2. Navigate to the **REST Consumers** tab, and click the name of your REST consumer, something like `SBPA_[SAPCommunityUsername]`.
+2. Navigate to the **REST Consumers** tab, and click the name of your REST consumer, something like `SBPA_[SAPCommunityDisplayName]`.
 
     ![Select REST consumer](assets/enable1.png)
 
@@ -232,7 +232,7 @@ First, let's see all the objects that we've configured.
 
     Select the **Summary** tab.
     
-5. Click on the **Connector / RDP**, named `EDP-SBPA-BPCreated-[SAPCommunityUsername]`, but with your SAP Community username.
+5. Click on the **Connector / RDP**, named `EDP-SBPA-BPCreated-[SAPCommunityDisplayName]`, but with your SAP Community display name.
     
     Click **Edit** on the top right, and enable the RDP by toggling the **Enabled** setting.
     
@@ -246,7 +246,7 @@ First, let's see all the objects that we've configured.
 
     This will trigger a Business Partner event which you will receive in your queue.
 
-    Check that the `EDP_BP_Created_[SAPCommunityUsername]` queue (inside your RDP) is accumulating messages.
+    Check that the `EDP_BP_Created_[SAPCommunityDisplayName]` queue (inside your RDP) is accumulating messages.
 
     ![Received messages in queue](assets/queue-messages-received.png)
 

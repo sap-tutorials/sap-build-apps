@@ -227,7 +227,7 @@ We will want the 3rd-party system to call our process back, and we need to suppl
     | Field | Value | 
     |------|--------|
     | **businesspartnerId** | Process Inputs > data > BusinessPartner |
-    | **communityId** | Process Inputs > data > YY1_SAPCommunityUsername |
+    | **communityId** | Process Inputs > data > YY1_SAPCommunityDisplayName |
     | **firstname** | Process Inputs > data > FirstName |
     | **lastname** | Process Inputs > data > LastName |
     | **processInstanceId** | Custom Variables > instanceID |

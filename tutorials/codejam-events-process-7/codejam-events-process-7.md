@@ -148,7 +148,7 @@ The binding step enables you to reuse steps, for example, to send the same appro
     | Field | Value |
     |-------|--------|
     | **BP ID** | Process Inputs > data > BusinessPartner | 
-    | **Community ID** | Process Inputs > data > YY1_SAPCommunityUsername | 
+    | **Community ID** | Process Inputs > data > YY1_SAPCommunityDisplayName | 
     | **First Name** | Process Inputs > data > FirstName | 
     | **Last Name** | Process Inputs > data > LastName | 
 

@@ -103,7 +103,7 @@ A data event is also a message that is sent to inform that something has happene
 
 As an example, let's get familiar with the [SAP Digital Vehicle Hub Business Events](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents/resource) available from SAP Digital Vehicle Hub. We can see that there is an operation available – Vehicle Created (`/sap.dmo.dvh.Vehicle.Created.v1`), and within it, we can find an example payload of the event. 
 
-![Exploring data event](explore4.png)
+![Exploring data event](explore4.jpg)
 
 You can see that it contains lots of information – vehicle information, business partner info, storage location, model specification, vehicle specification, tire information, and more. The [full sample](vehicle-created-sample.json) can be found in the assets folder. This event is an example of a data event.
 
@@ -306,14 +306,14 @@ One of the greatest features of SAP Build Process Automation is that it comes wi
 
 In the menu header of the SAP Business Accelerator Hub, click **SAP Build**.
 
-![Exploring SAP Build](build1.png)
+![Exploring SAP Build](build1.jpg)
 
 This will show hundreds of tiles for templates or SDKs that can be used in SAP Build Process Automation. These lead to documentation to these assets – if you want to use them, a similar list appears inside SAP Build in the SAP Build Store, where you quickly create projects based on these templates.
 
 
 Enter **service orders** in the search box, and click the tile **Mass Creation of Maintenance Service Orders**.
 
-![Mass Creation of Maintenance Service Orders](build2.png)
+![Mass Creation of Maintenance Service Orders](build2.jpg)
 
 You will get a page about these specific template. 
 
@@ -321,13 +321,13 @@ You will get a page about these specific template.
 
 - **Artifacts:** Lists all the assets contained within the project and what they are for
 
--**Documentation:** Links to documentation, generally a PDF hat you can download  
+- **Documentation:** Links to documentation, generally a PDF hat you can download  
 
 ![Mass Creation of Maintenance Service Orders documentation](build3.png)
 
 
 #### APIs
-You've already seen in the site APIs for S/4HANA. There are also key APIs for SAP Build. 
+You've already seen in the site APIs for SAP S/4HANA Cloud. There are also key APIs for SAP Build. 
 
 For example, you can explore the [SAP Build Process Automation API package](https://hub.sap.com/package/SAPProcessAutomation/overview).  
 
@@ -340,7 +340,7 @@ There are both OData and plain REST APIs for performing a variety of actions: tr
 #### Automation SDKs
 Go back to the SAP Build area, but search by SDK – or just click [SDKs](https://hub.sap.com/build?searchterm=SDK).
 
-![SDKs](build5.png)
+![SDKs](build5.jpg)
 
 Though you can consider these as just more pre-built content, SDKs are special projects that enable SAP Build Process Automation automation bots to connect to different applications: for example, Microsoft Office, Google Productivity Tools, SAPGUi, UI5 apps and more.
 

@@ -129,7 +129,7 @@ We published a simple event in the previous tutorial by using the **Try Me!** pa
 
 By the end of this tutorial we will achieve a communication scenario like the one below. Enter the `Try Me!`.
 
-![Publish and subscribe to the default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/\[SAPCommunityUsername\] topic](./assets/edp-codejam-exercise-5.png)
+![Publish and subscribe to the default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/\[SAPCommunityDisplayName\] topic](./assets/edp-codejam-exercise-5.png)
 
 1. Navigate to the `APJ-IN-Broker` event broker service and click the **Open Broker manager** link. 
 
@@ -147,13 +147,13 @@ By the end of this tutorial we will achieve a communication scenario like the on
 
     We have connected the Publisher section to the event broker service. 
     
-4. For the topic, enter the following but replace `[SAPCommunityUsername]` with your SAP Community username.
+4. For the topic, enter the following but replace `[SAPCommunityDisplayName]` with your SAP Community display name.
    
     ```JSON
-    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityUsername]
+    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
     ``` 
 
-    For the payload, enter the following but replace `[SAPCommunityUsername]` with your SAP Community username (it appears twice).
+    For the payload, enter the following but replace `[SAPCommunityDisplayName]` with your SAP Community display name (it appears twice).
 
     ```JSON
     {
@@ -167,9 +167,9 @@ By the end of this tutorial we will achieve a communication scenario like the on
         "BusinessPartner": "1005773",
         "FirstName": "Alan",
         "LastName": "Turing",
-        "YY1_SAPCommunityUsername": "[SAPCommunityUsername]"
+        "YY1_SAPCommunityDisplayName": "[SAPCommunityDisplayName]"
     },
-    "sapcommunityusername": "[SAPCommunityUsername]"
+    "sapcommunitydispname": "[SAPCommunityDisplayName]"
     }
     ```
 
@@ -187,9 +187,9 @@ By the end of this tutorial we will achieve a communication scenario like the on
 
 >The payload above is a custom CloudEvents message that's generated when a Business Partner is created in the simulated SAP S/4HANA Cloud system that we will be using as part of this CodeJam. 
 >
->For now, we are just copying and pasting the payload but in a later step we will be triggering a similar payload from a UI. We can see that the message contains the Business Partner ID, First Name, Last Name, and the SAP Community username of the person who created the Business Partner. The `YY1_SAPCommunityUsername` field mimics a custom field that we've added to the Business Partner object in the SAP S/4HANA Cloud system. The `sapcommunityusername` field is a custom header that we are including in our CloudEvents message.
+>For now, we are just copying and pasting the payload but in a later step we will be triggering a similar payload from a UI. We can see that the message contains the Business Partner ID, First Name, Last Name, and the SAP Community display name of the person who created the Business Partner. The `YY1_SAPCommunityDisplayName` field mimics a custom field that we've added to the Business Partner object in the SAP S/4HANA Cloud system. The `sapcommunitydispname` field is a custom header that we are including in our CloudEvents message.
 >
->You might have also noticed that the topic structure for the custom event (*default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityUsername]*) is different from the one used by a standard event (*default/sap.s4/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*). This is because a different topic structure is used in SAP S/4HANA Cloud when generating custom events. You can learn more about extending out-of-the-box events in SAP S/4HANA Cloud here: [Extending SAP S/4HANA Cloud events with RAP and event filtering plus dynamic topics](https://www.youtube.com/watch?v=Q4H0LNZi7Dg).
+>You might have also noticed that the topic structure for the custom event (*default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]*) is different from the one used by a standard event (*default/sap.s4/S4D/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1*). This is because a different topic structure is used in SAP S/4HANA Cloud when generating custom events. You can learn more about extending out-of-the-box events in SAP S/4HANA Cloud here: [Extending SAP S/4HANA Cloud events with RAP and event filtering plus dynamic topics](https://www.youtube.com/watch?v=Q4H0LNZi7Dg).
 
 
 > **Delivery Mode**
@@ -207,10 +207,10 @@ We've successfully connected the publisher section to the event broker by provid
 
 1. Click **Connect** in the **Subscriber** section to log in. It will the credentials from the publisher side.
 
-2. Enter the following in the topic field but replace `[SAPCommunityUsername]` with your SAP Community username. 
+2. Enter the following in the topic field but replace `[SAPCommunityDisplayName]` with your SAP Community display name. 
    
     ```JSON
-    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityUsername]
+    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
     ``` 
 
 3. Click **Subscribe**.
@@ -247,7 +247,7 @@ But what if we want to ensure that we receive all messages published, even if ou
    
     ![New queue](assets/queue2.png)
    
-    Enter the name `EDP_BP_Created_[SAPCommunityUsername]`, but replace `[SAPCommunityUsername]` with your SAP Community username.
+    Enter the name `EDP_BP_Created_[SAPCommunityDisplayName]`, but replace `[SAPCommunityDisplayName]` with your SAP Community display name.
 
     ![Create queue](assets/create-queue.png)
 
@@ -255,7 +255,7 @@ But what if we want to ensure that we receive all messages published, even if ou
     
 3. Leave all the default settings, and click **Apply**. 
 
-    Our queue has no subscriptions at the moment, so let's go ahead and add a subscription to the following topic: `default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityUsername]` (replacing `[SAPCommunityUsername]` with your SAP Community username).
+    Our queue has no subscriptions at the moment, so let's go ahead and add a subscription to the following topic: `default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]` (replacing `[SAPCommunityDisplayName]` with your SAP Community display name).
 
 4. Click on the queue you just created.
    
@@ -265,7 +265,7 @@ But what if we want to ensure that we receive all messages published, even if ou
     
     Click **+ Subscription** on the right side. 
     
-    Enter the topic name, `default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityUsername]` (replacing `[SAPCommunityUsername]` with your SAP Community username).
+    Enter the topic name, `default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]` (replacing `[SAPCommunityDisplayName]` with your SAP Community display name).
 
     ![Add subscription to queue](assets/queue-add-subscription.png)
 
@@ -290,7 +290,7 @@ Now that we have created a queue, let's subscribe to it in the **Try Me!** page.
 
 3. Expand the **Bind to an endpoint to receive guaranteed messages** section.
 
-    Enter the queue name in the text box – `EDP_BP_Created_[SAPCommunityUsername]`(replacing `[SAPCommunityUsername]` with your SAP Community username).
+    Enter the queue name in the text box – `EDP_BP_Created_[SAPCommunityDisplayName]`(replacing `[SAPCommunityDisplayName]` with your SAP Community display name).
 
     Click **Start Consume**.
 
@@ -340,10 +340,10 @@ This is an activity that we will do multiple times in the CodeJam, in order to t
     This create  a new Business Partner in the simulated SAP S/4HANA Cloud system and it will trigger a CloudEvents message that will be published to the event broker service. The event will be published to the following topic: 
     
     ```JSON
-    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityUsername]
+    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
     ```
     
-    The message will be delivered to the queue that we've created (`EDP_BP_Created_[SAPCommunityUsername]`) and you should be able to see it in the **Try Me!** UI if you are still connected and consuming messages from the queue.
+    The message will be delivered to the queue that we've created (`EDP_BP_Created_[SAPCommunityDisplayName]`) and you should be able to see it in the **Try Me!** UI if you are still connected and consuming messages from the queue.
 
     
 
