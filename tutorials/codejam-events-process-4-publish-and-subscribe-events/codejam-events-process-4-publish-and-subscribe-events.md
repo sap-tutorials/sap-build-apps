@@ -280,7 +280,7 @@ But what if we want to ensure that we receive all messages published, even if ou
 ### Subscribe to a Queue
 Now that we have created a queue, let's subscribe to it in the **Try Me!** page.
 
-1. Go back to he previous tab, which is the **Try Me!** page.
+1. Go back to the previous tab, which is the **Try Me!** page.
 
     On the publisher side, you should still be signed in.
     

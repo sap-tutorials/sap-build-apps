@@ -23,7 +23,7 @@ primary_tag: software-product>sap-build
 - How to forward messages from a queue to a REST consumer
 
 
-### Intro
+## Intro
 Now that we are familiar with the SAP Integration Suite, advanced event mesh, how we can publish and subscribe to events, and how we can exchange messages using an event broker service, we will start tackling one of the requirements of our integration scenario: trigger a business process in SAP Build Process Automation when a BusinessPartner is created in SAP S/4HANA Cloud.
 
 ![EDP Integration scenario](assets/edp-integration-scenario.png)

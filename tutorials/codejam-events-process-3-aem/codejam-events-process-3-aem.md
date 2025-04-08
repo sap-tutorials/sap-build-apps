@@ -79,7 +79,7 @@ In our case, we have four event broker services (only three are in our mesh – 
 
 - APJ-IN-Broker
 
-- APJ-IN-Broker
+- EU-North-Broker
 
 - EU-FR-DevBroker
 
@@ -107,7 +107,7 @@ Now, let's explore an event broker service available in our instance.
 
     In the dropdown on the right side, select to **View by: Protocol**.  Now, expand the `REST` section part of the accordion and select the `Solace REST Messaging API` element. The connection details will be displayed on the right side of the screen.
 
-    In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use – for example, the host, the port, the username and the password to connect to the event broker service. 
+    In the ***Connect*** tab, we can see the connection details available for the event broker service depending on the protocol we want to use – for example, the host, the port, the username and the password to connect to the event broker service.
     
     Depending on the protocol we use to connect, sometimes we might also need to provide Message VPN details. This is also included here.
 

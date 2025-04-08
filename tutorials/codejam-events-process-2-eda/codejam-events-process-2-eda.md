@@ -36,11 +36,11 @@ An event-driven architecture is a software architecture paradigm concerning the 
 Translating this to the SAP world, when a Business Partner is created/changed in SAP S/4HANA ( **source system** ), SAP S/4HANA can notify that there was a change in a business object and ***target system(s)*** interested in the Business Partner object can then react and trigger follow-up activities in their systems.
 
 
-### Source and target systems communication
+### How do source and target systems communicate?
 
 Now, if the source system lets other systems know of any changes happening in its business objects, it will not be sustainable to create a new programming routine within the source system every time we want to notify a new target system of any changes. 
 
-Traditionally we would have some form of middleware (for example, SAP Cloud Integration) and configure our source system (for example, SAP S/4HANA) to send notifications of these events to the middleware and then use the middleware to distribute these messages. We would add target system(s) as needed. 
+Traditionally we would have some form of middleware, e.g. SAP Cloud Integration) and configure our source system (for example, SAP S/4HANA) to send notifications of these events to the middleware and then use the middleware to distribute these messages. We would add target system(s) as needed. 
 
 Now, we are moving the problem from the source system to a sort of middleware but ideally, there will be a way for the source system to notify others without the need to make any changes. Enter the **event broker**.
 
@@ -52,7 +52,7 @@ By introducing an event broker in our landscapes:
 
 - We can configure our source systems to **publish** their events to this message-oriented middleware. The source system will specify the class of the message (that is, **topic**).
 
-- Wystems interested in the changes happening (for example, in a particular business object in the source system) can **subscribe** to the event(s), via the event broker, by specifying the topic they are interested (`topic-based filtering`) or it can also be based on the content of the message (`content-based filtering`). 
+- Systems interested in the changes happening (for example, in a particular business object in the source system) can **subscribe** to the event(s), via the event broker, by specifying the topic they are interested (`topic-based filtering`) or it can also be based on the content of the message (`content-based filtering`). 
 
 There are two keywords that are important here: publish and subscribe (or "PubSub"). This is a well-known messaging pattern used to decouple systems/applications and allow asynchronous communication between them.
 
