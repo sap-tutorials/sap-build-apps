@@ -10,7 +10,7 @@ primary_tag: software-product>sap-build
   
 
 # Event-Driven Processes CodeJam – Prerequisites
-<!-- description --> Get ready for your event-driven processes CodeJam now!
+<!-- description --> Get ready for your event-based processes CodeJam now!
 
 ## Prerequisites
 - Do this before you come to CodeJam ⏱️

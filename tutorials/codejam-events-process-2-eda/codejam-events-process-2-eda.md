@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description -->Learn how event-driven architectures (including event-based processes) make software systems more robust, and learn how such systems work.
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Events and SAP Build Artifacts in the SAP Business Accelerator Hub](codejam-events-process-1-bah).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Events and SAP Build Artifacts in the SAP Business Accelerator Hub](codejam-events-process-1-bah).
 
 
 ## You will learn

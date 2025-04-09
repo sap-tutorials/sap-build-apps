@@ -14,7 +14,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Publish and Subscribe to Events](codejam-events-process-4-publish-and-subscribe-events).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Publish and Subscribe to Events](codejam-events-process-4-publish-and-subscribe-events).
 - You have received the participants handbook, which contains systems and credentials you will need. The instructor will provide this to you. 
 - You have the SAP Build Process Automation service key created as part of the [CodeJam prerequisites](codejam-events-process-0-prerequisites).
 

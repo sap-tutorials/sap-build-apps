@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description -->Dive deeper into the message exchange, still by using the UI in AEM, and also explore a different section through which you can exchange messages.
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Explore SAP Integration Suite, advanced event mesh](codejam-events-process-3-aem).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Explore SAP Integration Suite, advanced event mesh](codejam-events-process-3-aem).
 - You have received the participants handbook, which contains systems and credentials you will need. The instructor will provide this to you. 
 
 ## You will learn

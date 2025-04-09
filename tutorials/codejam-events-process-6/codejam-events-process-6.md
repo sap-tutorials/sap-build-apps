@@ -4,7 +4,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-build, software-product:technology-platform/sap-business-technology-platform/sap-integration-suite, software-product>sap-build-process-automation]
+tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
 
@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description --> Now that you've created events and sent them to your SAP Build Process Automation tenant, create a project that can be triggered by those events.
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Send events to SAP Build Process Automation](codejam-events-process-5-send-events-sbpa).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Send events to SAP Build Process Automation](codejam-events-process-5-send-events-sbpa).
 
 ## You will learn
 - How to specify an event to be captured by the SAP Build Process Automation tenant

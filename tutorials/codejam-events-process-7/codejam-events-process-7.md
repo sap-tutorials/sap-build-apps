@@ -4,7 +4,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-build, software-product:technology-platform/sap-business-technology-platform/sap-integration-suite, software-product>sap-build-process-automation]
+tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
 
@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description --> Add a step to allow an approver to see the details sent with the event and approve the request for a badge. 
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Capture Event in SAP Build Process Automation](codejam-events-process-6).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Capture Event in SAP Build Process Automation](codejam-events-process-6).
 
 ## You will learn
 - How to add an approval step

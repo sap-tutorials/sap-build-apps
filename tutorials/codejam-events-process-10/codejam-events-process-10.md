@@ -4,7 +4,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-build, software-product:technology-platform/sap-business-technology-platform/sap-integration-suite, software-product>sap-build-process-automation]
+tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
 
@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description --> Add a "Wait for an API Call" to integrate an external system by using an action to call the system and then waiting for the system to trigger resumption of the process instance.   
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Add 2nd Approval With Custom Variables, Conditions and Form Events](codejam-events-process-9).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Add 2nd Approval With Custom Variables, Conditions and Form Events](codejam-events-process-9).
 
 ## You will learn
 - How to pause process instance with "Wait for an API Call"

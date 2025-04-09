@@ -4,7 +4,7 @@ author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-build, software-product:technology-platform/sap-business-technology-platform/sap-integration-suite, software-product>sap-build-process-automation]
+tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
  
@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Create Actions to Get Data from S/4HANA](codejam-events-process-8).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Create Actions to Get Data from S/4HANA](codejam-events-process-8).
 
 ## You will learn
 - How use conditions

@@ -12,7 +12,7 @@ primary_tag: software-product>sap-build
 <!-- description --> Before you start exchanging events between systems, let's get familiar with the events that SAP applications can produce, and with the SAP Business Accelerator Hub, where these events are described.
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Event-Driven Processes CodeJam – Prerequisites](codejam-events-process-0-prerequisites).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Event-Driven Processes CodeJam – Prerequisites](codejam-events-process-0-prerequisites).
 
 ## You will learn
 - The basics about the SAP Business Accelerator Hub 

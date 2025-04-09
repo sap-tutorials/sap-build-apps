@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 <!-- description -->Learn to get around SAP Integration Suite, advanced event mesh, and get familiar with some of key parts of the product.
 
 ## Prerequisites
-- You have completed the previous tutorial for the event-driven processes CodeJam, [Why Event-Driven Architectures?](codejam-events-process-2-eda).
+- You have completed the previous tutorial for the event-based processes CodeJam, [Why Event-Driven Architectures?](codejam-events-process-2-eda).
 - You have received the participants handbook, which contains systems and credentials you will need. The instructor will provide this to you. 
 
 ## You will learn
