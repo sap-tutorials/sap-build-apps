@@ -8,7 +8,7 @@ tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-
 primary_tag: software-product>sap-build
 ---
 
-# 8 - Create Action to Get Data from S/4HANA
+# 8 - Create Action to Get Data from SAP S/4HANA Cloud
 
 <!-- description --> Create an action project for defining the API call for retrieving additional data about the business partner, who ID was sent in the event. 
 
@@ -137,7 +137,7 @@ Actions specify the details of the API call, but do not specify a backend system
 
 
 
-### Create destination to S/4HANA
+### Create destination to SAP S/4HANA Cloud
 In the action test, we supplied the URL and credentials, but this was just for the test. In order to use in production, we want to use a destination – a connection defined in the SAP BTP cockpit to a backend system.
 
 Destinations can then be used seamlessly in applications and processes to connect to systems, without needing to know the connection details and using all types of sophisticated authentication schemes. 
@@ -333,7 +333,7 @@ Now that we've retrieved the data, we want to display it in the approval form. Y
 
 
 ### Trigger process
-1. Go back to the **Create Business Partner** app we provided to you.
+1. Go back to the [**Create Business Partner** app](https://s4-mock-server-with-bp-created-events.cfapps.eu10.hana.ondemand.com/create-bp) we provided to you.
 
     ![Business partner app](assets/BP1.png)
 
@@ -389,7 +389,7 @@ Now that we've retrieved the data, we want to display it in the approval form. Y
 
     ![Data from business partner](assets/monitor3.png)
 
-4. In your Inbox, see the approval form. It now contains the country and grouping, which you retrieved from the S/4HANA backend.
+4. In your Inbox, see the approval form. It now contains the country and grouping, which you retrieved from the SAP S/4HANA Cloud backend.
 
     ![Data in the approval form](assets/monitor4.png)
 

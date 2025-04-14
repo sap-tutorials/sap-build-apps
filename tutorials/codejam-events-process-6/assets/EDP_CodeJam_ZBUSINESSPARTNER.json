@@ -11,7 +11,7 @@
     "state": "ACTIVE"
   },
   "channels": {
-    "ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/Dan_Wroblewski": {
+    "ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]": {
       "subscribe": {
         "message": {
           "$ref": "#/components/messages/sap_s4_cust_ext_ZBUSINESSPARTNER_Created_v1"
@@ -113,12 +113,6 @@
               "description": "Describe the data encoding format",
               "type": "string",
               "const": "application/json"
-            }
-            ,
-            "sapcommunitydispname": {
-              "description": "Display name in the SAP Community",
-              "type": "string",
-              "maxLength": 20
             }
           },
           "required": [

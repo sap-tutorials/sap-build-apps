@@ -96,7 +96,7 @@ There will be an red error, but this is expected and you did nothing wrong. The 
     | **Headline 1** | Badge Request | 
     | **Text** | First Name | 
     | **Text** | Last Name | 
-    | **Text** | cc | 
+    | **Text** | BP ID | 
     | **Text** | Community ID |     
 
     ![Name fields](assets/configure3.png)
@@ -270,7 +270,7 @@ The binding step enables you to reuse steps, for example, to send the same appro
 ### 🥳 Trigger process
 This step is an exciting moment. Here you will trigger your process from your real event (not manually like you did before). This is the crux of the entire CodeJam – to be able to trigger processes from S/4HANA or other SAP events.
 
-1. Go to the **Create Business Partner** app we provided to you.
+1. Go to the [**Create Business Partner** app](https://s4-mock-server-with-bp-created-events.cfapps.eu10.hana.ondemand.com/create-bp) we provided to you.
 
     ![Business partner app](assets/BP1.png)
 

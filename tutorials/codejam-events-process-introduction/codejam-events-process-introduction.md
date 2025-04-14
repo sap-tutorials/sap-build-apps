@@ -73,8 +73,8 @@ You will not have to create all the pieces. You will:
 
 Here are the systems you will interact with (this icon 🔐 means your instructor will provide system details, including credntials):
 
-- **(Simulated) S/4HANA System 🔐:** We will provide a simulated S/4HANA system where you can create business partners, and we will provide you with a make-shift, non-SAP UI where it will be easy to create a business partner, including to associate your community ID with the new partner.
-- **Integration Suite, advanced event mesh 🔐:** While learning about Advanced Event Mesh and publishing/subscribing events, you will create a REST Delivery Point to forward events to you.  
+- **(Simulated) SAP S/4HANA Cloud System 🔐:** We will provide a simulated S/4HANA system where you can create business partners, and we will provide you with a make-shift, non-SAP UI where it will be easy to create a business partner, including to associate your community ID with the new partner.
+- **SAP Integration Suite, advanced event mesh 🔐:** While learning about Advanced Event Mesh and publishing/subscribing events, you will create a REST Delivery Point to forward events to you.  
 - **SAP BTP:** You will have to create an SAP BTP trial account. We will tell you how in the prerequisites.
 - **SAP Build Process Automation:**: You will need to install SAP Build Process Automation on your SAP BTP trial account. We will tell you how in the prerequisites.
 - **3rd-Party Badge System (Access Pro) 🔐:** We have created – with SAP Build Apps and a Python app deployed to SAP BTP – a make-believe but working 3rd-party app that will simulate the creation of badges. 
@@ -93,7 +93,7 @@ Here are the systems you will interact with (this icon 🔐 means your instructo
 
 
 
-### Prerequisite
+### Prerequisites
 
 To complete this CodeJam, you will need to come with a laptop, you will need to set up a SAP BTP trial account, set up SAP Build Process Automation, and a few more things. 
 

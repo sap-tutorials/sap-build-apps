@@ -168,7 +168,7 @@ Every process needs a trigger to start a new instance of the process.
 
     ![Wait for an Event](assets/trigger2.png)
 
-3. In the list of published events, find the **ZBusinessPartner Created** event.
+3. In the list of published events, find the **BusinessPartner Created** event.
 
     Click **Add** next to it.
 
