@@ -192,9 +192,6 @@ primary_tag: software-product>sap-build
 - [SAP Build Process Automation (YouTube playlist)](https://www.youtube.com/playlist?list=PL6RpkC85SLQBePo670YRglVJqaX_YaUtJ)
 
 
-
-
-
 >**Things to Ponder**
 >
 >What are the advantages of using SAP Build Proceass Automation for designing and deploying processes?
