@@ -114,7 +114,7 @@ Actions specify the details of the API call, but do not specify a backend system
 
     ![Add credentials](assets/action12.png)
 
-8. For the **BusinessPartner** input the ID for the business partner you created (or enter this ID - **1003769**).
+8. For the **BusinessPartner**, input the ID for the business partner you created (or enter this ID: **1003769**).
 
     Click **Test**.
 
@@ -122,7 +122,11 @@ Actions specify the details of the API call, but do not specify a backend system
 
     ![Test successful](assets/action13.png)
 
-9. Click **Release**, then click **Release** to confirm..
+9. Click **Save**.
+
+    ![Save action](assets/action13a.png)
+
+    Click **Release**, then click **Release** to confirm.
 
     ![Release action](assets/action14.png)
 
@@ -321,7 +325,7 @@ Now that we've retrieved the data, we want to display it in the approval form. Y
 
     Click **Deploy**.
 
-    You now get a new dialog to select values for all the environment variables you created for this project. In his case, you created a destination variable for your action, in order to select the destination for connecting to your backend system.
+    You now get a new dialog to select values for all the environment variables you created for this project. In this case, you created a destination variable for your action, in order to select the destination for connecting to your backend system.
 
     ![Destinations](assets/release5.png)
 
@@ -395,3 +399,27 @@ Now that we've retrieved the data, we want to display it in the approval form. Y
 
 
 Feel free to finish the process by approving the badge and then acknowledging the notification, as you did in the previous tutorial.
+
+
+
+
+
+### Further study
+
+- [Actions in SAP Build Process Automation (video)](https://youtu.be/A_o8qwUnXRo)
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/A_o8qwUnXRo" frameborder="0" allowfullscreen></iframe>
+
+- [Create an Action Project (Help Portal)](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/create-action-project)
+
+    - [Using $filter in actions](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/managing-input-and-output-parameters-c9a06f9520cc44879f16933e9ab6a7e0)
+
+> **Things to Ponder**
+>
+>What is the advantage of creating actions?
+>
+>When creating an action, why configure it? Why not leave all the API calls and all the inputs/outputs?
+>
+>What is the purpose of a destination variable?
+>
+>What is another advantage of using actions (related to SAP Build Apps, see this [news item](https://www.youtube.com/watch?v=haaZDIgz7kI&list=PL6RpkC85SLQAVBSQXN9522_1jNvPavBgg&index=26))?

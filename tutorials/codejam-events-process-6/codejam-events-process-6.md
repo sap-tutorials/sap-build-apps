@@ -53,7 +53,7 @@ Download our [Business Partner event spec](https://github.com/sap-tutorials/sap-
 ### Create event 
 If we want to consume events in SAP Build projects, we must let SAP Build know which events to capture. We do that by creating an event project.
 
-Once defined, each project can create an event trigger for one of those events so that SAP Build notifies it when such an event arrives.
+Once defined, each process project can create an event trigger for one of those events so that SAP Build notifies it when such an event arrives.
 
 1. Click **Events**.
 
@@ -87,7 +87,9 @@ Once defined, each project can create an event trigger for one of those events s
 
 You will now see the event project opened, with the editable version showing. There is nothing to change. You can close the tab.
 
-Go back to the Events area of the main SAP Build window. Select the tile (not the name) of your new event. On the right select the **Versions** tab.
+![Close tab](assets/event6a.png)
+
+Go back to the **Events** area of the main SAP Build window. Select the tile (not the name) of your new event. On the right select the **Versions** tab.
 
 ![Event published](assets/event7.png)
 
@@ -104,11 +106,11 @@ When you created the project, SAP Build automatically released and published the
 
 2. Click **Create**.
 
-    Select **Build an Automated Process**.
+    Select **Automated Process**, and click **Next**.
 
     ![Build an Automated Process](assets/project2.png)
 
-    Select **Business Process**.
+    Select **Process**, and click **Next**.
 
     ![Business Process](assets/project3.png)
 
@@ -119,11 +121,15 @@ When you created the project, SAP Build automatically released and published the
     | **Project Name** | Badges | 
     | **Description** | Process project for creating badges whenever a new business partner is created. |      
 
+    Click **Review**.
+
     ![Name and description](assets/project4.png)
 
-    Click **Create**.
+    On the **Summary** page, click **Create**.
 
-4. Since you indicated this was a process project (as opposed to an automation project), you will get a popup asking you to name the process, too.
+    ![Review](assets/project4a.png)
+
+4. Since you indicated this was a process project (as opposed to an automation project), you will get a popup asking you to name the process artifact inside the project, too.
 
     Enter the following (the identifier is automatically generated).
 
@@ -132,10 +138,15 @@ When you created the project, SAP Build automatically released and published the
     | **Name** | Badge Process | 
     | **Description** | This is the process that will manage creating a badge when a business partner is created. |      
 
+    Click **Create**.
+
     ![Process artifact](assets/project5.png)
 
+The project opens to the process.
 
-The project opens to the process, which is empty except for:
+![Project vs. process artifact](assets/project6.png)
+
+The process is empty except for:
 
 - **Trigger:** A place for you to specify what will trigger the process.
 
@@ -145,12 +156,9 @@ The plus sign, **+**, enables you to add all sorts of other types of steps to yo
 
 >**REMINDER:** You first created an SAP Build Process Automation project, which can contain all kinds of artifacts. Then you created your first artifact, a process. Projects can have many processes and automations, and those can themselves contain other processes and automations. It can get complicated.
 
->![Project vs. process artifact](assets/project6.png)
+>**Processes** are a series of steps that run on the server and require intervention by a human.
 
-
->**Processes** are a series of steps that run on the server and require someone intervention by a human.
-
->**Automations** are bots that run automatically on a desktop or virtual machine, and require the installation of an agent installed on the machine. 
+>**Automations** are bots that run automatically on a desktop or virtual machine, and require the installation of an agent on that machine. 
 
 
 
@@ -158,9 +166,9 @@ The plus sign, **+**, enables you to add all sorts of other types of steps to yo
 
 
 ### Add event trigger
-Every process needs a trigger to start a new instance of the process.
+Every process needs a trigger to start a new instance of the process. 
 
-1. Click **Add Trigger**.
+1. Click **Add a Trigger**.
 
     ![Add trigger](assets/trigger1.png)
 
@@ -168,7 +176,7 @@ Every process needs a trigger to start a new instance of the process.
 
     ![Wait for an Event](assets/trigger2.png)
 
-3. In the list of published events, find the **BusinessPartner Created** event.
+3. In the list of published events, find the **BusinessPartner Created** event (from the **EDP CodeJam** project).
 
     Click **Add** next to it.
 
@@ -180,7 +188,7 @@ Every process needs a trigger to start a new instance of the process.
 
 4. Click **Save** (upper right).
 
-You can now see he trigger at the start of the process. The process is ready to be triggered by our event.
+You can now see the trigger at the start of the process. The process is ready to be triggered by our event.
 
 ![Trigger created](assets/trigger5.png)
 
@@ -206,6 +214,8 @@ You can now see he trigger at the start of the process. The process is ready to 
 
 
 ### Release and deploy process
+For the process to be active, you must create a release version and then deploy it.
+
 1. Click **Release**.
 
     ![Release start](assets/release1.png)
@@ -228,7 +238,7 @@ You can now see he trigger at the start of the process. The process is ready to 
 
     >You can navigate between the versions of your project at the very top using the dropdown (assuming there is more than one version).
 
-    ![Released version](assets/release4.png)
+    >![Released version](assets/release4.png)
 
 3. Click **Deploy**.
 
@@ -261,7 +271,7 @@ The status of the project will change to **Deployed**, with a marker that says t
 ### Trigger process (manually)
 Now we want to trigger the process. 
 
-But we are going to do it manually without creating a business partner and then an event to trigger the process – we will postpone our gratification do that in the next tutorial, so be patient.
+But for this tutorial, we are going to do it manually from within the administration tools, without creating a business partner nor generating an event to trigger the process. Using a real event to trigger the process will wait until the next tutorial.
 
 
 1. On the main SAP Build page, select **Control Tower**.
@@ -294,6 +304,11 @@ But we are going to do it manually without creating a business partner and then 
 
 5. On the right, click **Start New Instance**.
 
+    This displays a dialog for provided the required payload for the trigger.
+
+    ![Payload dialog](assets/run5a.png)
+
+
     >**IMPORTANT:** In the dialog, you must provide the values for the inputs that you defined as "process inputs" in JSON format (those fields in the trigger event). BUT ... the example JSON you will see in the dialog is not related **AT ALL** to what you need to provide. Therefore, you will delete this JSON.  
 
     In the dialog, replace the JSON with the following JSON.
@@ -321,6 +336,10 @@ But we are going to do it manually without creating a business partner and then 
     ![Start process instance](assets/run6.png)
 
     Click **Start New Instance**.
+
+    If all goes well, you should see **Instance started** at the bottom.
+
+    ![Process instance started](assets/run6a.png)
 
 We have now simulated an event within SAP Build Process Automation in order to start and test the process more easily. 
 
@@ -367,3 +386,22 @@ Once we start a process, we have created a **process instance**, and we want to 
     | **Header** | At the top you will be things like when the process started, its ID, its environment, its current status and more. | 
     | **Logs** | Here you will see what steps were started and stopped, as well as some details about each step.<div>&nbsp;</div>For example, you will see an entry for the trigger and to indicate the instance completed. In other types of steps you will get additional information, like who was sent an approval form, the ID of the form, or error details.  | 
     | **Context** | Here you will see the data that is contained in the process instance, such as the input values sent with the trigger, custom variable values, data returned by an action, and more.|      
+
+
+
+
+### Further study
+
+- [What are environments? (Help Portal)](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/environments?locale=en-US&q=environment) 
+
+- [Event Triggers (video)](https://youtu.be/ZxSiE5ANlWY)
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZxSiE5ANlWY" frameborder="0" allowfullscreen></iframe>
+
+> **Things to Ponder**
+>
+>What capabilities does an environment let you control?
+>
+>Open the Overview tab of your process. What types of artifacts can you add to the project and what would they be useful for?
+>
+>What types of triggers are there, and when do you think you would use each?

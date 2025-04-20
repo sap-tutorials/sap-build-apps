@@ -32,7 +32,7 @@ Remember, our action will just describe the type of service we want to access, b
 
 1. Download the destination template. 
 
-    Click [Destination template](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-events-process-10/Badge-Service), and then click the download button.
+    Click [Destination template](https://github.com/sap-tutorials/sap-build-apps/blob/main/tutorials/codejam-events-process-10/AccessProService), and then click the download button.
 
     ![Download destination](assets/destination1.png)
 
@@ -72,7 +72,7 @@ You created a destination, but you must let SAP Build Process Automation know th
 
     ![Click Add](assets/destination-add2.png)
 
-    Select the **S4HANA_Badges** destination.
+    Select the **AccessProService** destination.
 
     ![Select destination](assets/destination-add3.png)
 
@@ -102,9 +102,9 @@ The destination should now appear in the list of destinations that can be used w
 
     ![Odata Destinations](assets/action3.png)
 
-    Select **Badge_Service**.
+    Select **AccessProService**.
 
-    ![Badge_Service](assets/action4.png)
+    ![AccessProService](assets/action4.png)
 
 3. You will now see a list of all the entities and all the API calls you can make, only for your information.
 
@@ -116,8 +116,8 @@ The destination should now appear in the list of destinations that can be used w
 
     | Field | Value | 
     |------|--------|
-    | **Name** | Badge Service |
-    | **Description** | A CAP service to manage the Badge System. |
+    | **Name** | Access Pro Service |
+    | **Description** | A 3rd-party service for managing the creation of employee/visitor badges. |
 
     ![Name action](assets/action6.png)
 
@@ -125,7 +125,7 @@ The destination should now appear in the list of destinations that can be used w
 
     You will now see the operations available for this service, and you will need to decide which ones to expose (to "your" developers).
 
-5.  Select the **POST** call, since you will want to create a new badge request during your process.
+5.  Select the **POST /Badges** call, since you will want to create a new badge request during your process.
 
     ![Select API](assets/action7.png)
 
@@ -160,7 +160,9 @@ The destination should now appear in the list of destinations that can be used w
 ### Store instance ID
 We will want the 3rd-party system to call our process back, and we need to supply to it the process instance ID. So first we must store the value. 
 
-1. With nothing selected (just click in an open space), open the side panel.
+1. Go back into your process, and make sure you have the Editable version open.
+
+    With nothing selected (just click in an open space), open the side panel.
    
     Under **Variables**, and then under **Custom Variables**, click **Configure**.
 
@@ -194,13 +196,18 @@ We will want the 3rd-party system to call our process back, and we need to suppl
 
     ![Create script](assets/variable5.png)
 
-    Click Apply.  
+    Click **Apply**.  
 
 6. Click **Save** (upper right). 
 
 
+
+
+
+
+
 ### Add action to generate badge 
-1. Under the script task click theplus sign, **+**, and add an action.
+1. Under the script task, click the plus sign, **+**, and add an action.
 
     ![Add action step](assets/addaction1.png)
 
@@ -208,7 +215,7 @@ We will want the 3rd-party system to call our process back, and we need to suppl
 
     ![Browse All Actions](assets/addaction2.png)
 
-    Select the **Add new entity to Badges**, and click **Add**.
+    Select the **Add new entity to Badges** (as part of Access Pro Service project), and click **Add**.
 
     ![Add action](assets/addaction3.png)
 
@@ -218,7 +225,7 @@ We will want the 3rd-party system to call our process back, and we need to suppl
 
     ![Destination variable](assets/addaction4.png)
 
-    Name the variable **BadgeDest**, and click **Create**.
+    Name the variable **AccessProDest**, and click **Create**.
 
     ![New variable](assets/addaction5.png)
 
@@ -234,6 +241,10 @@ We will want the 3rd-party system to call our process back, and we need to suppl
     | **status** | **Approved** |
 
 5. Click **Save**. 
+
+
+
+
 
 
 ### Add "Wait for an API Call"
@@ -253,13 +264,13 @@ We will want the 3rd-party system to call our process back, and we need to suppl
 
     ![Create an API Call](assets/wait4.png)
 
-3. Call the API trigger **Badge System**, and click **Create**.
+3. Call the API trigger **AccessProCallback**, and click **Create**.
 
      ![Wait Trigger](assets/wait5.png)
    
-4. with the new step selected, open the side panel.
+4. With the new step selected, open the side panel.
    
-    Select the **Inputs** tab, and click **Configure**.
+    Select the **Outputs** tab, and click **Configure**.
 
     ![Configure wait](assets/wait6.png)
 
@@ -301,8 +312,12 @@ Our 3rd-party system will call back to our process instance, and send a badge nu
    
 
 
+
+
+
+
 ### Add API key
-In order to call an SAP Build Process Automation trigger – either a standard trigger or a wait trigger – you must send an API key with the adequate permissions.
+In order to call an SAP Build Process Automation trigger – either a standard trigger or a wait trigger – you must send an API key with adequate permissions.
 
 1. Go to the **Control Tower**, and click **Environments**.
 
@@ -316,7 +331,7 @@ In order to call an SAP Build Process Automation trigger – either a standard t
 
     ![Add key](assets/apikey3.png)
 
-3. Call the key **BadgeKey**, and click **Next**.
+3. Call the key **AccessProCallbackAPIKey**, and click **Next**.
 
     ![BadgeKey](assets/apikey4.png)
 
@@ -338,6 +353,10 @@ In order to call an SAP Build Process Automation trigger – either a standard t
     >**IMPORTANT:** Make sure to copy and save it in a safe place.
 
     ![Add scopes](assets/apikey7.png)
+
+
+
+
 
 
 
@@ -374,167 +393,48 @@ In order to call an SAP Build Process Automation trigger – either a standard t
 
     ![Destinations](assets/release5.png)
 
-    Select the **Badge_Service** destination, make sure the **S4HANA_Badges** destination is selected.
+    Select the **AccessProService** destination, and make sure the **S4HANA_Badges** destination is selected.
 
 5. Click **Deploy**.
 
 6. After deploying, go to the **Control Tower > Environments**, and go to the Public environment.
 
-    Click **Triggers**, and you will see the trigger created for the Wait for an API Call. The trigger is called **Badge System**.
+    ![Check triggers](assets/release6.png)
+
+    Click **Triggers**, and you will see the trigger created for the Wait for an API Call. The trigger is called **AccessProCallback**.
+
+    ![Wait trigger](assets/release7.png)
 
     Click **View**
+
+    ![View trigger](assets/release8.png)
 
     You will see the connection details for the 3rd party system to call our process instances to resume them.
 
     Copy the URL and put it in a safe place, where you put your API key. You will need these when we use the 3rd-party system.
 
+    >**IMPORTANT:** Your URL will be different than the screenshot.
+
+    ![Trigger URL](assets/release9.png)
+
+
     
 
 
+### Further study
 
-
-### Trigger process
-1. Again, go back to the **Create Business Partner** app we provided to you.
-
-    ![Business partner app](assets/BP1.png)
-
-2. Enter the following:
-
-    | Field | Value |
-    |-------|--------|
-    | **First Name** | Anything you want | 
-    | **Last Name** | Anything you want | 
-    | **Country** | US |      
-    | **SAP Community Username** | Your user name in the SAP Community |      
-
-    Click **Create**.
-
-    Your business partner is created.
-
-3. Check that the event was received into SAP Build by going to **Monitoring** > **Acquired Events** > **Business Events**.
-   
-    You should see an event created for your new business partner, including the business partner ID that you saw when you created it.
-
-    ![Business events](assets/BP5.png)
+- [New "Wait for API Call" Integrates Processes with External Systems (Blog)](https://community.sap.com/t5/technology-blogs-by-sap/new-quot-wait-for-api-call-quot-integrates-processes-with-external-systems/ba-p/13992848)
 
 
 
 
-### Complete the process instance
-In this step, you'll go through the entire process 🥳.
+>**Things to Ponder**
+>
+>How did you get the process instance ID to pass to the 3rd-party system?
+>
+>WHat other details about your process can you get this way?
+>
+>What other integrations could you imagine with the "Wait for an API Call"?
+>
+>WHat other scopes can you specify for an API key?
 
-1. In SAP Build, click **Monitoring**.
-
-    Click the **Processes and Workflow Instances** tile.
-
-    ![Open Monitoring](assets/monitor1.png)
-
-2. You should now see your process instance.
-
-    Click on the process instance to see its details.
-    
-    ![Open process instance](assets/monitor2.png)
-
-    You can see the steps that have run so far (from the bottom).
-
-    - The process was triggered
-
-    - The flag for the local approver was set
-
-    - Data from S/4HANA was retrieved
-
-    - An approval task was created and is ready to be executed
-
-3. Open the Inbox in the header.
-
-    ![Open Inbox](assets/monitor3.png)
-
-4. Approve the request.
-
-    ![Approval](assets/monitor4.png)
-
-    The task will disappear in the Inbox. If you check Monitoring for the steps, you'll see these additional steps (from bottom to top):
- 
-    - The approval was completed
- 
-    - The condition was checked
- 
-    - Since Sabrina is from the US, a task was sent to the local approver 
-
-    ![Approval completed](assets/monitor5.png)
-
-5. Again – FAST! – go into the Inbox and refresh the display. 
-
-    If you were fast enough, you would have seen the form for the local approver.
-    
-    ![Local approval completed](assets/monitor6.png)
-
-    **DO NOT CLICK ANYTHING!** Let a minute go by and let the form lapse. If you refresh the Inbox, it will disappear.
-
-    If you now check Monitoring for the steps by refreshing, you'll see these additional steps (from bottom to top):
-
-    - The local approval was not done in time, and was canceled (2 entries)
-
-    - The process instance went to the next step
-
-    - The instance ID was retrieved (2 entries)
-
-    - The action to create a new badge request in the 3rd-part system was executed (2 entries)
-
-    - The process instance started to wait for an API call
-
-    ![Local approval skipped](assets/monitor7.png)
-
-6. Open the 3rd-party badge system (your instructor will provide details). 
-
-    Select your new business partner.
-
-    ![Open external app](assets/monitor8.png)
-
-    On the details page, enter the following, which you saved along the way:
-
-    - Your API key
-
-    - Wait Trigger URL
-
-    ![Key and URL](assets/monitor9.png)
-
-    Click **Upload Service Key**, and select your service key file. The client ID, client secret, and the authentication URL will be set.
-
-    ![Key and URL](assets/monitor10.png)
-
-    Click **Create Badge**.
-
-    You should get a success message.
-
-    ![Success](assets/monitor11.png)
-
-    >**What just happened?**
-    >
-    >The app made an API call to SAP Build Process Automation, specifically, to the "wait trigger" we created to  pause the process. The API call restarts the process, and injects the new badge ID in the process instance.
-    >
-    >We also updated the CAP service so that entity's status is updated to **PRINTED** and the badge ID is stored.    
-
-7. Go back to the **Monitoring** tab and refresh your process instance. You'll see 2 more steps (from bottom to top):
-
-    - The wait completed (because we called it via API)
-
-    - The notification form was sent.
-
-    ![Wait is over](assets/monitor12.png)
-
-    If you look at the context, you will see an entry for the API we called to restart the process, along with the badge ID sent with the API call.
-
-    ![Badge ID returned](assets/monitor13.png)
-    
-    Go to the Inbox and you will see the last notification form to acknowledge, along with the badge ID.
-
-    ![Last form](assets/monitor14.png)
-
-8. Submit the form and the process instance will complete.
-
-    Here's the entire flow:
-
-    ![The whole flow](assets/monitor15.png)
-
-    Nice job 😺

@@ -67,7 +67,7 @@ In this tutorial you will create an approval form and assign it to a recipient (
 
     You will see the form add to the process, with different paths for approval and rejection.
 
-There will be an red error, but this is expected and you did nothing wrong. The error is just an indicator that you need to add some settings, like to whom to send the form. 
+There will be a red error, but this is expected and you did nothing wrong. The error is just an indicator that you need to add some settings, like to whom to send the form. 
 
 ![Approval form added](assets/approval6.png)
 
@@ -340,7 +340,7 @@ Now that we know the event arrived into SAP Build Process Automation, let's chec
 
     ![Process instance info](assets/inbox5.png)
 
-    Expand the **Task "Badge Request"**. You'll see the recipients (you) as well as an ID for that specific task instance (there are APIs for manipulating that specific task, which use this ID).
+    Expand the **Task "Badge Request"**. You'll see the recipients (you) as well as an ID for that specific task instance (there are [APIs](https://api.sap.com/package/SAPProcessAutomation/rest) for manipulating that specific task, which use this ID).
 
     ![Task info](assets/inbox6.png)
 
@@ -348,7 +348,7 @@ Now that we know the event arrived into SAP Build Process Automation, let's chec
 
     ![Approve badge](assets/inbox7.png)
 
-    The task in the Inbox disappears. But refresh the Inbox and the notification will be shown.
+    The task in the Inbox disappears. But refresh the Inbox and the notification will be shown -- you'll have to scroll up.
 
     ![Notification received](assets/inbox8.png)
 
@@ -361,3 +361,25 @@ Now that we know the event arrived into SAP Build Process Automation, let's chec
 You can go back to the Inbox and click **Submit** on the notification form, then return to the **Monitoring** area and see that the process instance completed.
 
 ![Process instance completed](assets/inbox10.png)
+
+
+
+
+### Further study
+
+- [Form tables (Help Portal)](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/form-tables)
+
+- [Guidelines for specifying recipients of forms (Help Portal)](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/guidelines-for-specifying-recipient-users?locale=en-US) \
+
+- [Create a Data Type](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/create-data-type-process-automation)
+
+
+> **Things to Ponder**
+>
+>What advantages does creating releases and deployed versions of your process give you? (Look at your project in the lobby under 'Versions'.)
+>
+>What is binding and what is its purpose?
+>
+>What values can be bound?
+>
+>How can you handle more complex data types, and how would you display them in a form?

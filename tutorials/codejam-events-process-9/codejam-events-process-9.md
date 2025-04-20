@@ -68,7 +68,7 @@ SAP Build Process Automation enables many types of flows and branching. Here we 
 ### Set variable with script task
 We want by default that the flag be set to **True**, in case there is no need to add a local approver. If the local approver is needed and they reject the item, then we will set the flag to **False**.
 
-This is a very simple use of the Script Task, but we wanted to introduce it to you, because it is very powerful for processes data, for example, lists of backend data returned via action, and making it available to the rest of the process. The results of the data manipulation are generally stored in custom variables.
+This is a very simple use of the Script Task, but we wanted to introduce it to you, because it is very powerful for processing data, for example, lists of backend data returned via action, and making it available to the rest of the process. The results of the data manipulation are generally stored in custom variables.
 
 1. Right after the trigger step, click the plus sign, **+**.
 
@@ -104,7 +104,13 @@ This is a very simple use of the Script Task, but we wanted to introduce it to y
 
     ![Validate script](assets/script6.png)
 
-    Once the script is valid, you can test the script with different data. Add test input values in the **Test Variable** tab (by clicking the plus sign, **+**) and then click **Run Test**. The results, including the values for the custom variables, are shown in the **Test Console**.
+4. Once the script is valid, you can test the script with different data. Select the **Test Variable** tab.
+
+    ![Test script](assets/script6a.png)
+
+    Add test input values by clicking the plus sign, **+**, setting the variable name to `$.context.custom.localapprover`, and setting the value to `false`.
+    
+    Click **Run Test**. The results, including the values for the custom variables, are shown in the **Test Console**.
 
     ![Test script](assets/script7.png)
 
@@ -273,6 +279,8 @@ We want to give the local approver a chance to reject the badge, but only for 24
 
     Under **After the event is handled**, change the select to **Skip to Next Step**.
 
+    >If you cannot see this option, reduce the zoom of your browser.
+
     ![Configure timer event](assets/handle4.png)
 
 5. Click **Save** (upper right).
@@ -311,7 +319,7 @@ We want to give the local approver a chance to reject the badge, but only for 24
 
     Click **Deploy**.
 
-    You again get a dialog to select the destination for the action. The previous selection from the previous selection should still be there. If not, select **S4HANA_Badges**.
+    You again get a dialog to select the destination for the action. The previous selection from the previous deployment should still be there. If not, select **S4HANA_Badges**.
     
     Click **Deploy**.
 
@@ -337,7 +345,7 @@ We want to give the local approver a chance to reject the badge, but only for 24
     |-------|--------|
     | **First Name** | Anything you want | 
     | **Last Name** | Anything you want | 
-    | **Country** | US |      
+    | **Country** | United States |      
     | **SAP Community Username** | Your user name in the SAP Community |      
 
     Click **Create**.
@@ -369,13 +377,9 @@ We want to give the local approver a chance to reject the badge, but only for 24
 
 3. Now go to **Monitoring > Processes and Workflow Instances**.
 
-    Change the filter to include **Completed** process instances.
+    Click on the latest instance.
 
     ![New instance](assets/monitor3.png)
-
-4. Click on the completed instance, and view the log.
-
-    ![Log](assets/monitor4.png)
 
     Let's look at the log more closely. The log is in chronological order, from bottom to top. So let's review what happened.
 
@@ -389,13 +393,34 @@ We want to give the local approver a chance to reject the badge, but only for 24
     - You tried to retrieve business partner data with an action.
     - You retrieved business partner data with an action successfully.
     - The 1st approval task was triggered.
+    - The 1st approval task was completed.
     - The country was checked.
     - The 2nd approval task was triggered (because the country was the US).
     - The 2nd approval task was not completed in the specified time (1 minute).
     - The 2nd approval step was canceled.
-    - The instance completed (because we specified that when the time was reached to terminate the process).
+    - The process went to the next step.
+    - The notification form was triggered.
+
+
  
+### Further study
+
+- [Raise and Handle Escalation and Timer Events (Help Portal)](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/add-flow-controls-and-events)
+
+- [Create and Configure a Script Task (Help Portal)](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/create-and-configure-script-task)
+
+- [Transform Data with JavaScript in SAP Build Process Automation (Devtoberfest video)](https://youtu.be/Su2QvsCqjt4?si=rQlDeM2Fu_48sf-x)
+
+    - <iframe width="560" height="315" src="https://www.youtube.com/embed/Su2QvsCqjt4" frameborder="0" allowfullscreen></iframe>
 
 
+
+>**Things to Ponder**
+>
+>What are the 2 types of process events inside SAP Build Process Automation?
+>
+>What specifically would you use a Script Task for?
+>
+>How could you make use of an escalation event?
 
 

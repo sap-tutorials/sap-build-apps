@@ -1,0 +1,12 @@
+#
+#Wed Feb 26 05:03:48 UTC 2025
+Type=HTTP
+HTML5.DynamicDestination=true
+Authentication=NoAuthentication
+AppgyverEnabled=true
+ProxyType=Internet
+URL=https\://badges.cfapps.eu10.hana.ondemand.com/service/BadgeRequests
+Name=AccessProService
+sap.build.usage=odata_gen
+sap.applicationdevelopment.actions.enabled=true
+sap.processautomation.enabled=true
