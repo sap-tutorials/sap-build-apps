@@ -432,7 +432,7 @@ In order to call an SAP Build Process Automation trigger – either a standard t
 >
 >How did you get the process instance ID to pass to the 3rd-party system?
 >
->WHat other details about your process can you get this way?
+>What other details about your process can you get this way?
 >
 >What other integrations could you imagine with the "Wait for an API Call"?
 >

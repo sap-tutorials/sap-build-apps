@@ -211,6 +211,7 @@ This is a very simple use of the Script Task, but we wanted to introduce it to y
 
 
 
+
 ### Set flag to false
 In the case that the local approver rejects the badge, we must set the flag to false.
 

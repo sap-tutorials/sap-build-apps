@@ -3,13 +3,12 @@ parser: v2
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
 auto_validation: true
-time: 30
+time: 15
 tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
 
 # 11 - Run the Full Scenario
-
 <!-- description --> Now that all the pieces are in place, run the entire event-based process scenario.
    
 
