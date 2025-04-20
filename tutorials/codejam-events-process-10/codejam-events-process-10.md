@@ -436,5 +436,5 @@ In order to call an SAP Build Process Automation trigger – either a standard t
 >
 >What other integrations could you imagine with the "Wait for an API Call"?
 >
->WHat other scopes can you specify for an API key?
+>What other scopes can you specify for an API key?
 
