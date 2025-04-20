@@ -78,8 +78,8 @@ Here are the systems you will interact with (this icon 🔐 means your instructo
 - **SAP BTP:** You will have to create an SAP BTP trial account. We will tell you how in the prerequisites.
 - **SAP Build Process Automation:**: You will need to install SAP Build Process Automation on your SAP BTP trial account. We will tell you how in the prerequisites.
 - **3rd-Party Badge System (Access Pro) 🔐:** We have created – with SAP Build Apps and a Python app deployed to SAP BTP – a make-believe but working 3rd-party app that will simulate the creation of badges. 
-  
-    This system (1) will be called by your process (your process will then pause); (2) will allow a user to "create the badge"; (3) will call your process instance back to resume the flow.
+
+    See next step for more information on this app.
 
     We will provide you access to that app.
 
@@ -89,6 +89,32 @@ Here are the systems you will interact with (this icon 🔐 means your instructo
 >
 >This feature was recently introduced in the [SAP S/4HANA Cloud 2402 release](https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/5fd69458026d47f7bcc11837b42c5371.html?locale=en-US&version=2402.500).
 
+
+### 3rd-Party Badge System
+We have introduced the simulated 3rd-party app in order to show how SAP Build Process Automation can be integrated with external apps, especially using the new "Wait for an API Call" step.
+
+The "Wait for an API Call" step lets you pause a process instance until a specific API call is made to SAP Build Process Automation. This call can also include a payload to inject data into the process instance.
+
+The app has 2 pages. The first page lists all the requests for badges:
+
+![App, page 1](assets/app1.png)
+
+When a request is selected, a second page shows details. On this page, you can specify the connection details so the app can call back your SAP Build Process Automation installation so that the process instance the created the badge request can be resumed and sent the badge ID.
+
+![App, page 2](assets/app2.png)
+
+The design of the app is as follows:
+
+![App design](assets/CodeJamDesign.png)
+
+
+- The app was designed in SAP Build Apps, and deployed to SAP BTP.
+
+- The app uses an OData service (built with the Cloud Application Programming Model, or CAP) running in a different SAP BTP tenant as its backend.
+
+- When the app needs to call back SAP Build Process Automation, it does this through a Python service, which is used to avoid CORs issues. A destination is usually used for this purpose, but cannot be used here as we do not know ahead of time the service URL, as we want to enable the app to call back to any tenant. 
+
+    The Python service, with the connection details from the app, makes the call to the CodeJam participant's installation of SAP Build Process Automation.
 
 
 
