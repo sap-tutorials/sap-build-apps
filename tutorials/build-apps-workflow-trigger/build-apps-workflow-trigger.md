@@ -88,16 +88,64 @@ You then drag and drop flow functions and connect them to events. The flow funct
 
 
 
-### Create a new app project
+### Create project with sales order form
+First, you need to create a SAP Build Apps project and the main page with the form for specifying the sales order. IN this step, you will only create the UI, not the logic or bindings.
+
+>Note that there are 2 tabs for this tutorial step (above). 
+>
+>- With **Quick Import of UI**, you can skip most of the work and simply import our skeleton project. You will bypass the nitty gritty of adding and stylizing components, but you will still learn how to import an SAP Build Apps project. This way is much faster.
+
+>- With **Create from Scratch**, you can create the UI yourself. This will take longer but you will learn about UI components, stylizing them, and organizing them on the page.
+
+
+[OPTION BEGIN [Quick Import of UI]]
+We really want you to see some of things related to stylizing you can do with SAP Build Apps. But we understand that stylizing a UI may be tedious for some people.
+
+If you really want, you can skip doing the stylizing and instead import the project already stylized. If you want to take this route, do the following:
+
+1. Download the file [`Create-Sales-Order.mtar`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/build-apps-workflow-trigger/Create-Sales-Order.mtar).
+
+2. In the SAP Build Lobby, click the import icon.
+
+    ![Skip UI](replace.png)
+
+3. Click **Browse** and select the MTAR file you just downloaded.
+
+    ![Browse](replace1.png)
+
+4. Select the uploaded file, and click **Import**.
+
+    ![Import](replace2.png)
+
+5. When the file disappears, click **Close**.
+
+    The project is now created.
+
+    ![Close](replace3.png)
+    
+6. Go back to the SAP Build Lobby, and click on the new project to open it.
+
+    ![Open project in lobby](replace4.png)
+
+You will now see the opened project, with the sales order form already created.
+
+![Project opened](replace5.png)
+
+
+[OPTION END]
+
+
+
+[OPTION BEGIN [Create from Scratch]]
 1. Go to the SAP Build lobby, and click **Create**.
 
     ![Create project](new-project-create.png)
 
-2. Select **Build an Application**.
+2. Select **Application**, and then click **Next**.
 
     ![Build an application](new-project-appgyver.png)   
 
-    Select **SAP Build Apps**.
+    Select **Frontend**, and click **Next**.
 
     ![SAP Build Apps](new-project-appgyver2.png)   
 
@@ -109,55 +157,17 @@ You then drag and drop flow functions and connect them to events. The flow funct
    
     For the description, enter `Application to enable business users to request creation of a sales order`.
    
-    Click **Create**.
+    Click **Review**.
   
     ![Name project](new-project-name.png)
+
+    Click **Create**.
+  
+    ![Name project](new-project-name2.png)
 
     Your new project should open in a new browser tab.
    
     ![Open project](new-project-open.png)
-
-
-
-### Create the sales order page
-By default your new application contains a page with title and text fields. In this step, you will focus on turning this page into your app – by adding components like input boxes and buttons, and then styling them. 
-
-This is known as creating the user interface, also known as the UI.
-
->Note that there are 2 tabs for this tutorial step (above). 
->
->- With **Quick Import of UI**, you can skip most of the work and simply import our skeleton project. You will bypass the nitty gritty of adding and stylizing components, but you will learn how to import one SAP Build Apps project into an existing project. This way is much faster.
-
->- With **Create from Scratch**, you can create the UI yourself. This will take longer but you will learn about UI components, stylizing them, and organizing them on the page.
-
-
-[OPTION BEGIN [Quick Import of UI]]
-
-We really want you to see some of things related to stylizing you can do with SAP Build Apps. But we understand that stylizing a UI may be tedious for some people.
-
-If you really want, you can skip doing the stylizing and instead import the project already stylized. If you want to take this route, do the following:
-
-1. Download the file [`Sales-Order-Trigger.zip.gpg`](https://github.com/sap-tutorials/sap-build-apps/raw/main/tutorials/build-apps-workflow-trigger/Sales-Order-Trigger.zip.gpg).
-
-2. Click the 3 dots next to **History** in the upper-right corner.
-
-    ![Skip UI](replace.png)
-
-3. Select **Replace**.
-
-4. Select the file you downloaded.
-
-5. Click **Replace**
-
-    The project will be filled in with the UI for entering a sales order.
-
-    ![Replace](replaced.png)
-
-[OPTION END]
-
-
-
-[OPTION BEGIN [Create from Scratch]]
 
 1. Select the text field, and delete it.
 
@@ -269,17 +279,21 @@ SAP BTP destinations are connections to backend services – each specifies the 
 
 SAP BTP authentication also has the benefit of requiring authentication in your app and reusing the built-in SAP BTP authentication mechanism.
 
-1. Go to the **Auth** tab.
+1. Go to the **Settings > Authentication** tab.
+
+    ![Authentication](auth1.png)
 
 2. Click **Enable Authentication**.
 
-    ![Auth](auth.png)
+    ![Enable authentication](auth.png)
 
 3. Select **SAP BTP Authentication**.
 
+    ![BTP authentication](auth2.png)
+
     On the confirmation popup, click **OK**. 
 
-4. Click **Save** on the upper right corner.
+4. Click **Save** on the upper-right corner.
 
 
 
@@ -324,50 +338,33 @@ When you created your process and then deployed, you also published it so it can
 ### Create page variable
 You need a place to put the values the user will enter, so that you can later pass them to the process. For this, you can create a page variable.
 
-1. Back on the UI canvas (click the **UI Canvas** tab at the top), select **Variables**.
+1. At the top of the page, click **Variables**.
+
+    ![Variables](pagevar-0.png)
 
 2. On the left, click **Page Variables**.
 
-    >If you get a big text box saying **Welcome to Variables**, you can read it but then you can close it by clicking the **X**.
-
-    >![Date variable documentation](data-variable-docs.png)
-   
-3. Click **Add Page Variable**. 
-
-    Change the name of the variable to **SalesOrderDetails**.
-
-    Make the variable of type **Object**.
+    Click **Add Page Variable**. 
 
     ![Page variable](pagevar-1.png)
 
-4. Select the **id** field of the page variable, and click **Remove Object Property**.
+3. Select **From existing schema**. 
 
-    ![Delete field](pagevar-delete.png)
+    ![Existing schema](pagevar-2.png)
 
-5. Select the page variable, and under **Add new property** enter `amount`, and then press **Enter** or click the **+** icon.
-    
-    ![Add field](pagevar-add-field.png)
+    Select **Process**.
 
-    Do this for all the needed fields:
+    ![Existing schema](pagevar-3.png)
 
-    | Name | Type |
-    |-----|------|
-    | amount | Number |
-    | customer | Text |
-    | deliverydate | Date text |
-    | material | Text |
+    Navigate to **Order Processing > Trigger Process > Input Schema**.
 
-    Your variable should look like this, with all fields of type text:
+    Click **Create**.
 
-    ![Page variable completed](pagevariable0.png)
+    ![Page variable](pagevar-4.png)
 
-6. Select **amount** and change its type to **Number**.
-    
-    Select **deliverydate** and change its type to **Date text**.
-    
-    Your variable should look like this:
+4. Change the name of the variable to **SalesOrderDetails**.
 
-    ![Page variable completed](pagevariable.png)
+    ![Page variable](pagevar-5.png)
 
 5. Click **Save** (upper right).
 
@@ -383,33 +380,33 @@ We created a variable for the sales order data, but now we need to get the data 
 Whenever someone types into the input box, the value is automatically copied into the variable.
 
 
-1. Go back to **View** so you can see the UI canvas.
+1. Click the **User Interface** tab.
    
 2. Click on the first input field (for **Customer**).
 
-    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > customer**.
+    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > context > SalesOrderDetails > shipToParty**.
+
+    Click **Save**
 
     ![Binding input field](bind-input1.png)
 
-    Click **Save**
-
 3. Click on the second input field (for **Material**).
 
-    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > material**.
+    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > context > SalesOrderDetails > material**.
+
+    Click **Save**
 
     ![Binding input field](bind-input2.png)
 
-    Click **Save**
-
 4. Click on the third input field (for **Amount**).
 
-    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > amount**.
+    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > context > SalesOrderDetails > orderAmount**.
 
     Click **Save**
 
 5. Click on the fourth input field (for **Delivery Date**).
 
-    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > deliverydate**.
+    In the **Properties** tab, click the **X** next to the **Value** field, and select **Data and Variables > Page Variables > SalesOrderDetails > context > SalesOrderDetails > expectedDeliveryDate**.
 
     Click **Save**
 
@@ -423,7 +420,7 @@ Whenever someone types into the input box, the value is automatically copied int
 ### Add logic to trigger workflow
 We need to set up the logic so when someone clicks the **Get Approval** button (an event), we send the sales order data to our SAP Build Process Automation workflow using the data resource we previously created. 
 
-1. Click on the **Get Approval** button, and open the logic canvas by clicking **Add logic to Button1** at the bottom right.
+1. Click on the **Get Approval** button, and open the logic canvas by clicking **Add logic to Button 1** at the bottom right.
 
     ![Open logic canvas](logic-open1.png)
 
@@ -437,48 +434,36 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     ![Create record binding](logic-create-record-binding.png)
     
-    For **Input Parameters**, click **Custom object**. Here you could create all kinds of separate bindings for each of the fields from our process. But we will use a formula instead to make it easier.
+    For **Input Parameters**, click the binding type icon.
 
-   ![Close binding UI](logic-create-record-binding2.png)    
+    ![Close binding UI](logic-create-record-binding2.png)    
 
-    Click the **X** to close the dialog.
+    Select **Data and Variables > Page variable**, and then select **SalesOrderDetails > context**
 
-4. Under **Input Parameters**, click the binding type.
-   
-    ![Binding type](extra-logic1.png)
-
-    Select **Formula**.
-
-    ![Binding type](extra-logic2.png)
-
-    Enter the following formula:
-    
-    ```JavaScript
-    {salesorderdetails: {division: "1010", material: pageVars.SalesOrderDetails.material, orderAmount: NUMBER(pageVars.SalesOrderDetails.amount), shipToParty: pageVars.SalesOrderDetails.customer, salesOrderType: "OR", shippingCountry: "Barbados", salesOrganisation: "10", distributionChannel: "1000", expectedDeliveryDate: pageVars.SalesOrderDetails.deliverydate}}
-    ```
+    ![Select page variable](logic-create-record-binding3.png)    
 
     Click **Save**.
 
-5. Drag a **Toast** flow function onto the canvas, and connect the **top** output of the **Trigger process** flow function to it.
+4. Drag a **Toast** flow function onto the canvas, and connect the top output of the **Trigger process** flow function to it.
 
-    ![Toast](bind-toast.png)
+    ![Add toast](bind-toast.png)    
 
-6. Click on the **Toast** flow function and configure it in the **Properties** pane on the right.
+5. Click on the **Toast** flow function and configure it in the **Properties** pane on the right.
 
-    For **Toast message**, click on the **ABC**, and then select **Formula > Formula**.
+    For **Toast** message, click on the **ABC**, and then select **Formula > Formula**.
 
-    ![Toast configure](logic-toast-configure.png)
+    ![Configure toast](logic-toast-configure.png) 
 
     Erase the quotation marks, and enter the following formula:
 
     ```JavaScript
     "Triggered process with ID: " + outputs["Trigger process"].newProcessInstance.id
+
     ```
 
     Click **Save**.
 
-7. Click **Save** (upper right).
-
+6. Click **Save** (upper right).
 
 
 
@@ -489,15 +474,17 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
 
 ### Run app
-1. Click the **Launch** tab, and then **Open Preview Portal**.
+1. Click **Preview** at the top of the page.
 
-    ![Launch](launch.png)
+    ![Preview](launch.png)
 
-3. Click **Open web preview** (left).
-
-4. Select your project, **Select Order Trigger**.
+2. Click **Open web preview**.
 
     ![Launch preview](launch-preview.png)
+
+3. In the **Create Sales Order** tile, click **Open**.
+
+    ![Launch preview](launch-preview2.png)
 
 5. Enter the following values in your form:
 
