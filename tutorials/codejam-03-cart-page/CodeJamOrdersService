@@ -11,3 +11,4 @@ ProxyType=Internet
 URL=https://orderscapapp.cfapps.eu10.hana.ondemand.com/service/OrderManagement
 Appgyver.Enabled=true
 sap.applicationdevelopment.actions.enabled=true
+BuildApps.ApiType=odata
