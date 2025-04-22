@@ -75,7 +75,7 @@ A data resource defines a connection to a backend, and when executed, will bring
 ### Create data variable
 After retrieving the data, you need a place to put it, with the proper schema so we can reference all its fields.
 
-1. Click **UI Canvas**, and then click **Variables**.
+1. Click **Variables**.
 
     ![Data variables](data-var-open.png)
 
@@ -85,6 +85,10 @@ After retrieving the data, you need a place to put it, with the proper schema so
 
     ![Add data variable](data-var-add.png)
 
+    You should get a new data variable defined for your **Products** entity.
+
+    ![Data variable created](data-var-add2.png)
+
 3. Click **Save** (upper right).
    
 
@@ -92,11 +96,11 @@ After retrieving the data, you need a place to put it, with the proper schema so
 
 
 ### Create dropdown for materials
-1. On your **Create Sales Order** page, go back to UI canvas by clicking **View**.
+1. Click **User Interface** to return to the UI of the page.
    
 2. Drag a dropdown field next to the input box for the **Material**.
 
-    >You will likely have to expand the tree view. Also make sure for **Container 3**, for the material, you have text, input, and dropdown components at the same level.
+    >You will likely have to **Material** input field and then expand the tree view on the bottom right. Also make sure for **Container 3**, for the material, you have text, input, and dropdown components at the same level.
    
     ![Add dropdown](dropdown-add.png)
 
@@ -111,17 +115,15 @@ After retrieving the data, you need a place to put it, with the proper schema so
     | Field | Value |
     |-------|-------|
     | **Label text** | Delete `Dropdown label` |
-    | **Option list** | Click the list of values icon, and set the binding to a formula, and set the formula to the following:<div>&nbsp;</div>`MAP(data.Products1, {label: item.Name, value: item.Id})` |
+    | **Option list** | Click the list of values icon, and set the binding to a formula, and set the formula to the following:<div>&nbsp;</div>`MAP(data.Products1, {label: item.Name, value: item.Id})`<div>&nbsp;</div>![Dropdown properties](formula.png)<div>&nbsp;</div>Click **Save** twice on the formula pop up. |
 
     >**What does the formula do?**
     >
     >A dropdown field wants the options as a list of objects, with each object having 2 fields: `Name` for the display name, and `Id` for the underlying value of the option. The `Map` function takes the data in the data variable and converts it to the format we need.
 
-    Click **Save** twice on the formula pop up.
-
 4. You will have to bind the dropdown field to the `SalesOrderDetails` page variable (as we did for the input field for material).
     
-    From the properties tab, for the **Selected value** field, set the binding to: **Data and variables > Page variable > SalesOrderDetails > material**. 
+    From the properties tab, for the **Selected value** field, set the binding to: **Data and variables > Page variable > SalesOrderDetails > context > salesorderdetails > material**. 
 
     ![Selected value](dropdown-selected-value.png)
 
@@ -137,7 +139,7 @@ Run the app again.
 
 >If you already have a browser tab open to the web preview, it will refresh whenever you save the project.
 >
->Otherwise, to run the app, go to the **Launch** tab, then **Open Preview Portal > Open web preview**, and then click **Open** for the `Sales Order Trigger` project.
+>Otherwise, to run the app, click **Preview** at the top of page, then click **Open Web Preview**, and then click **Open** for the `Create Sales Order` project.
 
 5. Enter the following values in your form:
 

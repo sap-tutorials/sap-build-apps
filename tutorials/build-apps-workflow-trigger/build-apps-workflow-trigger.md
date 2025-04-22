@@ -18,7 +18,7 @@ primary_tag: software-product>sap-build
 - You have set up a service key for the SAP Build Process Automation service, and a destination to the service, as described in Step 1 of [6 - Trigger Process from Your App](codejam-06-connect-app-process).
 
 
- 
+
 
 ## You will learn
 - How to create a simple UI

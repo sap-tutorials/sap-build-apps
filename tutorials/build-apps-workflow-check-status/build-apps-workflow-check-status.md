@@ -31,11 +31,9 @@ In this tutorial, we will create a new page to display the processes we have tri
 ### Create page to display process instances
 You will create a separate page to display the process instances, including each one's ID, time it was triggered, and its status.
 
-1. Click **Create Sales Order** page area in the top left.
+1. In the top-left of your project, open the page dropdown and click **Add New Page**.
 
     ![Open page area](page1.png)
-
-2. Click **Add New Page**.
 
     For **Name**, enter `Process Status`.
 
@@ -43,17 +41,17 @@ You will create a separate page to display the process instances, including each
 
     ![Create page](page2.png)
 
-3. Delete the title and text components on the page, so the page is empty.
+2. Add a container into the page.
 
-    ![Delete components](page3.png)
+    ![Add container](page3.png)
 
 4. Copy the following text:
 
     ```Container Code
-    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
+    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
     ```
 
-    Select **Page Layout** in the tree view at the bottom right, and press **Control-V** or **Command-V** on a Mac.
+    Right-click the new container -- either on the canvas or in the tree view -- and select **Paste**.
 
     ![Paste UI](page4.png)
 
@@ -70,19 +68,23 @@ After retrieving the process instances, you will need a place to store the infor
 
 1. Click **Variables**.
 
-2. Click **Page Variables**.
-
-    Click **Add Page Variable**.
+2. Click **Page Variables**, and then click **Add Page Variable**.
 
     ![Page variable](pagevar1.png)
 
-3. Change the name of the new variable to `processInstances`.
-
-4. Change the type of the variable to **List**.
-   
-    Change the **List Item Type** to **Object**.
+    Choose **From existing schema**.
 
     ![Page variable](pagevar2.png)
+
+3. Select **Process**, then navigate to **Order Processing > Retireve process instances > Output Schema**.
+
+    Click **Create**.
+
+    ![Create page variable](pagevar3.png)
+
+4. Change the name of the variable to **processInstances**.
+
+    ![Change variable name](pagevar4.png)
 
 5. Click **Save** (upper right).
 
@@ -91,11 +93,11 @@ After retrieving the process instances, you will need a place to store the infor
 
 
 ### Retrieve statuses
-1. Click **UI Canvas**, and then click **Page Layout** in the tree view on the bottom right.
+1. Click the **User Interface** tab.
+
+    Open the logic pane by clicking **Add logic to Process Status**.
 
     ![Open page](retrieve1.png)
-
-2. Open the logic pane.
 
 3. Under **Processes**, drag in a **Retrieve Instances** flow function and connect it to the **Page Mounted** event.
 
@@ -105,7 +107,15 @@ After retrieving the process instances, you will need a place to store the infor
 
     ![Open page](retrieve3.png)
 
-    With the new flow function selected, set the **startedBy** property to **Data and Variables > System Variables > Currently logged in user >  email**.
+    With the flow function selected, set the **startedBy** property to **Data and Variables > System Variables > Currently logged in user >  email**.
+
+    >You can filter it to whichever user you want, or perhaps not filter the list at all.
+
+    ![Filter by startedBy](retrieve3a.png)
+
+    With the flow function selected, set the **orderBy** binding type to **Static text**. Then, select **startedAt desc**.
+
+    ![Sort by startedAt](retrieve3b.png)
 
 4. Drag a **Set page variable** flow function and connect it to the top output of the **Retrieve instances** flow function.
 
@@ -113,7 +123,7 @@ After retrieving the process instances, you will need a place to store the infor
 
     Set **Variable Name** to **processInstances** (this should already be set).
 
-    Set **Assigned Value** to **Output Value of Another Node > Retrieve Instances > ResponseArray**.
+    Set **Assigned Value** to **Output Value of Another Node > Retrieve Instances > Success**.
 
     ![Open page](retrieve5.png)
 
@@ -124,9 +134,11 @@ After retrieving the process instances, you will need a place to store the infor
 ### Add navigation
 You will create navigation so the user can open up the process status page from the home page.
 
-1. Open the **Navigation** tab.
+1. Open the **App Settings > Navigation** tab.
 
-2. Click **Add Item**.
+    ![Open navigation](nav0.png)
+
+2. Click **Add Item**. This will add a row to the navigation.
 
     ![Add navigation](nav1.png)
 
@@ -140,7 +152,11 @@ You will create navigation so the user can open up the process status page from 
 
     ![Add navigation](nav2.png)
 
-4. Click **Save** (upper right).
+4. Select the **Empty Page** menu item, and change its **Tab name** to **Home**.
+
+    ![Home page](nav3.png)
+
+5. Click **Save** (upper right).
 
 
 
@@ -157,9 +173,7 @@ Run the app, and click the new **Process Status** navigation menu item.
 
 ![Run app](run1.png)
 
-You should now see the process instances that you started. The exact data will depend on how many you created.
-
-![Process instances](run2.png)
+You should now see the process instances that you started. The exact data will depend on how many you created and their statuses.
 
 
 
@@ -174,11 +188,13 @@ You should now see the process instances that you started. The exact data will d
 
 
 ### Create logic to retrieve status
-We will create logic for the status button to retrieve the latest status for a specific process instance.
+To get any status that changed, you can just refresh the page. But now you will create logic for the status button to retrieve the latest status for a specific process instance.
 
-1. Click **UI Canvas**.
+1. Click the **User Interface** tab.
+
+    >Make sure you are on the **Process Status** page.
    
-2. Click the first **Status** buton, and open the logic canvas.
+    Click the first **Status** button, and make sure the logic canvas is open. If it's not open, click **SHow logic for Button 1**.
 
     ![Status button logic](getstatus1.png)
 
@@ -201,12 +217,12 @@ We will create logic for the status button to retrieve the latest status for a s
 
     ![Set page variable](getstatus4.png)
 
-    Set **Variable Name** to **processInstances** (this should already be set).
+    Set **Variable Name** to **processInstances.responseArray**.
 
     Set **Assigned Value** to the following formula:
     
     ```JavaScript
-    SET_ITEM_AT(pageVars.processInstances, repeatedInfo.current.index, SET_KEY(pageVars.processInstances[repeatedInfo.current.index],"status",outputs["Retrieve instances"].workflowInstances.responseArray[0].status))
+    SET_ITEM_AT(pageVars.processInstances.responseArray,repeatedInfo.current.index,SET_KEY(pageVars.processInstances.responseArray[repeatedInfo.current.index],"status",outputs["Retrieve instances"].workflowInstances.responseArray[0].status))
     ```
 
     ![Set page variable - properties](getstatus5.png)
@@ -220,7 +236,7 @@ We will create logic for the status button to retrieve the latest status for a s
 ### Run app
 Run the app again (it should refresh on its own), and click the navigation to go to **Process Status**. You should see something like this.
 
-![Process instances](run2.png)
+![Process instances](rerun.png)
 
 Go to SAP Build Process Automation, and suspend the process.
 
