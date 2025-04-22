@@ -81,7 +81,7 @@ After retrieving the data, you need a place to put it, with the proper schema so
 
 2. On the left, click **Data Variables**.
    
-    Then click **Add Data Variable**, and select `Products`
+    Then click **Add Data Variable**, and select **Products**.
 
     ![Add data variable](data-var-add.png)
 
@@ -100,7 +100,7 @@ After retrieving the data, you need a place to put it, with the proper schema so
    
 2. Drag a dropdown field next to the input box for the **Material**.
 
-    >You will likely have to **Material** input field and then expand the tree view on the bottom right. Also make sure for **Container 3**, for the material, you have text, input, and dropdown components at the same level.
+    >You will likely have to select the **Material** input field and then expand the tree view on the bottom right. Also make sure for **Container 3**, for the material, you have text, input, and dropdown components at the same level.
    
     ![Add dropdown](dropdown-add.png)
 
@@ -114,7 +114,7 @@ After retrieving the data, you need a place to put it, with the proper schema so
 
     | Field | Value |
     |-------|-------|
-    | **Label text** | Delete `Dropdown label` |
+    | **Label text** | Delete **Dropdown label**. |
     | **Option list** | Click the list of values icon, and set the binding to a formula, and set the formula to the following:<div>&nbsp;</div>`MAP(data.Products1, {label: item.Name, value: item.Id})`<div>&nbsp;</div>![Dropdown properties](formula.png)<div>&nbsp;</div>Click **Save** twice on the formula pop up. |
 
     >**What does the formula do?**

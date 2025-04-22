@@ -45,13 +45,25 @@ You will create a separate page to display the process instances, including each
 
     ![Add container](page3.png)
 
+    Right-click the container, and select **Copy**.
+
+    ![Copy container](page3a.png)
+
+    Right-click the container, and select **Paste**.
+
+    ![Copy container](page3b.png)
+
+    This will create nested containers.
+
+    ![Nested container](page3c.png)
+
 4. Copy the following text:
 
     ```Container Code
     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
     ```
 
-    Right-click the new container -- either on the canvas or in the tree view -- and select **Paste**.
+    Right-click **Container 2** -- either on the canvas (it should still be selected) or in the tree view -- and select **Paste**.
 
     ![Paste UI](page4.png)
 
