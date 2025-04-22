@@ -206,7 +206,7 @@ To get any status that changed, you can just refresh the page. But now you will 
 
     >Make sure you are on the **Process Status** page.
    
-    Click the first **Status** button, and make sure the logic canvas is open. If it's not open, click **SHow logic for Button 1**.
+    Click the first **Status** button, and make sure the logic canvas is open. If it's not open, click **Show logic for Button 1**.
 
     ![Status button logic](getstatus1.png)
 
