@@ -124,7 +124,7 @@ In this case, you will create a page variable to store the quantity of the item 
 
 1. Staying in the **Variables** area, on the left, click **Page Variables**
 
-    Click **Add Page Variable**. 
+    Click **Add Page Variable**, and then **From scratch**. 
 
     ![quantity Page Variable ](images/3a-add-page-variable.png)
 

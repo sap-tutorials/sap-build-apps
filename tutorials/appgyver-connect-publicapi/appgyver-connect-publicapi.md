@@ -49,9 +49,11 @@ To improve on this, you will configure a data source that has food information r
 
     >The API enables us to send a barcode as part of the URL, and then returns information about the food with that barcode.
 
-    In the dialog, add a field called **barcode** of type **text**. Click **Add**.
+    In the dialog, add a field called **barcode** of type **text**. 
+    
+    >**IMPORTANT:** Make sure you do not add an extra space to the end of **barcode**.
 
-    >Make sure you do not add an extra space to the end of **barcode**.
+    Click **Add**.
 
     ![Additional inputs](additional-inputs2.png)
 

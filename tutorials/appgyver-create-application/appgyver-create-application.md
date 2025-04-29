@@ -72,28 +72,32 @@ If you set up SAP Build Apps properly, skip this step. Otherwise, we have tried 
    
     ![Create](startnew1.png)
    
-    Click **Build an Application**. 
+    Click **Application**, and click **Next**. 
    
     ![Create](startnew2.png)
 
-    Click **SAP Build Apps**. 
+    Click **Frontend**, and click **Next**. 
    
     ![Create](startnew2a.png)
 
-    Click **Web & Mobile Application**. 
+    Click **Web & Mobile Application**, and click **Next**. 
 
     ![Create](startnew3.png)
 
-3. Enter:
+3. Name the new app by entering:
 
     | **Field** | **Value** |
     |---------|--------------|
     | Name | **Scanner Application** |
     | Description | **Scanner app for reading food barcodes** |
     
-    Click **Create**.
+    Click **Review**.
 
     ![Create](startnew4.png)
+
+    On the **Summary** page, click **Create**.
+
+    ![Create](startnew4a.png)
 
     Your SAP Build Apps project is created, and the default **Home page** is displayed. Once created, projects can be accessed again at any time from the SAP Build lobby.
 
@@ -184,29 +188,29 @@ The application is now saved and available to preview using the preview app on y
  
 
 ### Preview app on your device
-1. Open the SAP Build Apps preview app on your mobile device, and click **Other login options**.
-
-    ![Open preview app](preview1.PNG)
-
-    Select the **US10** region from the dropdown list.
-
-    ![Select US10](preview2.PNG)
-    
-    >If you are not using a trial account and your account is in the EU10 region, select the **EU10** region.
-
-    Click **Generate Code**. This will display a pin code.
-
-    ![Pin code](preview3.png)  
-
-2. Go back to SAP Build Apps on your desktop, and click **Preview**.
+1. Click **Preview** at the top-right of the screen.
     
     ![Launch](launch1a.png)
+
+    You will get a QR code that you will need to scan with the SAP Build Apps preview app.
+
+    ![Get code](previewstart.png)
     
-3. Enter the pin code, and press **Enter** or click **Confirm pin**.
+2. Open the SAP Build Apps preview app on your mobile device, and click the big **SAP Build Apps** button in the middle.
 
-    ![Alt text](Launch2a.png)
+    ![Big button](preview1.png) 
 
-    This will refresh the preview app and display a list of your apps. 
+    Scan the QR code.
+
+    ![Scan](preview2.png) 
+
+    This will generate a 6-character code.
+
+    ![Pin code](preview3.png)  
+    
+3. Back in the preview of the SAP Build Apps project on your desktop, enter the pin code.
+
+    ![Enter code](Launch2a.png)
 
 4. Click **Open** for the **Scanner Application** project.
 
@@ -215,4 +219,11 @@ The application is now saved and available to preview using the preview app on y
     Your application starts to run.
 
     ![Preview of app](IMG_5465.PNG)
+
+
+
+
+
+
+
 
