@@ -57,11 +57,11 @@ You installed SAP Build Process Automation in **Step 3** of the [prerequisites t
     >![Create](1a_Create_Business_Project_Lobby.png)
 
 
-2. Choose **Build an Automated Process**.
+2. Choose **Automated Process**, and then click **Next**.
 
     ![Build Automated Process](2_Build_an_Automated_Process.png) 
 
-    Choose **Business Process**.
+    Choose **Process**, and then click **Next**.
 
     ![Choose Automation Type](3_Business_Automation_Type.png)
 
@@ -70,11 +70,15 @@ You installed SAP Build Process Automation in **Step 3** of the [prerequisites t
     | Field | Value |
     | ------ | ------ |
     | **Project Name** | `Purchase Approval` |
-    | **Description** | `My purchase approval project`
+    | **Description** | `My purchase approval project` |
 
-    Click **Create**.
+    Click **Review**.
 
     ![Give Project Name](4_Business_Project_Name.png)
+
+    On the **Summary** page, click **Create**.
+
+    ![Create](4a_Business_Project_Name.png)
 
     >You may get a disclaimer screen. If so, click **Accept**.
 
@@ -132,7 +136,7 @@ In this step, you will specify the inputs required for the process.
     >The **Identifier** field values – which are case-sensitive – are auto-populated. DO NOT CHANGE THESE.
 
     |  Field Name                | Type | Required |
-    |  :-------------            | :------------- | :-------------
+    |  :-------------            | :------------- | :-------------: |
     |  `Order ID`                  | **String** | 	☑️  |
     |  `Total`                  | **Number** | 	☑️  |
     |  `Business Partner`          | **String** | 	☑️  |

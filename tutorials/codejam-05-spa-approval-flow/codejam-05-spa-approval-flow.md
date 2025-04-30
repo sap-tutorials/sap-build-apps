@@ -110,7 +110,7 @@ Now that you have a data type, you want to add to the process another input for 
 4. Click **Add Input**, and enter the following:
 
     | Name | Type | Required | List |
-    |------|------|------|------|
+    |------|------|:------:|:------:|
     | `Order Items` | **Order Item Type** | ☑️ | ☑️ |
 
     Click **Apply**.
@@ -148,6 +148,8 @@ The process will include a condition that if the total is less than 1000, the pu
     >There is a red warning triangle, next to the condition only because any new condition needs to be configured – NOT because you did anything wrong. 
 
 2. Click **Open Condition Editor**.
+
+    ![Open condition editor](condition-4a.png)
 
     A dialog for setting a condition opens.
 

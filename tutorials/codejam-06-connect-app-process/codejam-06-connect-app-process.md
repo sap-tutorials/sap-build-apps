@@ -146,11 +146,31 @@ In order to trigger a process from SAP Build Apps, you must first publish the pr
 
 
 
+### Enable processes
+In trial accounts, the connection between SAP Build Apps and SAP Build Process Automation is not automatically installed (at the time of this writing).
+
+You will have to install a project to enable triggering of processes.
+
+1. Go to the SAP Build Store.
+
+    ![Open store](enable1.png)
+
+2. Search for `process actions`.
+
+    ![Search store](enable2.png)
+
+3. In the **Process Actions** project, click **Add**.
+
+    ![Add project](enable3.png)
+
+    After a few seconds, you should get a success message.
+
+    ![Project added](enable4.png)
 
 
 
 
-### Enable the process
+### Enable your process
 The process is published, but we need to reference it in our SAP Build Apps project.
 
 1. In your SAP Build Apps project, go to the **Integrations** tab.
@@ -331,7 +351,10 @@ Update the logic as follows.
 
     ![Approval form](run3.png)
 
-    In the form itself, you'll see the order ID and the order items.
+    In the form itself, you'll see the order ID and the order items. You'll also see the total number of items, derived from the Script Task in your process.
+
+    ![Total items](totalitems.png)
+
 
     Click **Approve** (the form should disappear), and then refresh the list of tasks. Now you should see the approval notification, with the same order ID. 
 

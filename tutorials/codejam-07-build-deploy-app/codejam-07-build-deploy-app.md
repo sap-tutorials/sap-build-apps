@@ -105,7 +105,7 @@ primary_tag: software-product>sap-build
 
     ![Login](images/deploy4.png)
 
-    Click on your user.
+    Click on **Sign in with default identity**.
 
     ![User](images/deploy5.png)
 
@@ -133,13 +133,18 @@ primary_tag: software-product>sap-build
 
     >![HTML5 Applications](images/deploy10.png)
 
-    If you click the link, you will get an error, because we have to set up SAP Build Work Zone to work with SAP Build Apps.
+    Click the link and you should see your app.
 
-    ![App error](images/internalerror.png)
+    ![App running](images/wz6.png)
+
+    >If you click the link and get **Internal Server Error**, complete the next step.
+
+    >![App error](images/internalerror.png)
 
 
 
 ### Set up Work Zone
+**IMPORTANT:** This step is only necessary if you get **Internal Server Error** when running your deployed app in the previous step. 
 
 1. Go back to the BTP Cockpit, and open **Instances and Subscriptions**.
 

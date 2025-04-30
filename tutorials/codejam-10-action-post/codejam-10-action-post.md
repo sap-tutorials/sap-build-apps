@@ -259,6 +259,8 @@ Now, you will add the action so that if the order is approved, the action will u
 
     ![Select action](add-action2.png)
 
+    >If you do not see the action you just publsihed, refresh the page.
+
     Click **Add** next to the **Patch** API.
 
     The action gets added and a side pane opens.
@@ -467,7 +469,7 @@ In order to better see the status of all my orders and cart, you will create in 
 
     Click **Submit**. The process continues to update the status of the order, and then completes.
 
-7. Check the process in the monitor tab (make sure you change the filter so it shows completed processes), and you can see all the steps completed.
+7. Check the process in the monitor tab (make sure you change the filter so it shows completed processes), and you can see all the steps completed -- including the update of your order in our CAP service.
 
     ![Process complete](testapp6.png)
 

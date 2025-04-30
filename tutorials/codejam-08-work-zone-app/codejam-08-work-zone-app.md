@@ -60,11 +60,20 @@ To enable you to reach SAP Build Work Zone from the SAP Build Loby, you need to 
 
     ![Open Work Zone](images/wz-open1.png)
 
-2. Select **Build a Business Site**.
+2. Select **Business Site**, and then click **Next**.
 
     ![Build site](images/wz-open2.png)
 
-3. Select **Configure Site in Admin Console**.
+    >If you get a **Not Subscribed** indicator, make sure you have the **LaunchpadAdmin** role and log off and log back into SAP Build.
+    >
+    >![Not subscribed](images/wz-open2a.png)
+    >
+    >Log off with the "avatar" at the top right (yours will have your initials).
+    >
+    >![Logg out](images/wz-open2b.png)
+
+
+3. Select **Admin Console**, and then click **Open**.
 
     ![Open Admin console](images/wz-open3.png)
 
@@ -84,7 +93,7 @@ To enable you to reach SAP Build Work Zone from the SAP Build Loby, you need to 
 
     ![Create](images/wz-create-site2.png)
 
-    The site settings screen is displayed.
+    The site settings screen opens in a new tab.
 
 3. Click **Edit** in the top-right corner.
 
@@ -96,10 +105,7 @@ To enable you to reach SAP Build Work Zone from the SAP Build Loby, you need to 
 
 4. Click **Save**.
 
-
-5. Go back to the site directory.
-
-    ![Site directory](images/wz-create-site5.png)
+5. Go back to the site directory in the previous browser tab.
 
     You will see your new site tile.
 
@@ -143,6 +149,8 @@ To enable you to reach SAP Build Work Zone from the SAP Build Loby, you need to 
 
 4. Select your **ShoppingApp**, and then click **Add**.
 
+    You will get a success essage at the bottom of the page. 
+
     ![Select app](images/wz-add-app6.png)
 
 5. Use the breadcrumb to go back to the **Content Manager**.
@@ -168,12 +176,20 @@ To enable you to reach SAP Build Work Zone from the SAP Build Loby, you need to 
 
     ![Turn on app](images/wz-everyone3.png)
 
+    It should then look like this:
+
+    ![App on](images/wz-everyone4.png)
+
+
 4. Click **Save**.
 
 
 
+
+
+
 ### Create a page
-1. Go back to the **Content Manager** with the breadcrumb.
+1. Go back to the **Content Manager** main page with the breadcrumb.
 
     Click **Create**, and then **Page**.
 
@@ -185,17 +201,17 @@ To enable you to reach SAP Build Work Zone from the SAP Build Loby, you need to 
 
 3. Click **Add Section**.
 
+    ![Add section](images/wz-page2a.png)
+
     Call the section **Purchasing**.
 
     ![Create section](images/wz-page3.png)
 
 4. Click **Add Widget**.
 
-    Select **Tiles**.
+    ![Add widget](images/wz-page3a.png)
 
-    ![Tiles](images/wz-page4.png)
-
-5. Select **ShoppingApp**, and then click **Add (1)**.
+    Select your **ShoppingApp**, and then click **Add (1)**.
 
     ![Add app](images/wz-page5.png)
 
@@ -224,6 +240,8 @@ You get a preview of the page.
 4. Click **Save**.
 
 
+
+
 ### Add space to Everyone
 1. Go back to the **Content Manager** with the breadcrumb.
 
@@ -240,8 +258,13 @@ You get a preview of the page.
 4. Click **Save**.
 
 
+
+
+
 ### Open your site
 1. Go to the Site Directory.
+
+    ![Open Site Directory](images/wz-preview0.png)
 
 2. Open your site.
 

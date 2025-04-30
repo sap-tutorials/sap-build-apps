@@ -57,9 +57,13 @@ In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP 
     
     ![Settings](hub-key1.png)
     
-    Click `Show API Key` and save the key for later.
+    Click `Show API Key`.
 
     ![Show API Key](hub-key2.png)
+
+    Save the key for later.
+
+    ![Save API Key](hub-key3.png)
 
     >The last time we tested, the **Copy Key and Close** button did not work, so you may have to select the key and copy it manually.
 
@@ -191,7 +195,7 @@ In this step, you will enable the destination to be used in your processes.
 
     >![Search entity](search.png)
 
-    Select the **GET** operation that is called **Retrieves business partner data by using business partner number**.  
+    Select the **GET** operation that is called **/A_BusinessPartner('{BusinessPartner}')** with the description **Retrieves business partner data by using business partner number** (see screenshot above).  
    
     >Be careful! There are a lot of APIs that look the same. Use the search to help make finding the right one easier.
 
@@ -244,9 +248,9 @@ Your action should be open to the **Retrieves business partner data by using bus
 
     Under **Body**, you will now see only the needed fields.
 
-3. Click **Save**.
-
     ![Save output fields](3g_Save_Output_Fields.png) 
+
+3. Click **Save**.
 
 4. Click the **Test** tab.
 
@@ -276,7 +280,7 @@ To make the action available to your processes, you must release and publish the
 
 1. Click **Release**.
 
-    > If **Release** is disabled, make sure you've saved the project.
+    >If **Release** is disabled, make sure you've saved the project.
 
     ![Release Action Project](4a_Release_Action_Project.png) 
 
@@ -302,6 +306,7 @@ To make the action available to your processes, you must release and publish the
 
     ![Action Project under Actions List](6a_Action_Project_in_ActionsList.png) 
 
+    >If it's not updated, you can refresh the page or refresh the list with the refresh icon on the top right.
 
 
 
@@ -311,7 +316,6 @@ To make the action available to your processes, you must release and publish the
 
 ### Add action to process
 You've created an action to retrieve data. Now add it to the process so you can retrieve data inside the process.
-
 
 
 1. Return to the SAP Build lobby, and open your **Purchase Approval** project.
@@ -506,7 +510,7 @@ Now that the process expects a business partner, we must change the app to provi
 
 3. Click **Variables**.
 
-    Choose **Page Variables** on the left, then click **Add Page Variable**.
+    Choose **Page Variables** on the left, then click **Add Page Variable > From Scratch**.
 
     ![Select Page Variables](11a_Select_Page_Variables.png)
 
