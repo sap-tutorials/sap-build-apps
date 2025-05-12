@@ -110,7 +110,7 @@ The design of the app is as follows:
 
 - The app was designed in SAP Build Apps, and deployed to SAP BTP.
 
-- The app uses an OData service (built with the Cloud Application Programming Model, or CAP) running in a different SAP BTP tenant as its backend.
+- The app uses an OData service (built with the Cloud Application Programming Model, or CAP) running in SAP BTP as its backend.
 
 - When the app needs to call back SAP Build Process Automation, it does this through a Python service, which is used to avoid CORs issues. A destination is usually used for this purpose, but cannot be used here as we do not know ahead of time the service URL, as we want to enable the app to call back to any tenant. 
 
