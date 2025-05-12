@@ -5,7 +5,7 @@ author_profile: https://github.com/ajmaradiaga
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-build
+primary_tag: software-product>sap-build-process-automation
 ---
 
 # SAP Build: Event-Based Processes CodeJam – Introduction
