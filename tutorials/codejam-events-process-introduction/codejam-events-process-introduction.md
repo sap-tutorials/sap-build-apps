@@ -8,7 +8,7 @@ tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-
 primary_tag: software-product>sap-build
 ---
 
-# SAP Build: Create Event-Based Processes CodeJam – Introduction
+# SAP Build: Event-Based Processes CodeJam – Introduction
 <!-- description -->Welcome to the SAP Build: Create event-based processes CodeJam, and thanks for your interest in joining us as part of this CodeJam.
 
 ## Intro
