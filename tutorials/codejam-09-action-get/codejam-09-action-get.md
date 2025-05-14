@@ -53,11 +53,11 @@ In order to access the demo SAP S/4HANA Cloud business partner API on the **SAP 
 
     ![SAP Business Accelerator Hub](businesshub.png)
 
-    On the top-right, click your avatar, and then click `Settings`.
+    On the top-right, click your avatar, and then click **Settings**.
     
     ![Settings](hub-key1.png)
     
-    Click `Show API Key`.
+    Click **Show API Key**.
 
     ![Show API Key](hub-key2.png)
 
@@ -514,7 +514,7 @@ Now that the process expects a business partner, we must change the app to provi
 
     ![Select Page Variables](11a_Select_Page_Variables.png)
 
-    Change the name of the variable to **BP**.
+    Change the name of the variable `BP`.
     
     Click **Save**.
 
@@ -542,6 +542,8 @@ Now that the process expects a business partner, we must change the app to provi
    
     On the right, under **Input Parameters**, click **Custom object**. 
     
+    ![Trigger process parameters](13a_trigger_process2.png)
+
     In the dialog, bind **Business Partner** to **Data and Page Variables > Page Variable > BP**.
 
     Click **Save**.
@@ -594,7 +596,7 @@ Now that the process expects a business partner, we must change the app to provi
 
     ![Study and Understand the Process Log](17d_Process_Log.png)
 
-    In the process **Context** you can see that data from **S4HANA** is fetched successfully.
+    In the process **Context** you can see that data from S/4HANA is fetched successfully.
 
     ![Choose Process](17e_Process_Context.png)
 

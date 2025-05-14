@@ -235,8 +235,6 @@ You have already set up the approval form as part of the tutorial [Add Approval 
 
 Now, you will add the action so that if the order is approved, the action will update the status of the order.
 
-![Approval form Approve flow](images/5-approvalform-approve-flow.png)
-
 1. Go back to your **Purchase Approval** project, and open the process.
 
     Make sure the **Editable** version is selected.

@@ -3,7 +3,7 @@ parser: v2
 author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
-time: 25
+time: 30
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
@@ -11,7 +11,7 @@ primary_tag: software-product>sap-build
 # 1 - Create the Product List Page
 <!-- description --> Import a skeleton project for the SAP Build CodeJam, and create a simple product list page based on data in our CAP service.
 
- 
+  
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Set Up Prerequisites for SAP Build CodeJam](codejam-0-prerequisites).
 
@@ -294,7 +294,7 @@ Containers are components that can hold other components, and let you configure 
 
     ![Drag Large image list item inside Container](images/13-drag-largeimagelistitem-container.png)
 
-4. With the **Large Image List Item** selected, click the binding icon for the **Repeat** property.
+4. With the **Large Image List Item** selected, click the binding icon for the **Repeat with** property.
 
     ![Repeat property](images/13-repeat1.png)
 
@@ -330,7 +330,11 @@ As an example of how to stylize a component, let's add space around our containe
 
     >If you want, you can update the default style with your changes so it affects all components ( **Overwrite** ), or you can save your changes to a new style ( **New Style** ). 
 
-2. Expand the **Padding** settings. Here you can set the padding for all 4 directions.
+2. Expand the **Padding** settings.
+
+    ![Open padding](images/padding.png)
+
+3. Under **Padding**, you can set the padding for all 4 directions.
 
     ![Padding](padding.png)
     
