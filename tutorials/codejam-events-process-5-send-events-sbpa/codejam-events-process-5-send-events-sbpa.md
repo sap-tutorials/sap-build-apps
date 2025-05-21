@@ -127,7 +127,7 @@ Now that we've created a REST Delivery Point, we have to specify where we want e
     | *Authentication Scheme* | `OAuth 2.0 Client Credentials`                                                                                                                                     |
     | *Client ID*             | Value from service key `.uaa.clientid`, e.g. *sb-VQ18I1VS-3226-5LF1-JVWV-760D08FHP857-3ok534d4-8562-632j-436w-0j5b0n8r4d0l!b139588 \| eventing-xsuaa-broker!b####* |
     | *Client Secret*         | Value from service key `.uaa.clientsecret`                                                                                                                         |
-    | *Token Endpoint URL*    | Concatenate the value from service key `.uaa.url`, e.g. *https://[host].authentication.[region].hana.ondemand.com* and `/oauth/token`                              |
+    | *Token Endpoint URL*    | Concatenate the value from service key `.uaa.url`, e.g. _https://[host].authentication.[region].hana.ondemand.com_ and `/oauth/token`                              |
     | *Token Expiry Default*  | `3600`                                                                                                                                                             |
 
 4. Click **Apply**.

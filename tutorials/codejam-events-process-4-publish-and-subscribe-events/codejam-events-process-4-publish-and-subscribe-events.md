@@ -118,6 +118,7 @@ In AEM there is a concept of a **Topic Endpoint**. A topic endpoint is a durable
 
 - A topic endpoint doesn't allow reading messages without removing them. A queue supports this.
 
+> Peeking on messages in a queue can come in handy whenever there might be a problematic message in the queue that a consumer cannot process. In this case, as an end user we can check the message in the queue, see if there is something wrong with it and decide if we might need a code change on the consumer side or if we can just remove the message from the queue to continue processing all other messages. To learn how to peek on messages in a queue in AEM, check out the following blog post: [How to peek into queues in SAP Integration Suite, advanced event mesh](https://community.sap.com/t5/integration-blog-posts/how-to-peek-into-queues-in-sap-integration-suite-advanced-event-mesh/ba-p/14057317).
 
 
 

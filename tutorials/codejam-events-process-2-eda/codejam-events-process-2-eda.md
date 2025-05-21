@@ -3,7 +3,7 @@ parser: v2
 author_name: Antonio Maradiaga
 author_profile: https://github.com/ajmaradiaga
 auto_validation: true
-time: 30
+time: 10
 tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-build
 ---
