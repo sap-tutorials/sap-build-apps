@@ -127,7 +127,7 @@ Now that we've created a REST Delivery Point, we have to specify where we want e
     | *Authentication Scheme* | `OAuth 2.0 Client Credentials`                                                                                                                                     |
     | *Client ID*             | Value from service key `.uaa.clientid`, e.g. *sb-VQ18I1VS-3226-5LF1-JVWV-760D08FHP857-3ok534d4-8562-632j-436w-0j5b0n8r4d0l!b139588 \| eventing-xsuaa-broker!b####* |
     | *Client Secret*         | Value from service key `.uaa.clientsecret`                                                                                                                         |
-    | *Token Endpoint URL*    | Concatenate the value from service key `.uaa.url`, e.g. _https://[host].authentication.[region].hana.ondemand.com_ and `/oauth/token`                              |
+    | *Token Endpoint URL*    | Concatenate the value from service key `.uaa.url`, e.g. `https://[host].authentication.[region].hana.ondemand.com`, and `/oauth/token`                              |
     | *Token Expiry Default*  | `3600`                                                                                                                                                             |
 
 4. Click **Apply**.
@@ -248,10 +248,15 @@ First, let's see all the objects that we've configured.
 
     Check that the `EDP_BP_Created_[SAPCommunityDisplayName]` queue (inside your RDP) is accumulating messages.
 
-    ![Received messages in queue](assets/queue-messages-received.png)
+    ![Received messages in queue](assets/queue-messages-received.png).
 
+    Also, you can check the REST Consumer configured. In the stats tab of the REST consumer, you will see the number of messages processed.
 
+    ![REST consumer stats](assets/rest-consumer-success.png)
 
+> As an alternative, you can also check the Business Event being received in SAP Build Process Automation. In the SAP Build Process Automation tenant, navigate to **Monitoring** > **Acquired Events** > **Business Events**. The event should be listed there.
+>
+> ![Business Event in SAP Build Process Automation](assets/business-event-in-sbpa.png)
 
 
 ### Summary
