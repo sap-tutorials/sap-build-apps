@@ -602,7 +602,7 @@ Now that the process expects a business partner, we must change the app to provi
 
     You can also see that the last step is an approval form, waiting to be filled out -- the request is over 1000 and is not from someone in grouping BP01.
 
-5. Open your **Inbox** by clicking he icon in the header.
+5. Open your **Inbox** by clicking the icon in the header.
 
     You should see an **Approve Form** task in the Inbox
      

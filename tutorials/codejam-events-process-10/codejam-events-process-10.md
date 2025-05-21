@@ -98,7 +98,7 @@ The destination should now appear in the list of destinations that can be used w
 
     ![Create](assets/action2.png)
 
-    Scroll down and select **SAP Business Accelerator Hub**.
+    Select **OData Destinations**.
 
     ![Odata Destinations](assets/action3.png)
 

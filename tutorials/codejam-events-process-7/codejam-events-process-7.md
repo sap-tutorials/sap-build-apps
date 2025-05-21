@@ -7,7 +7,7 @@ time: 20
 tags: [ tutorial>intermediate, software-product>sap-build, software-product>sap-integration-suite, software-product>sap-build-process-automation]
 primary_tag: software-product>sap-build
 ---
-
+ 
 # 7 - Add Approval Step and Use Inbox
 
 <!-- description --> Add a step to allow an approver to see the details sent with the event and approve the request for a badge. 
