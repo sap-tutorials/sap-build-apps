@@ -28,7 +28,7 @@ primary_tag: software-product>sap-build
 
 
 ## Intro
-The very first thing you did in this CodeJam was to create a product page listing products from the ES5 backend.
+The very first thing you did in this CodeJam was to create a product page listing products from our CAP service.
 
 But will want to be able to filter the list, and you will create 2 filters:
 
@@ -107,7 +107,7 @@ The text filter will show only products with the text contained in the product n
 
 
 ### Add logic to get list of categories
-To enable the user to choose a category, you need to populate the **Categories** variable with the list of available categories. You will derive this from the list of products you retrieved from the ES5 system.
+To enable the user to choose a category, you need to populate the **Categories** variable with the list of available categories. You will derive this from the list of products you retrieved from our CAP service.
 
 1. In the **Variables** area, click **Data Variables**.
 
@@ -147,7 +147,7 @@ To enable the user to choose a category, you need to populate the **Categories**
 
 5. Click **Save** (upper right).
 
->The ES5-Shop service has an entity called **MainCategories**, and we could have instead just retrieved the categories from there. But the above a little simpler, especially as the list of products is not so long.
+
 
 
 
