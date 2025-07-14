@@ -1,0 +1,706 @@
+{
+	"info": {
+		"_postman_id": "fe812c7a-9fd7-439f-bfe2-53b4feccf09c",
+		"name": "SAP Build Process Automation",
+		"description": "This collection is for calling the APIs for SAP Build Process Automation, including to get all process instances, to trigger a new process instances, get all tasks associated with a process instance, and to similate the approval or rejection (or other action) for a user task, that is, form.\n\nUse the **Authorization** tab in this parent node to generate an access token, either with client credentials or authorization code (user token).\n\nIf you use client credentials, you will need to provide an API key in the header _**irpa-api-key**_., which is generated in your environment in SAP Build.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2165237"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{clientsecret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{clientid}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{authurl}}/oauth/token?grant_type=client_credentials",
+					"host": [
+						"{{authurl}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"description": "Grant type"
+						}
+					]
+				},
+				"description": "## Get Access Token\n\nThis endpoint is used to obtain an access token using the Client Credentials grant type and the service key for the SAP Build Process Automation service.\n\n**NOTE:** This request is only to show you how to manually get an access token. You should use the **Authorization** tab of the collection parent for obtaining a token for all requests."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token - User - password",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{clientsecret}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{clientid}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "{{user}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "Grant type",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{authurl}}/oauth/token",
+					"host": [
+						"{{authurl}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				},
+				"description": "## Get User Access Token - password\n\nThis endpoint is used to obtain a user access token using the Password grant type.\n\nThe request includes the service key for the SAP Build Process Automation service as well as the user password hardcoded in the request (though global environment is used to hide the user credentials).\n\nYou could instead use the authorization code grant type so no credentials are stored anywhere.\n\n**NOTE:** This request is only to show you how to manually get a user access token using password grant type. You should use the **Authorization** tab of the collection parent for obtaining a token for all requests."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Workflows",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "irpa-api-key",
+						"value": "4QSIwASmN23bidMV9usbdL-rhARrz3Gb",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/workflow-instances",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"workflow-instances"
+					],
+					"query": [
+						{
+							"key": "startedFrom",
+							"value": "20250501000000",
+							"description": "Include instances started after this date",
+							"disabled": true
+						},
+						{
+							"key": "startedUpTo",
+							"value": "20250521000000",
+							"description": "Include instances started up to this date",
+							"disabled": true
+						},
+						{
+							"key": "completedFrom",
+							"value": "20250601000000",
+							"description": "Include instances completed after this date",
+							"disabled": true
+						},
+						{
+							"key": "completedUpTo",
+							"value": "20250623000000",
+							"description": "Include instances completed up to this date",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "ERRONEOUS",
+							"description": "Include instances with this status",
+							"disabled": true
+						},
+						{
+							"key": "containsText",
+							"value": "",
+							"description": "Include instances that contains this text in id, definitionId, subject, startedBy, or businessKey",
+							"disabled": true
+						},
+						{
+							"key": "environmentId",
+							"value": "danielshared",
+							"description": "Include instances from this environment",
+							"disabled": true
+						},
+						{
+							"key": "$top",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "$orderby",
+							"value": "subject",
+							"disabled": true
+						}
+					]
+				},
+				"description": "### Get Workflow Instances\n\nThis endpoint retrieves a list of workflow instances from the system, and allows for filtering on a variety of fields.\n\nYou can filter the list by a variety of query parameters.\n\nThere is also a header for an API key -- irpa-api-key -- in case you use client credentials."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Workflow by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/workflow-instances/037716b9-12a5-4c47-92a9-4fb4757d0869",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"workflow-instances",
+						"037716b9-12a5-4c47-92a9-4fb4757d0869"
+					]
+				},
+				"description": "### Get a Specific Workflow Instance\n\nThis endpoint retrieves specific workflow instance based on the ID, and returns basic information about the instance, like its status, ID, and definition ID."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Workflow - Context",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/workflow-instances/037716b9-12a5-4c47-92a9-4fb4757d0869/context",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"workflow-instances",
+						"037716b9-12a5-4c47-92a9-4fb4757d0869",
+						"context"
+					]
+				},
+				"description": "### Get a Specific Workflow Instance Context\n\nThis endpoint retrieves the context (data) of a specific workflow instance based on the process instance ID."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Workflow - Context Path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/workflow-instances/037716b9-12a5-4c47-92a9-4fb4757d0869/context/action_post_Badges_1.result.status",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"workflow-instances",
+						"037716b9-12a5-4c47-92a9-4fb4757d0869",
+						"context",
+						"action_post_Badges_1.result.status"
+					]
+				},
+				"description": "### Get a Specific Workflow Instance Context\n\nThis endpoint retrieves a partion of the context (data) of a specific specific workflow instance based on the ID. The endpoint takes a path and returns only the path within the context."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Workflow - Execution Logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/workflow-instances/0a6f6ba3-5cb7-11f0-b28d-eeee0a966cc3/execution-logs",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"workflow-instances",
+						"0a6f6ba3-5cb7-11f0-b28d-eeee0a966cc3",
+						"execution-logs"
+					]
+				},
+				"description": "### Get a Specific Workflow Instance Logs\n\nThis endpoint retrieves the execution logs of a specific specific workflow instance based on the ID. The logs let you see all the steps that have been triggered and completed."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/task-instances",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"task-instances"
+					],
+					"query": [
+						{
+							"key": "createdFrom",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "createdUpTo",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "completedFrom",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "completedUpTo",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "dueDateFrom",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "dueDateUpTo",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "recipientUsers",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "containsText",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "### Get Tasks\n\nThis endpoint retrieves a list of tasks that were triggered by all the process instances.\n\nYou can filter the list by a variety of query parameters."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks for Workflow",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/task-instances?workflowInstanceId=74a583f1-5cb7-11f0-a26e-eeee0a872ba8",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"task-instances"
+					],
+					"query": [
+						{
+							"key": "workflowInstanceId",
+							"value": "74a583f1-5cb7-11f0-a26e-eeee0a872ba8"
+						}
+					]
+				},
+				"description": "### Get Tasks\n\nThis endpoint retrieves a list of tasks that were triggered by all the process instances.\n\nYou can filter the list by a variety of query parameters."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Task by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/task-instances/76c3cf45-5cb7-11f0-8571-eeee0a84481a",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"task-instances",
+						"76c3cf45-5cb7-11f0-8571-eeee0a84481a"
+					]
+				},
+				"description": "### Get a Specific Task\n\nThis endpoint retrieves a specific task based on the ID, and returns basic information about the instance, like its status, ID, and the process instance that it is part of."
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Task - Context",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/task-instances/76c3cf45-5cb7-11f0-8571-eeee0a84481a/context",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"task-instances",
+						"76c3cf45-5cb7-11f0-8571-eeee0a84481a",
+						"context"
+					]
+				},
+				"description": "### Get a Specific Task's Context\n\nThis endpoint retrieves the context (data) related to a specific task based on the task ID."
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Task",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-csrf-token",
+						"value": "aaaa",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "2.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"context\": {\r\n        \"comment\": \"This is my comment from the API\"\r\n    },\r\n    \"status\": \"COMPLETED\",\r\n    \"decision\": \"kaboom\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/task-instances/4876c6ce-5ccd-11f0-8571-eeee0a84481a",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"task-instances",
+						"4876c6ce-5ccd-11f0-8571-eeee0a84481a"
+					]
+				},
+				"description": "### Update a Task\n\nThis endpoint lets you update a task and simulate as if the user clicked one of the action button in the task. You can also update the context by sending data for the fields in the task/form."
+			},
+			"response": []
+		},
+		{
+			"name": "Trigger Process",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "irpa-api-key",
+						"value": "4QSIwASmN23bidMV9usbdL-rhARrz3Gb",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n{\r\n    \"definitionId\": \"us10.mytrial.testapi.testAPIProcess\",\r\n    \"context\": {\r\n        \"amount\": \"55\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/workflow/rest/v1/workflow-instances?environmentId=danielshared",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"workflow",
+						"rest",
+						"v1",
+						"workflow-instances"
+					],
+					"query": [
+						{
+							"key": "environmentId",
+							"value": "danielshared"
+						}
+					]
+				},
+				"description": "### Trigger a Process Instance\n\nThis endpoint ltriggers a process, creating a new process instance. You can send in values for the process inputs. You can view how the payload shsould look by going to the **Control Center > Triggers**, and viewing the trigger for the process.\n\nFor shared environments, you must send the name of the environment as a query parameter."
+			},
+			"response": []
+		},
+		{
+			"name": "Trigger Wait",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "irpa-api-key",
+						"value": "u4aDBLGCxpw_PU9yqXJ5KS6eylXMqgKJ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"executionId\": \"477f67a3-d969-11ef-96ad-eeee0a9acf4a\",\r\n    \"inputs\": {\r\n        \"cost\": 55\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/unified/v1/triggers/api/7e6fe369-8bb0-43bf-a031-3d6103866193",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"unified",
+						"v1",
+						"triggers",
+						"api",
+						"7e6fe369-8bb0-43bf-a031-3d6103866193"
+					]
+				},
+				"description": "### Trigger a \"Wait for API Call\"\n\nSAP Build Process Automation lets you add a \"Wait for API Call\" step, which pauses the process instance until a specific API call is received. This endpoint is the call to restart a process instance after such a step.\n\nThe API call currently is in a different format than a standard trigger, and includes an executionId in the request body that is specific to this trigger. The API also has a value in the path that is unqique to this trigger.\n\nSuch steps also let you declare input parameters that can be sent by the API that restarts the process instance."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{authurl}}/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{clientsecret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{clientid}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "{{authurl}}/oauth/authorize",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "{{endpoint}}",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "scope",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
