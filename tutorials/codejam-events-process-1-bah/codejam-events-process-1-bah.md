@@ -39,7 +39,7 @@ Among the SAP Build-related artifacts:
 
 - APIs
 
-- Process templates (especially for SAP applications)s
+- Process templates (especially for SAP applications)
 
 - Automation SDKs
 
@@ -47,7 +47,7 @@ Among the SAP Build-related artifacts:
 
 ### Tour events section of SAP Business Accelerator Hub
 
-Let's start by exploring the **Events** section part of the SAP Business Accelerator Hub.
+Let's start by exploring the **Events** section of the SAP Business Accelerator Hub.
 
 👉 Navigate to the SAP Business Accelerator Hub, [https://hub.sap.com](https://hub.sap.com), click **Categories**, and select **Events**.
 
@@ -99,7 +99,7 @@ We can see that there is an operation available, `ce/sap/s4/beh/marketingcampaig
 
 #### Data events
 
-A data event is also a message that is sent to inform that something has happened but different to the notification event, it includes the data that has changed. For example, a data event could be sent to inform that a new customer has been created in a system and include the data of the new customer.
+A data event is also a message that is sent to inform that something has happened, but unlike a notification event, it includes the data that has changed. For example, a data event could be sent to inform that a new customer has been created in a system and include the data of the new customer.
 
 As an example, let's get familiar with the [SAP Digital Vehicle Hub Business Events](https://hub.sap.com/event/SAPDigitalVehicleHubBusinessEvents_SAPDigitalVehicleHubBusinessEvents/resource) available from SAP Digital Vehicle Hub. We can see that there is an operation available – Vehicle Created (`/sap.dmo.dvh.Vehicle.Created.v1`), and within it, we can find an example payload of the event. 
 
@@ -189,13 +189,13 @@ Below is an example of what a CloudEvent message will look like:
 }
 ```
 
-You'll notice that the example above is composed of many attributes. These attributes describe the event and are independent of the event data. Meaning that we can somehow process/inspect the event without needing to process its data. Now, let's dive a bit into the message itself.
+You'll notice that the example above is composed of many attributes. These attributes describe the event and are independent of the event data. This means that we can process or inspect the event without needing to process its data. Now, let's dive a bit into the message itself.
 
 >For more information on how SAP has adopted CloudEvents, check out this blog post: https://community.sap.com/t5/application-development-blog-posts/cloudevents-at-sap/ba-p/13620137.
 
 #### CloudEvents message format
 
-A CloudEvent message is mainly composed of context attributes and data. As we briefly touched on previously, the payload in the data field will depend if it is a notification event or a data event.
+A CloudEvent message is mainly composed of context attributes and data. As we briefly touched on previously, the payload in the data field will depend on whether it is a notification event or a data event.
 
 #### Context attributes
 
@@ -297,31 +297,31 @@ In the next exercise, we will explore the CloudEvents format, which is a specifi
 
 
 ### Tour SAP Build artifacts
-IN addition to the event artifacts in the SAP Business Accelerator Hub, there are many SAP Build-related artifacts, especially for SAP Build Process Automation.
+In addition to the event artifacts in the SAP Business Accelerator Hub, there are many SAP Build-related artifacts, especially for SAP Build Process Automation.
 
 
 
 #### Pre-Built Content
-One of the greatest features of SAP Build Process Automation is that it comes with thousands of templates for automating SAP_relatted processes.
+One of the greatest features of SAP Build Process Automation is that it comes with thousands of templates for automating SAP-related processes.
 
 In the menu header of the SAP Business Accelerator Hub, click **SAP Build**.
 
 ![Exploring SAP Build](build1.jpg)
 
-This will show hundreds of tiles for templates or SDKs that can be used in SAP Build Process Automation. These lead to documentation to these assets – if you want to use them, a similar list appears inside SAP Build in the SAP Build Store, where you quickly create projects based on these templates.
+This will show hundreds of tiles for templates or SDKs that can be used in SAP Build Process Automation. These lead to documentation for these assets – if you want to use them, a similar list appears inside SAP Build in the SAP Build Store, where you quickly create projects based on these templates.
 
 
 Enter **service orders** in the search box, and click the tile **Mass Creation of Maintenance Service Orders**.
 
 ![Mass Creation of Maintenance Service Orders](build2.jpg)
 
-You will get a page about these specific template. 
+You will get a page about this specific template. 
 
 - **Overview:** Explains the use case and high-level architecture of the template
 
 - **Artifacts:** Lists all the assets contained within the project and what they are for
 
-- **Documentation:** Links to documentation, generally a PDF hat you can download  
+- **Documentation:** Links to documentation, generally a PDF that you can download  
 
 ![Mass Creation of Maintenance Service Orders documentation](build3.png)
 
@@ -333,7 +333,7 @@ For example, you can explore the [SAP Build Process Automation API package](http
 
 ![SAP Build Process Automation API package](build4.png)
 
-There are both OData and plain REST APIs for performing a variety of actions: trigger a process, view the context of process instances, execute rules and much more.
+There are both OData and plain REST APIs for performing a variety of actions: trigger a process, view the context of process instances, execute rules, and much more.
 
 
 
@@ -342,13 +342,11 @@ Go back to the SAP Build area, but search by SDK – or just click [SDKs](https:
 
 ![SDKs](build5.jpg)
 
-Though you can consider these as just more pre-built content, SDKs are special projects that enable SAP Build Process Automation automation bots to connect to different applications: for example, Microsoft Office, Google Productivity Tools, SAPGUi, UI5 apps and more.
+Though you can consider these as just more pre-built content, SDKs are special projects that enable SAP Build Process Automation bots to connect to different applications: for example, Microsoft Office, Google Productivity Tools, SAP GUI, UI5 apps, and more.
 
-SDKs are what makes automation bots do useful things.
+SDKs are what make automation bots do useful things.
 
-These entries provide explanation of what the SDKs can do plus a list of artifacts they come with. Generally, they do not have documentation.
-
-
+These entries provide an explanation of what the SDKs can do, plus a list of artifacts they come with. Generally, they do not have documentation.
 
 
 
