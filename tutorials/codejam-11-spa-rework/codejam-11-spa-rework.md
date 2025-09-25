@@ -96,9 +96,11 @@ You need to modify the approval form to enable the approver to indicate that the
 
     ![Explanation](approval3.png)
 
-4. Click the **Button Settings** icon at the bottom of the form. 
+4. Click the **Reject** button, and then in the side panel:
 
-    Under **Reject**, select from the dropdown **Custom**, and enter in the box `Reject/Rework`.
+    - Set **Button Type** to **Custom Label**.
+
+    - Set **Label** to `Reject/Rework`.
 
     ![Button texts](approval4.png)
 
@@ -113,7 +115,7 @@ Now you need to check whether the approver enabled rework. For this, you add a c
 
 1. Go back to the tab with your process.
    
-    Under **Reject** under the approval form, click the plus sign, **+**, and select **Controls and Events > Condition**.
+    Under **Reject/Rework** under the approval form, click the plus sign, **+**, and select **Controls and Events > Condition**.
 
     >You may need to expand the approval form.
 
@@ -171,11 +173,11 @@ Now you need to provide a form for the submitter to provide an explanation. Sinc
 
     ![Delete checkbox](reworkform5.png)
 
-3. Click the **Button Settings** icon at the bottom of the form. 
+3. Click each of the buttons and change their labels by setting **Button Type** to **Custom Label**. Then change the labels:
 
-    Under **Approve**, select from the dropdown **Custom**, and enter in the box `Retry`.
-
-    Under **Reject**, change the custom text to `Cancel Request`.
+    Change **Approve** to `Retry`.
+    
+    Change **Reject/Rework** to `Cancel Request`.
 
     ![Buttons](reworkform6.png)
 

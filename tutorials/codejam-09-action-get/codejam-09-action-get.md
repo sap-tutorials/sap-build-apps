@@ -12,7 +12,7 @@ primary_tag: software-product>sap-build
 # 9 - Create Action to Get Data from SAP S/4HANA Cloud
 <!-- description --> Create an action project to retrieve SAP S/4HANA Cloud data and call the action from your business process, as part of the SAP Build CodeJam.
 
-
+ 
 
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Trigger Process from Your App](codejam-08-work-zone-app).

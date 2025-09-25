@@ -57,7 +57,7 @@ To get and set up the SAP Build Apps Mobile Preview App, watch and follow along 
 ### Add UI for barcode scanning
 1. Go to the home page.
    
-    Make sure you are toggled to **View**.
+    Select **User Interface**.
 
     ![Back home](backhome.png)
 
@@ -198,35 +198,32 @@ Now you will use the mobile preview app so you can use the native functionality 
 
 
 
-1. Click the **Launch** tab, and then **Open preview portal**.
+1. Click **Preview**.
 
     ![Open launch tab](3-preview-1.png)
 
-    You should now get a place to enter a code from your preview app.
+    You should get a page like this:
 
-    ![Preview portal](3-preview-1a.png)
+    ![QR code](3-preview-1aa.png)
 
 2. Open the preview app on your device.
 
-3. Follow one of the following:
+    Click **Scan Login QR Code**.
 
-    - **For US10:** If you are on a trial account, likely you are on an SAP BTP account in the US10 region.
+    ![Click Scan](openPreviewApp1.png)]
 
-        - Click **Other login options**.
+    Scan the QR code on your preview page.
 
-        - Select **SAP Build Apps US10**, and then click **Generate Code**.
+    ![Scan](openPreviewApp2.png)]
 
-            A code will be shown.
-            
-            ![Preview on US10](3-preview-2.png)
+    This should give you a 6-character code.
 
-    - **For EU10:** Just click **SAP Build Apps** and a code will be shown.
+    ![Pin code](openPreviewApp3.png)]
 
-        ![Preview on EU10](3-preview-2a.png)
 
-4. Take the code and enter it in the preview portal in SAP Build Apps.
+4. Take the code and enter it in the preview page in SAP Build Apps.
 
-    Press **Enter**.
+    Press **Enter** (or click **Confirm Pin**).
 
     >The pin code can be entered upper or lower case, and you can press **Enter** instead of clicking **Confirm pin**.
 

@@ -103,7 +103,7 @@ To connect Build Apps to Process Automation a destination needs to be created fo
 
     >The skeleton destination you imported assumes you are using US10 region and setting the **URL** field accordingly. Double-check the **URL** field in the destination, which should be the same as the **api** field in your service key.
 
-    Select **Use default JDK truststore**.
+    Select **Use default client trust store**.
 
     Click **Save**.
 
