@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-buil
 primary_tag: software-product>sap-build
 ---
   
- 
+   
 
 # 6 - Trigger Process from Your App
 <!-- description --> Enable your app to call the SAP Build Process Automation API in order to trigger your process, as part of the SAP Build CodeJam.
@@ -146,26 +146,6 @@ In order to trigger a process from SAP Build Apps, you must first publish the pr
 
 
 
-### Enable processes
-In trial accounts, the connection between SAP Build Apps and SAP Build Process Automation is not automatically installed (at the time of this writing).
-
-You will have to install a project to enable triggering of processes.
-
-1. Go to the SAP Build Store.
-
-    ![Open store](enable1.png)
-
-2. Search for `process actions`.
-
-    ![Search store](enable2.png)
-
-3. In the **Process Actions** project, click **Add**.
-
-    ![Add project](enable3.png)
-
-    After a few seconds, you should get a success message.
-
-    ![Project added](enable4.png)
 
 
 

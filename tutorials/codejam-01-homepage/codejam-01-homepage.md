@@ -11,7 +11,7 @@ primary_tag: software-product>sap-build
 # 1 - Create the Product List Page
 <!-- description --> Import a skeleton project for the SAP Build CodeJam, and create a simple product list page based on data in our CAP service.
 
-  
+   
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Set Up Prerequisites for SAP Build CodeJam](codejam-0-prerequisites).
 

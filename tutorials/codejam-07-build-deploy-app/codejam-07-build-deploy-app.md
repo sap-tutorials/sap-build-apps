@@ -13,7 +13,7 @@ primary_tag: software-product>sap-build
 # 7 - Build and Deploy App to BTP
 <!-- description --> Build your app and deploy it to SAP BTP, as part of the SAP Build CodeJam.
 
-
+ 
 ## Prerequisites
 - You have completed the previous tutorial for the SAP Build CodeJam, [Add Approval Flow to Process](codejam-06-connect-app-process).
 

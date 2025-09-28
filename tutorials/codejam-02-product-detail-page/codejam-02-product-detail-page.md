@@ -7,7 +7,7 @@ time: 15
 tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps]
 primary_tag: software-product>sap-build
 ---
-  
+   
 
 # 2 - Configure the Product Details Page
 <!-- description --> Set up the product detail page – including variables, binding, styling, and logic – as part of the SAP Build CodeJam.
