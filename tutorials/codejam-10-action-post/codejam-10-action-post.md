@@ -4,45 +4,38 @@ author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-build, software-product>sap-build-apps, software-product>sap-build-process-automation]
+tags:
+    [
+        tutorial>beginner,
+        software-product>sap-build,
+        software-product>sap-build-apps,
+        software-product>sap-build-process-automation
+    ]
 primary_tag: software-product>sap-build
 ---
-   
 
 # 10 - Create Action Project to Post Data to CAP Service
+
 <!-- description --> Create an action project to update our CAP service and call the action from your process when the order is approved, as part of the SAP Build CodeJam.
 
-
-
 ## Prerequisites
-- You have completed the previous tutorial for the SAP Build CodeJam, [Create Action to Get Data from SAP S/4HANA Cloud](codejam-09-action-get).
 
-
-
-
+-   You have completed the previous tutorial for the SAP Build CodeJam, [Create Action to Get Data from SAP S/4HANA Cloud](codejam-09-action-get).
 
 ## You will learn
-- How to create an action to update data
-- How to use an action in your process
 
-
-
-
+-   How to create an action to update data
+-   How to use an action in your process
 
 ## Intro
+
 In the previous tutorial, you created and used an action to retrieve data from an SAP S/4HANA Cloud system.
 
 In this tutorial, you will create another action, this time to connect to our CAP service and update an entity.
 
-
-
-
-
-
-
-
 ### Enable destination in processes
-SAP Build Process Automation enables administrators to control which destinations – and, therefore, which backend systems – can be connected to processes during runtime. 
+
+SAP Build Process Automation enables administrators to control which destinations – and, therefore, which backend systems – can be connected to processes during runtime.
 
 You already created the destination for the CAP service because you needed it in the app. In this step, you will enable the destination to be used in your process.
 
@@ -70,31 +63,6 @@ You already created the destination for the CAP service because you needed it in
 
     The destination will be added to the list of destinations that can be used within your processes for runtime.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Create action project
 
 1. Go back to the SAP Build lobby, and click **Connectors > Actions**.
@@ -106,36 +74,36 @@ You already created the destination for the CAP service because you needed it in
     ![Create Actions](images/1a-actions-create.png)
 
 3. Select **Live API > OData Destinations**.
-   
+
     ![Select OData](images/1b-select-live-other-btp-destinations.png)
 
     Select **CodeJamOrdersService**.
 
     ![Select CodeJam Orders](images/1c-select-codejamordersservice.png)
-    
-    >**CodeJamOrdersService** was already configured as a destination in the SAP BTP cockpit – with the additional property `sap.applicationdevelopment.actions.enabled` – and hence is visible here.
+
+    > **CodeJamOrdersService** was already configured as a destination in the SAP BTP cockpit – with the additional property `sap.applicationdevelopment.actions.enabled` – and hence is visible here.
 
     After selecting the destination, you will see a list of all the entities and all the API calls you can make.
 
     Click **Next**.
 
 4. Enter `OrderManagement-Actions` for the project name and description.
-    
+
     Click **Create**.
 
     ![Project Name](images/1d-provide-projectname-create.png)
 
     You will now see the operations available for this service, and you will need to decide which ones to expose.
 
-5. In the **Orders** entity, you want to only update the **status** field. Hence, in the popup, you have to select the **PATCH** method of **/Orders({ID})** API. 
-    
-    Select the **Filter actions** dropdown, filter option and choose **PATCH**. 
-    
+5. In the **Orders** entity, you want to only update the **status** field. Hence, in the popup, you have to select the **PATCH** method of **/Orders({ID})** API.
+
+    Select the **Filter actions** dropdown, filter option and choose **PATCH**.
+
     ![Patch Update](images/2-update-entity-orders.png)
 
     Now, under **Orders** there will appear just one API. Select it.
 
-    >SAP Build Actions will open with the selected APIs. You can always go back and add additional APIs to expose.
+    > SAP Build Actions will open with the selected APIs. You can always go back and add additional APIs to expose.
 
     Click **Add**.
 
@@ -143,8 +111,8 @@ You already created the destination for the CAP service because you needed it in
 
     ![Path operation](images/2-update-entity-orders-final.png)
 
-
 ### Modify action to set status to APPROVED
+
 Actions enable all kinds of customization to API calls -- for example, to pre-set fields, enable additional inputs, set OData filters.
 
 Here we will do something simple: whenever someone calls this API, the action will change the order status to **APPROVED**.
@@ -163,8 +131,8 @@ Here we will do something simple: whenever someone calls this API, the action wi
 
     ![Save](approved3.png)
 
-
 ### Test action
+
 Let's make sure everything is connected properly and test the action.
 
 1. Click the **Test** tab.
@@ -174,26 +142,19 @@ Let's make sure everything is connected properly and test the action.
     ![Test](test1.png)
 
 2. Under the **Test Input Values**, enter `6c25e827-15c2-4e7f-be1a-89fb4304d4fa` for the **ID** field.
-   
+
     ![Test Input Values](test2.png)
-   
+
 3. Click **Test**.
 
     Once the execution is successful, you should see **200: OK** response.
 
-    >If for some reason you entered an order ID that did not exist, the service will create it, and you will get a **201: OK** status code.
+    > If for some reason you entered an order ID that did not exist, the service will create it, and you will get a **201: OK** status code.
 
-    >If for some reason you entered a value that was not a GUID, you will get **400: BAD REQUEST** or **404: NOT FOUND** status code.
-
-
-
-
-
-
-
-
+    > If for some reason you entered a value that was not a GUID, you will get **400: BAD REQUEST** or **404: NOT FOUND** status code.
 
 ### Release and publish action
+
 You will now release the action project to create a version and then publish this version in the action repository. It is this published action that you will connect to from your process.
 
 1. Click **Release** (top right).
@@ -210,7 +171,6 @@ You will now release the action project to create a version and then publish thi
 
     ![Release status](images/4a-release-status.png)
 
-    
 3. Click **Publish** (top right).
 
     ![Publish](images/4b-publish-to-library.png)
@@ -221,17 +181,9 @@ You will now release the action project to create a version and then publish thi
 
     ![Published Actions](images/4c-published-status.png)
 
-
-
-
-
-
-
-
-
 ### Add action to process
 
-You have already set up the approval form as part of the tutorial [Add Approval Flow to Process](codejam-05-spa-approval-flow). 
+You have already set up the approval form as part of the tutorial [Add Approval Flow to Process](codejam-05-spa-approval-flow).
 
 Now, you will add the action so that if the order is approved, the action will update the status of the order.
 
@@ -257,7 +209,7 @@ Now, you will add the action so that if the order is approved, the action will u
 
     ![Select action](add-action2.png)
 
-    >If you do not see the action you just publsihed, refresh the page.
+    > If you do not see the action you just publsihed, refresh the page.
 
     Click **Add** next to the **Patch** API.
 
@@ -265,25 +217,24 @@ Now, you will add the action so that if the order is approved, the action will u
 
     ![Action added with Side pane](images/5d-action-added-sidepane-open.png)
 
-    >You will see a red warning icon. This is only because you still need to bind data to the action, for example, the order ID.
+    > You will see a red warning icon. This is only because you still need to bind data to the action, for example, the order ID.
 
 4. In the side pane, click the **Destination variable** dropdown, and choose **Create Destination Variable**.
 
-    >A destination variable creates a way that you can deploy your process to different systems – dev, test, production – and assign different destinations for this action to each environment, without having to change the process itself. 
+    > A destination variable creates a way that you can deploy your process to different systems – dev, test, production – and assign different destinations for this action to each environment, without having to change the process itself.
 
     ![Create variable](add-action3.png)
-    
+
     Enter `MyCAPDest` in the **Identifier** field, and click **Create**.
 
-    >Destination variable identifiers cannot have spaces.
+    > Destination variable identifiers cannot have spaces.
 
     ![Destination variable](images/5e-create-destination-variable.png)
-
 
 5. In the side pane, go to the **Inputs** tab.
 
     Click in the **ID** field (this is one of the inputs defined in the action). You must bind which order to update.
-    
+
     Choose **Process Inputs > Order ID**.
 
     ![Inputs tab](images/5f-input-tab-orderid.png)
@@ -291,11 +242,11 @@ Now, you will add the action so that if the order is approved, the action will u
 6. Let's do one more thing to make the process more efficient.
 
     You updated the CAP service to change the status of our order when an approver approves the purchase. But you also want to update the order status when it is automatically approved.
-    
+
     Under the **Approval Notification 1** form, click the plus sign, **+**.
 
     ![Add go-to](goto1.png)
-    
+
     Select **Controls and Events > Go-to-Step**.
 
     ![Go-to step](goto2.png)
@@ -310,15 +261,6 @@ Now, you will add the action so that if the order is approved, the action will u
 
 7. Click **Save** (upper right).
 
-
-
-
-
-
-
-
-
-
 ### Release, deploy and publish process
 
 1. Click **Release** (top right).
@@ -326,13 +268,13 @@ Now, you will add the action so that if the order is approved, the action will u
     ![Release after actions](images/6-release-after-action.png)
 
     In the pop-up, for **Release Notes**, enter `Added Action to update Orders entity`.
-    
-    Click **Release**. 
+
+    Click **Release**.
 
     ![Version comment](images/6a-version-comment.png)
 
 2. Click **Show project version**.
-   
+
     Click **Deploy**.
 
     Select the **Public** environment, and click **Upgrade**.
@@ -340,12 +282,12 @@ Now, you will add the action so that if the order is approved, the action will u
     ![Select environment](deploy1.png)
 
     The triggers that will be deployed will be displayed. There is nothing to do here but confirm.
-    
+
     Click **Deploy**.
 
     ![Deploy triggers](deploy2.png)
 
-    Now you will see the environment variables for which you need to provide values. 
+    Now you will see the environment variables for which you need to provide values.
 
     ![Destinations](deploy3.png)
 
@@ -358,23 +300,20 @@ Now, you will add the action so that if the order is approved, the action will u
 3. Go back to the SAP Build lobby.
 
     Click the row for your process project, and then open the **Versions** tab.
-    
+
     Next to the version you just deployed, click the 3 dots and select **Publish to Library**.
 
     ![Republish](republish.png)
 
     In the dialog, click **Publish**.
 
-
-
-
-
 ### Build My Orders screen
+
 In order to better see the status of all my orders and cart, you will create in 5 minutes a page for checking the status of your orders.
 
 1. Open your SAP Build Apps project.
 
-2. Open the **My Orders** page. 
+2. Open the **My Orders** page.
 
     ![My Orders](myorders1.png)
 
@@ -389,7 +328,7 @@ In order to better see the status of all my orders and cart, you will create in 
     Select the basic table, and click **Install**.
 
 5. On the UI canvas, under the **Installed** tab on the left, drag an instance of the basic table onto the canvas.
-    
+
     ![alt text](myorders4.png)
 
 6. In the **Properties** pane on the right, click **Configure**.
@@ -399,7 +338,7 @@ In order to better see the status of all my orders and cart, you will create in 
     ![Orders](myorders5.png)
 
     Click **Properties**, expand the **Optional** node.
-    
+
     Click the **X** next to **Filter conditions**.
 
     ![Filter](myorders6.png)
@@ -422,16 +361,11 @@ In order to better see the status of all my orders and cart, you will create in 
 
     Click **Add Item**, and set the new item to the following.
 
-    | Icon    |   Tab name  |   Page  |
-    | --- | --- | --- |
-    | `credit card`    |   `My Orders`     | `My Orders` |
+    | Icon          | Tab name    | Page        |
+    | ------------- | ----------- | ----------- |
+    | `credit card` | `My Orders` | `My Orders` |
 
 8. Click **Save** (upper right).
-
-
-
-
-
 
 ### Test the app
 
@@ -475,4 +409,4 @@ In order to better see the status of all my orders and cart, you will create in 
 
     ![Order approved](testapp7.png)
 
-    >You will also notice that there is a new cart. Since you submitted the cart and changed it's status to **REQUESTED**, the app no longer had a cart. And when the app returned to the home page, it created a new cart in the CAP service.
+    > You will also notice that there is a new cart. Since you submitted the cart and changed it's status to **REQUESTED**, the app no longer had a cart. And when the app returned to the home page, it created a new cart in the CAP service.
