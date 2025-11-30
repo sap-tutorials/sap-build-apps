@@ -13,7 +13,7 @@ primary_tag: software-product>sap-business-technology-platform
 <!-- description --> Get ready for your event-based processes CodeJam now!
 
 ## Prerequisites
-- **IMPORTANT:** You must be attending a live CodeJam to perform these tutorial.
+- **IMPORTANT:** You must be attending a live CodeJam to perform these tutorials.
 - Do this before you come to CodeJam ⏱️
 - Bring your laptop 💻
 - Bring your device 📱
