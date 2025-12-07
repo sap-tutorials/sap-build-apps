@@ -71,7 +71,11 @@ If you set up SAP Build Apps properly, skip this step. Otherwise, we have tried 
 2. Within the SAP Build lobby, click **Create**.
    
     ![Create](startnew1.png)
-   
+
+    >If you have other SAP Build tools installed, you may get other options. Still click **Create** and then click on **Create** again.
+
+    >![Create button](create-alt.png)
+
     Click **Application**, and click **Next**. 
    
     ![Create](startnew2.png)
