@@ -17,7 +17,7 @@ parser: v2
 In the previous tutorial, you learned how to configure your application to read specific information from an API once a barcode has been scanned. Now, in this final tutorial for this mission, you will learn how to display the fetched information on your application interface.
 
 ### Add text components to app
-
+ 
 To start with, you'll add further visual information to your app in the form of a title and a paragraph of text. This will eventually be used to display specific calorific information obtained from scanning a food item.
 
 1. From the **Core** component tab, drag a **Title** component underneath your **Scan** button.
