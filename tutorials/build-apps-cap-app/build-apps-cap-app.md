@@ -12,7 +12,7 @@ primary_tag: software-product>sap-build
 # Consume a CAP Service in SAP Build Apps
 <!-- description --> Using SAP Build Apps, create an app that calls a CAP service via a destination, updates data, and manages permissions based on SAP BTP role collections.
 
- 
+  
 ## Prerequisites
 - You have created and deployed a CAP service, as described in [Create a CAP Service with BAS Productivity Tools](build-apps-cap-service).
 - You have created a destination to your CAP service, as described in [Expose a CAP Service to SAP Build](build-apps-cap-expose).
