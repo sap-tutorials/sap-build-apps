@@ -313,23 +313,23 @@ But for this tutorial, we are going to do it manually from within the administra
 
     In the dialog, replace the JSON with the following JSON.
 
-    ```JSON
-    {
-    "id": "33642f82-f55d-4d03-a198-2f2b9e135902",
-    "time": "2025-01-31T06:12:26.851Z",
-    "type": "cust.ext.codejam.ZBUSINESSPARTNER.Created.v1",
-    "source": "/default/sap.s4.beh/244572008",
-    "specversion": "1.1",
-    "datacontenttype": "application/json",
-    "data": {
-        "BusinessPartner": "1005773",
-        "FirstName": "Alan",
-        "LastName": "Turing",
-        "YY1_SAPCommunityDisplayName": "[SAPCommunityDisplayName]"
-    },
-    "sapcommunitydispname": "[SAPCommunityDisplayName]"
-    }
-    ```
+   ```JSON
+   {
+   "id": "33642f82-f55d-4d03-a198-2f2b9e135902",
+   "time": "2025-01-31T06:12:26.851Z",
+   "type": "cust.ext.codejam.ZBUSINESSPARTNER.Created.v1",
+   "source": "/default/sap.s4.beh/244572008",
+   "specversion": "1.1",
+   "datacontenttype": "application/json",
+   "data": {
+       "BusinessPartner": "1005773",
+       "FirstName": "Alan",
+       "LastName": "Turing",
+       "YY1_SAPCommunityDisplayName": "[SAPCommunityDisplayName]"
+   },
+   "sapcommunitydispname": "[SAPCommunityDisplayName]"
+   }
+   ```
 
     If you want, change the community ID to yours. But for this test, you do not have to.
 

@@ -149,37 +149,37 @@ Now, let's explore an event broker service available in our instance.
 
    - Click on the `Open Broker Manager` button.
 
-    ![Open Broker Manager](assets/try1.png)
+   ![Open Broker Manager](assets/try1.png)
     
    - On the `Publisher` side, expand the area for entering the credentials.
   
-    ![Expand credentials](assets/try2.png)
+   ![Expand credentials](assets/try2.png)
 
    - From the **participants handbook**, enter the credentials:`Broker URL`, `Message VPN`, `Client Username` and `Client Password`.
 
-    ![Publisher - Establish connection](assets/publisher-establish-connection.png)
+   ![Publisher - Establish connection](assets/publisher-establish-connection.png)
 
    - Click **Connect**.
 
-    You should now see **Connected**.
+   You should now see **Connected**.
 
-    ![Publisher - Connected](assets/try3.png)
+   ![Publisher - Connected](assets/try3.png)
 
    - On the `Subscriber` side, expand the credentials area, and select **Same as Publisher** checkboxes for the first three credentials.
 
-    ![Subscriber credentials](assets/try4.png)
+   ![Subscriber credentials](assets/try4.png)
 
-    Click **Connect**.
+   Click **Connect**.
 
    - After establishing the connection, subscribe to the topic `try-me` by clicking the **Subscribe** button.
 
-    ![Subscribe](assets/try5.png)
+   ![Subscribe](assets/try5.png)
 
    - Back on the **Publisher** side, publish a message to the topic `try-me` by clicking the **Publish** button.
 
-    Check the message being consumed on the **Subscriber** side.
+   Check the message being consumed on the **Subscriber** side.
 
-    ![Try Me! - Message exchange](assets/try6.png)
+   ![Try Me! - Message exchange](assets/try6.png)
 
 
 ### Event Meshes

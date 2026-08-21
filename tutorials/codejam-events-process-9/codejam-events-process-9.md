@@ -92,9 +92,9 @@ This is a very simple use of the Script Task, but we wanted to introduce it to y
 
     Then add code so the line is the following:
 
-    ```JavaScript
-    $.context.custom.localapprover = true;
-    ```
+   ```JavaScript
+   $.context.custom.localapprover = true;
+   ```
 
     ![Finish script](assets/script5.png)
 
@@ -179,9 +179,9 @@ This is a very simple use of the Script Task, but we wanted to introduce it to y
   
 3. For the **Subject** field, enter the following (including trailing space):
 
-    ```Text
-    Badge Request - Local Approver - 
-    ```
+   ```Text
+   Badge Request - Local Approver - 
+   ```
 
     Then, with the cursor still at the end of the field, select **Process Inputs > data > BusinessPartner**.
 
@@ -231,9 +231,9 @@ In the case that the local approver rejects the badge, we must set the flag to f
 
     Copy in the following:
 
-    ```JavaScript
-    $.context.custom.localapprover = false;
-    ```
+   ```JavaScript
+   $.context.custom.localapprover = false;
+   ```
 
     Click **Apply**.
 

@@ -87,9 +87,9 @@ In this tutorial, you create the required variables, binding and logic, and in t
 
     Set the type of variable to **Single data record**, and set the **ProductID** to the following formula:
 
-    ```JavaScript
-    NUMBER(params.productID)
-    ```
+   ```JavaScript
+   NUMBER(params.productID)
+   ```
 
     ![Products data variable](products-data-var.png)
 
@@ -180,9 +180,9 @@ Whenever someone clicks on one of the products on the List of Products page, we 
 
     Set **Parameters > ProductID** to the following formula:
 
-    ```JavaScript
-    STRING(repeated.current.ProductID)
-    ```
+   ```JavaScript
+   STRING(repeated.current.ProductID)
+   ```
 
     ![Navigate](navigate.png)
 

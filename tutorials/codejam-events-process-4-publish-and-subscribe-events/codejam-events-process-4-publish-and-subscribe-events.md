@@ -150,29 +150,29 @@ By the end of this tutorial we will achieve a communication scenario like the on
     
 4. For the topic, enter the following but replace `[SAPCommunityDisplayName]` with your SAP Community display name.
    
-    ```JSON
-    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
-    ``` 
+   ```JSON
+   default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
+   ``` 
 
     For the payload, enter the following but replace `[SAPCommunityDisplayName]` with your SAP Community display name (it appears twice).
 
-    ```JSON
-    {
-    "id": "33642f82-f55d-4d03-a198-2f2b9e135902",
-    "time": "2025-01-31T06:12:26.851Z",
-    "type": "cust.ext.codejam.ZBUSINESSPARTNER.Created.v1",
-    "source": "/default/sap.s4.beh/244572008",
-    "specversion": "1.1",
-    "datacontenttype": "application/json",
-    "data": {
-        "BusinessPartner": "1005773",
-        "FirstName": "Alan",
-        "LastName": "Turing",
-        "YY1_SAPCommunityDisplayName": "[SAPCommunityDisplayName]"
-    },
-    "sapcommunitydispname": "[SAPCommunityDisplayName]"
-    }
-    ```
+   ```JSON
+   {
+   "id": "33642f82-f55d-4d03-a198-2f2b9e135902",
+   "time": "2025-01-31T06:12:26.851Z",
+   "type": "cust.ext.codejam.ZBUSINESSPARTNER.Created.v1",
+   "source": "/default/sap.s4.beh/244572008",
+   "specversion": "1.1",
+   "datacontenttype": "application/json",
+   "data": {
+       "BusinessPartner": "1005773",
+       "FirstName": "Alan",
+       "LastName": "Turing",
+       "YY1_SAPCommunityDisplayName": "[SAPCommunityDisplayName]"
+   },
+   "sapcommunitydispname": "[SAPCommunityDisplayName]"
+   }
+   ```
 
     It should look like this:
     
@@ -210,9 +210,9 @@ We've successfully connected the publisher section to the event broker by provid
 
 2. Enter the following in the topic field but replace `[SAPCommunityDisplayName]` with your SAP Community display name. 
    
-    ```JSON
-    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
-    ``` 
+   ```JSON
+   default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
+   ``` 
 
 3. Click **Subscribe**.
 
@@ -340,9 +340,9 @@ This is an activity that we will do multiple times in the CodeJam, in order to t
 
     This create  a new Business Partner in the simulated SAP S/4HANA Cloud system and it will trigger a CloudEvents message that will be published to the event broker service. The event will be published to the following topic: 
     
-    ```JSON
-    default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
-    ```
+   ```JSON
+   default/sap.s4/S4D/ce/cust/ext/codejam/ZBUSINESSPARTNER/Created/v1/[SAPCommunityDisplayName]
+   ```
     
     The message will be delivered to the queue that we've created (`EDP_BP_Created_[SAPCommunityDisplayName]`) and you should be able to see it in the **Try Me!** UI if you are still connected and consuming messages from the queue.
 

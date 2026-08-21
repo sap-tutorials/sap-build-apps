@@ -456,10 +456,10 @@ We need to set up the logic so when someone clicks the **Get Approval** button (
 
     Erase the quotation marks, and enter the following formula:
 
-    ```JavaScript
-    "Triggered process with ID: " + outputs["Trigger process"].newProcessInstance.id
+   ```JavaScript
+   "Triggered process with ID: " + outputs["Trigger process"].newProcessInstance.id
 
-    ```
+   ```
 
     Click **Save**.
 

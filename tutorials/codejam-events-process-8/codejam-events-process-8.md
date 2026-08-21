@@ -104,9 +104,9 @@ Actions specify the details of the API call, but do not specify a backend system
 
     For the URL, enter: 
     
-    ```URL
-    https://s4-mock-server-with-bp-created-events.cfapps.eu10.hana.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER
-    ```
+   ```URL
+   https://s4-mock-server-with-bp-created-events.cfapps.eu10.hana.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER
+   ```
 
     ![Set up test](assets/action11.png)
 
