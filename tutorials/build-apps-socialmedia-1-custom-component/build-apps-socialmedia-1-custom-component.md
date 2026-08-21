@@ -218,9 +218,9 @@ We want the component to show the rating and rating count for each of the produc
 
 4. Select the first text component, and set the **Content** property to the following formula:
 
-    ```JavaScript
-    FORMAT_LOCALIZED_DECIMAL(internalProps.Rating, "en", 1,1)
-    ```
+   ```JavaScript
+   FORMAT_LOCALIZED_DECIMAL(internalProps.Rating, "en", 1,1)
+   ```
 
     ![Text binding](comp-binding1.png)
 
@@ -230,9 +230,9 @@ We want the component to show the rating and rating count for each of the produc
 
 5. Select the second text component, and set the **Content** property to the following formula:
 
-    ```JavaScript
-    "(" + internalProps.RatingCount + ")"
-    ```
+   ```JavaScript
+   "(" + internalProps.RatingCount + ")"
+   ```
 
     Under **Layout**, set the width to be exactly 40px wide.
 

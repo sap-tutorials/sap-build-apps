@@ -97,13 +97,13 @@ Finally, click on `RiskManagement-uaa`, and you will see a service key on the ri
 
 3. In the terminal, run the following commands separately:
 
-    ```Bash
-    curl http://localhost:8887/reload
-    ```
+   ```Bash
+   curl http://localhost:8887/reload
+   ```
 
-    ```Bash
-    curl https://RiskManagement-RiskManagementService.dest/Risks
-    ```
+   ```Bash
+   curl https://RiskManagement-RiskManagementService.dest/Risks
+   ```
 
     ![Run curl](4-test2.jpg)
 

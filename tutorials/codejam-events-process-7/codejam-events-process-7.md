@@ -125,9 +125,9 @@ The binding step enables you to reuse steps, for example, to send the same appro
 
 2. For the **Subject** field, enter the following (including trailing space):
 
-    ```Text
-    Badge Request - 
-    ```
+   ```Text
+   Badge Request - 
+   ```
 
     ![Add text to subject](assets/bind2.png)
 
@@ -202,9 +202,9 @@ The binding step enables you to reuse steps, for example, to send the same appro
 
 2. For the **Subject** field, enter the following (including trailing space):
 
-    ```Text
-    Badge Request Approved - 
-    ```
+   ```Text
+   Badge Request Approved - 
+   ```
 
     ![Add text to subject](assets/bindform2.png)
 

@@ -190,9 +190,9 @@ We will want the 3rd-party system to call our process back, and we need to suppl
 
     Add the following line to the editor.
 
-    ```JavaScript
-    $.context.custom.instanceid = $.info.workflowInstanceId
-    ```
+   ```JavaScript
+   $.context.custom.instanceid = $.info.workflowInstanceId
+   ```
 
     ![Create script](assets/variable5.png)
 
@@ -292,9 +292,9 @@ Our 3rd-party system will call back to our process instance, and send a badge nu
 
 2. Add a **Paragraph** and set its text to:
    
-    ```Text
-    Your badge number is:
-    ```
+   ```Text
+   Your badge number is:
+   ```
     
     Add a **Text** field. Call it **Badge Number** and set to read only.
 

@@ -132,9 +132,9 @@ Now that the data variable exists, you might notice that it has some automatical
 
 5. Select the **If condition** node and set its condition to a formula type binding, and set the formula to the following:
 
-    ```JavaScript
-    !IS_EMPTY(outputs["Get record collection"].records)
-    ```
+   ```JavaScript
+   !IS_EMPTY(outputs["Get record collection"].records)
+   ```
     <img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step3gif4.gif" alt="Formula for If node"/>
 
     >Instead of copying and pasting the formula, you may need to simply build the formula yourself with the formula editor.
@@ -280,9 +280,9 @@ It is recommended to use theme variables in formulas instead of going with stati
     
     In this **If condition**, check first whether preferenceId is empty and then that at least one of the app variables (`language` or `darkMode`) doesn’t match the value in the data variable. The following formula would do this:
 
-    ```JavaScript
-    (appVars.darkMode==data.Preferences1[0].darkMode&&appVars.language==data.Preferences1[0].language)
-    ```
+   ```JavaScript
+   (appVars.darkMode==data.Preferences1[0].darkMode&&appVars.language==data.Preferences1[0].language)
+   ```
 
 3. Attach an **Update record flow function** to the **If condition**.
 
@@ -292,9 +292,9 @@ It is recommended to use theme variables in formulas instead of going with stati
 
 4. Configure the **Update record** flow function by setting the **ID** to the formula:
 
-    ```JavaScript
-    data.Preferences1[0].id
-    ```
+   ```JavaScript
+   data.Preferences1[0].id
+   ```
     
     Set the **Record** custom object properties each to the contents of the two app variables.
 
@@ -304,9 +304,9 @@ It is recommended to use theme variables in formulas instead of going with stati
 
     For that, add a **Set data variable** node, and set the record collection to the formula:
     
-    ```JavaScript
-    [outputs["Update record"].response]
-    ```
+   ```JavaScript
+   [outputs["Update record"].response]
+   ```
 Preview the app.
 
 <img src="https://raw.githubusercontent.com/sap-tutorials/sap-build-apps/main/tutorials/build-apps-offline-storage/step7gif1.gif" alt="Final view of application functionality"/>
