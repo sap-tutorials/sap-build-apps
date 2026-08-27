@@ -47,7 +47,7 @@ Among the SAP Build-related artifacts:
 
 
 
-## Tour events section of SAP Business Accelerator Hub
+### Tour events section of SAP Business Accelerator Hub
 
 Let's start by exploring the **Events** section of the SAP Business Accelerator Hub.
 
@@ -66,11 +66,11 @@ Let's group these events by SAP application and get familiar with the events pro
 ![Navigate to SAP Marketing Cloud Business Events](explore3.png)
 
 
-## Notification and data events
+### Notification and data events
 
 The two most common types of events that we will normally interact with are known as notification events and data events. They mainly differ in the amount of information included in the payload. Let's explore this further.
 
-### Notification events
+#### Notification events
 
 A notification event is a message that is sent to inform that something has happened. It is a simple message that does not contain much data. For example, a notification event could be sent to inform that a new customer has been created in a system and within its payload it might just contain an ID.
 
@@ -99,7 +99,7 @@ We can see that there is an operation available, `ce/sap/s4/beh/marketingcampaig
 >We'll see another notification event later in this tutorial, for SAP S/4HANA business partners.
 
 
-### Data events
+#### Data events
 
 A data event is also a message that is sent to inform that something has happened, but unlike a notification event, it includes the data that has changed. For example, a data event could be sent to inform that a new customer has been created in a system and include the data of the new customer.
 
@@ -170,7 +170,7 @@ You might have noticed that the notification and data events above follow a spec
 
 
 
-## What is CloudEvents?
+### What is CloudEvents?
 
 CloudEvents is a specification for describing event data in a common way. Its goal is to simplify event declaration and delivery across services, platforms and beyond! The specification is now under the [Cloud Native Computing Foundation](https://cncf.io/).
 
@@ -195,11 +195,11 @@ You'll notice that the example above is composed of many attributes. These attri
 
 >For more information on how SAP has adopted CloudEvents, check out this blog post: https://community.sap.com/t5/application-development-blog-posts/cloudevents-at-sap/ba-p/13620137.
 
-### CloudEvents message format
+#### CloudEvents message format
 
 A CloudEvent message is mainly composed of context attributes and data. As we briefly touched on previously, the payload in the data field will depend on whether it is a notification event or a data event.
 
-### Context attributes
+#### Context attributes
 
 Several attributes can be included within the message, these attributes are known as [context attributes](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#context-attributes) and the idea is that these context attributes can be used to describe the event. We can think of these context attributes as the header information of our event.
 
@@ -214,7 +214,7 @@ Let's explore some of the attributes available.
 | datacontenttype | | Content type of the value in data. | `application/json` |
 
 
-### Extension context attributes
+#### Extension context attributes
 
 A CloudEvent message may also include additional context attributes, which are not defined as part of the specification. These additional attributes are known as "extension context attributes" and can be used by the producer systems to include additional metadata to an event, similar to how we can use HTTP custom headers.
 
@@ -236,7 +236,7 @@ For example, in the [SAP Digital Vehicle Hub Business Events package](https://hu
 }
 ```
 
-### Data field
+#### Data field
 
 A CloudEvent message may include a payload but this is not required. If included, it will be in the format specified in the `datacontenttype` context attribute. Although it is not required, we will generally have a payload in messages. Below we can see an example of an event message that contains a payload.
 
@@ -264,7 +264,7 @@ Now that we are familiar with the CloudEvents format, let's explore the Business
 
 
 
-## Tour business partner events in SAP S/4HANA Cloud 
+### Tour business partner events in SAP S/4HANA Cloud 
 
 As part of this CodeJam, we will interact with the Business Partner data from an SAP S/4HANA Cloud system. In our scenario, the Business Partner event will be used to inform that a Business Partner has been created and it will be triggered with the creation of a new Business Partner in the SAP S/4HANA Cloud system.
 
@@ -298,12 +298,12 @@ In the next exercise, we will explore the CloudEvents format, which is a specifi
 
 
 
-## Tour SAP Build artifacts
+### Tour SAP Build artifacts
 In addition to the event artifacts in the SAP Business Accelerator Hub, there are many SAP Build-related artifacts, especially for SAP Build Process Automation.
 
 
 
-### Pre-Built Content
+#### Pre-Built Content
 One of the greatest features of SAP Build Process Automation is that it comes with thousands of templates for automating SAP-related processes.
 
 In the menu header of the SAP Business Accelerator Hub, click **SAP Build**.
@@ -328,7 +328,7 @@ You will get a page about this specific template.
 ![Mass Creation of Maintenance Service Orders documentation](build3.png)
 
 
-### APIs
+#### APIs
 You've already seen in the site APIs for SAP S/4HANA Cloud. There are also key APIs for SAP Build. 
 
 For example, you can explore the [SAP Build Process Automation API package](https://hub.sap.com/package/SAPProcessAutomation/overview).  
@@ -339,7 +339,7 @@ There are both OData and plain REST APIs for performing a variety of actions: tr
 
 
 
-### Automation SDKs
+#### Automation SDKs
 Go back to the SAP Build area, but search by SDK – or just click [SDKs](https://hub.sap.com/build?searchterm=SDK).
 
 ![SDKs](build5.jpg)
@@ -353,7 +353,7 @@ These entries provide an explanation of what the SDKs can do, plus a list of art
 
 
 
-## Further study
+### Further study
 
 Now that you are familiar with some of the events available in the SAP Business Accelerator Hub, we are ready to start exploring the format used to describe the events. Enter CloudEvents.
 
